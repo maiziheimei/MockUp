@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-sm-9">
+      <div *ngIf="!hidenewModel">
+      <h2>New Modell Document</h2>
+      <form #form="ngForm" (ngSubmit)="onSubmitAddModelDoc(form.value)" class="well">
+        <div class="form-group">
+          <label>_id</label>
+          <input type="text" class="form-control" required name="_id" ngModel>
+        </div>
+        <div class="form-group">
+          <label>Kriterium</label>
+          <input type="text" class="form-control" required name="Kriterium" ngModel>
+        </div>
+        <div class="form-group">
+          <label>Beschreibung</label>
+          <input type="text" class="form-control" name="Beschreibung" ngModel>
+        </div>
+        <div class="form-group">
+          <label>Auspraegung_0</label>
+          <input type="text" class="form-control" name="Auspraegung_0" ngModel>
+        </div>
+        <div class="form-group">
+          <label>Auspraegung_0</label>
+          <input type="text" class="form-control" name="Auspraegung_1" ngModel>
+        </div>
+        <div class="form-group">
+          <label>Auspraegung_0</label>
+          <input type="text" class="form-control" name="Auspraegung_2" ngModel>
+        </div>
+        <div class="form-group">
+          <label>Auspraegung_0</label>
+          <input type="text" class="form-control" name="Auspraegung_3" ngModel>
+        </div>
+        <div class="form-group">
+          <label>IT</label>
+          <input type="text" class="form-control" name="IT" ngModel>
+        </div>
+        <div class="form-group">
+          <label>TOP_Zuordnung</label>
+          <input type="text" class="form-control" name="TOP_Zuordnung" ngModel>
+        </div>
+
+        <button type="submit" class="btn btn-success">Save</button>
+        <button class="btn btn-danger" (click)="cancelNewModellDoc()">Cancel</button>
+      </form>
+    </div>
+    <model-detail *ngIf="selectedModel && hidenewModel"
+                  (updateModelEvent)="onUpdateModelEvent($event)"
+                  (deleteModelEvent)="onDeleteModelEvent($event)"
+                  [modell]="selectedModel"></model-detail>
+  </div>
+
+  <div class="col-sm-3">
+    <button style="margin-bottom:2px;" type="button" (click)="newModellDoc()" class="btn btn-success btn-block">+ New Modell Document</button>
+    <model-list (SelectModel)="onSelectModel($event)" [modells]="modells"></model-list>
+  </div>
+</div>

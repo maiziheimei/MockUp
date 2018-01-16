@@ -1,0 +1,35 @@
+<div>
+  <form>
+    <h3 *ngIf="!editId" (click)="onIdClick()">{{modell._id}}</h3>
+
+    <div *ngIf="editId" class="form-group">
+      <label >_id:</label> <input type="input" class="form-control" name="_id" required placeholder="_id" [(ngModel)]="modell._id">
+    </div>
+    <div class="form-group">
+      <label>Kriterium: </label> <input type="input" class="form-control" name="Kriterium" required placeholder="Kriterium" [(ngModel)]="modell.Kriterium">
+    </div>
+    <div class="form-group">
+      <label>Beschreibung: </label> <textarea class="form-control" rows="5" name="Beschreibung" [(ngModel)]="modell.Beschreibung"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Auspraegung_0: </label> <textarea class="form-control" rows="5" name="Auspraegung_0" [(ngModel)]="modell.Auspraegung_0"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Auspraegung_1: </label> <textarea class="form-control" rows="5" name="Auspraegung_1" [(ngModel)]="modell.Auspraegung_1"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Auspraegung_2: </label> <textarea class="form-control" rows="5" name="Auspraegung_2" [(ngModel)]="modell.Auspraegung_2"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Auspraegung_3: </label> <textarea class="form-control" rows="5" name="Auspraegung_3" [(ngModel)]="modell.Auspraegung_3"></textarea>
+    </div>
+    <div class="form-group">
+      <label>IT : </label> <input class="form-control" rows="5" name="IT" [(ngModel)]="modell.IT">
+    </div>
+    <div class="form-group">
+      <label>TOP_Zuordnung : </label> <textarea class="form-control" rows="5" name="TOP_Zuordnung" [(ngModel)]="modell.TOP_Zuordnung"></textarea>
+    </div>
+    <button type="button" (click)="updateModel()" class="btn btn-primary">Update</button>
+    <button type="button" (click)="deleteModel()" class="btn btn-danger">Delete</button>
+  </form>
+</div>
