@@ -6,12 +6,14 @@ const mongoose = require('mongoose');
 const mdl = require('../models/modell');
 
 
-const db = "mongodb://root:xia@ds247347.mlab.com:47347/mockup";
+//const db = "mongodb://root:xia@ds247347.mlab.com:47347/mockup";
+const db= "mongodb://localhost/mockup";
 
 mongoose.Promise = global.Promise;
 
 mongoose.connect(db, function(err){
   if(err){
+    console.error("cant not receive data from mlab ... " );
     console.error("Error! " + err);
   }
 });

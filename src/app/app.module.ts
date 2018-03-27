@@ -8,9 +8,25 @@ import { HomeComponent } from './home/home.component';
 import { ModellCenterComponent } from './modell-center/modell-center.component';
 import { ModelListComponent } from './model-list/model-list.component';
 import { ModelDetailComponent } from './model-detail/model-detail.component';
-import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
-import {HttpClientModule} from '@angular/common/http';
+
+import { StartComponent } from './start/start.component';
+import { KriterienComponent } from './kriterien/kriterien.component';
+import { ZustaendeComponent } from './zustaende/zustaende.component';
+import { ModellDesignComponent } from './modell-design/modell-design.component';
+import { MassnahmenComponent } from './massnahmen/massnahmen.component';
+import { EvaluationComponent } from './evaluation/evaluation.component';
+
+import { FormsModule} from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatInputModule, MatCardModule, MatDatepickerModule, MatFormFieldModule, MatNativeDateModule, MatButtonModule, MatCheckboxModule, MatIconModule} from '@angular/material';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatSelectModule} from '@angular/material/select';
+import { ModellService } from './modell.service';
+
+
 
 @NgModule({
   declarations: [
@@ -18,16 +34,26 @@ import {HttpClientModule} from '@angular/common/http';
     HomeComponent,
     ModellCenterComponent,
     ModelListComponent,
-    ModelDetailComponent
+    ModelDetailComponent,
+    KriterienComponent,
+    StartComponent,
+    ZustaendeComponent,
+    MassnahmenComponent,
+    ModellDesignComponent,
+    EvaluationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    AngularFontAwesomeModule,
+    BrowserAnimationsModule,
+    MatCheckboxModule, MatButtonModule, MatFormFieldModule, MatGridListModule, MatDatepickerModule, MatNativeDateModule, MatCardModule, MatSelectModule,
+    MatInputModule, MatIconModule
   ],
-  providers: [HttpClientModule],
+  providers: [HttpClientModule, ModellService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

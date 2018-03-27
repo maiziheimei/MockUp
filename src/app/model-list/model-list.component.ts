@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
-import {Modell} from '../modell';
+import { Modell } from '../modell';
 
 @Component({
   selector: 'model-list',
@@ -10,6 +10,7 @@ import {Modell} from '../modell';
 })
 export class ModelListComponent implements OnInit {
 
+  modells: any;
   public SelectModel = new EventEmitter();
 
   constructor() { }

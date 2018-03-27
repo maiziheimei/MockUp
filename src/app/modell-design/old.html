@@ -1,0 +1,44 @@
+<div class="container">
+
+
+  <div class="labs">
+    <a mat-icon-button id="close-icon" (click)="closeBlock()"><mat-icon> clear </mat-icon></a>
+    <label id="R"> Relevant</label>
+    <input type="text" value="Digitale Konnektivität von Maschinen">
+    <label >  Priorität</label>
+    <input matInput type="number" placeholder="1" min="1" max="42" [(ngModel)]="value"/>
+    <a mat-icon-button id="help-icon"><mat-icon> help </mat-icon></a>
+  </div>
+
+  <mat-card class="modell-card">
+    <mat-card-content>
+      <p id="model-text">Es wird betrachtet, über welche (informations-) technischen Schnittstellen zwischen Hard- und Software sowie Maschinen und Anlagen digital kommuniziert werden kann. Welche Kommunikationsstandards bzw. -konzepte werden genutzt oder sind grundsaetzlich verfügbar, um IT-Netzwerke aufzubauen?
+      </p>
+      <a mat-icon-button class="small"><mat-icon> info </mat-icon></a>
+      <textarea id="model_note" matInput placeholder="Notiz " ></textarea>
+    </mat-card-content>
+  </mat-card>
+
+
+  <div class="aug-cards">
+    <mat-card  *ngFor=" let au of auspraegung; index as ind" class="example-card-{{ind % 8}}">
+      <mat-card-header>
+        <mat-card-title><h3> Ausprägung {{ind}}</h3></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <textarea class="aus_text"  rows="6"> {{au}} </textarea>
+        <mat-form-field style=" margin-bottom: -1.25em" >
+          <mat-select [ngClass]="colorClass"  placeholder="" value="selected">
+            <mat-option value="option0">None</mat-option>
+            <mat-option value="option1">Ist</mat-option>
+            <mat-option value="option2">Ziel</mat-option>
+          </mat-select>
+          <!--<p>Selected Value ID:  <b></b><br/></p>-->
+        </mat-form-field>
+        <mat-form-field [class.app-input-no-underline]="!showUnderline" style=" margin-bottom: -1.25em">
+          <textarea matInput placeholder="Notiz "  matTextareaAutosize matAutosizeMinRows="8" matAutosizeMaxRows="15"></textarea>
+        </mat-form-field>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

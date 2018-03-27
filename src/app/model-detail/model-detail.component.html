@@ -3,7 +3,8 @@
     <h3 *ngIf="!editId" (click)="onIdClick()">{{modell._id}}</h3>
 
     <div *ngIf="editId" class="form-group">
-      <label >_id:</label> <input type="input" class="form-control" name="_id" required placeholder="_id" [(ngModel)]="modell._id">
+      <label >_id:</label>
+      <input type="input" class="form-control" name="_id" required placeholder="_id" [(ngModel)]="modell._id">
     </div>
     <div class="form-group">
       <label>Kriterium: </label> <input type="input" class="form-control" name="Kriterium" required placeholder="Kriterium" [(ngModel)]="modell.Kriterium">

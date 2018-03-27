@@ -1,1 +1,94 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+body{
+  background-color: #f4f4f4;
+  color:#555;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6em;
+  margin:0;
+}
+/*!* to remove underline *!*/
+/*.mat-form-field.app-input-no-underline .mat-input-underline {*/
+     /*display: none;*/
+   /*}*/
+
+.container{
+  width:100%;
+  padding:0;
+  overflow: hidden;
+  box-sizing: content-box;
+  margin-bottom: 10px;
+}
+
+#main-header{
+  background-color: coral;
+  height: 80px;
+  color:#fff;
+  padding-left: 5px;
+}
+
+#navbar{
+  background-color: #808080;
+  color: #ffffff;
+
+  height :50px;
+  margin:auto;
+}
+
+#navbar ul{
+  padding:0;
+  list-style: none;
+  word-spacing: 20px;
+}
+
+#navbar li{
+  display: inline;
+  float:left;
+}
+
+#navbar a{
+  color:#fff;
+  text-decoration: none;
+  font-size: 2.4em !important;
+  text-align: center;
+  padding-right: 15px;
+  margin-right: 10px;
+}
+
+
+/*Active nav items*/
+   /*#navbar .nav .active > a,*/
+   /*#navbar .nav .active > a:hover {*/
+     /*color: red;*/
+     /*text-decoration: none;*/
+     /*background-color: #808080;*/
+   /*}*/
+
+
+   #navbar a.active{
+     color: coral;
+     text-decoration: none;
+     background-color: #808080;
+   }
+
+#main-footer{
+  background: #808080;
+  color:#fff;
+  text-align: center;
+  padding: 5px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+
+
+#label1{
+  background: #EFD9C1;
+  width: 90%;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  font: normal 20px courier !important;
+  padding:10px;
+}

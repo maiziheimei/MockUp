@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Modell } from '../modell';
-import {ModellService} from '../modell.service';
+import { ModellService} from '../modell.service';
 
 @Component({
   selector: 'app-modell-center',
   templateUrl: './modell-center.component.html',
   styleUrls: ['./modell-center.component.css'],
-  providers: [ModellService]
+  providers: [ ModellService]
 })
 export class ModellCenterComponent implements OnInit {
 
@@ -19,7 +19,7 @@ export class ModellCenterComponent implements OnInit {
 
   modells: Array<Modell>;
   selectedModel: Modell;
-  private hidenewModel: boolean = true;
+  hidenewModel = true;
 
   constructor(private _modellService: ModellService) {
   }
@@ -52,7 +52,7 @@ export class ModellCenterComponent implements OnInit {
 
 
   onDeleteModelEvent(modell: any) {
-    let modellArray = this.modells;
+    const modellArray = this.modells;
     this._modellService.deleteModelDoc(modell)
       .subscribe(resDeletedVideo => {
         for (let i = 0; i < modellArray.length; i++) {

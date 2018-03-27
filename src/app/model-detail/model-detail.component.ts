@@ -1,4 +1,4 @@
-import { Component, OnInit,EventEmitter } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'model-detail',
@@ -11,7 +11,7 @@ export class ModelDetailComponent implements OnInit {
 
   modell: any;
 
-  private  editId: boolean = false;
+  editId: boolean = false;
   private updateModelEvent = new EventEmitter();
   private deleteModelEvent = new EventEmitter();
   constructor() { }
