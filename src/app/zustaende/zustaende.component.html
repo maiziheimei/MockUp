@@ -1,0 +1,38 @@
+<!--Zustaede as parentComponet and Modell-design as child component-->
+
+<div *ngIf = "displayThenBlock; then thenBlock  else elseBlock"></div>
+
+<ng-template #thenBlock>
+  <!-- for testing
+  <h2>  this is then block</h2>
+  <button (click)= hideThenBlock()> hide </button>-->
+
+    <div>
+      <label id="label1"> Was sind die Ist-, Ziel-Zustände und Prioritäten für dir aus gewählten Kriterien? </label>
+    </div>
+
+    <div id="three-labels">
+      <label> Priorität </label>
+      <label> Ziel </label>
+      <label> Ist </label>
+    </div>
+
+
+  <div *ngFor="let cmodle of allmodels" >
+    <div class ="input-group" *ngIf="checkedArray.indexOf(cmodle._id) >-1">
+    <button type="text" (click)=openEditor(cmodle)> {{cmodle._id}}. {{cmodle.Kriterium}} </button>
+    <div class="numberCircle">0</div>
+    <div class="numberCircle">0</div>
+    <div class="numberCircle">0</div>
+    </div>
+  </div>
+
+</ng-template>
+
+
+<ng-template #elseBlock>
+  <!--<h2>  this is else block</h2>-->
+  <!--<button (click)= showThenBlock()> show</button>-->
+
+  <app-modell-design (childEvent)="receiveChanage($event)" [parentSwitch]="displayThenBlock" [ClickedModell] ="cMod"> </app-modell-design>
+</ng-template>

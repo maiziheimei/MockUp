@@ -1,0 +1,89 @@
+.myform{
+  width:100%;
+  float:left;
+  padding: 20px;
+}
+
+#close-icon {
+  width:10%;
+}
+.myform .form-group{
+  padding: 0;
+  margin:0;
+}
+
+.myform .form-group label{
+  float:left;
+  width: 60%;
+  height: 30px;
+  background-color:#A9B7C0;
+  color:#333;
+  font-weight:  bold;
+  padding:0;
+  border:none;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  font-size: medium;
+}
+
+.myform .form-group mat-checkbox {
+  float: right;
+  width: 20%;
+  margin-right: -80px;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.fa-check-circle-o{
+  font-size:40px;
+  color:orange;
+  float:right;
+  margin-right:100px;
+  box-sizing: border-box;
+  position: center;
+}
+
+.fa-check-circle{
+  font-size:40px;
+  color:orange;
+  float:right;
+  margin-right:100px;
+  box-sizing: border-box;
+  position: center;
+}
+
+.myform .form-group textarea {
+  padding: 8px;
+  width: 85%;
+  border-radius: 0;
+  overflow: hidden;
+  background: #EFD9C1;
+  display: block;
+  border-color: lightgrey;
+  font-size: medium;
+}
+
+.mat-form-field{
+  width:100% !important;
+  border:0;
+  margin:0;
+  padding:0;
+}
+
+#wrapper {
+}
+#content {
+  float: left;
+  width: 80%;
+}
+#sidebar {
+  float: right;
+  width: 20%;
+  margin-right: -100px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+#cleared {
+  clear: both;
+}
+

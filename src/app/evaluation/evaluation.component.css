@@ -1,0 +1,107 @@
+/*.container{*/
+  /*background-color: #fac9ae;*/
+/*}*/
+
+.input-group{
+  float: left;
+  width: 80%;
+  /*border: 1px dotted #A9B7C0;*/
+  border-radius: 25px;
+  background: lightgrey;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+#label1{
+  float: left;
+  width: 80%;
+}
+
+.input-select{
+  float: right;
+  width: 15%;
+  margin-left: 15px;
+  margin-top: 110px;
+}
+
+.checkedModel{
+  float: left;
+  width: 50%;
+  margin:2px;
+}
+
+.checkedModel input{
+  background-color:#A9B7C0;
+  width:90%;
+  color:black;
+  font-size: medium;
+  font-weight: bold;
+  padding:5px;
+  border:none;
+  margin-bottom: 5px;
+  display: block;
+}
+
+
+.balls{
+  width: 15%;
+  background-color: #d7d7d7;
+  color:darkgrey;
+  height: 30px;
+  margin-right: 30px;
+  font-size: medium;
+  font-weight: bold;
+  text-align: center;
+}
+.priority{
+  float:right;
+  width: 20%;
+  margin:2px;
+}
+.priority input{
+  font-size: medium;
+  height: 30px;
+  font-weight: bold;
+  margin-right: 80px;
+  background-color: #d7d7d7;
+  border:none;
+  display: block;
+  text-align: center;
+  padding:5px;
+  margin-bottom: 5px;
+  color:darkgrey;
+}
+.mass{
+  float:left;
+  width: 100%;
+  display: block;
+}
+
+.mass  textarea{
+  float: left;
+  width: 95%;
+  background-color: #d7d7d7;
+  overflow: hidden;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border:1px;
+  font-size: medium;
+  color:darkgrey;
+  font-weight: normal;
+}
+
+.KTV-form {
+  min-width: 150px;
+  max-width: 100%;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.example-full-width {
+  width: 95%;
+  font-size: medium;
+  font-weight: bold;
+  background-color: #d7d7d7;
+  color:darkgrey;
+}

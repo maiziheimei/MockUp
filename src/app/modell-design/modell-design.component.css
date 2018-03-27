@@ -1,0 +1,196 @@
+.labs{
+  margin-top: 30px;
+  width: 100%;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+#close-icon{
+  float:left;
+  width:5%;
+}
+
+.labs label{
+  float: left;
+  width: 10%;
+  display: block;
+  margin-right: 0;
+  margin-left: 10px;
+  background-color: #EFD9C1;
+  font-size: large;
+  color: #555555;
+  padding:5px;
+  text-align: center;
+}
+.labs input[type='text']{
+  float: left;
+  width: 55%;
+  background-color: #A9B7C0;
+  border: 0;
+  font: bold 20px courier !important;
+  padding: 5px;
+  margin-left:10px;
+  margin-right:10px;
+}
+
+
+.labs input[type='number']{
+  float: left;
+  width: 5%;
+  background-color: #C7D8C6;
+  font-weight: bold;
+  font-size: large;
+  text-align: center;
+  padding:5px;
+  border:0;
+  margin-left: 5px;
+}
+
+.labs input[type=number]::-webkit-inner-spin-button,
+.labs input[type=number]::-webkit-outer-spin-button {
+
+  opacity: 1;
+}
+
+
+#help-icon{
+  width:10%;
+}
+/*.mat-icon-button.small {*/
+ /*width:15%;*/
+/*}*/
+
+.modell-card{
+  width:97%;
+  background-color: #A9B7C0;
+  margin-top: 15px;
+  margin-left: 10px;
+  padding-bottom:5px;
+}
+
+#model-text {
+  width: 90%;
+  float:left;
+  display: block;
+}
+
+
+/*the following 4 styling is for changing the size of icon*/
+.mat-icon-button.small {
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+}
+
+.mat-icon, .mat-icon-button i {
+  line-height: 36px;
+}
+
+.mat-icon {
+  width: 36px;
+  height:36px;
+}
+
+.material-icons {
+  font-size: 32px;
+  color: #666666;
+}
+
+
+#model_note{
+  width: 85%;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.aug-cards{
+  width: 100%;
+}
+
+.aug-cards mat-card-title{
+  align-content: center;
+}
+
+.mat-form-field{
+  width:95%;
+}
+
+.mat-form-field-wrapper {
+  padding-bottom: -1.25em;
+}
+
+.example-card-0, .example-card-3, .example-card-4, .example-card-5, .example-card-6, .example-card-7{
+  float:left;
+  width:23%;
+  align-items: center;
+  display: block;
+  background: lightgrey;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right:8px;
+  overflow: no-display;
+  padding-left: 13px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 2px;
+}
+
+.example-card-1{
+  float:left;
+  width:23%;
+  display: block;
+  background: #7272fd;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right:8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 2px;
+  overflow: no-display;
+}
+.example-card-2{
+  float:left;
+  width:23%;
+  display: block;
+  background: #FA8072;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right:8px;
+  overflow: no-display;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 2px;
+}
+
+.mat-select{
+  background: #A9B7C0;
+  height: 30px;
+  padding: 2px;
+  width:100%;
+  font-size: large;
+  font-weight: bold;
+  margin:2px;
+}
+
+.mat-card-title {
+  margin-bottom: 5px;
+}
+
+.aus_text{
+  width:95%;
+  background: none;
+  border:none;
+  padding:0;
+}
+
+ textarea{
+  background: #C7D8C6;
+  width: 100%;
+  /*padding: 2px;*/
+  /*margin:0;*/
+}
+
+

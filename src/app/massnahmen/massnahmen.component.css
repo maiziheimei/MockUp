@@ -1,0 +1,117 @@
+.input-group{
+  float: left;
+  width: 90%;
+  /*border: 1px dotted #A9B7C0;*/
+  border-radius: 25px;
+  background: lightgrey;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.checkedModel{
+  float: left;
+  width: 50%;
+  margin:2px;
+}
+
+.checkedModel input{
+  background-color:#A9B7C0;
+  width:90%;
+  color:#333;
+  font-size: medium;
+  font-weight: bold;
+  padding:5px;
+  border:none;
+  margin-bottom: 5px;
+  display: block;
+}
+
+
+.balls{
+  width: 15%;
+  background-color: #EFD9C1;
+  height: 30px;
+  margin-right: 30px;
+  font-size: medium;
+  font-weight: bold;
+  text-align: center;
+}
+.priority{
+  float:right;
+  width: 15%;
+  margin:2px;
+}
+ .priority input{
+  font-size: medium;
+  height: 30px;
+
+  font-weight: bold;
+  margin-right: 80px;
+  background-color: #EFD9C1;
+  border:none;
+  display: block;
+  text-align: center;
+  padding:5px;
+  margin-bottom: 5px;
+}
+.mass{
+  float:left;
+  width: 100%;
+  display: block;
+}
+
+.mass  textarea{
+  float: left;
+  width: 100%;
+  background-color: #f9f9f9;
+  overflow: hidden;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border:1px;
+  font-size: medium;
+}
+
+.KTV-form {
+  min-width: 150px;
+  max-width: 100%;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.example-full-width {
+  width: 95%;
+  font-size: medium;
+  font-weight: bold;
+  background-color: #C7D8C6;
+}
+
+
+
+#myCarousel{
+  width: 100%;
+  margin-top: 3px;
+  padding: 10px;
+  background: darkgray;
+  height: 800px;
+}
+.carousel-inner{
+  width: 80%;
+}
+#myCarousel .carousel-inner .item {
+  width:70%;
+  margin-left: 280px;
+  margin-right: 280px;
+  font-size: medium;
+}
+
+#myCarousel .carousel-inner .left .carousel-control {
+  float: left;
+  margin-left: 0;
+  padding-left: 0;
+}
+#myCarousel .carousel-inner .right .carousel-control{
+  float: right;
+  margin-right: 0;
+  padding-right: 0;
+}

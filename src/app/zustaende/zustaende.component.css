@@ -1,0 +1,79 @@
+.myform{
+  width:100%;
+  float:left;
+  padding: 0;
+}
+
+/*#label1{*/
+  /*background: #EFD9C1;*/
+  /*width: 100%;*/
+  /*margin-bottom: 10px;*/
+  /*margin-top: 30px;*/
+  /*font: normal 20px courier !important;*/
+  /*padding:10px;*/
+/*}*/
+
+#three-labels{
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+#three-labels label{
+  display: inline-grid;
+  float:right;
+  background-color: #C7D8C6;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 80px;
+  text-align: center;
+  font-weight: bold;
+  font-size: medium;
+  padding: 3px;
+}
+
+.form-group label{
+  float: left;
+  width: 60%;
+  background-color:#A9B7C0;
+  color:#333;
+  font-weight: bold;
+  font-size: medium;
+  padding:5px;
+  border:none;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  display: inline-grid;
+}
+
+.input-group button{
+  float: left;
+  width: 60%;
+  background-color:#A9B7C0;
+  color:#333;
+  padding:5px;
+  border:none;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-right:88px;
+  display: inline-grid;
+  font-size: medium;
+  font-weight: bold;
+  text-align: left;
+}
+
+
+.numberCircle {
+  display: block;
+  margin-right: 47px;
+  margin-top: 12px;
+  margin-left: 31px;
+  background: #EFD9C1;
+  border-radius: 100%;
+  width: 36px;
+  height: 36px;
+  padding: 3px;
+  border: 2px solid #EFD9C1;
+  color: #808080;
+  text-align: center;
+  font: 24px Arial, sans-serif;
+}

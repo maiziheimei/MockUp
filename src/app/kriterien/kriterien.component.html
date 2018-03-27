@@ -1,0 +1,36 @@
+<div class="container">
+  <form class="myform">
+    <div>
+      <label id="label1"> Welche Kriterien benötigen Sie für Ihre Ziele? </label>
+    </div>
+    <div class ="form-group" *ngFor="let modell of modells; let i = index;">
+      <label>{{modell._id}}. {{modell.Kriterium}}</label>
+      <!--<mat-checkbox name="{{modell._id}}"  ></mat-checkbox>-->
+      <!--<mat-checkbox type="checkbox" id="{{modell._id}}"  (click)=insertChecked(modell) ></mat-checkbox>-->
+      <mat-checkbox type="checkbox" (change)="onChange($event, i, modell)" ></mat-checkbox>
+        <!--<mat-form-field >-->
+        <textarea matInput placeholder="" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="15">{{modell.Beschreibung}}</textarea>
+      <!--</mat-form-field>-->
+    </div>
+  </form>
+</div>
+
+<div ng-repeat="ngmo of selectedIDs">
+  <i [class]="unchecked_o" id ="xia" ng-click="makeChange($event)" aria-hidden="true"></i>
+</div>
+
+<!--<div class="container">-->
+  <!--<form class="myform">-->
+    <!--<div>-->
+      <!--<label id="label1"> Welche Kriterien benötigen Sie für Ihre Ziele? </label>-->
+    <!--</div>-->
+    <!--<div class ="form-group" *ngFor="let modell of modells">-->
+      <!--<label>{{modell._id}}. {{modell.Kriterium}}</label>-->
+      <!--&lt;!&ndash;<mat-checkbox name="{{modell._id}}"  ></mat-checkbox>&ndash;&gt;-->
+      <!--<input type="checkbox" (onclick)=onClickHandler(modell) id="{{modell._id}}"/>-->
+      <!--<mat-form-field [class.app-input-no-underline]="showUnderline" >-->
+        <!--<textarea matInput placeholder="" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="15">{{modell.Beschreibung}}</textarea>-->
+      <!--</mat-form-field>-->
+    <!--</div>-->
+  <!--</form>-->
+<!--</div>-->

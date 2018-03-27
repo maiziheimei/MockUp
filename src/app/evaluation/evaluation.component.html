@@ -1,0 +1,49 @@
+<div class="container">
+
+  <div id="label1">
+    <label> Welche Maßnahmen sollen die Lücken zwischen Ist- und Ziel-Zuständen schließen? </label>
+  </div>
+
+  <div *ngFor="let cm of CModells; index as i">
+    <div class ="input-group" >
+      <div class="checkedModel"> <input  disabled type="text" id="{{cm._id}}" value="{{cm._id}}. {{cm.Kriterium}}"></div>
+      <div class="balls"> {{balls[i]}}</div>
+      <div class="priority"> <input  type="text" disabled value=" Priorität: {{i+1}}"></div>
+      <div class="mass">
+        <!--<mat-form-field [class.app-input-no-underline]="!showUnderline" >-->
+        <!--&lt;!&ndash;<textarea matInput placeholder="Maßnahme: "  matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="15">{{mass[i]}}  </textarea>&ndash;&gt;-->
+        <!--<textarea matInput placeholder="Maßnahme: "  matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="15"></textarea>-->
+        <!--</mat-form-field>-->
+        <!--<mat-form-field [class.app-input-no-underline]="!showUnderline" >-->
+        <!--<textarea matInput placeholder="Erklärung: "  matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="15"> </textarea>-->
+        <!--</mat-form-field>-->
+
+        <textarea matInput placeholder="Maßnahme:"  matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="15"></textarea>
+        <textarea matInput placeholder="Erklaerung:"  matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="15"></textarea>
+
+      </div>
+
+      <form class="KTV-form">
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td><mat-form-field class="example-full-width">
+              <input matInput type="number" placeholder="Kosten: (EUR)" value="3.000">
+            </mat-form-field></td>
+            <td><mat-form-field class="example-full-width">
+              <input matInput [matDatepicker]="picker" placeholder="Termin:">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+            </mat-form-field></td>
+            <td><mat-form-field class="example-full-width">
+              <input matInput #postalCode maxlength="30" placeholder="Verantwortlich" value="">
+            </mat-form-field></td>
+          </tr></table>
+      </form>
+    </div><!--input Group-->
+
+    <div class="input-select">
+      <mat-checkbox type="checkbox" ></mat-checkbox>
+    </div>
+  </div>
+
+</div><!--container-->
