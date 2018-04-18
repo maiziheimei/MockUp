@@ -5,7 +5,7 @@
   </div>
 
   <div *ngFor="let cm of CModells; index as i">
-     <div class ="input-group" >
+     <div class ="input-group" *ngIf="sms[i]">
          <div class="checkedModel"> <input  disabled type="text" id="{{cm._id}}" value="{{cm._id}}. {{cm.Kriterium}}"></div>
          <div class="balls"> {{balls[i]}}</div>
          <div class="priority"> <input  type="text" disabled value=" Priorität: {{i+1}}"></div>

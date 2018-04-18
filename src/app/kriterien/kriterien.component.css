@@ -37,8 +37,11 @@
 .fa-check-circle-o{
   font-size:40px;
   color:orange;
+  width: 20%;
   float:right;
-  margin-right:100px;
+  margin-right: -80px;
+  margin-top: 20px;
+  padding: 0;
   box-sizing: border-box;
   position: center;
 }
@@ -47,14 +50,17 @@
   font-size:40px;
   color:orange;
   float:right;
-  margin-right:100px;
+  width: 20%;
   box-sizing: border-box;
   position: center;
+  margin-right: -80px;
+  margin-top: 20px;
+  padding: 0;
 }
 
 .myform .form-group textarea {
   padding: 8px;
-  width: 85%;
+  width: 75%;
   border-radius: 0;
   overflow: hidden;
   background: #EFD9C1;

@@ -1,4 +1,4 @@
-<!--Zustaede as parentComponet and Modell-design as child component-->
+<!--Zustaede as the parentComponet and Modell-design as the child component-->
 
 <div *ngIf = "displayThenBlock; then thenBlock  else elseBlock"></div>
 
@@ -18,14 +18,20 @@
     </div>
 
 
-  <div *ngFor="let cmodle of allmodels" >
-    <div class ="input-group" *ngIf="checkedArray.indexOf(cmodle._id) >-1">
+  <div *ngFor="let cmodle of allmodels; let m = index;" >
+    <!--<div class ="input-group" *ngIf="checkedArray.indexOf(cmodle._id) >-1 && checkedModells[m]">-->
+    <div class ="input-group" *ngIf="checkedModells[m]">
     <button type="text" (click)=openEditor(cmodle)> {{cmodle._id}}. {{cmodle.Kriterium}} </button>
-    <div class="numberCircle">0</div>
-    <div class="numberCircle">0</div>
-    <div class="numberCircle">0</div>
+    <div class="numberCircle">{{int_ist}}</div>
+    <div class="numberCircle">{{int_ziet}}</div>
+    <div class="numberCircle">{{int_priorty}}</div>
     </div>
   </div>
+
+  <!--<div *ngFor="let cmodle of allmodels" >-->
+      <!--<button type="text" > {{cmodle._id}}. {{cmodle.Kriterium}} ... plus {{cmodle.isSelected()}}</button>-->
+  <!--</div>-->
+
 
 </ng-template>
 
@@ -35,4 +41,5 @@
   <!--<button (click)= showThenBlock()> show</button>-->
 
   <app-modell-design (childEvent)="receiveChanage($event)" [parentSwitch]="displayThenBlock" [ClickedModell] ="cMod"> </app-modell-design>
+
 </ng-template>

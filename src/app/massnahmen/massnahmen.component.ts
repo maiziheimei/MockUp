@@ -1,4 +1,6 @@
 import { Component, OnInit} from '@angular/core';
+import { DataService } from '../data.service';
+import { ModellService} from '../modell.service';
 
 @Component({
   selector: 'app-massnahmen',
@@ -7,17 +9,19 @@ import { Component, OnInit} from '@angular/core';
 })
 export class MassnahmenComponent implements OnInit {
 
-  public CModells = [
-    {'_id': '1', 'Kriterium': 'Digitale Konnektivität von Maschinen'},
-    {'_id': '3', 'Kriterium': 'Produkt als digitaler Informationstraeger'},
-    {'_id': '6', 'Kriterium': 'Mensch-Roboter-Kollaboration'},
-    {'_id': '7', 'Kriterium': 'Betriebsdatenerfassung (BDE)'},
-    {'_id': '9', 'Kriterium': 'Methodik der Fertigungs- und Montagesteuerung'},
-    {'_id': '14', 'Kriterium': 'Kostentransparenz'},
-    {'_id': '20', 'Kriterium': 'Dokumentation und Analyse von Qualitaetsdaten'},
-    {'_id': '24', 'Kriterium': 'IT-Sicherheit / Industrial Security'}
-  ];
+  // public CModells = [
+  //   {'_id': '1', 'Kriterium': 'Digitale Konnektivität von Maschinen'},
+  //   {'_id': '3', 'Kriterium': 'Produkt als digitaler Informationstraeger'},
+  //   {'_id': '6', 'Kriterium': 'Mensch-Roboter-Kollaboration'},
+  //   {'_id': '7', 'Kriterium': 'Betriebsdatenerfassung (BDE)'},
+  //   {'_id': '9', 'Kriterium': 'Methodik der Fertigungs- und Montagesteuerung'},
+  //   {'_id': '14', 'Kriterium': 'Kostentransparenz'},
+  //   {'_id': '20', 'Kriterium': 'Dokumentation und Analyse von Qualitaetsdaten'},
+  //   {'_id': '24', 'Kriterium': 'IT-Sicherheit / Industrial Security'}
+  // ];
 
+  sms = [];
+  CModells: any;
 
   balls = ['1 -> 2', '1 -> 2', '2 -> 3', '0 -> 2', '0 -> 3', '3 -> 4' ];
 
@@ -40,11 +44,17 @@ export class MassnahmenComponent implements OnInit {
  //
 
   myVar = 1;
+  itemCount: any;
   show = false;
 
-  constructor() { }
+  constructor( private _modellService: ModellService, private  _data: DataService) {}
 
   ngOnInit() {
+    this._modellService.sharedModells.subscribe(res => this.CModells = res);
+    this._modellService.changeModel(this.CModells);
+    this.itemCount = this.sms.length;
+    this._data.selectedModels.subscribe(res => this.sms = res);
+    this._data.changeGoal(this.sms);
     // if (this.myVar === 1) {
     //   document.getElementById('MyElement').className = 'big';
     // } else {

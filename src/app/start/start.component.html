@@ -22,10 +22,9 @@
 
   </div>
 
-
   <div class="col">
 
-    <br><textarea class ="textarea ng-valid" name="item"  placeholder="Vision ..."></textarea><br>
+    <br><input class ="textarea ng-valid" name="item"  placeholder="Vision ..." [value]="vision" (input)="vision=$event.target.value"><br>
 
     <br><textarea class ="textarea ng-valid"  name="item"
                   placeholder="Mission ..." required></textarea><br>
@@ -33,7 +32,7 @@
     <br><textarea class ="textarea ng-valid"  name="item"
                   placeholder="Strategische Ziele: Lieferfähigkeit erhöhen ..." required></textarea><br>
 
-    <video width="500" height="280" controls>
+    <video class="video" width="500" height="280" controls>
       <source src="assets/video/bear.mp4" type="video/mp4">
       <source src="assets/video/bear.ogg" type="video/ogg">
       Your browser does not support the video tag.

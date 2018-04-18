@@ -25,6 +25,7 @@ import { MatInputModule, MatCardModule, MatDatepickerModule, MatFormFieldModule,
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule} from '@angular/material/select';
 import { ModellService } from './modell.service';
+import { DataService } from './data.service';
 
 
 
@@ -53,7 +54,7 @@ import { ModellService } from './modell.service';
     MatCheckboxModule, MatButtonModule, MatFormFieldModule, MatGridListModule, MatDatepickerModule, MatNativeDateModule, MatCardModule, MatSelectModule,
     MatInputModule, MatIconModule
   ],
-  providers: [HttpClientModule, ModellService],
+  providers: [HttpClientModule, ModellService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
