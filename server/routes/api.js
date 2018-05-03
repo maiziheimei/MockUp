@@ -6,16 +6,18 @@ const mongoose = require('mongoose');
 const mdl = require('../models/modell');
 
 
-//const db = "mongodb://root:xia@ds247347.mlab.com:47347/mockup";
-const db= "mongodb://localhost/mockup";
+const db = "mongodb://root:xia@ds247347.mlab.com:47347/mockup";
+// const db= "mongodb://db:27017/mockup";
+// const db= "mongodb://localhost/mockup";
+
 
 mongoose.Promise = global.Promise;
 
 mongoose.connect(db, function(err){
   if(err){
-    console.error("cant not receive data from mlab ... " );
+    console.error("can not receive data from mongodb ... " );
     console.error("Error! " + err);
-  }
+  } else { console.log("... connected to "+db.toString());}
 });
 
 router.get('/models', function(req, res){
@@ -27,6 +29,7 @@ router.get('/models', function(req, res){
       }else {
         res.json(mdls);
       }
+      console.log('mdls length: ' + mdls.length);
     });
 });
 

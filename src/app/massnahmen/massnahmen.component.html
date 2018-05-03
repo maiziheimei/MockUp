@@ -4,11 +4,15 @@
     <label> Welche Maßnahmen sollen die Lücken zwischen Ist- und Ziel-Zuständen schließen? </label>
   </div>
 
-  <div *ngFor="let cm of CModells; index as i">
-     <div class ="input-group" *ngIf="sms[i]">
-         <div class="checkedModel"> <input  disabled type="text" id="{{cm._id}}" value="{{cm._id}}. {{cm.Kriterium}}"></div>
-         <div class="balls"> {{balls[i]}}</div>
-         <div class="priority"> <input  type="text" disabled value=" Priorität: {{i+1}}"></div>
+
+
+
+  <div *ngFor="let cm of ssms; index as i">
+     <!--<div class ="input-group" *ngIf="sms[i]">-->
+     <div class ="input-group">
+         <div class="checkedModel"> <input  disabled type="text" id="{{cm.kriterium_id}}" value="{{cm.kriterium_id}}. {{cm.kriterium}}"></div>
+         <div class="balls"> {{cm.ist_id}} -> {{cm.ziel_id}}</div>
+         <div class="priority"> <input  type="text" disabled value=" Priorität: {{cm.priority}}"></div>
          <div class="mass">
             <!--<mat-form-field [class.app-input-no-underline]="!showUnderline" >-->
               <!--&lt;!&ndash;<textarea matInput placeholder="Maßnahme: "  matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="15">{{mass[i]}}  </textarea>&ndash;&gt;-->
@@ -18,8 +22,8 @@
              <!--<textarea matInput placeholder="Erklärung: "  matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="15"> </textarea>-->
            <!--</mat-form-field>-->
 
-             <textarea matInput placeholder="Maßnahme:"  matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="15"></textarea>
-             <textarea matInput placeholder="Erklaerung:"  matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="15"></textarea>
+             <textarea matInput placeholder="Maßnahme:"  [(ngModel)]="cm.Massnahmen" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="15"></textarea>
+             <textarea matInput placeholder="Erklaerung:" [(ngModel)]="cm.Erklaerung" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="15"></textarea>
 
          </div>
 
@@ -27,19 +31,23 @@
          <table class="example-full-width" cellspacing="0">
            <tr>
               <td><mat-form-field class="example-full-width">
-                <input matInput type="number" placeholder="Kosten: (EUR)" value="3.000">
+                <input matInput type="number" [(ngModel)]="cm.Kosten" placeholder="Kosten: (EUR)" [ngModelOptions]="{standalone: true}">
               </mat-form-field></td>
               <td><mat-form-field class="example-full-width">
-                <input matInput [matDatepicker]="picker" placeholder="Termin:">
+                <input matInput [matDatepicker]="picker" placeholder="Termin:" [(ngModel)]="cm.Termin"  [ngModelOptions]="{standalone: true}" >
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
               </mat-form-field></td>
               <td><mat-form-field class="example-full-width">
-                <input matInput #postalCode maxlength="30" placeholder="Verantwortlich" value="">
+                <input matInput #postalCode maxlength="30" placeholder="Verantwortlich" [(ngModel)]="cm.Verantwortlich" [ngModelOptions]="{standalone: true}" >
               </mat-form-field></td>
         </tr></table>
+
       </form>
-      </div><!--input Group-->
+
+       <div> current Mass {{cm.Massnahmen}} Erk:{{cm.Erklaerung}}  Kost: {{cm.Kosten}} Ver: {{cm.Verantwortlich}} Termin: {{cm.Termin}}</div>
+
+     </div><!--input Group-->
 
 
   </div>

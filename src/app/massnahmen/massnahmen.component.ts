@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { DataService } from '../data.service';
 import { ModellService} from '../modell.service';
 
+
 @Component({
   selector: 'app-massnahmen',
   templateUrl: './massnahmen.component.html',
@@ -19,12 +20,9 @@ export class MassnahmenComponent implements OnInit {
   //   {'_id': '20', 'Kriterium': 'Dokumentation und Analyse von Qualitaetsdaten'},
   //   {'_id': '24', 'Kriterium': 'IT-Sicherheit / Industrial Security'}
   // ];
-
-  sms = [];
-  CModells: any;
-
-  balls = ['1 -> 2', '1 -> 2', '2 -> 3', '0 -> 2', '0 -> 3', '3 -> 4' ];
-
+  // show = false;
+  // myVar = 1;
+  // balls = ['1 -> 2', '1 -> 2', '2 -> 3', '0 -> 2', '0 -> 3', '3 -> 4' ];
  //  public mass= ['Maßnahme: Die Machinen bekommen einfache I/O-Schnittstellen (z.B. Klemmen einer SPS) über welche binäre ode analoge Singale ausgetauscht werder. ',
  //    '1 Maßnahme: Die Machinen bekommen einfache I/O-Schnittstellen (z.B. Klemmen einer SPS) über welche binäre ode analoge Singale ausgetauscht werder. ',
  //    '2 Maßnahme: Die Machinen bekommen einfache I/O-Schnittstellen (z.B. Klemmen einer SPS) über welche binäre ode analoge Singale ausgetauscht werder. ',
@@ -42,24 +40,23 @@ export class MassnahmenComponent implements OnInit {
  //    'Erklärung: Neue (informations-) technischen Schnittstellen zwischen Hard- und Software sowie Maschinen und Anagen werden gebraucht'];
  //
  //
-
-  myVar = 1;
+  ssms = [];
+  CModells: any;
   itemCount: any;
-  show = false;
+
 
   constructor( private _modellService: ModellService, private  _data: DataService) {}
 
   ngOnInit() {
     this._modellService.sharedModells.subscribe(res => this.CModells = res);
     this._modellService.changeModel(this.CModells);
-    this.itemCount = this.sms.length;
-    this._data.selectedModels.subscribe(res => this.sms = res);
-    this._data.changeGoal(this.sms);
-    // if (this.myVar === 1) {
-    //   document.getElementById('MyElement').className = 'big';
-    // } else {
-    //   document.getElementById('MyElement').className = 'small';
-    // }
+    this.itemCount = this.ssms.length;
+    this._data.selectedModels.subscribe(res => this.ssms = res);
+    this._data.changeGoal(this.ssms);
+    // console.log('... the passed on sms has ...: ', this.ssms.length);
+    // for (let i = 0; i < this.ssms.length; i++) {
+    //   console.log(this.ssms[i].kriterium_id, this.ssms[i].kriterium,
+    //     this.ssms[i].isselected, this.ssms[i].int_priorty); }
   }
 
 }

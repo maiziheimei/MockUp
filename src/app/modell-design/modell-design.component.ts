@@ -1,6 +1,9 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { Modell } from '../modell';
 import { ModellService} from '../modell.service';
+import { DataService } from '../data.service';
+import { SelectedModel } from '../selectedModel';
+
 
 @Component({
   selector: 'app-modell-design',
@@ -10,9 +13,14 @@ import { ModellService} from '../modell.service';
 export class ModellDesignComponent implements OnInit {
   @Input() public parentSwitch;
   @Input() public ClickedModell: Modell;
+  @Input() public ClickedSelectedModel: SelectedModel;
   @Output() public childEvent = new EventEmitter();
 
   // ClickedModell: any;
+  value_p: number;
+  value_s: any;
+  value_z: any;
+  selectedOption = 1;
 
   // data from Modell_1
   // auspraegung = ['Keine Konnektivität gegeben, d.h., es stehen keine Schnittstellen für die digitale Datenkommunikation zur Verfügung.',
@@ -40,6 +48,7 @@ export class ModellDesignComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('..... to see the detail of clicked model ', this.ClickedModell._id );
     this.auspraegung.push(this.ClickedModell.Auspraegung_0);
     this.auspraegung.push(this.ClickedModell.Auspraegung_1);
     this.auspraegung.push(this.ClickedModell.Auspraegung_2);
@@ -48,8 +57,30 @@ export class ModellDesignComponent implements OnInit {
     this.auspraegung.push(this.ClickedModell.Auspraegung_5);
     this.auspraegung.push(this.ClickedModell.Auspraegung_6);
     this.auspraegung.push(this.ClickedModell.Auspraegung_7);
+    this.value_p = this.ClickedSelectedModel.priority;
   }
 
+  getValue(aug_index) {
+    if ( this.ClickedSelectedModel.ziel_id !== 'N' && aug_index === this.ClickedSelectedModel.ziel_id ) {
+      console.log('... ang_index is ', aug_index, '... ziel id: ', this.ClickedSelectedModel.ziel_id);
+      this.selectedOption = 2; }
+    if ( this.ClickedSelectedModel.ist_id !== 'N' && aug_index === this.ClickedSelectedModel.ist_id ) {
+      console.log('... ang_index is ', aug_index, '... ist id: ', this.ClickedSelectedModel.ist_id);
+      this.selectedOption = 1; }
+  }
+
+  onChange(event, optionValue, cIndex) {
+    console.log('... hey option is', this.iz_selects[optionValue], cIndex);
+    if (optionValue === '1') {
+      this.value_s = cIndex;
+      this.ClickedSelectedModel.ist_id = cIndex;
+    }
+    if (optionValue === '2') {
+      this.value_z = cIndex;
+      this.ClickedSelectedModel.ziel_id = cIndex;
+    }
+    console.log('... currently, priority:', this.ClickedSelectedModel.priority, ' ist_id : ', this.ClickedSelectedModel.ist_id, ' ziel_id : ', this.ClickedSelectedModel.ziel_id);
+  }
   closeBlock() {
     this.parentSwitch = true;
     // to do something more here: disable navbar, save the data!

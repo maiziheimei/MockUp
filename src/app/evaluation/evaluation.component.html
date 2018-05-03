@@ -4,38 +4,33 @@
     <label> Welche Maßnahmen sollen die Lücken zwischen Ist- und Ziel-Zuständen schließen? </label>
   </div>
 
-  <div *ngFor="let cm of CModells; index as i">
-    <div class ="input-group" *ngIf="sms[i]">
-      <div class="checkedModel"> <input  disabled type="text" id="{{cm._id}}" value="{{cm._id}}. {{cm.Kriterium}}"></div>
-      <div class="balls"> {{balls[i]}}</div>
-      <div class="priority"> <input  type="text" disabled value=" Priorität: {{i+1}}"></div>
+  <div>
+    <div class="info"> You have selected {{number}} Kriterials. </div>
+    <button class="btn" (click)="preview()"> preview </button>
+    <button class="btn" (click)="exportJson()"> download (.json)</button>
+    <!--<a class="btn btn-clear" title="Download JSON" [href]="downloadJsonHref" download="download.json"></a>-->
+  </div>
+  <div *ngFor="let cm of sms; index as i">
+    <div class ="input-group">
+      <div class="checkedModel"> <input  disabled type="text" id="{{cm.kriterium_id}}" value="{{cm.kriterium_id}}. {{cm.kriterium}}"></div>
+      <div class="balls"> {{cm.ist_id}} -> {{cm.ziel_id}}</div>
+      <div class="priority"> <input  type="text" disabled value=" Priorität: {{cm.priority}}"></div>
       <div class="mass">
-        <!--<mat-form-field [class.app-input-no-underline]="!showUnderline" >-->
-        <!--&lt;!&ndash;<textarea matInput placeholder="Maßnahme: "  matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="15">{{mass[i]}}  </textarea>&ndash;&gt;-->
-        <!--<textarea matInput placeholder="Maßnahme: "  matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="15"></textarea>-->
-        <!--</mat-form-field>-->
-        <!--<mat-form-field [class.app-input-no-underline]="!showUnderline" >-->
-        <!--<textarea matInput placeholder="Erklärung: "  matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="15"> </textarea>-->
-        <!--</mat-form-field>-->
-
-        <textarea matInput placeholder="Maßnahme:"  matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="15"></textarea>
-        <textarea matInput placeholder="Erklaerung:"  matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="15"></textarea>
-
+        <textarea matInput placeholder="Maßnahme:"    value="{{cm.Massnahmen}}" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="15"></textarea>
+        <textarea matInput placeholder="Erklaerung:"  value="{{cm.Erklaerung}}" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="15"></textarea>
       </div>
 
       <form class="KTV-form">
         <table class="example-full-width" cellspacing="0">
           <tr>
             <td><mat-form-field class="example-full-width">
-              <input matInput type="number" placeholder="Kosten: (EUR)" value="3.000">
+              <input matInput type="number" value="{{cm.Kosten}}">
             </mat-form-field></td>
             <td><mat-form-field class="example-full-width">
-              <input matInput [matDatepicker]="picker" placeholder="Termin:">
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+              <input matInput  value="{{cm.Termin | date : 'dd.MM.y' }}">
             </mat-form-field></td>
             <td><mat-form-field class="example-full-width">
-              <input matInput #postalCode maxlength="30" placeholder="Verantwortlich" value="">
+              <input matInput maxlength="30" value="{{cm.Verantwortlich}}">
             </mat-form-field></td>
           </tr></table>
       </form>

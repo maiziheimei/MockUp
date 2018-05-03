@@ -1,12 +1,12 @@
 <div class="container">
-
+<div> current Priority {{ClickedSelectedModel.priority}} Ist: {{ClickedSelectedModel.ist_id}} Ziel: {{ClickedSelectedModel.ziel_id}}</div>
 
   <div class="labs">
     <a mat-icon-button id="close-icon" (click)="closeBlock()"><mat-icon> clear </mat-icon></a>
     <label id="R"> Relevant</label>
     <input type="text" [(ngModel)]="ClickedModell.Kriterium">
     <label >  Priorität</label>
-    <input matInput type="number" placeholder="1" min="1" max="42" [(ngModel)]="value"/>
+    <input matInput type="number" placeholder="1" min="1" max="42" [(ngModel)]="ClickedSelectedModel.priority"/>
     <a mat-icon-button id="help-icon"><mat-icon> help </mat-icon></a>
   </div>
 
@@ -14,7 +14,7 @@
     <mat-card-content>
       <p id="model-text">{{ClickedModell.Beschreibung}}</p>
       <a mat-icon-button class="small"><mat-icon> info </mat-icon></a>
-    <textarea id="model_note" matInput placeholder="Notiz " ></textarea>
+      <textarea id="model_note" matInput placeholder="Notiz " ></textarea>
     </mat-card-content>
   </mat-card>
 
@@ -27,12 +27,25 @@
     <mat-card-content>
         <textarea class="aus_text"  rows="6"> {{au}} </textarea>
       <mat-form-field style=" margin-bottom: -1.25em" >
-        <mat-select [ngClass]="colorClass"  placeholder="" value="selected">
-          <mat-option value="option0">None</mat-option>
-          <mat-option value="option1">Ist</mat-option>
-          <mat-option value="option2">Ziel</mat-option>
+        <mat-select [ngClass]="colorClass"  placeholder="" [value]="selectedOption"
+                    #device (change)="onChange($event, device.value, ind)">
+          <mat-option value="0">None</mat-option>
+          <mat-option value="1">Ist</mat-option>
+          <mat-option value="2">Ziel</mat-option>
         </mat-select>
-        <!--<p>Selected Value ID:  <b></b><br/></p>-->
+
+
+        <!--<select [ngModel]="selected" (ngModelChange)="onChange($event.target.value, ind)" name="sel2">-->
+          <!--<option [value]="selected" *ngFor="let i of iz_selects">{{i}}</option>-->
+        <!--</select>-->
+
+        <!--<div ng-init="students=['None', 'Ist', 'Ziel']">-->
+          <!--Students: <select ngModel="student"-->
+                            <!--ngOptions="student as student for student in students"-->
+                            <!--ngChange="changedValue(ind,student)"></select>-->
+          <!--<pre>Student: {{student}}</pre>-->
+        <!--</div>-->
+
       </mat-form-field>
       <mat-form-field  style=" margin-bottom: -1.25em">
            <textarea matInput placeholder="Notiz "  matTextareaAutosize matAutosizeMinRows="8" matAutosizeMaxRows="15"></textarea>
