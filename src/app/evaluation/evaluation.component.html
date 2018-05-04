@@ -5,9 +5,9 @@
   </div>
 
   <div>
-    <div class="info"> You have selected {{number}} Kriterials. </div>
-    <button class="btn" (click)="preview()"> preview </button>
-    <button class="btn" (click)="exportJson()"> download (.json)</button>
+    <div class="info"> You have evaluated {{number}} Kriterien. </div>
+    <button class="btn" (click)="preview()"> Preview </button>
+    <button class="btn" (click)="exportJson()"> Download (.json)</button>
     <!--<a class="btn btn-clear" title="Download JSON" [href]="downloadJsonHref" download="download.json"></a>-->
   </div>
   <div *ngFor="let cm of sms; index as i">
@@ -37,7 +37,7 @@
     </div><!--input Group-->
 
     <div class="input-select" *ngIf="sms[i]">
-      <mat-checkbox type="checkbox" ></mat-checkbox>
+      <mat-checkbox type="checkbox" (change)="onChange($event, i, cm)" ></mat-checkbox>
     </div>
   </div>
 

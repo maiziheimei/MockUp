@@ -20,6 +20,7 @@ export class EvaluationComponent implements OnInit {
 
   sms = [];
   number = 0;
+  evaluated: any;
   CModells: any;
   itemCount: any;
   balls = ['1 -> 2', '1 -> 2', '2 -> 3', '0 -> 2', '0 -> 3'];
@@ -33,6 +34,7 @@ export class EvaluationComponent implements OnInit {
     this.itemCount = this.sms.length;
     this._data.selectedModels.subscribe(res => this.sms = res);
     this._data.changeGoal(this.sms);
+    this.evaluated = new Array<boolean>(this.sms.length).fill(false);
   }
 
   preview() {
@@ -65,6 +67,18 @@ export class EvaluationComponent implements OnInit {
         document.body.removeChild(a);
         window.URL.revokeObjectURL(url);
       }, 0);
+    }
+  }
+
+  // check or uncheck modell
+  onChange(event, index, item) {
+    this.number = 0;
+    item.checked = !item.checked;
+    this.evaluated[index] = item.checked;
+    for (const entry of this.evaluated) {
+      if (entry) {
+        this.number += 1;
+         console.log ('item is checked', entry); }
     }
   }
 
