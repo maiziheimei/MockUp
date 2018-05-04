@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartComponent implements OnInit {
 
-  vision = 'xia';
+  vision = 'vison';
   constructor() { }
 
   ngOnInit() {
