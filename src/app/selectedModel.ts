@@ -2,6 +2,7 @@ export class SelectedModel {
   kriterium_id: string;
   kriterium: string;
   isselected: boolean;
+  isEvaluated: boolean;
   ist_id: string;
   ist_note: string;
   ziel_id: string;
@@ -17,6 +18,7 @@ export class SelectedModel {
   constructor() {
     this.kriterium_id = '0';
     this.isselected = false;
+    this.isEvaluated = false;
     this.ist_id = 'N';
     this.ziel_id = 'N';
     this.priority = 0;
@@ -24,7 +26,7 @@ export class SelectedModel {
     this.Massnahmen = 'Maßnahme:';
     this.Erklaerung = 'Erklärung:';
     this.Verantwortlich = 'xxx';
-    this.Termin = new Date(2000, 0, 1);
+    this.Termin = new Date(2018, 0, 1);
   }
 }
 

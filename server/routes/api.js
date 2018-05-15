@@ -6,19 +6,28 @@ const mongoose = require('mongoose');
 const mdl = require('../models/modell');
 
 
-const db = "mongodb://root:xia@ds247347.mlab.com:47347/mockup";
-// const db= "mongodb://db:27017/mockup";
-// const db= "mongodb://localhost/mockup";
+// const db = "mongodb://root:xia@ds247347.mlab.com:47347/mockup";
+ const db= "mongodb://db:27017/mockup";
+ //const db= "mongodb://localhost/mockup";
 
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect(db, function(err){
-  if(err){
-    console.error("can not receive data from mongodb ... " );
-    console.error("Error! " + err);
-  } else { console.log("... connected to "+db.toString());}
-});
+// mongoose.connect(db, function(err){
+//   if(err){
+//     console.error("can not receive data from mongodb ... " );
+//     console.error("Error! " + err);
+//   } else { console.log("... connected to "+db.toString());}
+// });
+
+mongoose.connection.openUri(db)
+  .once('open', function(){
+    console.log("... connected to "+db.toString());
+    console.log('Good to go !');})
+  .on('error', function(error) {
+  console.log('Warning', error);
+  });
+
 
 router.get('/models', function(req, res){
   console.log('Get request for all models');

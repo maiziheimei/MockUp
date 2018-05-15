@@ -13,18 +13,13 @@ RUN mkdir -p /usr/src/app
 # Change directory so that our commands run inside this new dir
 WORKDIR /usr/src/app
 
+# Install app dependencies
+COPY package*.json ./
+RUN npm update && \
+    npm install
+
 # Get all the code needed to run the app
-COPY . /usr/src/app
-
-# Copy dependency definitions
-COPY package.json /usr/src/app
-COPY package-lock.json /usr/src/app
-
- # Install dependecies
-RUN npm install && \
-  npm install -g nodemon && \
-  ls /usr/src/app && \
-  npm prune --production
+COPY . .
 
 # Serve the app
 CMD ["npm", "start"]

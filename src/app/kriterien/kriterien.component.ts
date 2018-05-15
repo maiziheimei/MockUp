@@ -18,10 +18,11 @@ export class KriterienComponent implements OnInit {
   sms = [];
   itemCount: any;
   modells: any;
+  lastAction: string;
   hiddenValue = new Array(42).fill(false);
-  currClass = 'fa fa-check-circle-o';
-  // selectedIDs: string[] = ['1', '3', '5', '6'];
-  selectedIDs = new Array(42);
+  // currClass = 'fa fa-check-circle-o';
+  // // selectedIDs: string[] = ['1', '3', '5', '6'];
+  // selectedIDs = new Array(42);
   constructor(private _modellService: ModellService, private  _data: DataService) {
   }
 
@@ -63,10 +64,11 @@ export class KriterienComponent implements OnInit {
 
   getCheckState(mid) {
     if (this.sms != null) {
-       console.log('... to get the check status of model: ', mid);
+      // console.log('... to get the check status of model: ', mid);
       const mo =  this.sms.find(x => x.kriterium_id === mid);
       if (mo != null) {
-        console.log('... mo size is ', mo.length, mid, ' checked status is: ', mo.isselected); return mo.isselected; }
+        // console.log('... mo size is ', mo.length, mid, ' checked status is: ', mo.isselected);
+        return mo.isselected; }
     } else {
       return false;
     }
@@ -74,7 +76,17 @@ export class KriterienComponent implements OnInit {
 
   // check or uncheck modell
   onChange(event, index, item) {
-    item.checked = !item.checked;
+    this.lastAction = 'index: ' + index + ', label: ' + item.label + ', checked: ' + item.checked;
+
+    console.log('before: ', index, event, item);
+     item.checked = event.checked;
+
+    this.lastAction = 'index: ' + index + ', label: ' + item.label + ', checked: ' + item.checked;
+
+    console.log('after: ', index, event, item);
+
+
+
     const checkedID = index;
     const kid = item._id;
     this.modells[checkedID].isSelected = item.checked;
@@ -90,17 +102,6 @@ export class KriterienComponent implements OnInit {
         this.removeItem(kid);
       }
   }
-    // var existIndex = this.sms.findIndex(ele => ele.kriterium_id === kid);
-    // console.log('... check if in sms ...: ', existIndex);
-    //
-    // for (let i = 0; i < this.modells.length; i++) {
-    //   if (this.modells[i].isSelected && existIndex < 0) {
-    //     this.addItem(kid);
-    //   } if (!this.modells[i].isSelected && existIndex > -1) {
-    //     this.removeItem(kid);
-    //   }
-    // }
-    // console.log('... from selectedIDs ...: ', this.selectedIDs);
     this._modellService.changeModel(this.modells);
 
     console.log('... the persisted sms ...: ', this.sms.length);

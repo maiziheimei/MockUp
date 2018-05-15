@@ -3,6 +3,8 @@ import { Modell } from '../modell';
 import { ModellService} from '../modell.service';
 import { DataService } from '../data.service';
 import { SelectedModel } from '../selectedModel';
+import {FormControl} from '@angular/forms';
+
 
 
 @Component({
@@ -35,14 +37,19 @@ export class ModellDesignComponent implements OnInit {
 
   auspraegung: string[] = new Array();
   iz_selects = ['None', 'Ist', 'Ziel'];
-  selected = this.iz_selects[0];
+  // selected = this.iz_selects[0];;
+  selected = '0';
+  panelColor = new FormControl('0' );
   selectedValue: string;
 
-  public colorClass = {
-    'example-card-0': this.selected === 'None',
-    'example-card-1': this.selected === 'Ist',
-    'example-card-2': this.selected === 'Ziel'
-  };
+  public colorClass = [
+    // 'example-card-0': this.selected === 'None',
+    // 'example-card-1': this.selected === 'Ist',
+    // 'example-card-2': this.selected === 'Ziel'
+    {className: 'example-card-0'},
+    {className: 'example-card-1'},
+    {className: 'example-card-2'}
+  ];
 
   constructor() {
   }
@@ -74,10 +81,12 @@ export class ModellDesignComponent implements OnInit {
     if (optionValue === '1') {
       this.value_s = cIndex;
       this.ClickedSelectedModel.ist_id = cIndex;
+      this.selected = '1';
     }
     if (optionValue === '2') {
       this.value_z = cIndex;
       this.ClickedSelectedModel.ziel_id = cIndex;
+      this.selected = '2';
     }
     console.log('... currently, priority:', this.ClickedSelectedModel.priority, ' ist_id : ', this.ClickedSelectedModel.ist_id, ' ziel_id : ', this.ClickedSelectedModel.ziel_id);
   }

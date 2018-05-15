@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ModellService} from '../modell.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import {element} from 'protractor';
+import {forEach} from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-evaluation',
@@ -19,8 +21,10 @@ export class EvaluationComponent implements OnInit {
   // ];
 
   sms = [];
+  tmpArray: any = [];
   number = 0;
-  evaluated: any;
+  // evaluated: Array<boolean> = [];
+  // evaluated: any;
   CModells: any;
   itemCount: any;
   balls = ['1 -> 2', '1 -> 2', '2 -> 3', '0 -> 2', '0 -> 3'];
@@ -34,11 +38,12 @@ export class EvaluationComponent implements OnInit {
     this.itemCount = this.sms.length;
     this._data.selectedModels.subscribe(res => this.sms = res);
     this._data.changeGoal(this.sms);
-    this.evaluated = new Array<boolean>(this.sms.length).fill(false);
+    for (const s of this.sms) {
+      s.isEvaluated = false; }
   }
 
   preview() {
-    const objJSON = JSON.stringify(this.sms);
+    const objJSON = JSON.stringify(this.tmpArray);
     console.log(objJSON);
   }
 
@@ -49,9 +54,14 @@ export class EvaluationComponent implements OnInit {
   }
   exportJson(): void {
     console.log(this.sms);
-    const c = JSON.stringify(this.sms);
+    for (let i = 0; i < this.sms.length; i ++) {
+      if (this.sms[i].isEvaluated) {
+        this.tmpArray.push(this.sms[i]); }
+    }
+
+    const c = JSON.stringify(this.tmpArray);
     const file = new Blob([c], {type: 'text/json'});
-    this.download(file, 'YourKriterions.json');
+    this.download(file, 'Your_Kriterions.json');
   }
   download(blob, filename) {
     if (window.navigator.msSaveOrOpenBlob) { // IE10+
@@ -70,15 +80,16 @@ export class EvaluationComponent implements OnInit {
     }
   }
 
-  // check or uncheck modell
+// check or uncheck
   onChange(event, index, item) {
     this.number = 0;
-    item.checked = !item.checked;
-    this.evaluated[index] = item.checked;
-    for (const entry of this.evaluated) {
-      if (entry) {
+    item.checked = event.checked;
+    this.sms[index].isEvaluated = item.checked;
+
+    for (const entry of this.sms) {
+      if (entry.isEvaluated) {
         this.number += 1;
-         console.log ('item is checked', entry); }
+        console.log ('item is checked', entry.isEvaluated); }
     }
   }
 

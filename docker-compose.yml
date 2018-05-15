@@ -22,13 +22,11 @@ services:
       - MONGO_INITDB_DATABASE=mockup
       - MONGO_DATA_DIR=/data/db
     ports:
-      - "27017:27017"
+      - "27027:27017"
     volumes:
       - ./data/db:/data/db
     command: mongod --bind_ip_all --smallfiles --logpath=/dev/null # --quiet
     #command: [mongod, --dbpath, /data/db]
-volumes:
-  db:
-
-
+#volumes:
+#  db:
 

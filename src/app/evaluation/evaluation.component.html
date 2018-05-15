@@ -37,7 +37,8 @@
     </div><!--input Group-->
 
     <div class="input-select" *ngIf="sms[i]">
-      <mat-checkbox type="checkbox" (change)="onChange($event, i, cm)" ></mat-checkbox>
+    <!--<div class="input-select">-->
+      <mat-checkbox type="checkbox" checked="false" [checked]="sms[i].isEvaluated" (change)="onChange($event, i, cm)" ></mat-checkbox>
     </div>
   </div>
 
