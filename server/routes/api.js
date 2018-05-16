@@ -7,8 +7,8 @@ const mdl = require('../models/modell');
 
 
 // const db = "mongodb://root:xia@ds247347.mlab.com:47347/mockup";
- const db= "mongodb://db:27017/mockup";
- //const db= "mongodb://localhost/mockup";
+// const db= "mongodb://db:27017/mockup";
+const db= "mongodb://localhost/mockup";
 
 
 mongoose.Promise = global.Promise;
