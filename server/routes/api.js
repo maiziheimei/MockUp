@@ -7,8 +7,8 @@ const mdl = require('../models/modell');
 
 
 // const db = "mongodb://root:xia@ds247347.mlab.com:47347/mockup";
- const db= "mongodb://db:27017/mockup";
-// const db= "mongodb://localhost/mockup";
+// const db= "mongodb://db:27017/mockup";
+ const db= "mongodb://localhost/mockup";
 
 
 mongoose.Promise = global.Promise;
@@ -48,7 +48,7 @@ router.get('/models/:id', function(req, res){
   mdl.findById(req.params.id)
     .exec(function(err, mdl){
       if (err){
-        console.log("Error retrieving video");
+        console.log("Error retrieving model by id ...");
       }else {
         res.json(mdl);
       }

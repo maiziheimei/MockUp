@@ -1,43 +1,43 @@
 <div class="containerStart">
   <div class="col">
+    <div class="titleTable">
+        <div  class="td2"> <a href="http://www.adaption-projekt.de/"><h1>Project ADAPTION</h1></a></div>
+        <div class="td1"> <img src="assets/images/adaption.png" width=55% height=35%> </div>
+    </div>
 
-    <br><textarea class ="textarea ng-invalid"   name="item" rows="12"  cols="50" placeholder="Wilkommen!
-    Bitte beschreiben Sie Ihre Vision, Mission und strategische Ziele.
+    <br><textarea disabled class ="textarea ng-invalid"   name="item" rows="30"  cols="50" placeholder="Ziel des Forschungsprojektes ADAPTION ist es, KMU und Unternehmen bei der Migration zum Cyber-physischen System für Produktion und Fertigung zu unterstützen. Gefördert vom BMBF wird ein reifegradbasiertes Vorgehensmodell hierzu entwickelt, das die Ableitung eines individuellen Migrationspfades unter Beachtung von Wirtschaftlichkeitsgesichtspunkten ermöglicht. Der optimale Zielreifegrad wird individuell nach Nutzen und Wirtschaftlichkeit für jedes Unternehmen festgelegt. Das Vorgehensmodell verfolgt einen Ansatz, der die drei betrieblichen Gestaltungsdimensionen Technik, Organisation und Personal berücksichtigt.
 
-    Phasen:
-        1. Start
-        2. IST-Zustand
-        3. ZIEL-Zustand
-        4. Maßnahmen
-        5. Evaluation"></textarea><br>
+    Die Aufgabe des Educational Technology Lab in ADAPTION besteht in der Formalisierung und software-technischen Umsetzung eines Reifegrad- und Vorgehensmodell bei der Migration zum Cyber-physischen Produktionssystem. Weiterhin in der Erweiterung eines existierenden Assistenzsystems um digitale Lernszenarien, die für Cyber-physische Produktionssysteme relevant sind. Die Migration wird bei Anwendungspartnern verschiedener Größe (Konzern, KMU) unter realen Bedingungen untersucht, gewonnene Erkenntnisse werden in das allgemeine Vorgehensmodell überführt."></textarea>
+    <br>
 
-    <br><textarea class ="textarea ng-invalid" type="textarea"  name="item" placeholder="Motivation
-        - Strategische Ausrichtung
-        - Problemlösung
-        - Anstoß durch Messen etc. „Ideengenerierung“)
-        Ergebnisse
-        - Grober IST-Reifegrad („Quick-Check“)
-        - Problembeschreibung
-        - Vorläufige Zieldefinition" ></textarea><br>
+    <br><textarea disabled class ="textarea ng-invalid-2" type="textarea"  name="item" placeholder="ADAPTION Tool (ADAPTION) entwickelt ein Selbstbewertungstool für ein Industrie 4.0-Audit, um den vorliegenden Reifegrad zu ermitteln und auf dieser Grundlage den unter wirtschaftlichen Gesichtspunkten optimalen Reifegrad festzulegen. Das Ziel ist die Unterstützung dieses Prozesses:
+          1. Strategische Ausrichtung
+          2. Industrie 4.0 Audit
+          3. Zielstellung
+          4. Maßnahmen-planung
+          5. Evaluation) " ></textarea><br>
 
   </div>
 
   <div class="col">
 
-    <br><input class ="textarea ng-valid" name="item"  placeholder="Vision ..." [value]="vision" (input)="vision=$event.target.value"><br>
+    <br><textarea class="textarea ng-valid" name="item"  placeholder="" [value]="vision" (input)="vision=$event.target.value"></textarea><br>
 
-    <br><textarea class ="textarea ng-valid"  name="item"
-                  placeholder="Mission ..." required></textarea><br>
+    <br><textarea class ="textarea ng-valid-2"  name="item"
+                  placeholder="" [value]="mission" (input)="mission=$event.target.value" required></textarea><br>
 
-    <br><textarea class ="textarea ng-valid"  name="item"
-                  placeholder="Strategische Ziele: Lieferfähigkeit erhöhen ..." required></textarea><br>
+    <br><textarea class ="textarea ng-valid-2"  name="item"
+                  placeholder="" [value]="strategy" (input)="strategy=$event.target.value" required></textarea><br>
 
-    <video class="video" width="500" height="280" controls>
-      <source src="assets/video/bear.mp4" type="video/mp4">
-      <source src="assets/video/bear.ogg" type="video/ogg">
-      Your browser does not support the video tag.
-    </video>
+    <!--<video class="video" width="500" height="280" controls>-->
+      <!--<source src="assets/video/bear.mp4" type="video/mp4">-->
+      <!--<source src="assets/video/bear.ogg" type="video/ogg">-->
+      <!--Your browser does not support the video tag.-->
+    <!--</video>-->
 
+      <div class="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/kQLbVVPNTMQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
     <!--<form>-->
       <!--<input type="submit" class="btn" value="upload your video" >-->
     <!--</form>-->

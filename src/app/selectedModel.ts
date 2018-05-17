@@ -14,7 +14,7 @@ export class SelectedModel {
   Kosten: string;
   Termin: Date;
   Verantwortlich: string;
-
+  Auspraegung_note: string[];
   constructor() {
     this.kriterium_id = '0';
     this.isselected = false;
@@ -27,6 +27,7 @@ export class SelectedModel {
     this.Erklaerung = 'Erklärung:';
     this.Verantwortlich = 'xxx';
     this.Termin = new Date(2018, 0, 1);
+    this.Auspraegung_note = new Array<string>(3);
   }
 }
 

@@ -29,6 +29,7 @@ export class ModellCenterComponent implements OnInit {
       .subscribe(resModellData => this.modells = resModellData);
   }
 
+
   onSelectModel(modell: any) {
     this.selectedModel = modell;
     console.log(this.selectedModel);

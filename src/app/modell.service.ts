@@ -15,7 +15,6 @@ export class ModellService {
   private dbModels = new BehaviorSubject<any>(null);
   sharedModells = this.dbModels.asObservable();
 
-
   constructor(private _http: Http) {
     this._http.get(this._getUrl)
       .map((response: Response) => response.json() )

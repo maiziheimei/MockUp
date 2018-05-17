@@ -20,22 +20,25 @@ export class KriterienComponent implements OnInit {
   modells: any;
   lastAction: string;
   hiddenValue = new Array(42).fill(false);
-  // currClass = 'fa fa-check-circle-o';
-  // // selectedIDs: string[] = ['1', '3', '5', '6'];
-  // selectedIDs = new Array(42);
-  constructor(private _modellService: ModellService, private  _data: DataService) {
-  }
+
+  constructor(private _modellService: ModellService, private  _data: DataService) { }
 
   ngOnInit() {
-    //  // call modellService method to init values from mongodb
-    // this._modellService.getModells().subscribe(resModellData => this.modells = resModellData);
     this._modellService.sharedModells.subscribe(res => this.modells = res);
- //   console.log('... get from DB, the modell length is: ', this.modells.length);
     this._modellService.changeModel(this.modells);
+   // console.log('... get from DB, the modell length is: ', this.modells.length);
     this.itemCount = this.sms.length;
     console.log('... the sms length is: ', this.itemCount);
     this._data.selectedModels.subscribe(res => this.sms = res);
     this._data.changeGoal(this.sms);
+    // this.sortModells();
+  }
+
+  sortModells() {
+    const size = Object.keys(this.modells).length;
+    console.log('... length of dbMmodels: ', size);
+    // console.log('... length of modells: ', xxx);
+    // this.modells.sort((a, b) => +a._id < +b._id ? -1 : +a._id > +b._id ? 1 : 0);
   }
 
   // selectedIndex is actually the model ID

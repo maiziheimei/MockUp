@@ -22,6 +22,7 @@ export class ModellDesignComponent implements OnInit {
   value_p: number;
   value_s: any;
   value_z: any;
+  knote : string;
   selectedOption = 1;
 
   // data from Modell_1
@@ -65,6 +66,7 @@ export class ModellDesignComponent implements OnInit {
     this.auspraegung.push(this.ClickedModell.Auspraegung_6);
     this.auspraegung.push(this.ClickedModell.Auspraegung_7);
     this.value_p = this.ClickedSelectedModel.priority;
+    this.knote = this.ClickedModell.Kriterium_note;
   }
 
   getValue(aug_index) {

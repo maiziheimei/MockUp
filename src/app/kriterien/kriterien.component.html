@@ -1,6 +1,8 @@
 <div class="container">
   <form class="myform">
-    <div><label id="label1"> Welche Kriterien benötigen Sie für Ihre Ziele? </label></div>
+    <div id="label1">
+      <label> Welche Kriterien benötigen Sie für Ihre Ziele?  </label>
+    </div>
 
     <div class ="form-group" *ngFor="let modell of modells; let i = index;">
       <label title="click to see description" (click)="showBeschreibung(i)" >{{modell._id}}. {{modell.Kriterium}}</label>
