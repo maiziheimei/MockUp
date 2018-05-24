@@ -8,6 +8,23 @@
   margin-top: 20px;
 }
 
+div.input-group.mb-3{
+  float: left;
+  width: 95%;
+  padding: 0px;
+  margin-top: 2px;
+}
+
+.input-group-text{
+  font-size: medium;
+  font-weight: bold;
+}
+
+.form-control{
+  font-size: medium;
+  background-color: #F7F9F9;
+}
+
 .checkedModel{
   float: left;
   width: 50%;
@@ -86,7 +103,15 @@
   background-color: #C7D8C6;
 }
 
+.example2-form {
+  width: 95%;
+}
 
+.example2-full-width {
+  width: 100%;
+  font-size: large;
+  font-weight: bold;
+}
 
 #myCarousel{
   width: 100%;

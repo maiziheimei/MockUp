@@ -22,10 +22,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatInputModule, MatCardModule, MatDatepickerModule, MatFormFieldModule, MatNativeDateModule, MatButtonModule, MatCheckboxModule, MatIconModule} from '@angular/material';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule} from '@angular/material/select';
 import { ModellService } from './modell.service';
 import { DataService } from './data.service';
+import {UserService} from './user.service';
 
 
 
@@ -52,9 +54,9 @@ import { DataService } from './data.service';
     AngularFontAwesomeModule,
     BrowserAnimationsModule,
     MatCheckboxModule, MatButtonModule, MatFormFieldModule, MatGridListModule, MatDatepickerModule, MatNativeDateModule, MatCardModule, MatSelectModule,
-    MatInputModule, MatIconModule
+    MatInputModule, MatIconModule, MatTooltipModule
   ],
-  providers: [HttpClientModule, ModellService, DataService],
+  providers: [HttpClientModule, ModellService, DataService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

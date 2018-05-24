@@ -2,7 +2,7 @@
   /*background-color: #fac9ae;*/
 /*}*/
 
-.input-group{
+div.input-group{
   float: left;
   width: 80%;
   /*border: 1px dotted #A9B7C0;*/
@@ -72,6 +72,28 @@
   margin-bottom: 5px;
   color:darkgrey;
 }
+
+
+div.input-group.mb-3{
+  float: left;
+  width: 95%;
+  padding: 0px;
+  margin-top: 2px;
+  background: lightgrey;
+}
+
+.input-group-text{
+  font-size: medium;
+  font-weight: bold;
+  background: lightgrey;
+}
+
+.form-control{
+  font-size: medium;
+  background: lightgrey;
+  border-style: none;
+}
+
 .mass{
   float:left;
   width: 100%;

@@ -6,7 +6,7 @@
 
   <div>
     <div class="info"> You have evaluated {{number}} Kriterien. </div>
-    <button class="btn" (click)="preview()"> Preview </button>
+    <button class="btn" (click)="preview()" disabled> Preview </button>
     <button class="btn" (click)="exportJson()"> Download (.json)</button>
     <!--<a class="btn btn-clear" title="Download JSON" [href]="downloadJsonHref" download="download.json"></a>-->
   </div>
@@ -15,22 +15,34 @@
       <div class="checkedModel"> <input  disabled type="text" id="{{cm.kriterium_id}}" value="{{cm.kriterium_id}}. {{cm.kriterium}}"></div>
       <div class="balls"> {{cm.ist_id}} -> {{cm.ziel_id}}</div>
       <div class="priority"> <input  type="text" disabled value=" Priorität: {{cm.priority}}"></div>
-      <div class="mass">
-        <textarea matInput placeholder="Maßnahme:"    value="{{cm.Massnahmen}}" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="15"></textarea>
-        <textarea matInput placeholder="Erklaerung:"  value="{{cm.Erklaerung}}" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="15"></textarea>
+
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Maßnahme: </span>
+        </div>
+        <textarea class="form-control" aria-label="Maßnahme: "  value="{{cm.Massnahmen}}"  matTextareaAutosize matAutosizeMinRows="3" matAutosizeMaxRows="15" disabled></textarea>
       </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Erklärung: &nbsp;&nbsp;&nbsp;</span>
+        </div>
+        <textarea class="form-control" aria-label="Erklärung:" value="{{cm.Erklaerung}}" matTextareaAutosize matAutosizeMinRows="3" matAutosizeMaxRows="15" disabled></textarea>
+      </div>
+
 
       <form class="KTV-form">
         <table class="example-full-width" cellspacing="0">
           <tr>
             <td><mat-form-field class="example-full-width">
-              <input matInput type="number" value="{{cm.Kosten}}">
+              <input matInput type="text" placeholder="Kosten: (EUR)" value="{{cm.Kosten}}">
             </mat-form-field></td>
             <td><mat-form-field class="example-full-width">
-              <input matInput  value="{{cm.Termin | date : 'dd.MM.y' }}">
+              <input matInput  placeholder="Termin:" value="{{cm.Termin | date : 'dd.MM.y' }}">
             </mat-form-field></td>
             <td><mat-form-field class="example-full-width">
-              <input matInput maxlength="30" value="{{cm.Verantwortlich}}">
+              <input matInput placeholder="Verantwortlich:" maxlength="30" value="{{cm.Verantwortlich}}">
             </mat-form-field></td>
           </tr></table>
       </form>

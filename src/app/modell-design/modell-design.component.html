@@ -7,13 +7,24 @@
     <input type="text" [(ngModel)]="ClickedModell.Kriterium">
     <label >  Priorität</label>
     <input matInput type="number" placeholder="1" min="1" max="42" [(ngModel)]="ClickedSelectedModel.priority"/>
-    <a mat-icon-button id="help-icon"><mat-icon> help </mat-icon></a>
+    <!--<a mat-icon-button id="help-icon"><mat-icon> help </mat-icon></a>-->
+    <button mat-button id="help-icon"
+            matTooltip="Help information about the Kriterium"
+            aria-label="Button that displays a tooltip when focused or hovered over">
+      <mat-icon> help </mat-icon>
+    </button>
   </div>
 
   <mat-card class="modell-card">
     <mat-card-content>
       <p id="model-text">{{ClickedModell.Beschreibung}}</p>
-      <a mat-icon-button class="small"><mat-icon> info </mat-icon></a>
+      <!--<a mat-icon-button class="small"><mat-icon> info </mat-icon></a>-->
+      <button mat-button id="info"
+              matTooltip="More info about this"
+              aria-label="Button that displays a tooltip when focused or hovered over">
+        <mat-icon> info </mat-icon>
+      </button>
+
       <textarea class="aug_note" matInput placeholder="Notiz " [(ngModel)]="ClickedSelectedModel.Kriterium_note"> </textarea>
     </mat-card-content>
   </mat-card>

@@ -25,6 +25,7 @@
 .labs input[type='text']{
   float: left;
   width: 55%;
+
   background-color: #A9B7C0;
   border: 0;
   font: bold 20px courier !important;
@@ -33,6 +34,9 @@
   margin-right:10px;
 }
 
+input.ng-pristine.ng-valid.ng-touched {
+  height: 30px;
+}
 
 .labs input[type='number']{
   float: left;
@@ -52,9 +56,15 @@
   opacity: 1;
 }
 
+button.mat-button{
+  width:5%;
+  margin-left: 10px;
+}
 
-#help-icon{
-  width:10%;
+button#info.mat-button {
+  width: 15%;
+  float: right;
+  margin-top: -50px;
 }
 /*.mat-icon-button.small {*/
  /*width:15%;*/
