@@ -8,6 +8,9 @@
 #close-icon{
   float:left;
   width:5%;
+  margin-right: 10px;
+  margin-left: 2px;
+  margin-top: -10px;
 }
 
 .labs label{
@@ -15,7 +18,7 @@
   width: 10%;
   display: block;
   margin-right: 0;
-  margin-left: 10px;
+  margin-left: 5px;
   background-color: #EFD9C1;
   font-size: large;
   color: #555555;
@@ -25,17 +28,13 @@
 .labs input[type='text']{
   float: left;
   width: 55%;
-
+  height: 37px;
   background-color: #A9B7C0;
   border: 0;
   font: bold 20px courier !important;
   padding: 5px;
   margin-left:10px;
   margin-right:10px;
-}
-
-input.ng-pristine.ng-valid.ng-touched {
-  height: 30px;
 }
 
 .labs input[type='number']{
@@ -47,7 +46,8 @@ input.ng-pristine.ng-valid.ng-touched {
   text-align: center;
   padding:5px;
   border:0;
-  margin-left: 5px;
+  margin-left: 2px;
+  margin-top: 0px;
 }
 
 .labs input[type=number]::-webkit-inner-spin-button,
@@ -62,9 +62,9 @@ button.mat-button{
 }
 
 button#info.mat-button {
-  width: 15%;
+  /*width: 5%;*/
   float: right;
-  margin-top: -50px;
+  margin-top: -15px;
 }
 /*.mat-icon-button.small {*/
  /*width:15%;*/

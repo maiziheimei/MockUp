@@ -38,8 +38,9 @@ export class EvaluationComponent implements OnInit {
     this.itemCount = this.sms.length;
     this._data.selectedModels.subscribe(res => this.sms = res);
     this._data.changeGoal(this.sms);
+    this.number = 0;
     for (const s of this.sms) {
-      s.isEvaluated = false; }
+     if ( s.isEvaluated ) {this.number ++; }}
   }
 
   preview() {
