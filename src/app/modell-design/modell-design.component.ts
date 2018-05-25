@@ -22,7 +22,7 @@ export class ModellDesignComponent implements OnInit {
   value_p: number;
   value_s: any;
   value_z: any;
-  knote : string;
+  knote: string;
   selectedOption = 1;
 
   // data from Modell_1
@@ -37,6 +37,7 @@ export class ModellDesignComponent implements OnInit {
 
 
   auspraegung: string[] = new Array();
+  niz: string[] = new Array(8)  ;
   iz_selects = ['None', 'Ist', 'Ziel'];
   // selected = this.iz_selects[0];;
   selected = '0';
@@ -67,7 +68,27 @@ export class ModellDesignComponent implements OnInit {
     this.auspraegung.push(this.ClickedModell.Auspraegung_7);
     this.value_p = this.ClickedSelectedModel.priority;
     this.knote = this.ClickedModell.Kriterium_note;
+
+    for (let i = 0; i < this.niz.length; i++) {
+      this.niz[i] = '0';
+      if ( i === +this.ClickedSelectedModel.ziel_id ) {this.niz[i] = '2'; }
+      if ( i === +this.ClickedSelectedModel.ist_id ) {this.niz[i] = '1'; }
+    }
+    for (const s of this.niz) {
+      console.log('... ', s); }
   }
+
+  getBColor(nizValue) {
+    switch (nizValue) {
+      case '0':
+        return 'lightgrey';
+      case '1':
+        return '#7272fd';
+      case '2':
+        return '#FA8072';
+    }
+
+}
 
   getValue(aug_index) {
     if ( this.ClickedSelectedModel.ziel_id !== 'N' && aug_index === this.ClickedSelectedModel.ziel_id ) {
@@ -84,11 +105,13 @@ export class ModellDesignComponent implements OnInit {
       this.value_s = cIndex;
       this.ClickedSelectedModel.ist_id = cIndex;
       this.selected = '1';
+      this.niz[cIndex] = '1';
     }
     if (optionValue === '2') {
       this.value_z = cIndex;
       this.ClickedSelectedModel.ziel_id = cIndex;
       this.selected = '2';
+      this.niz[cIndex] = '2';
     }
     console.log('... currently, priority:', this.ClickedSelectedModel.priority, ' ist_id : ', this.ClickedSelectedModel.ist_id, ' ziel_id : ', this.ClickedSelectedModel.ziel_id);
   }

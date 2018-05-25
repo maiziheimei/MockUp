@@ -1,5 +1,5 @@
 <div class="container">
-<!--<div> current Priority {{ClickedSelectedModel.priority}} Ist: {{ClickedSelectedModel.ist_id}} Ziel: {{ClickedSelectedModel.ziel_id}}</div>-->
+<div> current Priority {{ClickedSelectedModel.priority}} Ist: {{ClickedSelectedModel.ist_id}} Ziel: {{ClickedSelectedModel.ziel_id}}</div>
 
   <div class="labs">
     <!--<a mat-icon-button id="close-icon" (click)="closeBlock()"><mat-icon> clear </mat-icon></a>-->
@@ -33,7 +33,7 @@
 
   <div class="aug-cards">
   <!--<mat-card  *ngFor=" let au of auspraegung; index as ind" class="example-card-{{ind % 8}}">-->
-    <mat-card class="example-card-0" *ngFor=" let au of auspraegung; index as ind" >
+    <mat-card class="example-card-0" [ngStyle]="{'background': getBColor(niz[ind])}" *ngFor=" let au of auspraegung; index as ind" >
     <mat-card-header>
       <mat-card-title><h3> Ausprägung {{ind}}</h3></mat-card-title>
     </mat-card-header>
@@ -44,14 +44,16 @@
                     <!--#device (change)="onChange($event, device.value, ind)">-->
 
 
-          <mat-select  [ngClass]="{'example-card-0': value == '0', 'example-card-1': value == '1', 'example-card-2': value =='2'}"
-                       placeholder="" [value]="selectedOption"
-                       #device (change)="onChange($event, device.value, ind)">
+          <!--<mat-select  [ngClass]="{'example-card-0': value == '0', 'example-card-1': value == '1', 'example-card-2': value =='2'}"-->
+                       <!--placeholder="" [value]="selectedOption"-->
+                       <!--#device (change)="onChange($event, device.value, ind)">-->
+
+        <mat-select [value]="niz[ind]"  #device (change)="onChange($event, device.value, ind)">
 
             <!--<mat-select  [formControl]="panelColor" panelClass="example-card-{{panelColor.value}}}"-->
                          <!--placeholder="" [value]="selectedOption"-->
                          <!--#device (change)="onChange($event, device.value, ind)">-->
-          <mat-option value="0">None</mat-option>
+          <mat-option value="0">Keine</mat-option>
           <mat-option value="1">Ist</mat-option>
           <mat-option value="2">Ziel</mat-option>
         </mat-select>
