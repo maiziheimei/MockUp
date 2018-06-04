@@ -35,13 +35,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/esm5/router.js");
-/* harmony import */ var _modell_center_modell_center_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modell-center/modell-center.component */ "./src/app/modell-center/modell-center.component.ts");
-/* harmony import */ var _start_start_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./start/start.component */ "./src/app/start/start.component.ts");
-/* harmony import */ var _kriterien_kriterien_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./kriterien/kriterien.component */ "./src/app/kriterien/kriterien.component.ts");
-/* harmony import */ var _zustaende_zustaende_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./zustaende/zustaende.component */ "./src/app/zustaende/zustaende.component.ts");
-/* harmony import */ var _massnahmen_massnahmen_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./massnahmen/massnahmen.component */ "./src/app/massnahmen/massnahmen.component.ts");
-/* harmony import */ var _modell_design_modell_design_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modell-design/modell-design.component */ "./src/app/modell-design/modell-design.component.ts");
-/* harmony import */ var _evaluation_evaluation_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./evaluation/evaluation.component */ "./src/app/evaluation/evaluation.component.ts");
+/* harmony import */ var _impressum_impressum_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./impressum/impressum.component */ "./src/app/impressum/impressum.component.ts");
+/* harmony import */ var _modell_center_modell_center_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modell-center/modell-center.component */ "./src/app/modell-center/modell-center.component.ts");
+/* harmony import */ var _start_start_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./start/start.component */ "./src/app/start/start.component.ts");
+/* harmony import */ var _kriterien_kriterien_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./kriterien/kriterien.component */ "./src/app/kriterien/kriterien.component.ts");
+/* harmony import */ var _zustaende_zustaende_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./zustaende/zustaende.component */ "./src/app/zustaende/zustaende.component.ts");
+/* harmony import */ var _massnahmen_massnahmen_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./massnahmen/massnahmen.component */ "./src/app/massnahmen/massnahmen.component.ts");
+/* harmony import */ var _modell_design_modell_design_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modell-design/modell-design.component */ "./src/app/modell-design/modell-design.component.ts");
+/* harmony import */ var _evaluation_evaluation_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./evaluation/evaluation.component */ "./src/app/evaluation/evaluation.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -57,16 +58,17 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var routes = [
     { path: '', redirectTo: '/start', pathMatch: 'full' },
-    // {path: 'home', component: HomeComponent},
-    { path: 'start', component: _start_start_component__WEBPACK_IMPORTED_MODULE_3__["StartComponent"] },
-    { path: 'kriteiren', component: _kriterien_kriterien_component__WEBPACK_IMPORTED_MODULE_4__["KriterienComponent"] },
-    { path: 'zustaende', component: _zustaende_zustaende_component__WEBPACK_IMPORTED_MODULE_5__["ZustaendeComponent"] },
-    { path: 'massnahman', component: _massnahmen_massnahmen_component__WEBPACK_IMPORTED_MODULE_6__["MassnahmenComponent"] },
-    { path: 'evaluation', component: _evaluation_evaluation_component__WEBPACK_IMPORTED_MODULE_8__["EvaluationComponent"] },
-    { path: 'modellDesign', component: _modell_design_modell_design_component__WEBPACK_IMPORTED_MODULE_7__["ModellDesignComponent"] },
-    { path: 'models', component: _modell_center_modell_center_component__WEBPACK_IMPORTED_MODULE_2__["ModellCenterComponent"] }
+    { path: 'impressum', component: _impressum_impressum_component__WEBPACK_IMPORTED_MODULE_2__["ImpressumComponent"] },
+    { path: 'start', component: _start_start_component__WEBPACK_IMPORTED_MODULE_4__["StartComponent"] },
+    { path: 'kriteiren', component: _kriterien_kriterien_component__WEBPACK_IMPORTED_MODULE_5__["KriterienComponent"] },
+    { path: 'zustaende', component: _zustaende_zustaende_component__WEBPACK_IMPORTED_MODULE_6__["ZustaendeComponent"] },
+    { path: 'massnahman', component: _massnahmen_massnahmen_component__WEBPACK_IMPORTED_MODULE_7__["MassnahmenComponent"] },
+    { path: 'evaluation', component: _evaluation_evaluation_component__WEBPACK_IMPORTED_MODULE_9__["EvaluationComponent"] },
+    { path: 'modellDesign', component: _modell_design_modell_design_component__WEBPACK_IMPORTED_MODULE_8__["ModellDesignComponent"] },
+    { path: 'models', component: _modell_center_modell_center_component__WEBPACK_IMPORTED_MODULE_3__["ModellCenterComponent"] }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
@@ -91,7 +93,7 @@ var AppRoutingModule = (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "a {\n  color: #B8B8B8;\n}\n"
 
 /***/ }),
 
@@ -102,7 +104,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--<nav class = \"navbar navbar-inverse\">-->\n  <!--<div class=\"container-fluid\">-->\n    <!--<div class=\" navbar-header\">-->\n      <!--<a class=\"navbar-brand\" href=\"#\"> Mockup Modell Editor</a>-->\n    <!--</div>-->\n    <!--<div><ul class=\"nav navbar-nav\">-->\n      <!--<li> <a routerLink=\"/home\" routerLinkActive=\"active\"> Home</a> </li>-->\n      <!--<li> <a routerLink=\"/start\" routerLinkActive=\"active\"> Start</a> </li>-->\n      <!--<li> <a routerLink=\"/kriteiren\" routerLinkActive=\"active\"> Kriterien</a> </li>-->\n      <!--<li> <a routerLink=\"/models\" routerLinkActive=\"active\"> Model List</a> </li>-->\n    <!--</ul></div>-->\n  <!--</div>-->\n<!--</nav>-->\n\n\n<nav id=\"navbar\">\n  <div class=\"container\">\n    <ul>\n      <!--<li> <a routerLink=\"/home\" > Home</a> </li>-->\n      <li> <a routerLink=\"/start\" routerLinkActive=\"active\"> Start</a> </li>\n      <li> <a routerLink=\"/kriteiren\" routerLinkActive=\"active\"> Kriterien</a> </li>\n      <li> <a routerLink=\"/zustaende\" routerLinkActive=\"active\"> Zustände</a> </li>\n      <li> <a routerLink=\"/massnahman\" routerLinkActive=\"active\"> Maßnahmen</a> </li>\n      <li> <a routerLink=\"/evaluation\" routerLinkActive=\"active\"> Evaluation</a> </li>\n      <!--<li> <a routerLink=\"/modellDesign\" routerLinkActive=\"active\"> ModelDesign</a> </li>-->\n      <!--<li> <a routerLink=\"/models\" routerLinkActive=\"active\"> ModelList</a> </li>-->\n\n    </ul>\n  </div>\n</nav>\n\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>\n"
+module.exports = "<!--<nav class = \"navbar navbar-inverse\">-->\n  <!--<div class=\"container-fluid\">-->\n    <!--<div class=\" navbar-header\">-->\n      <!--<a class=\"navbar-brand\" href=\"#\"> Mockup Modell Editor</a>-->\n    <!--</div>-->\n    <!--<div><ul class=\"nav navbar-nav\">-->\n      <!--<li> <a routerLink=\"/home\" routerLinkActive=\"active\"> Home</a> </li>-->\n      <!--<li> <a routerLink=\"/start\" routerLinkActive=\"active\"> Start</a> </li>-->\n      <!--<li> <a routerLink=\"/kriteiren\" routerLinkActive=\"active\"> Kriterien</a> </li>-->\n      <!--<li> <a routerLink=\"/models\" routerLinkActive=\"active\"> Model List</a> </li>-->\n    <!--</ul></div>-->\n  <!--</div>-->\n<!--</nav>-->\n\n\n<nav id=\"navbar\">\n  <div class=\"container\">\n    <ul>\n      <!--<li> <a routerLink=\"/home\" > Home</a> </li>-->\n      <li> <a routerLink=\"/start\" routerLinkActive=\"active\"> Start</a> </li>\n      <li> <a routerLink=\"/kriteiren\" routerLinkActive=\"active\"> Kriterien</a> </li>\n      <li> <a routerLink=\"/zustaende\" routerLinkActive=\"active\"> Zustände</a> </li>\n      <li> <a routerLink=\"/massnahman\" routerLinkActive=\"active\"> Maßnahmen</a> </li>\n      <li> <a routerLink=\"/evaluation\" routerLinkActive=\"active\"> Evaluation</a> </li>\n      <!--<li> <a routerLink=\"/modellDesign\" routerLinkActive=\"active\"> ModelDesign</a> </li>-->\n      <!--<li> <a routerLink=\"/models\" routerLinkActive=\"active\"> ModelList</a> </li>-->\n\n    </ul>\n  </div>\n</nav>\n\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>\n\n<div id=\"main-footer\">\n\n <a routerLink=\"/impressum\" routerLinkActive=\"active\"> IMPRESSUM & DATENSCHUTZERKLÄRUNG </a>\n\n  </div>\n"
 
 /***/ }),
 
@@ -156,7 +158,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _impressum_impressum_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./impressum/impressum.component */ "./src/app/impressum/impressum.component.ts");
 /* harmony import */ var _modell_center_modell_center_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modell-center/modell-center.component */ "./src/app/modell-center/modell-center.component.ts");
 /* harmony import */ var _model_list_model_list_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./model-list/model-list.component */ "./src/app/model-list/model-list.component.ts");
 /* harmony import */ var _model_detail_model_detail_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./model-detail/model-detail.component */ "./src/app/model-detail/model-detail.component.ts");
@@ -217,7 +219,7 @@ var AppModule = (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-                _home_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"],
+                _impressum_impressum_component__WEBPACK_IMPORTED_MODULE_4__["ImpressumComponent"],
                 _modell_center_modell_center_component__WEBPACK_IMPORTED_MODULE_5__["ModellCenterComponent"],
                 _model_list_model_list_component__WEBPACK_IMPORTED_MODULE_6__["ModelListComponent"],
                 _model_detail_model_detail_component__WEBPACK_IMPORTED_MODULE_7__["ModelDetailComponent"],
@@ -439,38 +441,38 @@ var EvaluationComponent = (function () {
 
 /***/ }),
 
-/***/ "./src/app/home/home.component.css":
-/*!*****************************************!*\
-  !*** ./src/app/home/home.component.css ***!
-  \*****************************************/
+/***/ "./src/app/impressum/impressum.component.css":
+/*!***************************************************!*\
+  !*** ./src/app/impressum/impressum.component.css ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "li {\n  font-size:15px;\n}\n\nh2 {\n  color : gray;\n}\n\nh3 {\n  color : gray;\n}\n"
 
 /***/ }),
 
-/***/ "./src/app/home/home.component.html":
-/*!******************************************!*\
-  !*** ./src/app/home/home.component.html ***!
-  \******************************************/
+/***/ "./src/app/impressum/impressum.component.html":
+/*!****************************************************!*\
+  !*** ./src/app/impressum/impressum.component.html ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron\">\n  <h3>Mockup Modell Viewer -updeated </h3>\n</div>\n"
+module.exports = "<div class=\"jumbotron\">\n  <h2 align=\"center\">IMPRESSUM & DATENSCHUTZERKLÄRUNG </h2>\n\n  <div>\n    <p></p>\n    <h3><strong>Impressum</strong></h3>\n    <p><strong>Deutsches Forschungszentrum für Künstliche Intelligenz GmbH<br />\n      Projektbüro Berlin</strong><br />\n      Alt-Moabit 91 C<br />\n      10559 Berlin<br />\n      Deutschland<br />\n      Telefon: +49 (0)30 / 238 95-0<br />\n      Telefax: +49 (0)30 / 238 95-1810</p>\n    <p><strong>Standort Bremen</strong><br />\n      Robert-Hooke-Straße 1<br />\n      28359 Bremen<br />\n      Deutschland<br />\n      Telefon: +49 (0)421 / 178 45-0<br />\n      Telefax: +49 (0)421 / 178 45-4150</p>\n    <p><strong>Standort Kaiserslautern</strong><br />\n      Trippstadter Straße 122<br />\n      67663 Kaiserslautern<br />\n      Deutschland<br />\n      Telefon: +49 (0)631 / 205 75-0<br />\n      Telefax: +49 (0)631 / 205 75-5030</p>\n    <p><strong>Standort Saarbrücken</strong><br />\n      Stuhlsatzenhausweg 3<br />\n      66123 Saarbrücken<br />\n      Deutschland<br />\n      Telefon: +49 (0)681 / 857 75-0<br />\n      Telefax: +49 (0)681 / 857 75-5341</p>\n    <p><strong>Vertretungsberechtigte Geschäftsführer</strong><br />\n      Prof. Dr. Dr. h.c. mult. Wolfgang Wahlster (Vorsitzender)<br />\n      Dr. Walter Olthoff</p>\n    <p><strong>Vorsitzender des Aufsichtsrates</strong><br />\n      Prof. Dr. h.c. Hans A. Aukes</p>\n    <p>Registergericht: Amtsgericht Kaiserslautern<br />\n      Registernummer: HRB 2313</p>\n    <p>ID-Nummer: DE 148 646 973</p>\n    <p>&nbsp;</p>\n    <h3><strong>Datenschutzerklärung</strong></h3>\n    <p>Das DFKI (Deutsches Forschungszentrum für Künstliche Intelligenz GmbH) und seine Mitarbeiter/-innen setzen sich ziel- und risikoorientiert für die informationelle Selbstbestimmung und das Grundrecht auf Schutz personenbezogener Daten ein. In dieser Datenschutzerklärung informieren wir Sie über die Verarbeitung Ihrer personenbezogenen Daten bei Besuch und Benutzung unserer Webseite.</p>\n    <p><strong>Verantwortlicher</strong></p>\n    <p>Deutsches Forschungszentrum für Künstliche Intelligenz GmbH (DFKI)<br />\n      Telefon: +49 (0)631 / 205 75-0, E-Mail: <a href=\"mailto:info@dfki.de\">info@dfki.de</a>, Impressum</p>\n    <p><strong>Datenschutzbeauftragter</strong></p>\n    <p>Telefon: +49 (0)631 / 205 75-0, E-Mail: <a href=\"mailto:datenschutz@dfki.de\">datenschutz@dfki.de</a></p>\n    <p><strong>Zweck der Verarbeitung</strong></p>\n    <ul>\n      <li>Bereitstellung des Informationsangebotes im Rahmen der Öffentlichkeitsarbeit des DFKI</li>\n      <li>Kontaktaufnahme und Korrespondenz mit Besuchern und Benutzern</li>\n    </ul>\n    <p><strong>Anonyme und geschützte Benutzung</strong></p>\n    <p>Der Besuch und die Benutzung unserer Webseite sind anonym. Personenbezogene Daten werden auf unserer Webseite nur im technisch notwendigen Umfang erhoben. Die verarbeiteten personenbezogenen Daten werden außer aufgrund konkreter gesetzlicher Verpflichtungen nicht an Dritte übermittelt oder in anderer Weise offengelegt. Wir binden innerhalb unseres Informationsangebots keine Inhalts- oder Serviceangebote von Drittanbietern ein. Bei der Benutzung unserer Webseite ist die Datenübertragung im Internet durch ein als sicher anerkanntes Verschlüsselungsverfahren gegen Kenntnisnahme Dritter geschützt und kann somit nicht auf einfache Weise beobachtet oder verfälscht werden kann.</p>\n    <p><strong>Zugriffsdaten</strong></p>\n    <p>Bei jedem Zugriff auf unsere Webseite werden Nutzungs-, Verkehrs- und Verbindungsdaten erhoben, vorübergehend in einer Protokolldatei gespeichert und regelmäß nach 90 Tagen gelöscht. Über jeden Zugriff/Abruf werden folgende Daten gespeichert:</p>\n    <ul>\n      <li>IP-Adresse</li>\n      <li>übermittelte User-Agent Information (insbesondere Typ/Version von Webbrowser, Betriebssystem, usw.)</li>\n      <li>übermittelte Referrer Information (URL der verweisenden Seite)</li>\n      <li>Datum und Uhrzeit des Zugriffs/Abrufs</li>\n      <li>übermittelte Zugriffsmethode/Funktion</li>\n      <li>übermittelte Eingabewerte (Suchbegriffe, usw.)</li>\n      <li>aufgerufene Seite bzw. abgerufene Datei</li>\n      <li>übertragene Datenmenge</li>\n      <li>Status der Verarbeitung des Zugriffs/Abrufs</li>\n    </ul>\n    <p>Die Verarbeitung der Zugriffsdaten ist rechtmäßig, weil sie zur Wahrung berechtigter Interessen des DFKI erforderlich ist. Die berechtigten Interessen des DFKI sind die Anpassung und Optimierung des Informationsangebots und die Ermittlung, Aufdeckung von Verfolgung von rechtswidrigen Handlungen im Zusammenhang mit der Benutzung der Webseite. Die gespeicherten Datensätze können statistisch ausgewertet werden, um unser Informationsangebot an die Bedürfnisse unserer Besucher anpassen und optimieren zu können. Techniken, die es ermöglichen, das Zugriffsverhalten der Benutzer nachzuvollziehen (Tracking), werden nicht eingesetzt. Die Erstellung von Benutzerprofilen und eine darauf beruhende automatisierte Entscheidungsfindung ist ausgeschlossen. Die gespeicherten Datensätze sind nicht bestimmten Personen zuordenbar. Eine Zusammenführung mit anderen Datenquellen wird grundsätzlich nicht vorgenommen. Die gespeicherten Daten können jedoch geprüft und mit anderen Datenquellen zusammengeführt werden, wenn uns konkrete Anhaltspunkte für eine rechtswidrige Benutzung bekannt werden.</p>\n    <p><strong>Cookies</strong></p>\n    <p>Auf unserer Webseite verwenden wir sogenannte Cookies. Cookies sind kleine Dateien, die von Ihrem Webbrowser gespeichert werden. Die auf unserer Webseite verwendeten Cookies richten auf Ihrem Rechner keinen Schaden an und enthalten keine Schadsoftware. Sie ermöglichen eine benutzerfreundliche und effektive Nutzung unserer Webseite. Wir verwenden Cookies nicht für Werbezwecke. Wir übertragen an Ihren Webbrowser temporäre Session Cookies. Sie sind nur für die Dauer Ihres Besuches auf unserer Webseite gültig und sie haben außerhalb unserer Webseite keine Bedeutung. Die temporären Cookies werden verwendet, um Ihre Sitzung während Ihres Besuches mit einer eindeutigen Nummer zu identifizieren und unsere Inhalte in der von Ihnen bevorzugten Sprache zu übertragen. Nach Ende Ihres Besuches können Sie die Session Cookies durch Beendigung Ihres Webbrowsers löschen. Wir übertragen an Ihren Webbrowser auch permanente Cookies mit einer Gültigkeitsdauer von höchstens 365 Tagen. Wir verwenden diese Cookies ausschließlich dazu, bei Ihrem nächsten Besuch unserer Webseite Ihre Einstellungen für die Art der Darstellung (normal, invertiert) und für die Schriftgröße zu beachten. Weiterhin wird vermerkt, ob Sie die Information über die Verwendung von Cookies in Ihrem Webbrowser zur Kenntnis genommen haben. Sie können Ihren Webbrowser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben bzw. die Annahme von Cookies für bestimmte Fälle oder generell ausschließen. Bereits gespeicherte Cookies können Sie in den Einstellungen Ihres Webbrowsers löschen. Sie können auch das automatische Löschen von Cookies beim Beenden Ihres Webbrowsers einstellen. Bei der Deaktivierung von Cookies kann die Funktionalität unserer Webseite eingeschränkt sein. In jedem Fall steht unser Informationsangebot in seinem vollem Umfang zur Verfügung.</p>\n    <p><strong>Social Media</strong></p>\n    <p>Wir betten keine Social Media Plugins in unserer Webseite ein. Wenn Sie unsere Webseite besuchen, werden daher keine Daten an Social Media Services übermittelt. Eine Profilbildung durch Dritte ist somit ausgeschlossen. Sie haben jedoch die Möglichkeit, direkt zu unseren Informationsangeboten auf Facebook, Twitter und YouTube zu wechseln. Für die Benutzung dieser Dienste verweisen wir auf die Geschäftsbedingungen und die Datenschutzbestimmungen der jeweiligen Betreiber. Wir verarbeiten Ihre personenbezogene Daten innerhalb der sozialen Netzwerke soweit Sie Beiträge einstellen, Nachrichten versenden oder auf andere Weise mit uns kommunizieren.</p>\n    <p><strong>Korrespondenz</strong></p>\n    <p>Sie haben die Möglichkeit, uns per E-Mail zu kontaktieren. Ihre E-Mail-Adresse und andere personenbezogene Kontaktdaten verwenden wir für die Korrespondenz mit Ihnen. Aufgrund gesetzlicher Verpflichtung wird jede E-Mail-Korrespondenz archiviert. Soweit zur Wahrung unserer berechtigten Interessen erforderlich, können Ihre E-Mail-Adresse und andere personenbezogene Kontaktdaten aus der Korrespondenz in unserer Kontaktdatenbank gespeichert werden. In diesem Fall werden Sie eine entsprechende Information über die Verarbeitung Ihrer Kontaktdaten erhalten.</p>\n    <p><strong>Auskunft und Intervention</strong></p>\n    <p>Neben der Information in dieser Datenschutzerklärung haben Sie das Recht auf Auskunft über Ihre personenbezogenen Daten. Zur Gewährleistung einer fairen Verarbeitung bestehen für Sie die folgenden Interventionsrechte:</p>\n    <ul>\n      <li>Das Recht auf Berichtigung und Vervollständigung Ihrer personenbezogenen Daten</li>\n      <li>Das Recht auf Löschung Ihrer personenbezogenen Daten</li>\n      <li>Das Recht auf Einschränkung der Verarbeitung Ihrer personenbezogenen Daten</li>\n      <li>Das Recht auf Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten aus Gründen Ihrer besonderen Situation</li>\n    </ul>\n    <p>Für die Ausübung Ihrer Rechte wenden Sie sich bitte an unseren Datenschutzbeauftragten.</p>\n    <p><strong>Recht auf Beschwerde</strong></p>\n    <p>Sie haben das Recht auf Beschwerde bei einer Aufsichtsbehörde, wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen gesetzliche Datenschutzvorschriften verstößt.</p>\n</div>\n\n\n\n\n\n</div>\n"
 
 /***/ }),
 
-/***/ "./src/app/home/home.component.ts":
-/*!****************************************!*\
-  !*** ./src/app/home/home.component.ts ***!
-  \****************************************/
-/*! exports provided: HomeComponent */
+/***/ "./src/app/impressum/impressum.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/impressum/impressum.component.ts ***!
+  \**************************************************/
+/*! exports provided: ImpressumComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ImpressumComponent", function() { return ImpressumComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -482,20 +484,20 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var HomeComponent = (function () {
-    function HomeComponent() {
+var ImpressumComponent = (function () {
+    function ImpressumComponent() {
     }
-    HomeComponent.prototype.ngOnInit = function () {
+    ImpressumComponent.prototype.ngOnInit = function () {
     };
-    HomeComponent = __decorate([
+    ImpressumComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-home',
-            template: __webpack_require__(/*! ./home.component.html */ "./src/app/home/home.component.html"),
-            styles: [__webpack_require__(/*! ./home.component.css */ "./src/app/home/home.component.css")]
+            selector: 'app-impressum',
+            template: __webpack_require__(/*! ./impressum.component.html */ "./src/app/impressum/impressum.component.html"),
+            styles: [__webpack_require__(/*! ./impressum.component.css */ "./src/app/impressum/impressum.component.css")]
         }),
         __metadata("design:paramtypes", [])
-    ], HomeComponent);
-    return HomeComponent;
+    ], ImpressumComponent);
+    return ImpressumComponent;
 }());
 
 

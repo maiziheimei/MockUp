@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { ImpressumComponent } from './impressum/impressum.component';
 import { ModellCenterComponent } from './modell-center/modell-center.component';
 import { ModelListComponent } from './model-list/model-list.component';
 import { ModelDetailComponent } from './model-detail/model-detail.component';
@@ -34,7 +34,7 @@ import {UserService} from './user.service';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    ImpressumComponent,
     ModellCenterComponent,
     ModelListComponent,
     ModelDetailComponent,
