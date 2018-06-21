@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+import { AuthGuard } from './auth/auth.guard';
+import { LoginComponent } from './login/login.component';
+
 import { ImpressumComponent } from './impressum/impressum.component';
 import { ModellCenterComponent } from './modell-center/modell-center.component';
 import { StartComponent} from './start/start.component';
@@ -11,15 +15,18 @@ import { EvaluationComponent} from './evaluation/evaluation.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: '/start', pathMatch: 'full'},
+  { path: '', component: StartComponent, canActivate: [AuthGuard], pathMatch: 'full'},
+  { path: 'login', component: LoginComponent },
+  // { path: '**', redirectTo: ''},
+  // {path: '', redirectTo: '/start', pathMatch: 'full'},
   {path: 'impressum', component: ImpressumComponent},
-  {path: 'start', component: StartComponent},
-  {path: 'kriteiren', component: KriterienComponent},
-  {path: 'zustaende', component: ZustaendeComponent},
-  {path: 'massnahman', component: MassnahmenComponent},
-  {path: 'evaluation', component: EvaluationComponent},
-  {path: 'modellDesign', component: ModellDesignComponent}, // child component of Zustände component
-  {path: 'models', component: ModellCenterComponent}
+  {path: 'start', component: StartComponent, canActivate: [AuthGuard]},
+  {path: 'kriteiren', component: KriterienComponent, canActivate: [AuthGuard]},
+  {path: 'zustaende', component: ZustaendeComponent, canActivate: [AuthGuard]},
+  {path: 'massnahman', component: MassnahmenComponent, canActivate: [AuthGuard]},
+  {path: 'evaluation', component: EvaluationComponent, canActivate: [AuthGuard]},
+  {path: 'modellDesign', component: ModellDesignComponent, canActivate: [AuthGuard]}, // child component of Zustände component
+  {path: 'models', component: ModellCenterComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

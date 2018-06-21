@@ -14,6 +14,8 @@ import { SelectedModel } from '../selectedModel';
   providers: [ ModellService]
 })
 export class KriterienComponent implements OnInit {
+
+  isLoggedIn = true;
   // showUnderline = true;
   sms = [];
   itemCount: any;

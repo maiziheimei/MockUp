@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,12 +23,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatInputModule, MatCardModule, MatDatepickerModule, MatFormFieldModule, MatNativeDateModule, MatButtonModule, MatCheckboxModule, MatIconModule} from '@angular/material';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatTooltipModule} from '@angular/material/tooltip';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule} from '@angular/material/select';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { ModellService } from './modell.service';
 import { DataService } from './data.service';
-import {UserService} from './user.service';
+import { UserService} from './user.service';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth/auth.guard';
+import { AuthService } from './auth/auth.service';
+import { HeaderComponent } from './header/header.component';
+
 
 
 
@@ -43,20 +50,23 @@ import {UserService} from './user.service';
     ZustaendeComponent,
     MassnahmenComponent,
     ModellDesignComponent,
-    EvaluationComponent
+    EvaluationComponent,
+    LoginComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     HttpModule,
     AngularFontAwesomeModule,
     BrowserAnimationsModule,
-    MatCheckboxModule, MatButtonModule, MatFormFieldModule, MatGridListModule, MatDatepickerModule, MatNativeDateModule, MatCardModule, MatSelectModule,
+    MatCheckboxModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatGridListModule, MatDatepickerModule, MatNativeDateModule, MatCardModule, MatSelectModule,
     MatInputModule, MatIconModule, MatTooltipModule
   ],
-  providers: [HttpClientModule, ModellService, DataService, UserService],
+  providers: [HttpClientModule, ModellService, DataService, UserService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

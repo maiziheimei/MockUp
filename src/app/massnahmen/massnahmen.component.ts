@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { DataService } from '../data.service';
 import { ModellService} from '../modell.service';
 
@@ -43,6 +43,8 @@ export class MassnahmenComponent implements OnInit {
   ssms = [];
   CModells: any;
   itemCount: any;
+  hiddenShowIst: any;
+  hiddenShowZiel: any;
 
 
   constructor( private _modellService: ModellService, private  _data: DataService) {}
@@ -53,10 +55,27 @@ export class MassnahmenComponent implements OnInit {
     this.itemCount = this.ssms.length;
     this._data.selectedModels.subscribe(res => this.ssms = res);
     this._data.changeGoal(this.ssms);
+    this.hiddenShowIst = new Array(this.ssms.length).fill(false);
+    this.hiddenShowZiel = new Array(this.ssms.length).fill(false);
     // console.log('... the passed on sms has ...: ', this.ssms.length);
     // for (let i = 0; i < this.ssms.length; i++) {
     //   console.log(this.ssms[i].kriterium_id, this.ssms[i].kriterium,
     //     this.ssms[i].isselected, this.ssms[i].int_priorty); }
+    }
+
+  showIst(i) {
+    if (this.hiddenShowIst[i]) {
+      this.hiddenShowIst[i] = false;
+    } else {
+      this.hiddenShowIst[i] = true;
+    }
   }
+    showZiel(i) {
+      if (this.hiddenShowZiel[i]) {
+        this.hiddenShowZiel[i] = false;
+      } else {
+        this.hiddenShowZiel[i] = true;
+      }
+    }
 
 }

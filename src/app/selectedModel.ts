@@ -5,8 +5,10 @@ export class SelectedModel {
   isEvaluated: boolean;
   ist_id: string;
   ist_note: string;
+  ist_content: string;
   ziel_id: string;
   ziel_note: string;
+  ziel_content: string;
   priority: number;
   Kriterium_note: string;
   Massnahmen: string;

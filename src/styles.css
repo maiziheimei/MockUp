@@ -42,12 +42,13 @@ body{
   word-spacing: 20px;
 }
 
+
 #navbar li{
   display: inline;
   float:left;
 }
 
-#navbar a{
+#navbar a {
   color:#fff;
   text-decoration: none;
   font-size: 2.4em !important;
@@ -56,6 +57,19 @@ body{
   margin-right: 10px;
 }
 
+button.logout {
+  float: right;
+  text-decoration: none;
+  font-size: 2.4em !important;
+  text-align: center;
+  padding-right: 15px;
+  margin-right: 10px;
+  margin-left: 360px;
+  font-weight: 400;
+  display: inline;
+  background-color: #808080;
+  border-style: hidden;
+}
 
 /*Active nav items*/
    /*#navbar .nav .active > a,*/

@@ -43,6 +43,19 @@ div.input-group.mb-3{
   display: block;
 }
 
+.smallLable {
+  background-color:#A9B7C0;
+  width:45px;
+  height: 34px;
+  color:#333;
+  font-size: medium;
+  font-weight: bold;
+  padding:5px;
+  border:none;
+  margin-bottom: 0px;
+  margin-left: 20px;
+  display: block;
+}
 
 .balls{
   width: 15%;
@@ -52,6 +65,40 @@ div.input-group.mb-3{
   font-size: medium;
   font-weight: bold;
   text-align: center;
+  cursor: zoom-in;
+}
+
+.numberCircle {
+  width: 15%;
+  display: block;
+  margin-right: 10px;
+  margin-top: 0px;
+  margin-left: 10px;
+  background: #EFD9C1;
+  border-radius: 100%;
+  width: 36px;
+  height: 36px;
+  padding: 3px;
+  border: 2px solid #EFD9C1;
+  color: #808080;
+  text-align: center;
+  font: 24px Arial, sans-serif;
+  cursor: zoom-in;
+}
+
+
+.diplayContent {
+  padding: 8px;
+  width: 95%;
+  border-radius: 0;
+  overflow: hidden;
+  background: #F2E0CD;
+  display: block;
+  border-color: lightgrey;
+  font-size: medium;
+  resize: vertical;
+  overflow-y: scroll;
+  margin-bottom: 10px;
 }
 .priority{
   float:right;
@@ -60,8 +107,9 @@ div.input-group.mb-3{
 }
  .priority input{
   font-size: medium;
-  height: 30px;
-
+   width: 160px;
+  height: 34px;
+  margin-left: 25px;
   font-weight: bold;
   margin-right: 80px;
   background-color: #EFD9C1;

@@ -104,12 +104,14 @@ export class ModellDesignComponent implements OnInit {
     if (optionValue === '1') {
       this.value_s = cIndex;
       this.ClickedSelectedModel.ist_id = cIndex;
+      this.ClickedSelectedModel.ist_content = this.auspraegung[cIndex];
       this.selected = '1';
       this.niz[cIndex] = '1';
     }
     if (optionValue === '2') {
       this.value_z = cIndex;
       this.ClickedSelectedModel.ziel_id = cIndex;
+      this.ClickedSelectedModel.ziel_content = this.auspraegung[cIndex];
       this.selected = '2';
       this.niz[cIndex] = '2';
     }

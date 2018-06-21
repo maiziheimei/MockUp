@@ -7,9 +7,19 @@
   <div *ngFor="let cm of ssms; index as i">
      <!--<div class ="input-group" *ngIf="sms[i]">-->
      <div class ="input-group">
+
          <div class="checkedModel"> <input  disabled type="text" id="{{cm.kriterium_id}}" value="{{cm.kriterium_id}}. {{cm.kriterium}}"></div>
-         <div class="balls"> {{cm.ist_id}} -> {{cm.ziel_id}}</div>
+         <!--<div class="balls" (click)="showContent(i)"> {{cm.ist_id}} -> {{cm.ziel_id}}</div>-->
+         <div><input class="smallLable" disabled type="text" value="Ist: "></div>
+         <div class="numberCircle" [ngStyle]="{'background-color': hiddenShowIst[i]? '#7272fd' : '#EFD9C1'}" (click)="showIst(i)">{{cm.ist_id}}</div>
+
+         <!--<div> <img height="30" width="30" background-color="" src="assets/images/arrow1.png"></div>-->
+         <div><input class="smallLable" disabled type="text" value="Ziel: "></div>
+         <div class="numberCircle" [ngStyle]="{'background-color': hiddenShowZiel[i]? '#FA8072' : '#EFD9C1'}" (click)="showZiel(i)">{{cm.ziel_id}}</div>
          <div class="priority"> <input  type="text" disabled value=" Priorität: {{cm.priority}}"></div>
+
+       <textarea  style="background-color: #7272fd" class="diplayContent" [hidden]="!hiddenShowIst[i]" matInput placeholder="" matTextareaAutosize matAutosizeMinRows="5" matAutosizeMaxRows="10"><b>Ist:</b> {{cm.ist_content}}</textarea>
+       <textarea  style="background-color: #FA8072" class="diplayContent" [hidden]="!hiddenShowZiel[i]" matInput placeholder="" matTextareaAutosize matAutosizeMinRows="5" matAutosizeMaxRows="10">Ziel: {{cm.ziel_content}}</textarea>
 
        <div class="input-group mb-3">
          <div class="input-group-prepend">

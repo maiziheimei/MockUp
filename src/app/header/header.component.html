@@ -1,0 +1,32 @@
+<!--<mat-toolbar color="primary" *ngIf="isLoggedIn$ | async as isLoggedIn">-->
+  <!--<span>-->
+    <!--Angular NavBar + Login Example #01-->
+  <!--</span>-->
+  <!--<span class="fill-remaining-space"></span>-->
+  <!--<button mat-button>Menu Option 01</button>-->
+  <!--<button mat-button>Menu Option 02</button>-->
+  <!--&lt;!&ndash;button mat-button routerLink="login" *ngIf="!isLoggedIn; else notLoggedIn">Login</button>-->
+  <!--<ng-template #notLoggedIn>-->
+    <!--<button mat-button (click)="onLogout()">Logout</button>-->
+  <!--</ng-template &ndash;&gt;-->
+  <!--<button mat-button (click)="onLogout()" *ngIf="isLoggedIn">Logout</button>-->
+<!--</mat-toolbar>-->
+
+
+<nav id="navbar" *ngIf="isLoggedIn$ | async as isLoggedIn">
+  <div class="container">
+    <ul>
+      <!--<li> <a routerLink="/home" > Home</a> </li>-->
+      <li> <a routerLink="/start" routerLinkActive="active"> Start</a> </li>
+      <li> <a routerLink="/kriteiren" routerLinkActive="active"> Kriterien</a> </li>
+      <li> <a routerLink="/zustaende" routerLinkActive="active"> Zustände</a> </li>
+      <li> <a routerLink="/massnahman" routerLinkActive="active"> Maßnahmen</a> </li>
+      <li> <a routerLink="/evaluation" routerLinkActive="active"> Evaluation</a> </li>
+      <!--<li> <a routerLink="/modellDesign" routerLinkActive="active"> ModelDesign</a> </li>-->
+      <!--<li> <a routerLink="/models" routerLinkActive="active"> ModelList</a> </li>-->
+      <!--<button mat-button (click)="onLogout()" *ngIf="isLoggedIn">Logout</button>-->
+      <li><button class="logout" type="button" (click)="onLogout()" *ngIf="isLoggedIn" >Logout</button></li>
+    </ul>
+
+  </div>
+</nav>
