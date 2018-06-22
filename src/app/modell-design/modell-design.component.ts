@@ -105,6 +105,7 @@ export class ModellDesignComponent implements OnInit {
       this.value_s = cIndex;
       this.ClickedSelectedModel.ist_id = cIndex;
       this.ClickedSelectedModel.ist_content = this.auspraegung[cIndex];
+      this.ClickedSelectedModel.ist_note = this.ClickedSelectedModel.Auspraegung_note[cIndex];
       this.selected = '1';
       this.niz[cIndex] = '1';
     }
@@ -112,10 +113,12 @@ export class ModellDesignComponent implements OnInit {
       this.value_z = cIndex;
       this.ClickedSelectedModel.ziel_id = cIndex;
       this.ClickedSelectedModel.ziel_content = this.auspraegung[cIndex];
+      this.ClickedSelectedModel.ziel_note = this.ClickedSelectedModel.Auspraegung_note[cIndex];
       this.selected = '2';
       this.niz[cIndex] = '2';
     }
     console.log('... currently, priority:', this.ClickedSelectedModel.priority, ' ist_id : ', this.ClickedSelectedModel.ist_id, ' ziel_id : ', this.ClickedSelectedModel.ziel_id);
+    console.log('... ist_note:', this.ClickedSelectedModel.ist_note, ' ziel_id : ', this.ClickedSelectedModel.ziel_note);
   }
   closeBlock() {
     this.parentSwitch = true;

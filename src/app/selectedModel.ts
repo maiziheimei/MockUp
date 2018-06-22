@@ -17,11 +17,15 @@ export class SelectedModel {
   Termin: Date;
   Verantwortlich: string;
   Auspraegung_note: string[];
+
+
   constructor() {
     this.kriterium_id = '0';
     this.isselected = false;
     this.isEvaluated = false;
     this.ist_id = 'N';
+    this.ist_note = '';
+    this.ziel_note = '';
     this.ziel_id = 'N';
     this.priority = 0;
     this.Kosten = '3,000';

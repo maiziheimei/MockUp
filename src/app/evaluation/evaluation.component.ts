@@ -4,6 +4,7 @@ import { ModellService} from '../modell.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import {element} from 'protractor';
 import {forEach} from '@angular/router/src/utils/collection';
+import {UserService} from '../user.service';
 
 @Component({
   selector: 'app-evaluation',
@@ -12,25 +13,18 @@ import {forEach} from '@angular/router/src/utils/collection';
 })
 export class EvaluationComponent implements OnInit {
 
-  // public CModells = [
-  //   {'_id': '1', 'Kriterium': 'Digitale Konnektivität von Maschinen'},
-  //   {'_id': '3', 'Kriterium': 'Produkt als digitaler Informationstraeger'},
-  //   {'_id': '6', 'Kriterium': 'Mensch-Roboter-Kollaboration'},
-  //   {'_id': '7', 'Kriterium': 'Betriebsdatenerfassung (BDE)'},
-  //   {'_id': '9', 'Kriterium': 'Methodik der Fertigungs- und Montagesteuerung'}
-  // ];
-
   sms = [];
   tmpArray: any = [];
   number = 0;
-  // evaluated: Array<boolean> = [];
-  // evaluated: any;
+
+  currentUser: any;
   CModells: any;
+  arrForJson = [];
   itemCount: any;
   balls = ['1 -> 2', '1 -> 2', '2 -> 3', '0 -> 2', '0 -> 3'];
   resJsonResponse: any;
   downloadJsonHref: any;
-  constructor( private _modellService: ModellService, private  _data: DataService, private sanitizer: DomSanitizer) {}
+  constructor( private _modellService: ModellService, private  _data: DataService, private sanitizer: DomSanitizer, private _userService: UserService) {}
 
   ngOnInit() {
     this._modellService.sharedModells.subscribe(res => this.CModells = res);
@@ -41,6 +35,9 @@ export class EvaluationComponent implements OnInit {
     this.number = 0;
     for (const s of this.sms) {
      if ( s.isEvaluated ) {this.number ++; }}
+
+    this._userService.getUser().subscribe(res => this.currentUser = res);
+    this._userService.changeUser(this.currentUser);
   }
 
   preview() {
@@ -55,10 +52,16 @@ export class EvaluationComponent implements OnInit {
   }
   exportJson(): void {
     console.log(this.sms);
+    this.tmpArray.push(this.currentUser);
+
     for (let i = 0; i < this.sms.length; i ++) {
       if (this.sms[i].isEvaluated) {
-        this.tmpArray.push(this.sms[i]); }
+        // this.tmpArray.push(this.sms[i]);
+        this.arrForJson.push(this.sms[i]);
+      }
     }
+
+    this.tmpArray.push(this.arrForJson);
 
     const c = JSON.stringify(this.tmpArray);
     const file = new Blob([c], {type: 'text/json'});

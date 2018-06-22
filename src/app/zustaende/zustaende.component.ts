@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Modell} from '../modell';
 import { ModellService} from '../modell.service';
 import { DataService } from '../data.service';
+import { SelectedModel } from '../selectedModel';
+import { SortArrPipe } from '../sort-arr.pipe';
 
 @Component({
   selector: 'app-zustaende',
@@ -11,7 +13,7 @@ import { DataService } from '../data.service';
 })
 export class ZustaendeComponent implements OnInit {
   allmodels: any;
-  checkedModells: any;
+  checkedModells: SelectedModel[];
   displayThenBlock= true;
   cMod: any;
   csMod: any;
@@ -22,6 +24,7 @@ export class ZustaendeComponent implements OnInit {
     this._modellService.sharedModells.subscribe(res => this.allmodels = res);
     this._modellService.changeModel(this.allmodels);
     this._data.selectedModels.subscribe(res => this.checkedModells = res);
+    this._data.changeGoal(this.checkedModells);
   }
 
   // the same code as smsExist(kid) of Kriterien.componenet.ts
@@ -50,5 +53,6 @@ export class ZustaendeComponent implements OnInit {
   receiveChanage($event) {
     this.displayThenBlock = $event;
   }
+
 }
 

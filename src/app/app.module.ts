@@ -34,6 +34,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthService } from './auth/auth.service';
 import { HeaderComponent } from './header/header.component';
+import { SortArrPipe } from './sort-arr.pipe';
 
 
 
@@ -52,7 +53,8 @@ import { HeaderComponent } from './header/header.component';
     ModellDesignComponent,
     EvaluationComponent,
     LoginComponent,
-    HeaderComponent
+    HeaderComponent,
+    SortArrPipe
   ],
   imports: [
     BrowserModule,

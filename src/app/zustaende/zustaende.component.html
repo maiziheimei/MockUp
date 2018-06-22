@@ -19,19 +19,7 @@
     </div>
 
 
-  <!--<div *ngFor="let cmodle of allmodels; let m = index;" >-->
-    <!--&lt;!&ndash;<div class ="input-group" *ngIf="checkedArray.indexOf(cmodle._id) >-1 && checkedModells[m]">&ndash;&gt;-->
-    <!--<div class ="input-group" *ngIf="isChecked(cmodle._id)">-->
-    <!--<button type="text" (click)=openEditor(cmodle)> {{cmodle._id}}. {{cmodle.Kriterium}} </button>-->
-    <!--<div class="numberCircle">{{int_ist}}</div>-->
-    <!--<div class="numberCircle">{{int_ziet}}</div>-->
-    <!--<div class="numberCircle">{{int_priorty}}</div>-->
-    <!--</div>-->
-  <!--</div>-->
-
-
-  <div *ngFor="let cmodle of checkedModells; let m = index;" >
-    <!--<div class ="input-group" *ngIf="checkedArray.indexOf(cmodle._id) >-1 && checkedModells[m]">-->
+  <div *ngFor="let cmodle of checkedModells | sortArr; let m = index;" >
     <div class ="input-group">
       <button type="text" (click)=openEditor(cmodle)> {{cmodle.kriterium_id}}. {{cmodle.kriterium}} </button>
       <div class="numberCircle">{{cmodle.ist_id}}</div>
@@ -39,13 +27,6 @@
       <div class="numberCircle">{{cmodle.priority}}</div>
     </div>
   </div>
-
-
-
-
-  <!--<div *ngFor="let cmodle of allmodels" >-->
-      <!--<button type="text" > {{cmodle._id}}. {{cmodle.Kriterium}} ... plus {{cmodle.isSelected()}}</button>-->
-  <!--</div>-->
 
 
 </ng-template>
