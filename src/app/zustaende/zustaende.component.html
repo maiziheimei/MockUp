@@ -19,7 +19,7 @@
     </div>
 
 
-  <div *ngFor="let cmodle of checkedModells | sortArr; let m = index;" >
+  <div *ngFor="let cmodle of checkedModells | sortArr:'priority'; let m = index;" >
     <div class ="input-group">
       <button type="text" (click)=openEditor(cmodle)> {{cmodle.kriterium_id}}. {{cmodle.kriterium}} </button>
       <div class="numberCircle">{{cmodle.ist_id}}</div>

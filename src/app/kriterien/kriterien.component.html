@@ -5,7 +5,7 @@
              <label> Welche Kriterien benötigen Sie für Ihre Ziele?  </label>
             </div>
 
-           <div class ="form-group" *ngFor="let modell of modells; let i = index;">
+           <div class ="form-group" *ngFor="let modell of modells | sortArr:'_id'; let i = index;">
                  <label title="click to see description" (click)="showBeschreibung(i)" >{{modell._id}}. {{modell.Kriterium}}</label>
                   <mat-checkbox type="checkbox" checked="false" [checked]="getCheckState(modell._id)" (change)="onChange($event, i, modell)" ></mat-checkbox>
                   <textarea [hidden]="!hiddenValue[i]" matInput placeholder="" matTextareaAutosize matAutosizeMinRows="6" matAutosizeMaxRows="50">{{modell.Beschreibung}}</textarea>

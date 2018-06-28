@@ -1,4 +1,5 @@
 import { v4 as uuid } from 'uuid';
+import {SelectedModel} from './selectedModel';
 
 export class User {
   id: string;
@@ -6,10 +7,15 @@ export class User {
   vision: string;
   mission: string;
   strategy: string;
-// constructor() {
-//   this.id = uuid();
-//   this.vision = 'vision';
-//   this.mission = ' mission';
-//   this.strategy = ' strategy';
-// }
+  kriterienList: SelectedModel[];
+
+ // constructor () {}
+  constructor(_id, _name, _mission, _vision, _strategy, _kriList) {
+    this.id = _id;
+    this.name = _name;
+    this.vision = _mission;
+    this.mission = _vision;
+    this.strategy = _strategy;
+    this.kriterienList = _kriList;
+  }
 }

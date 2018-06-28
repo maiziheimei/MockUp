@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ModellService} from '../modell.service';
 import { DomSanitizer } from '@angular/platform-browser';
-import {element} from 'protractor';
-import {forEach} from '@angular/router/src/utils/collection';
-import {UserService} from '../user.service';
+import { element} from 'protractor';
+import { forEach} from '@angular/router/src/utils/collection';
+import { UserService} from '../user.service';
 
 @Component({
   selector: 'app-evaluation',
@@ -19,7 +19,7 @@ export class EvaluationComponent implements OnInit {
 
   currentUser: any;
   CModells: any;
-  arrForJson = [];
+
   itemCount: any;
   balls = ['1 -> 2', '1 -> 2', '2 -> 3', '0 -> 2', '0 -> 3'];
   resJsonResponse: any;
@@ -34,8 +34,8 @@ export class EvaluationComponent implements OnInit {
     this._data.changeGoal(this.sms);
     this.number = 0;
     for (const s of this.sms) {
-     if ( s.isEvaluated ) {this.number ++; }}
-
+     if ( s.isEvaluated ) {this.number ++; }
+    }
     this._userService.getUser().subscribe(res => this.currentUser = res);
     this._userService.changeUser(this.currentUser);
   }
@@ -52,18 +52,24 @@ export class EvaluationComponent implements OnInit {
   }
   exportJson(): void {
     console.log(this.sms);
-    this.tmpArray.push(this.currentUser);
-
+    // this.tmpArray.push(this.currentUser);
+    const arrForJson = [];
+    console.log ('... the current user: ', this.currentUser);
+    // this will leave out the ones of unchecked
     for (let i = 0; i < this.sms.length; i ++) {
-      if (this.sms[i].isEvaluated) {
-        // this.tmpArray.push(this.sms[i]);
-        this.arrForJson.push(this.sms[i]);
-      }
+     // if (this.sms[i].isEvaluated) {
+      //  // this.tmpArray.push(this.sms[i]);
+        arrForJson.push(this.sms[i]);
+     // }
     }
 
-    this.tmpArray.push(this.arrForJson);
+    //  this.currentUser.kriterienList = this.arrForJson;
+    this.currentUser.kriterienList = arrForJson.map(x => Object.assign({}, x));
+    //  this.tmpArray.push(this.currentUser);
+    //  // this.tmpArray.push(this.arrForJson);
 
-    const c = JSON.stringify(this.tmpArray);
+   // const c = JSON.stringify(this.tmpArray);
+    const c = JSON.stringify(this.currentUser);
     const file = new Blob([c], {type: 'text/json'});
     this.download(file, 'Your_Kriterions.json');
   }

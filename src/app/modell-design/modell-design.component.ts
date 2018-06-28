@@ -83,7 +83,7 @@ export class ModellDesignComponent implements OnInit {
       case '0':
         return 'lightgrey';
       case '1':
-        return '#7272fd';
+        return '#71B7FD';
       case '2':
         return '#FA8072';
     }

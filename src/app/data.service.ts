@@ -8,7 +8,6 @@ export class DataService {
   constructor() { }
 
   // this used to persist the selected models, which will be used by all the other pages
-  // private seModels = new BehaviorSubject<boolean[]>( new Array(42));
   private seModels = new BehaviorSubject<any>([]);
   selectedModels = this.seModels.asObservable();
 

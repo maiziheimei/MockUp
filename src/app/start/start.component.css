@@ -46,6 +46,13 @@
 a {
   color: #0067a2;
 }
+
+button {
+  background-color: #EFD9C1;;
+  width: 158px;
+  margin-left: 40px;
+}
+
 .textarea.ng-invalid {
   /*background-color: rgba(211,211,211, 0.8);*/
   background-color: #A9B7C0;
@@ -94,7 +101,8 @@ a {
 
 .form-control {
  font-size: 12pt;
- background-color: #E2E6E9;
+ background-color: #8c9ca7;
+ color:  #EFD9C1;
 }
 
 .textarea.ng-valid {

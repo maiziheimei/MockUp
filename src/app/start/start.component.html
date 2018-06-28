@@ -1,6 +1,10 @@
 <div class="containerStart">
   <div class="col">
-    <div class="uuidLableLeft"> <b>Do your want to import your previous file (.json)?</b> &nbsp;&nbsp;&nbsp;&nbsp; <button >import</button></div>
+    <div class="uuidLableLeft"> <b>Do your want to import your previous file (.json)?</b> &nbsp;&nbsp;&nbsp;&nbsp;
+      <!--<button >import</button>-->
+      <input style="display: none" type="file" accept=".json" (change)="onFileLoad($event)" #fileinput>
+      <button type="button" (click)="fileinput.click()"> load </button>
+    </div>
 
     <div class="titleTable">
         <!--<div  class="td2"> <a href="http://www.adaption-projekt.de/"><h1>Projekt ADAPTION</h1></a></div>-->
@@ -19,13 +23,13 @@
           2. Industrie 4.0 Audit
           3. Zielstellung
           4. Maßnahmen-planung
-          5. Evaluation) " ></textarea><br>
+          5. Evaluation " ></textarea><br>
 
   </div>
 
   <div class="col">
 
-    <div class="uuidLable"> Welcome! &nbsp; Your User_ID is: <b>{{cUser.id}}</b></div>
+    <div class="uuidLable"> Welcome! &nbsp; Your User_ID is: <b style="color:#EFD9C1">{{cUser.id}}</b></div>
     <!--<br><textarea class ="textarea ng-valid-2" name="item"-->
                   <!--placeholder="Was ist Ihre Vision?"  [(ngModel)]="cUser.vision"  ></textarea><br>-->
     <!--<br><textarea class ="textarea ng-valid-2"  name="item"-->
@@ -63,3 +67,4 @@
   <!--<div> current User mission : {{cUser.mission}} </div>-->
   <!--<div> current User mission : {{cUser.strategy}} </div>-->
 </div>
+

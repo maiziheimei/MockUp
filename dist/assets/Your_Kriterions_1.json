@@ -1,0 +1,83 @@
+{
+  "id": "dd7d9ab5-aacf-43e1-8f49-edbe210f9503",
+  "name": "DFKI",
+  "mission": "my mission ....",
+  "vision": "Wang's vision ... ",
+  "strategy": "new strategy will be applied here ...",
+  "kriterienList": [
+    {
+      "kriterium_id": "6",
+      "isselected": true,
+      "isEvaluated": true,
+      "ist_id": 1,
+      "ziel_id": 3,
+      "priority": 1,
+      "Kosten": "66,000",
+      "Massnahmen": " mammmm 6666",
+      "Erklaerung": "  er 6666",
+      "Verantwortlich": " Mr. Wang",
+      "Termin": "2019-10-14T22:00:00.000Z",
+      "Auspraegung_note": [
+        null,
+        "ist 666",
+        null,
+        "ziel 6666"
+      ],
+      "kriterium": "Mensch-Roboter-Kollaboration",
+      "checked": true,
+      "Kriterium_note": "holle 666",
+      "ist_content": "Es sind Roboter im Einsatz, aber es findet keine direkte Zusammenarbeit zwischen Roboter und Mitarbeiter statt.",
+      "ziel_content": "Mensch und Roboter arbeiten im selben Bereich und ohne raeumliche Trennung zusamen; Kollisionen werden durch den Einsatz von Sensoren vermieden."
+    },
+    {
+      "kriterium_id": "3",
+      "isselected": true,
+      "isEvaluated": false,
+      "ist_id": 3,
+      "ziel_id": 1,
+      "priority": 2,
+      "Kosten": "39,000",
+      "Massnahmen": " mmmmm 3333",
+      "Erklaerung": "  er 3333",
+      "Verantwortlich": " Miss Xia",
+      "Termin": "2020-01-05T23:00:00.000Z",
+      "Auspraegung_note": [
+        null,
+        "zie 333",
+        null,
+        "ist 333"
+      ],
+      "kriterium": "Produkt als digitaler Informationsträger",
+      "Kriterium_note": "hallo 3333",
+      "ist_content": "Die vom Produkt mitgeführten Daten sind waehrend des Prozesses veraenderbar (les- und schreibbar). Es lassen sich somit am Produkt Daten aus durchlaufenen Prozessschritten festhalten (z.B. durchgeführte Fertigungsschritte, Prüfergebnisse).",
+      "ziel_content": "Waehrend des betrachteten Prozesses ist eine eindeutige Identifizierung des einzelnen Produkts möglich. Hierzu traegt das Produkt eine eindeutige, maschninell auslesbare Kennung mit sich (z.B. Barcode, QR-Code oder RFID). Weitere Informationen stellt das Produkt nicht bereit.",
+      "checked": true
+    },
+    {
+      "kriterium_id": "9",
+      "isselected": true,
+      "isEvaluated": true,
+      "ist_id": 2,
+      "ziel_id": 5,
+      "priority": 3,
+      "Kosten": "96,000",
+      "Massnahmen": " masss 99999",
+      "Erklaerung": "  erk 9999",
+      "Verantwortlich": " Mr. Groß",
+      "Termin": "2018-10-09T22:00:00.000Z",
+      "Auspraegung_note": [
+        null,
+        null,
+        "ist 99999",
+        null,
+        null,
+        "ziel 999"
+      ],
+      "kriterium": "Methodik der Fertigungs- und Montagesteuerung",
+      "Kriterium_note": "hello 9999",
+      "ist_content": "Die Vorgehensweise wird durch den Einsatz von manuellen Steuerungsmethoden (z.B. Plantafel, KANBAN) unterstützt.",
+      "ziel_content": "Eine Software steuert autonom auf Basis starrer Regeln und unter Berücksichtigung der Ressourcenverfügbarkeit.",
+      "checked": true
+    }
+  ]
+}

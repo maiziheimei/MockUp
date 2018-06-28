@@ -4,7 +4,8 @@ import { Modell } from '../modell';
 import { ModellService} from '../modell.service';
 import { DataService } from '../data.service';
 import { SelectedModel } from '../selectedModel';
-
+import { UserService } from '../user.service';
+import { User} from '../user';
 
 
 @Component({
@@ -18,22 +19,31 @@ export class KriterienComponent implements OnInit {
   isLoggedIn = true;
   // showUnderline = true;
   sms = [];
+  loadUser: User;
   itemCount: any;
   modells: any;
   lastAction: string;
   hiddenValue = new Array(42).fill(false);
 
-  constructor(private _modellService: ModellService, private  _data: DataService) { }
+  constructor(private _modellService: ModellService, private  _data: DataService,  private _userService: UserService) { }
 
   ngOnInit() {
     this._modellService.sharedModells.subscribe(res => this.modells = res);
     this._modellService.changeModel(this.modells);
    // console.log('... get from DB, the modell length is: ', this.modells.length);
-    this.itemCount = this.sms.length;
-    console.log('... the sms length is: ', this.itemCount);
+
+    // this.itemCount = this.sms.length;
+    // console.log('... the sms length is: first ', this.itemCount);
+
     this._data.selectedModels.subscribe(res => this.sms = res);
     this._data.changeGoal(this.sms);
+    console.log('... the sms length is: ', this.sms.length);
+    // this._userService.currentUser.subscribe(res => this.loadUser = res);
+    // this._userService.changeUser(this.loadUser);
+    // this.sms = this.loadUser.kriterienList.map(x => Object.assign({}, x));
+    // console.log('... kri page loadUser.id is: ', this.loadUser.id);
     // this.sortModells();
+    // this._userService.getUser().subscribe(res => this.sms = res.kriterienList);
   }
 
   sortModells() {
@@ -68,6 +78,10 @@ export class KriterienComponent implements OnInit {
   }
 
   getCheckState(mid) {
+    // if (this.loadUser.kriterienList.length > 0) {
+    //   console.log('... this loadeUser length is: ', this.loadUser.kriterienList.length);
+    // }
+
     if (this.sms != null) {
       // console.log('... to get the check status of model: ', mid);
       const mo =  this.sms.find(x => x.kriterium_id === mid);

@@ -3,18 +3,29 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { User } from './user';
 import { Observable } from 'rxjs';
 import { NewUser } from './newuser';
+import { Subject } from 'rxjs/Subject';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { Http, Response } from '@angular/http';
+import {v4 as uuid} from 'uuid';
 
 @Injectable()
 export class UserService {
-  private user = new BehaviorSubject<User>(null);
+
+  constructor() { }
+
+//  private user = new ReplaySubject<User>(1);
+  private user = new BehaviorSubject<User>( null);
   currentUser = this.user.asObservable();
-  constructor() {}
+
 
   changeUser(currentUser) {
     this.user.next(currentUser);
   }
 
+
  getUser(): Observable<User> {
-   return Observable.of(NewUser);
+      return Observable.of(NewUser);
  }
- }
+
+
+}
