@@ -1,9 +1,9 @@
 <div class="containerStart">
   <div class="col">
-    <div class="uuidLableLeft"> <b>Do your want to import your previous file (.json)?</b> &nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="uuidLableLeft"> <b>Do your want to import your previous file (.json)?</b>
       <!--<button >import</button>-->
       <input style="display: none" type="file" accept=".json" (change)="onFileLoad($event)" #fileinput>
-      <button type="button" (click)="fileinput.click()"> load </button>
+      <button class="loadButton" type="button" (click)="fileinput.click()"> load </button>
     </div>
 
     <div class="titleTable">
@@ -29,7 +29,10 @@
 
   <div class="col">
 
-    <div class="uuidLable"> Welcome! &nbsp; Your User_ID is: <b style="color:#EFD9C1">{{cUser.id}}</b></div>
+
+    <div class="uuidLable">  <button class="newButton" type="button" (click)="createNewUser()"> new </button>
+      Welcome! &nbsp; Your User_ID is: <b style="color:#EFD9C1; background-color: #8c9ca7; font-weight: 200">{{cUser.id}}</b></div>
+
     <!--<br><textarea class ="textarea ng-valid-2" name="item"-->
                   <!--placeholder="Was ist Ihre Vision?"  [(ngModel)]="cUser.vision"  ></textarea><br>-->
     <!--<br><textarea class ="textarea ng-valid-2"  name="item"-->

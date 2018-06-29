@@ -47,10 +47,10 @@ a {
   color: #0067a2;
 }
 
-button {
+.loadButton {
   background-color: #EFD9C1;;
-  width: 158px;
-  margin-left: 40px;
+  width: 98px;
+  margin-left: 20px;
 }
 
 .textarea.ng-invalid {
@@ -160,3 +160,9 @@ input.btn {
   font-size: small;
 }
 
+.newButton {
+  background-color: #EFD9C1;;
+  width: 98px;
+  position: absolute;
+  left: 15px;
+}

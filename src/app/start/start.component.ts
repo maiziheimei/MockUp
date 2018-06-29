@@ -7,8 +7,8 @@ import { User} from '../user';
 import { UserService} from '../user.service';
 import { ModellService} from '../modell.service';
 import { v4 as uuid } from 'uuid';
-import {DataService} from '../data.service';
-import {FormControl, FormGroup} from '@angular/forms';
+import { DataService} from '../data.service';
+import { FormControl, FormGroup} from '@angular/forms';
 import { NewUser } from '../newuser';
 
 @Component({
@@ -115,5 +115,19 @@ export class StartComponent implements OnInit {
     })(f);
    reader.readAsText(f);
     // alert('json global var has been set to parsed json of this file here it is unevaled = \n' + JSON.stringify(this.json));
+  }
+
+ createNewUser() {
+    console.log('... will create a new user: ');
+    // this.cUser = new User( uuid(), ' ',  ' ',  ' ',  ' ', []);
+    this.cUser.id = uuid();
+    this.cUser.mission = '';
+    this.cUser.vision = '';
+    this.cUser.strategy = '';
+    this.cUser.kriterienList = [];
+    this._userService.changeUser(this.cUser);
+
+    this.slist = [];
+    this._data.changeGoal(this.slist);
   }
 }

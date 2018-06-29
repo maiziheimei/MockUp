@@ -18,8 +18,8 @@
          <div class="numberCircle" [ngStyle]="{'background-color': hiddenShowZiel[i]? '#FA8072' : '#EFD9C1'}" (click)="showZiel(i)">{{cm.ziel_id}}</div>
          <div class="priority"> <input  type="text" disabled value=" Priorität: {{cm.priority}}"></div>
 
-       <textarea  style="background-color: #71B7FD" class="diplayContent" [hidden]="!hiddenShowIst[i]" matInput placeholder="" matTextareaAutosize matAutosizeMinRows="5" matAutosizeMaxRows="10">Ist: {{cm.ist_content}}</textarea>
-       <textarea  style="background-color: #FA8072" class="diplayContent" [hidden]="!hiddenShowZiel[i]" matInput placeholder="" matTextareaAutosize matAutosizeMinRows="5" matAutosizeMaxRows="10">Ziel: {{cm.ziel_content}}</textarea>
+       <textarea disabled style="background-color: #71B7FD" class="diplayContent" [hidden]="!hiddenShowIst[i]" matInput placeholder="" matTextareaAutosize matAutosizeMinRows="5" matAutosizeMaxRows="10">Ist: {{cm.ist_content}}</textarea>
+       <textarea disabled style="background-color: #FA8072" class="diplayContent" [hidden]="!hiddenShowZiel[i]" matInput placeholder="" matTextareaAutosize matAutosizeMinRows="5" matAutosizeMaxRows="10">Ziel: {{cm.ziel_content}}</textarea>
 
        <div class="input-group mb-3">
          <div class="input-group-prepend">

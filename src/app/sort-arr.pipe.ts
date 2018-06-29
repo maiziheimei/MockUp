@@ -8,6 +8,7 @@ import { SelectedModel } from './selectedModel';
 export class SortArrPipe  implements PipeTransform {
 
   transform(array: any[], field: string): any[] {
+    if (array !== null) {
       array.sort((a: any, b: any) => {
         if (a[field] * 1 < b[field] * 1) {
           return -1;
@@ -19,4 +20,5 @@ export class SortArrPipe  implements PipeTransform {
       });
       return array;
     }
+  }
 }

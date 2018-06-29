@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { User } from './user';
+import {StartComponent} from '../start/start.component';
+
+
 
 @Injectable()
 export class AuthService {
@@ -12,7 +15,7 @@ export class AuthService {
   }
 
   constructor(
-    private router: Router
+    private router: Router,
   ) {}
 
   login(user: User) {
@@ -26,4 +29,4 @@ export class AuthService {
     this.loggedIn.next(false);
     this.router.navigate(['/login']);
   }
-}
+  }
