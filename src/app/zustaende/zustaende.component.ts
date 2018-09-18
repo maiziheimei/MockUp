@@ -54,5 +54,26 @@ export class ZustaendeComponent implements OnInit {
     this.displayThenBlock = $event;
   }
 
+  getISTE(csModell: SelectedModel, iz: string) {
+    let temp_list: any;
+    if (iz === 'i') {
+      temp_list = csModell.Iste;
+    } else if (iz === 'z') {
+      temp_list = csModell.Ziele;
+    } else {
+      temp_list = [];
+    }
+
+    if(temp_list.length === 0) {
+      return 'N';
+    } else {
+      const temp_ist_ids = temp_list.map(function (ist) {
+        return ist.id;
+      });
+      console.log('... tge temp_istZiel_string: ', temp_ist_ids.join(','));
+      return temp_ist_ids.join(',');
+    }
+  }
+
 }
 

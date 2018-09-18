@@ -1,6 +1,9 @@
 import { Component, OnInit, } from '@angular/core';
 import { DataService } from '../data.service';
 import { ModellService} from '../modell.service';
+import {SelectedModel} from "../selectedModel";
+import {ModellDesignComponent} from "../modell-design/modell-design.component";
+import {Ist, Ziel} from "../modell";
 
 
 @Component({
@@ -61,6 +64,7 @@ export class MassnahmenComponent implements OnInit {
     // for (let i = 0; i < this.ssms.length; i++) {
     //   console.log(this.ssms[i].kriterium_id, this.ssms[i].kriterium,
     //     this.ssms[i].isselected, this.ssms[i].int_priorty); }
+
     }
 
   showIst(i) {
@@ -77,5 +81,89 @@ export class MassnahmenComponent implements OnInit {
         this.hiddenShowZiel[i] = true;
       }
     }
+
+  public get_izIDs (cdModel: SelectedModel, iz:string) {
+    if(iz === 'i') {
+      const temp_ist_ids = cdModel.Iste.map(function (ist) {
+        return ist.id;
+      });
+      return temp_ist_ids.join(',');
+    }
+    if(iz === 'z') {
+      const temp_ziel_ids = cdModel.Ziele.map(function (ziel) {
+        return ziel.id;
+      });
+      return temp_ziel_ids.join(',');
+    }
+    return 'N';
+  }
+
+  get_izContent (cdModel: SelectedModel, iz:string) {
+    if(iz === 'i') {
+      const temp_ist_contents = cdModel.Iste.map(function (ist) {
+        if(ist.content !== null) {
+          return 'Ist_' + ist.id + ': ' + ist.content;
+        } });
+      return temp_ist_contents.join('\n\n');
+    }
+
+    if(iz === 'z') {
+      const temp_ziel_contents = cdModel.Ziele.map(function (ziel) {
+        if(ziel.content !== null){
+        return 'Ziel_' + ziel.id + ': ' + ziel.content;
+        } });
+      return temp_ziel_contents.join('\n\n');
+    }
+
+  }
+
+
+
+  // updateIZnote() {
+  //   if (this.ssms.length >0) {
+  //     for(const entry of this.ssms) {
+  //       for(let i=0; i< entry.Auspraegung_note.length; i++) {
+  //         if(entry.Auspraegung_note[i] !== null) {
+  //           this.updateIZ_List(i, entry);
+  //         }
+  //
+  //       }
+  //
+  //     }
+  //   }
+  // }
+  //
+  //
+  // updateIZ_List(i: number, entry: SelectedModel) {
+  //   const temp_ist_ids = entry.Iste.map(function (ist) {
+  //     return ist.id;
+  //   });
+  //
+  //   const temp_ziel_ids = entry.Ziele.map(function (ziel) {
+  //     return ziel.id;
+  //   });
+  //
+  //   if(this.existObj (i, temp_ist_ids) && this.existObj(i,temp_ziel_ids)) {
+  //     this.updateNote(entry, temp_ist_ids, 'i', i);
+  //     this.updateNote(entry,temp_ziel_ids, 'z',i);
+  //   }
+  //   if(this.existObj (i, temp_ist_ids) && !this.existObj(i,temp_ziel_ids)) { this.updateNote(entry, temp_ist_ids, 'i', i);}
+  //   if(!this.existObj (i, temp_ist_ids) && this.existObj(i,temp_ziel_ids)) { this.updateNote(entry,temp_ziel_ids, 'z',i);}
+  //
+  // }
+  //
+  // existObj (c_index, iz_list) {
+  //   return iz_list.findIndex(x=> parseInt(x) === c_index)> -1;
+  // }
+  //
+  // updateNote(entry: SelectedModel,list_ids, iz, i) {
+  //  // let tp = list_ids.findIndex(x => parseInt(x.id) === i);
+  //   if (iz = 'i') {
+  //     entry.Iste.find( x => x.id === i).note = entry.Auspraegung_note[i];
+  //   }
+  //   if (iz = 'z') {
+  //     entry.Ziele.find( x => x.id === i).note = entry.Auspraegung_note[i];
+  //   }
+  // }
 
 }

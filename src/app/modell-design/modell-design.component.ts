@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import { Modell } from '../modell';
+import {Ist, Modell, Ziel} from '../modell';
 import { ModellService} from '../modell.service';
 import { DataService } from '../data.service';
 import { SelectedModel } from '../selectedModel';
@@ -70,15 +70,13 @@ export class ModellDesignComponent implements OnInit {
     this.knote = this.ClickedModell.Kriterium_note;
 
     for (let i = 0; i < this.niz.length; i++) {
-      this.niz[i] = '0';
-      if ( i === +this.ClickedSelectedModel.ziel_id ) {this.niz[i] = '2'; }
-      if ( i === +this.ClickedSelectedModel.ist_id ) {this.niz[i] = '1'; }
+      this.niz[i] = this.checkInList(i);
     }
-    for (const s of this.niz) {
-      console.log('... ', s); }
+    // console.log('... current niz[]: ', this.niz);
   }
 
   getBColor(nizValue) {
+   // console.log('... nizValue:', nizValue);
     switch (nizValue) {
       case '0':
         return 'lightgrey';
@@ -86,45 +84,167 @@ export class ModellDesignComponent implements OnInit {
         return '#71B7FD';
       case '2':
         return '#FA8072';
+      case '3':
+        return '#EFD9C1';
     }
 
 }
 
-  getValue(aug_index) {
-    if ( this.ClickedSelectedModel.ziel_id !== 'N' && aug_index === this.ClickedSelectedModel.ziel_id ) {
-      console.log('... ang_index is ', aug_index, '... ziel id: ', this.ClickedSelectedModel.ziel_id);
-      this.selectedOption = 2; }
-    if ( this.ClickedSelectedModel.ist_id !== 'N' && aug_index === this.ClickedSelectedModel.ist_id ) {
-      console.log('... ang_index is ', aug_index, '... ist id: ', this.ClickedSelectedModel.ist_id);
-      this.selectedOption = 1; }
-  }
+checkInList(i) {
+  const temp_ist_ids = this.ClickedSelectedModel.Iste.map(function (ist) {
+    return ist.id;
+  });
+
+  const temp_ziel_ids = this.ClickedSelectedModel.Ziele.map(function (ziel) {
+    return ziel.id;
+  });
+
+  if(this.exitObj (i, temp_ist_ids) && this.exitObj(i,temp_ziel_ids)) {return '3';}
+  if(this.exitObj (i, temp_ist_ids) && !this.exitObj(i,temp_ziel_ids)) {return '1';}
+  if(!this.exitObj (i, temp_ist_ids) && this.exitObj(i,temp_ziel_ids)) {return '2';}
+  return '0';
+}
+
+ exitObj (c_index, iz_list) {
+    return iz_list.findIndex(x=> parseInt(x) === c_index)> -1;
+}
+
+  // getValue(aug_index) {
+  //   if ( this.ClickedSelectedModel.ziel_id !== 'N' && aug_index === this.ClickedSelectedModel.ziel_id ) {
+  //     console.log('... ang_index is ', aug_index, '... ziel id: ', this.ClickedSelectedModel.ziel_id);
+  //     this.selectedOption = 2; }
+  //   if ( this.ClickedSelectedModel.ist_id !== 'N' && aug_index === this.ClickedSelectedModel.ist_id ) {
+  //     console.log('... ang_index is ', aug_index, '... ist id: ', this.ClickedSelectedModel.ist_id);
+  //     this.selectedOption = 1; }
+  // }
+
+  // onChange(event, optionValue, cIndex) {
+  //   console.log('... hey option is', this.iz_selects[optionValue], cIndex);
+  //   if (optionValue === '1') {
+  //     this.value_s = cIndex;
+  //     this.ClickedSelectedModel.ist_id = cIndex;
+  //     this.ClickedSelectedModel.ist_content = this.auspraegung[cIndex];
+  //     this.ClickedSelectedModel.ist_note = this.ClickedSelectedModel.Auspraegung_note[cIndex];
+  //     this.selected = '1';
+  //     this.niz[cIndex] = '1';
+  //   }
+  //   if (optionValue === '2') {
+  //     this.value_z = cIndex;
+  //     this.ClickedSelectedModel.ziel_id = cIndex;
+  //     this.ClickedSelectedModel.ziel_content = this.auspraegung[cIndex];
+  //     this.ClickedSelectedModel.ziel_note = this.ClickedSelectedModel.Auspraegung_note[cIndex];
+  //     this.selected = '2';
+  //     this.niz[cIndex] = '2';
+  //   }
+  //   console.log('... currently, priority:', this.ClickedSelectedModel.priority, ' ist_id : ', this.ClickedSelectedModel.ist_id, ' ziel_id : ', this.ClickedSelectedModel.ziel_id);
+  //   console.log('... ist_note:', this.ClickedSelectedModel.ist_note, ' ziel_id : ', this.ClickedSelectedModel.ziel_note);
+  // }
 
   onChange(event, optionValue, cIndex) {
+    console.log('... hey I am here');
     console.log('... hey option is', this.iz_selects[optionValue], cIndex);
+   // this.value_z = cIndex;
+    this.removeIZ(cIndex);
+
+    if (optionValue === '3') {
+      const new_zeit = this.newZEIT(cIndex);
+      this.ClickedSelectedModel.Iste.push(new_zeit);
+      const new_ist = this.newIST(cIndex);
+      this.ClickedSelectedModel.Ziele.push(new_ist);
+      this.selected = '3';
+      this.niz[cIndex] = '3';
+    }
+
     if (optionValue === '1') {
-      this.value_s = cIndex;
-      this.ClickedSelectedModel.ist_id = cIndex;
-      this.ClickedSelectedModel.ist_content = this.auspraegung[cIndex];
-      this.ClickedSelectedModel.ist_note = this.ClickedSelectedModel.Auspraegung_note[cIndex];
+      const new_ist = this.newIST(cIndex);
+      this.ClickedSelectedModel.Iste.push(new_ist);
       this.selected = '1';
       this.niz[cIndex] = '1';
     }
     if (optionValue === '2') {
-      this.value_z = cIndex;
-      this.ClickedSelectedModel.ziel_id = cIndex;
-      this.ClickedSelectedModel.ziel_content = this.auspraegung[cIndex];
-      this.ClickedSelectedModel.ziel_note = this.ClickedSelectedModel.Auspraegung_note[cIndex];
+      const new_zeit = this.newZEIT(cIndex);
+      this.ClickedSelectedModel.Ziele.push(new_zeit);
       this.selected = '2';
       this.niz[cIndex] = '2';
     }
-    console.log('... currently, priority:', this.ClickedSelectedModel.priority, ' ist_id : ', this.ClickedSelectedModel.ist_id, ' ziel_id : ', this.ClickedSelectedModel.ziel_id);
-    console.log('... ist_note:', this.ClickedSelectedModel.ist_note, ' ziel_id : ', this.ClickedSelectedModel.ziel_note);
+
+    // testing cretiria_10
+    if (cIndex === 9 && (optionValue === '2' || optionValue === '3')) {
+      this.ClickedSelectedModel.Auspraegung_note[3] = '9. Methodik der Fertigungs und Montagesteuerung - Ausprägung 2\n' +
+        '7. Betriebsdatenerfassung - Ausprägung 2\n' +
+        '20. Produktionsstücklisten und Rezepturen - Ausprägung 1\n' +
+        '28. Auswertung von Daten - Ausprägung 1';
+    }
+
+    // console.log('... currently, priority:', this.ClickedSelectedModel.priority, ' ist_id : ', this.ClickedSelectedModel.ist_id, ' ziel_id : ', this.ClickedSelectedModel.ziel_id);
+    // console.log('... ist_note:', this.ClickedSelectedModel.ist_note, ' ziel_id : ', this.ClickedSelectedModel.ziel_note);
+    console.log('... this.niz[]:', this.niz);
   }
+
+  removeIZ(cIndex) {
+    if(this.ClickedSelectedModel.Iste.find(x => x.id === cIndex)) {
+      this.ClickedSelectedModel.Iste =   this.ClickedSelectedModel.Iste.filter(obj => obj.id !== cIndex);
+    }
+
+    if(this.ClickedSelectedModel.Ziele.find(x => x.id === cIndex)) {
+      this.ClickedSelectedModel.Ziele =   this.ClickedSelectedModel.Ziele.filter(obj => obj.id !== cIndex);
+    }
+
+  }
+  newZEIT(cIndex) {
+    const newZiel = new Ziel();
+    newZiel.id = cIndex;
+    newZiel.note = this.ClickedSelectedModel.Auspraegung_note[cIndex];
+    newZiel.content = this.auspraegung[cIndex];
+    return newZiel;
+  }
+
+  newIST(cIndex) {
+    const newIst = new Ist();
+    newIst.id = cIndex;
+    newIst.note = this.ClickedSelectedModel.Auspraegung_note[cIndex];
+    newIst.content = this.auspraegung[cIndex];
+    return newIst;
+  }
+
+  updateIZnote(entry) {
+    // let  temp_iste: Ist[] = entry.Iste;
+    // let  temp_ziele: Ziel[] = entry.Ziele;
+
+    for (const em of entry.Iste) {
+      console.log('ist... em.id', em.id);
+      if (this.noteIndexContains(em.id, entry)) {
+        em.note = entry.Auspraegung_note[parseInt(em.id)];
+        console.log('... em.note: ', em.note);
+      }
+    }
+
+    for (const em of entry.Ziele) {
+      console.log('ziel... em.id', em.id);
+      if (this.noteIndexContains(em.id, entry)) {
+        em.note = entry.Auspraegung_note[em.id];
+        console.log('... em.note: ', em.note);
+      }
+    }
+
+  }
+
+  noteIndexContains(id, entry) {
+    for (let i=0; i < entry.Auspraegung_note.length; i++) {
+      if (id === i) {
+        return true;
+      }
+    }
+    return false;
+    }
+
+
   closeBlock() {
+    this.updateIZnote(this.ClickedSelectedModel);
     this.parentSwitch = true;
     // to do something more here: disable navbar, save the data!
     this.childEvent.emit(this.parentSwitch);
-    }
+  }
 }
 
 

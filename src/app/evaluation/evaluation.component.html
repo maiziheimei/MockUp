@@ -13,7 +13,7 @@
   <div *ngFor="let cm of sms; index as i">
     <div class ="input-group">
       <div class="checkedModel"> <input  disabled type="text" id="{{cm.kriterium_id}}" value="{{cm.kriterium_id}}. {{cm.kriterium}}"></div>
-      <div class="balls"> {{cm.ist_id}} -> {{cm.ziel_id}}</div>
+      <div class="balls"> {{get_izIDs(cm, 'i')}} -> {{get_izIDs(cm, 'z')}}</div>
       <div class="priority"> <input  type="text" disabled value=" Priorität: {{cm.priority}}"></div>
 
 

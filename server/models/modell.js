@@ -6,6 +6,7 @@ const modellSchema = new Schema({
   _id: String,
   Kriterium: String,
   Beschreibung: String,
+  Kompetenzen: String,
   Auspraegung_0: String,
   Auspraegung_1: String,
   Auspraegung_2: String,
@@ -31,4 +32,4 @@ const modellSchema = new Schema({
 // mongoose.model creates a model
 // the first argument is model name, going to represent the modellSchema
 // the third argument is the collection name in your mongodb
-module.exports = mongoose.model('modell', modellSchema, 'modell')
+module.exports = mongoose.model('modell', modellSchema, 'criteria')

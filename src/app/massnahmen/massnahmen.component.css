@@ -87,6 +87,20 @@ div.input-group.mb-3{
 }
 
 
+.izLable {
+  display: block;
+  margin-top:0px;
+  margin-right: 5px;
+  width: 80px;
+  height: 33px;
+  margin-left: 2px;
+  background: #EFD9C1;
+  text-align: center;
+  font: 18px Arial, sans-serif;
+  color: #808080;
+  padding: 8px;
+}
+
 .diplayContent {
   padding: 8px;
   width: 95%;
@@ -107,9 +121,9 @@ div.input-group.mb-3{
 }
  .priority input{
   font-size: medium;
-   width: 160px;
+   width: 120px;
   height: 34px;
-  margin-left: 25px;
+  margin-left: 10px;
   font-weight: bold;
   margin-right: 80px;
   background-color: #EFD9C1;

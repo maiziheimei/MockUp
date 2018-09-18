@@ -1,14 +1,12 @@
+import {Ist, Ziel} from "./modell";
+
 export class SelectedModel {
   kriterium_id: string;
   kriterium: string;
   isselected: boolean;
   isEvaluated: boolean;
-  ist_id: string;
-  ist_note: string;
-  ist_content: string;
-  ziel_id: string;
-  ziel_note: string;
-  ziel_content: string;
+  Iste: Ist[];
+  Ziele: Ziel[];
   priority: number;
   Kriterium_note: string;
   Massnahmen: string;
@@ -23,10 +21,8 @@ export class SelectedModel {
     this.kriterium_id = '0';
     this.isselected = false;
     this.isEvaluated = false;
-    this.ist_id = 'N';
-    this.ist_note = '';
-    this.ziel_note = '';
-    this.ziel_id = 'N';
+    this.Iste = []
+    this.Ziele = [];
     this.priority = 0;
     this.Kosten = '3,000';
     this.Massnahmen = ' ';

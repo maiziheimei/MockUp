@@ -449,7 +449,7 @@ module.exports = "/*.container{*/\n  /*background-color: #fac9ae;*/\n  /*}*/\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n\n  <div id=\"label1\">\n    <label> Welche Maßnahmen sollen die Lücken zwischen Ist- und Ziel-Zuständen schließen? </label>\n  </div>\n\n  <div>\n    <div class=\"info\"> You have evaluated {{number}} Kriterien. </div>\n    <button class=\"btn\" (click)=\"preview()\" disabled> Preview </button>\n    <button class=\"btn\" (click)=\"exportJson()\"> Download (.json)</button>\n    <!--<a class=\"btn btn-clear\" title=\"Download JSON\" [href]=\"downloadJsonHref\" download=\"download.json\"></a>-->\n  </div>\n  <div *ngFor=\"let cm of sms; index as i\">\n    <div class =\"input-group\">\n      <div class=\"checkedModel\"> <input  disabled type=\"text\" id=\"{{cm.kriterium_id}}\" value=\"{{cm.kriterium_id}}. {{cm.kriterium}}\"></div>\n      <div class=\"balls\"> {{cm.ist_id}} -> {{cm.ziel_id}}</div>\n      <div class=\"priority\"> <input  type=\"text\" disabled value=\" Priorität: {{cm.priority}}\"></div>\n\n\n      <div class=\"input-group mb-3\">\n        <div class=\"input-group-prepend\">\n          <span class=\"input-group-text\">Maßnahme: </span>\n        </div>\n        <textarea class=\"form-control\" aria-label=\"Maßnahme: \"  value=\"{{cm.Massnahmen}}\"  matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\" disabled></textarea>\n      </div>\n\n      <div class=\"input-group mb-3\">\n        <div class=\"input-group-prepend\">\n          <span class=\"input-group-text\">Erklärung: &nbsp;&nbsp;&nbsp;</span>\n        </div>\n        <textarea class=\"form-control\" aria-label=\"Erklärung:\" value=\"{{cm.Erklaerung}}\" matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\" disabled></textarea>\n      </div>\n\n\n      <form class=\"KTV-form\">\n        <table class=\"example-full-width\" cellspacing=\"0\">\n          <tr>\n            <td><mat-form-field class=\"example-full-width\">\n              <input matInput type=\"text\" placeholder=\"Kosten: (EUR)\" value=\"{{cm.Kosten}}\">\n            </mat-form-field></td>\n            <td><mat-form-field class=\"example-full-width\">\n              <input matInput  placeholder=\"Termin:\" value=\"{{cm.Termin | date : 'dd.MM.y' }}\">\n            </mat-form-field></td>\n            <td><mat-form-field class=\"example-full-width\">\n              <input matInput placeholder=\"Verantwortlich:\" maxlength=\"30\" value=\"{{cm.Verantwortlich}}\">\n            </mat-form-field></td>\n          </tr></table>\n      </form>\n    </div><!--input Group-->\n\n    <div class=\"input-select\" *ngIf=\"sms[i]\">\n    <!--<div class=\"input-select\">-->\n      <mat-checkbox type=\"checkbox\" checked=\"false\" [checked]=\"sms[i].isEvaluated\" (change)=\"onChange($event, i, cm)\" ></mat-checkbox>\n    </div>\n  </div>\n\n\n</div><!--container-->\n"
+module.exports = "<div class=\"container\">\n\n  <div id=\"label1\">\n    <label> Welche Maßnahmen sollen die Lücken zwischen Ist- und Ziel-Zuständen schließen? </label>\n  </div>\n\n  <div>\n    <div class=\"info\"> You have evaluated {{number}} Kriterien. </div>\n    <button class=\"btn\" (click)=\"preview()\" disabled> Preview </button>\n    <button class=\"btn\" (click)=\"exportJson()\"> Download (.json)</button>\n    <!--<a class=\"btn btn-clear\" title=\"Download JSON\" [href]=\"downloadJsonHref\" download=\"download.json\"></a>-->\n  </div>\n  <div *ngFor=\"let cm of sms; index as i\">\n    <div class =\"input-group\">\n      <div class=\"checkedModel\"> <input  disabled type=\"text\" id=\"{{cm.kriterium_id}}\" value=\"{{cm.kriterium_id}}. {{cm.kriterium}}\"></div>\n      <div class=\"balls\"> {{get_izIDs(cm, 'i')}} -> {{get_izIDs(cm, 'z')}}</div>\n      <div class=\"priority\"> <input  type=\"text\" disabled value=\" Priorität: {{cm.priority}}\"></div>\n\n\n      <div class=\"input-group mb-3\">\n        <div class=\"input-group-prepend\">\n          <span class=\"input-group-text\">Maßnahme: </span>\n        </div>\n        <textarea class=\"form-control\" aria-label=\"Maßnahme: \"  value=\"{{cm.Massnahmen}}\"  matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\" disabled></textarea>\n      </div>\n\n      <div class=\"input-group mb-3\">\n        <div class=\"input-group-prepend\">\n          <span class=\"input-group-text\">Erklärung: &nbsp;&nbsp;&nbsp;</span>\n        </div>\n        <textarea class=\"form-control\" aria-label=\"Erklärung:\" value=\"{{cm.Erklaerung}}\" matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\" disabled></textarea>\n      </div>\n\n\n      <form class=\"KTV-form\">\n        <table class=\"example-full-width\" cellspacing=\"0\">\n          <tr>\n            <td><mat-form-field class=\"example-full-width\">\n              <input matInput type=\"text\" placeholder=\"Kosten: (EUR)\" value=\"{{cm.Kosten}}\">\n            </mat-form-field></td>\n            <td><mat-form-field class=\"example-full-width\">\n              <input matInput  placeholder=\"Termin:\" value=\"{{cm.Termin | date : 'dd.MM.y' }}\">\n            </mat-form-field></td>\n            <td><mat-form-field class=\"example-full-width\">\n              <input matInput placeholder=\"Verantwortlich:\" maxlength=\"30\" value=\"{{cm.Verantwortlich}}\">\n            </mat-form-field></td>\n          </tr></table>\n      </form>\n    </div><!--input Group-->\n\n    <div class=\"input-select\" *ngIf=\"sms[i]\">\n    <!--<div class=\"input-select\">-->\n      <mat-checkbox type=\"checkbox\" checked=\"false\" [checked]=\"sms[i].isEvaluated\" (change)=\"onChange($event, i, cm)\" ></mat-checkbox>\n    </div>\n  </div>\n\n\n</div><!--container-->\n"
 
 /***/ }),
 
@@ -468,6 +468,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modell_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modell.service */ "./src/app/modell.service.ts");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/esm5/platform-browser.js");
 /* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../user.service */ "./src/app/user.service.ts");
+/* harmony import */ var _massnahmen_massnahmen_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../massnahmen/massnahmen.component */ "./src/app/massnahmen/massnahmen.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -482,12 +483,14 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var EvaluationComponent = (function () {
-    function EvaluationComponent(_modellService, _data, sanitizer, _userService) {
+    function EvaluationComponent(_modellService, _data, sanitizer, _userService, _massna) {
         this._modellService = _modellService;
         this._data = _data;
         this.sanitizer = sanitizer;
         this._userService = _userService;
+        this._massna = _massna;
         this.sms = [];
         this.tmpArray = [];
         this.number = 0;
@@ -569,13 +572,17 @@ var EvaluationComponent = (function () {
             }
         }
     };
+    EvaluationComponent.prototype.get_izIDs = function (cdModel, iz) {
+        return this._massna.get_izIDs(cdModel, iz);
+    };
     EvaluationComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            providers: [_massnahmen_massnahmen_component__WEBPACK_IMPORTED_MODULE_5__["MassnahmenComponent"]],
             selector: 'app-evaluation',
             template: __webpack_require__(/*! ./evaluation.component.html */ "./src/app/evaluation/evaluation.component.html"),
             styles: [__webpack_require__(/*! ./evaluation.component.css */ "./src/app/evaluation/evaluation.component.css")]
         }),
-        __metadata("design:paramtypes", [_modell_service__WEBPACK_IMPORTED_MODULE_2__["ModellService"], _data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"], _user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"]])
+        __metadata("design:paramtypes", [_modell_service__WEBPACK_IMPORTED_MODULE_2__["ModellService"], _data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"], _user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"], _massnahmen_massnahmen_component__WEBPACK_IMPORTED_MODULE_5__["MassnahmenComponent"]])
     ], EvaluationComponent);
     return EvaluationComponent;
 }());
@@ -1016,7 +1023,7 @@ var LoginComponent = (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".input-group{\n  float: left;\n  width: 90%;\n  /*border: 1px dotted #A9B7C0;*/\n  border-radius: 25px;\n  background: lightgrey;\n  padding: 20px;\n  margin-top: 20px;\n}\n\ndiv.input-group.mb-3{\n  float: left;\n  width: 95%;\n  padding: 0px;\n  margin-top: 2px;\n}\n\n.input-group-text{\n  font-size: medium;\n  font-weight: bold;\n}\n\n.form-control{\n  font-size: medium;\n  background-color: #F7F9F9;\n}\n\n.checkedModel{\n  float: left;\n  width: 50%;\n  margin:2px;\n}\n\n.checkedModel input{\n  background-color:#A9B7C0;\n  width:90%;\n  color:#333;\n  font-size: medium;\n  font-weight: bold;\n  padding:5px;\n  border:none;\n  margin-bottom: 5px;\n  display: block;\n}\n\n.smallLable {\n  background-color:#A9B7C0;\n  width:45px;\n  height: 34px;\n  color:#333;\n  font-size: medium;\n  font-weight: bold;\n  padding:5px;\n  border:none;\n  margin-bottom: 0px;\n  margin-left: 20px;\n  display: block;\n}\n\n.balls{\n  width: 15%;\n  background-color: #EFD9C1;\n  height: 30px;\n  margin-right: 30px;\n  font-size: medium;\n  font-weight: bold;\n  text-align: center;\n  cursor: zoom-in;\n}\n\n.numberCircle {\n  width: 15%;\n  display: block;\n  margin-right: 10px;\n  margin-top: 0px;\n  margin-left: 10px;\n  background: #EFD9C1;\n  border-radius: 100%;\n  width: 36px;\n  height: 36px;\n  padding: 3px;\n  border: 2px solid #EFD9C1;\n  color: #808080;\n  text-align: center;\n  font: 24px Arial, sans-serif;\n  cursor: zoom-in;\n}\n\n.diplayContent {\n  padding: 8px;\n  width: 95%;\n  border-radius: 0;\n  overflow: hidden;\n  background: #F2E0CD;\n  display: block;\n  border-color: lightgrey;\n  font-size: medium;\n  resize: vertical;\n  overflow-y: scroll;\n  margin-bottom: 10px;\n}\n\n.priority{\n  float:right;\n  width: 15%;\n  margin:2px;\n}\n\n.priority input{\n  font-size: medium;\n   width: 160px;\n  height: 34px;\n  margin-left: 25px;\n  font-weight: bold;\n  margin-right: 80px;\n  background-color: #EFD9C1;\n  border:none;\n  display: block;\n  text-align: center;\n  padding:5px;\n  margin-bottom: 5px;\n}\n\n.mass{\n  float:left;\n  width: 100%;\n  display: block;\n}\n\n.mass  textarea{\n  float: left;\n  width: 100%;\n  background-color: #f9f9f9;\n  overflow: hidden;\n  display: block;\n  margin-top: 5px;\n  margin-bottom: 5px;\n  border:1px;\n  font-size: medium;\n}\n\n.KTV-form {\n  min-width: 150px;\n  max-width: 100%;\n  width: 100%;\n  margin-top: 15px;\n}\n\n.example-full-width {\n  width: 95%;\n  font-size: medium;\n  font-weight: bold;\n  background-color: #C7D8C6;\n}\n\n.example2-form {\n  width: 95%;\n}\n\n.example2-full-width {\n  width: 100%;\n  font-size: large;\n  font-weight: bold;\n}\n\n#myCarousel{\n  width: 100%;\n  margin-top: 3px;\n  padding: 10px;\n  background: darkgray;\n  height: 800px;\n}\n\n.carousel-inner{\n  width: 80%;\n}\n\n#myCarousel .carousel-inner .item {\n  width:70%;\n  margin-left: 280px;\n  margin-right: 280px;\n  font-size: medium;\n}\n\n#myCarousel .carousel-inner .left .carousel-control {\n  float: left;\n  margin-left: 0;\n  padding-left: 0;\n}\n\n#myCarousel .carousel-inner .right .carousel-control{\n  float: right;\n  margin-right: 0;\n  padding-right: 0;\n}\n"
+module.exports = ".input-group{\n  float: left;\n  width: 90%;\n  /*border: 1px dotted #A9B7C0;*/\n  border-radius: 25px;\n  background: lightgrey;\n  padding: 20px;\n  margin-top: 20px;\n}\n\ndiv.input-group.mb-3{\n  float: left;\n  width: 95%;\n  padding: 0px;\n  margin-top: 2px;\n}\n\n.input-group-text{\n  font-size: medium;\n  font-weight: bold;\n}\n\n.form-control{\n  font-size: medium;\n  background-color: #F7F9F9;\n}\n\n.checkedModel{\n  float: left;\n  width: 50%;\n  margin:2px;\n}\n\n.checkedModel input{\n  background-color:#A9B7C0;\n  width:90%;\n  color:#333;\n  font-size: medium;\n  font-weight: bold;\n  padding:5px;\n  border:none;\n  margin-bottom: 5px;\n  display: block;\n}\n\n.smallLable {\n  background-color:#A9B7C0;\n  width:45px;\n  height: 34px;\n  color:#333;\n  font-size: medium;\n  font-weight: bold;\n  padding:5px;\n  border:none;\n  margin-bottom: 0px;\n  margin-left: 20px;\n  display: block;\n}\n\n.balls{\n  width: 15%;\n  background-color: #EFD9C1;\n  height: 30px;\n  margin-right: 30px;\n  font-size: medium;\n  font-weight: bold;\n  text-align: center;\n  cursor: zoom-in;\n}\n\n.numberCircle {\n  width: 15%;\n  display: block;\n  margin-right: 10px;\n  margin-top: 0px;\n  margin-left: 10px;\n  background: #EFD9C1;\n  border-radius: 100%;\n  width: 36px;\n  height: 36px;\n  padding: 3px;\n  border: 2px solid #EFD9C1;\n  color: #808080;\n  text-align: center;\n  font: 24px Arial, sans-serif;\n  cursor: zoom-in;\n}\n\n.izLable {\n  display: block;\n  margin-top:0px;\n  margin-right: 5px;\n  width: 80px;\n  height: 33px;\n  margin-left: 2px;\n  background: #EFD9C1;\n  text-align: center;\n  font: 18px Arial, sans-serif;\n  color: #808080;\n  padding: 8px;\n}\n\n.diplayContent {\n  padding: 8px;\n  width: 95%;\n  border-radius: 0;\n  overflow: hidden;\n  background: #F2E0CD;\n  display: block;\n  border-color: lightgrey;\n  font-size: medium;\n  resize: vertical;\n  overflow-y: scroll;\n  margin-bottom: 10px;\n}\n\n.priority{\n  float:right;\n  width: 15%;\n  margin:2px;\n}\n\n.priority input{\n  font-size: medium;\n   width: 120px;\n  height: 34px;\n  margin-left: 10px;\n  font-weight: bold;\n  margin-right: 80px;\n  background-color: #EFD9C1;\n  border:none;\n  display: block;\n  text-align: center;\n  padding:5px;\n  margin-bottom: 5px;\n}\n\n.mass{\n  float:left;\n  width: 100%;\n  display: block;\n}\n\n.mass  textarea{\n  float: left;\n  width: 100%;\n  background-color: #f9f9f9;\n  overflow: hidden;\n  display: block;\n  margin-top: 5px;\n  margin-bottom: 5px;\n  border:1px;\n  font-size: medium;\n}\n\n.KTV-form {\n  min-width: 150px;\n  max-width: 100%;\n  width: 100%;\n  margin-top: 15px;\n}\n\n.example-full-width {\n  width: 95%;\n  font-size: medium;\n  font-weight: bold;\n  background-color: #C7D8C6;\n}\n\n.example2-form {\n  width: 95%;\n}\n\n.example2-full-width {\n  width: 100%;\n  font-size: large;\n  font-weight: bold;\n}\n\n#myCarousel{\n  width: 100%;\n  margin-top: 3px;\n  padding: 10px;\n  background: darkgray;\n  height: 800px;\n}\n\n.carousel-inner{\n  width: 80%;\n}\n\n#myCarousel .carousel-inner .item {\n  width:70%;\n  margin-left: 280px;\n  margin-right: 280px;\n  font-size: medium;\n}\n\n#myCarousel .carousel-inner .left .carousel-control {\n  float: left;\n  margin-left: 0;\n  padding-left: 0;\n}\n\n#myCarousel .carousel-inner .right .carousel-control{\n  float: right;\n  margin-right: 0;\n  padding-right: 0;\n}\n"
 
 /***/ }),
 
@@ -1027,7 +1034,7 @@ module.exports = ".input-group{\n  float: left;\n  width: 90%;\n  /*border: 1px 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n\n  <div id=\"label1\">\n    <label> Welche Maßnahmen sollen die Lücken zwischen Ist- und Ziel-Zuständen schließen? </label>\n  </div>\n\n  <div *ngFor=\"let cm of ssms; index as i\">\n     <!--<div class =\"input-group\" *ngIf=\"sms[i]\">-->\n     <div class =\"input-group\">\n\n         <div class=\"checkedModel\"> <input  disabled type=\"text\" id=\"{{cm.kriterium_id}}\" value=\"{{cm.kriterium_id}}. {{cm.kriterium}}\"></div>\n         <!--<div class=\"balls\" (click)=\"showContent(i)\"> {{cm.ist_id}} -> {{cm.ziel_id}}</div>-->\n         <div><input class=\"smallLable\" disabled type=\"text\" value=\"Ist: \"></div>\n         <div class=\"numberCircle\" [ngStyle]=\"{'background-color': hiddenShowIst[i]? '#71B7FD' : '#EFD9C1'}\" (click)=\"showIst(i)\">{{cm.ist_id}}</div>\n\n         <!--<div> <img height=\"30\" width=\"30\" background-color=\"\" src=\"assets/images/arrow1.png\"></div>-->\n         <div><input class=\"smallLable\" disabled type=\"text\" value=\"Ziel: \"></div>\n         <div class=\"numberCircle\" [ngStyle]=\"{'background-color': hiddenShowZiel[i]? '#FA8072' : '#EFD9C1'}\" (click)=\"showZiel(i)\">{{cm.ziel_id}}</div>\n         <div class=\"priority\"> <input  type=\"text\" disabled value=\" Priorität: {{cm.priority}}\"></div>\n\n       <textarea disabled style=\"background-color: #71B7FD\" class=\"diplayContent\" [hidden]=\"!hiddenShowIst[i]\" matInput placeholder=\"\" matTextareaAutosize matAutosizeMinRows=\"5\" matAutosizeMaxRows=\"10\">Ist: {{cm.ist_content}}</textarea>\n       <textarea disabled style=\"background-color: #FA8072\" class=\"diplayContent\" [hidden]=\"!hiddenShowZiel[i]\" matInput placeholder=\"\" matTextareaAutosize matAutosizeMinRows=\"5\" matAutosizeMaxRows=\"10\">Ziel: {{cm.ziel_content}}</textarea>\n\n       <div class=\"input-group mb-3\">\n         <div class=\"input-group-prepend\">\n           <span class=\"input-group-text\">Maßnahme: </span>\n         </div>\n         <textarea class=\"form-control\" aria-label=\"Maßnahme: \"  [(ngModel)]=\"cm.Massnahmen\"  matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\"></textarea>\n       </div>\n\n       <div class=\"input-group mb-3\">\n         <div class=\"input-group-prepend\">\n           <span class=\"input-group-text\">Erklärung: &nbsp;&nbsp;</span>\n         </div>\n         <textarea class=\"form-control\" aria-label=\"Erklärung: \" [(ngModel)]=\"cm.Erklaerung\" matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\"></textarea>\n       </div>\n\n       <div class=\"mass\">\n\n         <form class=\"KTV-form\">\n         <table class=\"example-full-width\" cellspacing=\"0\">\n           <tr>\n              <td><mat-form-field class=\"example-full-width\">\n                <input matInput type=\"text\" [(ngModel)]=\"cm.Kosten\" placeholder=\"Kosten: (EUR)\" [ngModelOptions]=\"{standalone: true}\">\n              </mat-form-field></td>\n              <td><mat-form-field class=\"example-full-width\">\n                <input matInput [matDatepicker]=\"picker\" placeholder=\"Termin:\" [(ngModel)]=\"cm.Termin\"  [ngModelOptions]=\"{standalone: true}\" >\n                <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n                <mat-datepicker #picker startView=\"year\" [startAt]=\"startDate\"></mat-datepicker>\n              </mat-form-field></td>\n              <td><mat-form-field class=\"example-full-width\">\n                <input matInput #postalCode maxlength=\"30\" placeholder=\"Verantwortlich\" [(ngModel)]=\"cm.Verantwortlich\" [ngModelOptions]=\"{standalone: true}\" >\n              </mat-form-field></td>\n        </tr></table>\n      </form>\n\n       <!--<div> current Mass {{cm.Massnahmen}} Erk:{{cm.Erklaerung}}  Kost: {{cm.Kosten}} Ver: {{cm.Verantwortlich}} Termin: {{cm.Termin}}</div>-->\n\n     </div><!--input Group-->\n\n\n  </div>\n\n</div>\n\n</div>\n\n\n"
+module.exports = "<div class=\"container\">\n\n  <div id=\"label1\">\n    <label> Welche Maßnahmen sollen die Lücken zwischen Ist- und Ziel-Zuständen schließen? </label>\n  </div>\n\n  <div *ngFor=\"let cm of ssms; index as i\">\n     <!--<div class =\"input-group\" *ngIf=\"sms[i]\">-->\n     <div class =\"input-group\">\n\n         <div class=\"checkedModel\"> <input  disabled type=\"text\" id=\"{{cm.kriterium_id}}\" value=\"{{cm.kriterium_id}}. {{cm.kriterium}}\"></div>\n         <!--<div class=\"balls\" (click)=\"showContent(i)\"> {{cm.ist_id}} -> {{cm.ziel_id}}</div>-->\n         <div><input class=\"smallLable\" disabled type=\"text\" value=\"Ist: \"></div>\n         <div class=\"izLable\" [ngStyle]=\"{'background-color': hiddenShowIst[i]? '#71B7FD' : '#EFD9C1'}\" (click)=\"showIst(i)\">{{get_izIDs(cm, 'i')}}</div>\n\n         <!--<div> <img height=\"30\" width=\"30\" background-color=\"\" src=\"assets/images/arrow1.png\"></div>-->\n         <div><input class=\"smallLable\" disabled type=\"text\" value=\"Ziel: \"></div>\n         <div class=\"izLable\" [ngStyle]=\"{'background-color': hiddenShowZiel[i]? '#FA8072' : '#EFD9C1'}\" (click)=\"showZiel(i)\">{{get_izIDs(cm, 'z')}}</div>\n         <div class=\"priority\"> <input  type=\"text\" disabled value=\" Priorität: {{cm.priority}}\"></div>\n\n       <textarea disabled style=\"background-color: #71B7FD\" class=\"diplayContent\" [hidden]=\"!hiddenShowIst[i]\" matInput placeholder=\"\" matTextareaAutosize matAutosizeMinRows=\"5\" matAutosizeMaxRows=\"10\"> {{get_izContent(cm, 'i')}}</textarea>\n       <textarea disabled style=\"background-color: #FA8072\" class=\"diplayContent\" [hidden]=\"!hiddenShowZiel[i]\" matInput placeholder=\"\" matTextareaAutosize matAutosizeMinRows=\"5\" matAutosizeMaxRows=\"10\"> {{get_izContent(cm, 'z')}}</textarea>\n\n       <div class=\"input-group mb-3\">\n         <div class=\"input-group-prepend\">\n           <span class=\"input-group-text\">Maßnahme: </span>\n         </div>\n         <textarea class=\"form-control\" aria-label=\"Maßnahme: \"  [(ngModel)]=\"cm.Massnahmen\"  matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\"></textarea>\n       </div>\n\n       <div class=\"input-group mb-3\">\n         <div class=\"input-group-prepend\">\n           <span class=\"input-group-text\">Erklärung: &nbsp;&nbsp;</span>\n         </div>\n         <textarea class=\"form-control\" aria-label=\"Erklärung: \" [(ngModel)]=\"cm.Erklaerung\" matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\"></textarea>\n       </div>\n\n       <div class=\"mass\">\n\n         <form class=\"KTV-form\">\n         <table class=\"example-full-width\" cellspacing=\"0\">\n           <tr>\n              <td><mat-form-field class=\"example-full-width\">\n                <input matInput type=\"text\" [(ngModel)]=\"cm.Kosten\" placeholder=\"Kosten: (EUR)\" [ngModelOptions]=\"{standalone: true}\">\n              </mat-form-field></td>\n              <td><mat-form-field class=\"example-full-width\">\n                <input matInput [matDatepicker]=\"picker\" placeholder=\"Termin:\" [(ngModel)]=\"cm.Termin\"  [ngModelOptions]=\"{standalone: true}\" >\n                <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n                <mat-datepicker #picker startView=\"year\" [startAt]=\"startDate\"></mat-datepicker>\n              </mat-form-field></td>\n              <td><mat-form-field class=\"example-full-width\">\n                <input matInput #postalCode maxlength=\"30\" placeholder=\"Verantwortlich\" [(ngModel)]=\"cm.Verantwortlich\" [ngModelOptions]=\"{standalone: true}\" >\n              </mat-form-field></td>\n        </tr></table>\n      </form>\n\n       <!--<div> current Mass {{cm.Massnahmen}} Erk:{{cm.Erklaerung}}  Kost: {{cm.Kosten}} Ver: {{cm.Verantwortlich}} Termin: {{cm.Termin}}</div>-->\n\n     </div><!--input Group-->\n\n\n  </div>\n\n</div>\n\n</div>\n\n\n"
 
 /***/ }),
 
@@ -1120,6 +1127,39 @@ var MassnahmenComponent = (function () {
         }
         else {
             this.hiddenShowZiel[i] = true;
+        }
+    };
+    MassnahmenComponent.prototype.get_izIDs = function (cdModel, iz) {
+        if (iz === 'i') {
+            var temp_ist_ids = cdModel.Iste.map(function (ist) {
+                return ist.id;
+            });
+            return temp_ist_ids.join(',');
+        }
+        if (iz === 'z') {
+            var temp_ziel_ids = cdModel.Ziele.map(function (ziel) {
+                return ziel.id;
+            });
+            return temp_ziel_ids.join(',');
+        }
+        return 'N';
+    };
+    MassnahmenComponent.prototype.get_izContent = function (cdModel, iz) {
+        if (iz === 'i') {
+            var temp_ist_contents = cdModel.Iste.map(function (ist) {
+                if (ist.content !== null) {
+                    return 'Ist_' + ist.id + ': ' + ist.content;
+                }
+            });
+            return temp_ist_contents.join('\n\n');
+        }
+        if (iz === 'z') {
+            var temp_ziel_contents = cdModel.Ziele.map(function (ziel) {
+                if (ziel.content !== null) {
+                    return 'Ziel_' + ziel.id + ': ' + ziel.content;
+                }
+            });
+            return temp_ziel_contents.join('\n\n');
         }
     };
     MassnahmenComponent = __decorate([
@@ -1413,7 +1453,7 @@ module.exports = ".labs{\n  margin-top: 30px;\n  width: 100%;\n  margin-bottom: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n<!--<div> current Priority {{ClickedSelectedModel.priority}} Ist: {{ClickedSelectedModel.ist_id}} Ziel: {{ClickedSelectedModel.ziel_id}}</div>-->\n\n  <div class=\"labs\">\n    <!--<a mat-icon-button id=\"close-icon\" (click)=\"closeBlock()\"><mat-icon> clear </mat-icon></a>-->\n    <a mat-icon-button id=\"close-icon\" (click)=\"closeBlock()\"><img src=\"assets/images/saveback.png\" width=\"50\" height=\"50\"></a>\n    <label id=\"R\"> Relevant</label>\n    <input type=\"text\" [(ngModel)]=\"ClickedModell.Kriterium\">\n    <label >  Priorität</label>\n    <input matInput type=\"number\" placeholder=\"1\" min=\"1\" max=\"42\" [(ngModel)]=\"ClickedSelectedModel.priority\"/>\n    <!--<a mat-icon-button id=\"help-icon\"><mat-icon> help </mat-icon></a>-->\n    <button mat-button id=\"help-icon\"\n            matTooltip=\"Help information about the Kriterium\"\n            aria-label=\"Button that displays a tooltip when focused or hovered over\">\n      <mat-icon> help </mat-icon>\n    </button>\n  </div>\n\n  <mat-card class=\"modell-card\">\n    <mat-card-content>\n      <p id=\"model-text\">{{ClickedModell.Beschreibung}}</p>\n      <!--<a mat-icon-button class=\"small\"><mat-icon> info </mat-icon></a>-->\n      <button mat-button id=\"info\"\n              matTooltip=\"More info about this\"\n              aria-label=\"Button that displays a tooltip when focused or hovered over\">\n        <mat-icon> info </mat-icon>\n      </button>\n\n      <textarea class=\"aug_note\" matInput placeholder=\"Notiz \" [(ngModel)]=\"ClickedSelectedModel.Kriterium_note\"> </textarea>\n    </mat-card-content>\n  </mat-card>\n\n\n  <div class=\"aug-cards\">\n  <!--<mat-card  *ngFor=\" let au of auspraegung; index as ind\" class=\"example-card-{{ind % 8}}\">-->\n    <mat-card class=\"example-card-0\" [ngStyle]=\"{'background': getBColor(niz[ind])}\" *ngFor=\" let au of auspraegung; index as ind\" >\n    <mat-card-header>\n      <mat-card-title><h3> Ausprägung {{ind}}</h3></mat-card-title>\n    </mat-card-header>\n    <mat-card-content>\n        <textarea class=\"aus_text\"  rows=\"6\" disabled> {{au}} </textarea>\n      <mat-form-field style=\" margin-bottom: -1.25em\" >\n        <!--<mat-select [ngClass]=\"colorClass\"  placeholder=\"\" [value]=\"selectedOption\"-->\n                    <!--#device (change)=\"onChange($event, device.value, ind)\">-->\n\n\n          <!--<mat-select  [ngClass]=\"{'example-card-0': value == '0', 'example-card-1': value == '1', 'example-card-2': value =='2'}\"-->\n                       <!--placeholder=\"\" [value]=\"selectedOption\"-->\n                       <!--#device (change)=\"onChange($event, device.value, ind)\">-->\n\n        <mat-select [value]=\"niz[ind]\"  #device (change)=\"onChange($event, device.value, ind)\">\n\n            <!--<mat-select  [formControl]=\"panelColor\" panelClass=\"example-card-{{panelColor.value}}}\"-->\n                         <!--placeholder=\"\" [value]=\"selectedOption\"-->\n                         <!--#device (change)=\"onChange($event, device.value, ind)\">-->\n          <mat-option value=\"0\">Keine</mat-option>\n          <mat-option value=\"1\">Ist</mat-option>\n          <mat-option value=\"2\">Ziel</mat-option>\n        </mat-select>\n\n\n        <!--<select [ngModel]=\"selected\" (ngModelChange)=\"onChange($event.target.value, ind)\" name=\"sel2\">-->\n          <!--<option [value]=\"selected\" *ngFor=\"let i of iz_selects\">{{i}}</option>-->\n        <!--</select>-->\n\n        <!--<div ng-init=\"students=['None', 'Ist', 'Ziel']\">-->\n          <!--Students: <select ngModel=\"student\"-->\n                            <!--ngOptions=\"student as student for student in students\"-->\n                            <!--ngChange=\"changedValue(ind,student)\"></select>-->\n          <!--<pre>Student: {{student}}</pre>-->\n        <!--</div>-->\n\n      </mat-form-field>\n      <mat-form-field  style=\" margin-bottom: -1.25em\">\n           <textarea class=\"aug_note\" matInput placeholder=\"Notiz\"  matTextareaAutosize matAutosizeMinRows=\"8\" matAutosizeMaxRows=\"15\" [(ngModel)]=\"ClickedSelectedModel.Auspraegung_note[ind]\"></textarea>\n      </mat-form-field>\n    </mat-card-content>\n  </mat-card>\n  </div>\n</div>\n\n\n\n\n\n\n\n\n\n\n"
+module.exports = "<div class=\"container\">\n<!--<div> current Priority {{ClickedSelectedModel.priority}} Ist: {{ClickedSelectedModel.ist_id}} Ziel: {{ClickedSelectedModel.ziel_id}}</div>-->\n\n  <div class=\"labs\">\n    <!--<a mat-icon-button id=\"close-icon\" (click)=\"closeBlock()\"><mat-icon> clear </mat-icon></a>-->\n    <a mat-icon-button id=\"close-icon\" (click)=\"closeBlock()\"><img src=\"assets/images/saveback.png\" width=\"50\" height=\"50\"></a>\n    <label id=\"R\"> Relevant</label>\n    <input type=\"text\" [(ngModel)]=\"ClickedModell.Kriterium\">\n    <label >  Priorität</label>\n    <input matInput type=\"number\" placeholder=\"1\" min=\"1\" max=\"42\" [(ngModel)]=\"ClickedSelectedModel.priority\"/>\n    <!--<a mat-icon-button id=\"help-icon\"><mat-icon> help </mat-icon></a>-->\n    <button mat-button id=\"help-icon\"\n            matTooltip=\"Help information about the Kriterium\"\n            aria-label=\"Button that displays a tooltip when focused or hovered over\">\n      <mat-icon> help </mat-icon>\n    </button>\n  </div>\n\n  <mat-card class=\"modell-card\">\n    <mat-card-content>\n      <p id=\"model-text\">{{ClickedModell.Beschreibung}}</p>\n      <!--<a mat-icon-button class=\"small\"><mat-icon> info </mat-icon></a>-->\n      <button mat-button id=\"info\"\n              matTooltip=\"More info about this\"\n              aria-label=\"Button that displays a tooltip when focused or hovered over\">\n        <mat-icon> info </mat-icon>\n      </button>\n\n      <textarea class=\"aug_note\" matInput placeholder=\"Notiz \" [(ngModel)]=\"ClickedSelectedModel.Kriterium_note\"> </textarea>\n    </mat-card-content>\n  </mat-card>\n\n\n  <div class=\"aug-cards\">\n  <!--<mat-card  *ngFor=\" let au of auspraegung; index as ind\" class=\"example-card-{{ind % 8}}\">-->\n    <mat-card class=\"example-card-0\" [ngStyle]=\"{'background': getBColor(niz[ind])}\" *ngFor=\" let au of auspraegung; index as ind\" >\n    <mat-card-header>\n      <mat-card-title><h3> Ausprägung {{ind}}</h3></mat-card-title>\n    </mat-card-header>\n    <mat-card-content>\n        <textarea class=\"aus_text\"  rows=\"6\" disabled> {{au}} </textarea>\n      <mat-form-field style=\" margin-bottom: -1.25em\" >\n        <!--<mat-select [ngClass]=\"colorClass\"  placeholder=\"\" [value]=\"selectedOption\"-->\n                    <!--#device (change)=\"onChange($event, device.value, ind)\">-->\n\n\n          <!--<mat-select  [ngClass]=\"{'example-card-0': value == '0', 'example-card-1': value == '1', 'example-card-2': value =='2'}\"-->\n                       <!--placeholder=\"\" [value]=\"selectedOption\"-->\n                       <!--#device (change)=\"onChange($event, device.value, ind)\">-->\n\n        <mat-select [value]=\"niz[ind]\"  #device (change)=\"onChange($event, device.value, ind)\">\n\n            <!--<mat-select  [formControl]=\"panelColor\" panelClass=\"example-card-{{panelColor.value}}}\"-->\n                         <!--placeholder=\"\" [value]=\"selectedOption\"-->\n                         <!--#device (change)=\"onChange($event, device.value, ind)\">-->\n          <mat-option value=\"0\">Keine</mat-option>\n          <mat-option value=\"1\">Ist</mat-option>\n          <mat-option value=\"2\">Ziel</mat-option>\n          <mat-option value=\"3\">Ist+Ziel</mat-option>\n        </mat-select>\n\n\n        <!--<select [ngModel]=\"selected\" (ngModelChange)=\"onChange($event.target.value, ind)\" name=\"sel2\">-->\n          <!--<option [value]=\"selected\" *ngFor=\"let i of iz_selects\">{{i}}</option>-->\n        <!--</select>-->\n\n        <!--<div ng-init=\"students=['None', 'Ist', 'Ziel']\">-->\n          <!--Students: <select ngModel=\"student\"-->\n                            <!--ngOptions=\"student as student for student in students\"-->\n                            <!--ngChange=\"changedValue(ind,student)\"></select>-->\n          <!--<pre>Student: {{student}}</pre>-->\n        <!--</div>-->\n\n      </mat-form-field>\n      <mat-form-field  style=\" margin-bottom: -1.25em\">\n           <textarea class=\"aug_note\" matInput placeholder=\"Notiz\"  matTextareaAutosize matAutosizeMinRows=\"8\" matAutosizeMaxRows=\"15\" [(ngModel)]=\"ClickedSelectedModel.Auspraegung_note[ind]\"></textarea>\n      </mat-form-field>\n    </mat-card-content>\n  </mat-card>\n  </div>\n</div>\n\n\n\n\n\n\n\n\n\n\n"
 
 /***/ }),
 
@@ -1485,20 +1525,12 @@ var ModellDesignComponent = (function () {
         this.value_p = this.ClickedSelectedModel.priority;
         this.knote = this.ClickedModell.Kriterium_note;
         for (var i = 0; i < this.niz.length; i++) {
-            this.niz[i] = '0';
-            if (i === +this.ClickedSelectedModel.ziel_id) {
-                this.niz[i] = '2';
-            }
-            if (i === +this.ClickedSelectedModel.ist_id) {
-                this.niz[i] = '1';
-            }
+            this.niz[i] = this.checkInList(i);
         }
-        for (var _i = 0, _a = this.niz; _i < _a.length; _i++) {
-            var s = _a[_i];
-            console.log('... ', s);
-        }
+        // console.log('... current niz[]: ', this.niz);
     };
     ModellDesignComponent.prototype.getBColor = function (nizValue) {
+        // console.log('... nizValue:', nizValue);
         switch (nizValue) {
             case '0':
                 return 'lightgrey';
@@ -1506,40 +1538,148 @@ var ModellDesignComponent = (function () {
                 return '#71B7FD';
             case '2':
                 return '#FA8072';
+            case '3':
+                return '#EFD9C1';
         }
     };
-    ModellDesignComponent.prototype.getValue = function (aug_index) {
-        if (this.ClickedSelectedModel.ziel_id !== 'N' && aug_index === this.ClickedSelectedModel.ziel_id) {
-            console.log('... ang_index is ', aug_index, '... ziel id: ', this.ClickedSelectedModel.ziel_id);
-            this.selectedOption = 2;
+    ModellDesignComponent.prototype.checkInList = function (i) {
+        var temp_ist_ids = this.ClickedSelectedModel.Iste.map(function (ist) {
+            return ist.id;
+        });
+        var temp_ziel_ids = this.ClickedSelectedModel.Ziele.map(function (ziel) {
+            return ziel.id;
+        });
+        if (this.exitObj(i, temp_ist_ids) && this.exitObj(i, temp_ziel_ids)) {
+            return '3';
         }
-        if (this.ClickedSelectedModel.ist_id !== 'N' && aug_index === this.ClickedSelectedModel.ist_id) {
-            console.log('... ang_index is ', aug_index, '... ist id: ', this.ClickedSelectedModel.ist_id);
-            this.selectedOption = 1;
+        if (this.exitObj(i, temp_ist_ids) && !this.exitObj(i, temp_ziel_ids)) {
+            return '1';
         }
+        if (!this.exitObj(i, temp_ist_ids) && this.exitObj(i, temp_ziel_ids)) {
+            return '2';
+        }
+        return '0';
     };
+    ModellDesignComponent.prototype.exitObj = function (c_index, iz_list) {
+        return iz_list.findIndex(function (x) { return parseInt(x) === c_index; }) > -1;
+    };
+    // getValue(aug_index) {
+    //   if ( this.ClickedSelectedModel.ziel_id !== 'N' && aug_index === this.ClickedSelectedModel.ziel_id ) {
+    //     console.log('... ang_index is ', aug_index, '... ziel id: ', this.ClickedSelectedModel.ziel_id);
+    //     this.selectedOption = 2; }
+    //   if ( this.ClickedSelectedModel.ist_id !== 'N' && aug_index === this.ClickedSelectedModel.ist_id ) {
+    //     console.log('... ang_index is ', aug_index, '... ist id: ', this.ClickedSelectedModel.ist_id);
+    //     this.selectedOption = 1; }
+    // }
+    // onChange(event, optionValue, cIndex) {
+    //   console.log('... hey option is', this.iz_selects[optionValue], cIndex);
+    //   if (optionValue === '1') {
+    //     this.value_s = cIndex;
+    //     this.ClickedSelectedModel.ist_id = cIndex;
+    //     this.ClickedSelectedModel.ist_content = this.auspraegung[cIndex];
+    //     this.ClickedSelectedModel.ist_note = this.ClickedSelectedModel.Auspraegung_note[cIndex];
+    //     this.selected = '1';
+    //     this.niz[cIndex] = '1';
+    //   }
+    //   if (optionValue === '2') {
+    //     this.value_z = cIndex;
+    //     this.ClickedSelectedModel.ziel_id = cIndex;
+    //     this.ClickedSelectedModel.ziel_content = this.auspraegung[cIndex];
+    //     this.ClickedSelectedModel.ziel_note = this.ClickedSelectedModel.Auspraegung_note[cIndex];
+    //     this.selected = '2';
+    //     this.niz[cIndex] = '2';
+    //   }
+    //   console.log('... currently, priority:', this.ClickedSelectedModel.priority, ' ist_id : ', this.ClickedSelectedModel.ist_id, ' ziel_id : ', this.ClickedSelectedModel.ziel_id);
+    //   console.log('... ist_note:', this.ClickedSelectedModel.ist_note, ' ziel_id : ', this.ClickedSelectedModel.ziel_note);
+    // }
     ModellDesignComponent.prototype.onChange = function (event, optionValue, cIndex) {
+        console.log('... hey I am here');
         console.log('... hey option is', this.iz_selects[optionValue], cIndex);
+        // this.value_z = cIndex;
+        this.removeIZ(cIndex);
+        if (optionValue === '3') {
+            var new_zeit = this.newZEIT(cIndex);
+            this.ClickedSelectedModel.Iste.push(new_zeit);
+            var new_ist = this.newIST(cIndex);
+            this.ClickedSelectedModel.Ziele.push(new_ist);
+            this.selected = '3';
+            this.niz[cIndex] = '3';
+        }
         if (optionValue === '1') {
-            this.value_s = cIndex;
-            this.ClickedSelectedModel.ist_id = cIndex;
-            this.ClickedSelectedModel.ist_content = this.auspraegung[cIndex];
-            this.ClickedSelectedModel.ist_note = this.ClickedSelectedModel.Auspraegung_note[cIndex];
+            var new_ist = this.newIST(cIndex);
+            this.ClickedSelectedModel.Iste.push(new_ist);
             this.selected = '1';
             this.niz[cIndex] = '1';
         }
         if (optionValue === '2') {
-            this.value_z = cIndex;
-            this.ClickedSelectedModel.ziel_id = cIndex;
-            this.ClickedSelectedModel.ziel_content = this.auspraegung[cIndex];
-            this.ClickedSelectedModel.ziel_note = this.ClickedSelectedModel.Auspraegung_note[cIndex];
+            var new_zeit = this.newZEIT(cIndex);
+            this.ClickedSelectedModel.Ziele.push(new_zeit);
             this.selected = '2';
             this.niz[cIndex] = '2';
         }
-        console.log('... currently, priority:', this.ClickedSelectedModel.priority, ' ist_id : ', this.ClickedSelectedModel.ist_id, ' ziel_id : ', this.ClickedSelectedModel.ziel_id);
-        console.log('... ist_note:', this.ClickedSelectedModel.ist_note, ' ziel_id : ', this.ClickedSelectedModel.ziel_note);
+        // testing cretiria_10
+        if (cIndex === 9 && (optionValue === '2' || optionValue === '3')) {
+            this.ClickedSelectedModel.Auspraegung_note[3] = '9. Methodik der Fertigungs und Montagesteuerung - Ausprägung 2\n' +
+                '7. Betriebsdatenerfassung - Ausprägung 2\n' +
+                '20. Produktionsstücklisten und Rezepturen - Ausprägung 1\n' +
+                '28. Auswertung von Daten - Ausprägung 1';
+        }
+        // console.log('... currently, priority:', this.ClickedSelectedModel.priority, ' ist_id : ', this.ClickedSelectedModel.ist_id, ' ziel_id : ', this.ClickedSelectedModel.ziel_id);
+        // console.log('... ist_note:', this.ClickedSelectedModel.ist_note, ' ziel_id : ', this.ClickedSelectedModel.ziel_note);
+        console.log('... this.niz[]:', this.niz);
+    };
+    ModellDesignComponent.prototype.removeIZ = function (cIndex) {
+        if (this.ClickedSelectedModel.Iste.find(function (x) { return x.id === cIndex; })) {
+            this.ClickedSelectedModel.Iste = this.ClickedSelectedModel.Iste.filter(function (obj) { return obj.id !== cIndex; });
+        }
+        if (this.ClickedSelectedModel.Ziele.find(function (x) { return x.id === cIndex; })) {
+            this.ClickedSelectedModel.Ziele = this.ClickedSelectedModel.Ziele.filter(function (obj) { return obj.id !== cIndex; });
+        }
+    };
+    ModellDesignComponent.prototype.newZEIT = function (cIndex) {
+        var newZiel = new _modell__WEBPACK_IMPORTED_MODULE_1__["Ziel"]();
+        newZiel.id = cIndex;
+        newZiel.note = this.ClickedSelectedModel.Auspraegung_note[cIndex];
+        newZiel.content = this.auspraegung[cIndex];
+        return newZiel;
+    };
+    ModellDesignComponent.prototype.newIST = function (cIndex) {
+        var newIst = new _modell__WEBPACK_IMPORTED_MODULE_1__["Ist"]();
+        newIst.id = cIndex;
+        newIst.note = this.ClickedSelectedModel.Auspraegung_note[cIndex];
+        newIst.content = this.auspraegung[cIndex];
+        return newIst;
+    };
+    ModellDesignComponent.prototype.updateIZnote = function (entry) {
+        // let  temp_iste: Ist[] = entry.Iste;
+        // let  temp_ziele: Ziel[] = entry.Ziele;
+        for (var _i = 0, _a = entry.Iste; _i < _a.length; _i++) {
+            var em = _a[_i];
+            console.log('ist... em.id', em.id);
+            if (this.noteIndexContains(em.id, entry)) {
+                em.note = entry.Auspraegung_note[parseInt(em.id)];
+                console.log('... em.note: ', em.note);
+            }
+        }
+        for (var _b = 0, _c = entry.Ziele; _b < _c.length; _b++) {
+            var em = _c[_b];
+            console.log('ziel... em.id', em.id);
+            if (this.noteIndexContains(em.id, entry)) {
+                em.note = entry.Auspraegung_note[em.id];
+                console.log('... em.note: ', em.note);
+            }
+        }
+    };
+    ModellDesignComponent.prototype.noteIndexContains = function (id, entry) {
+        for (var i = 0; i < entry.Auspraegung_note.length; i++) {
+            if (id === i) {
+                return true;
+            }
+        }
+        return false;
     };
     ModellDesignComponent.prototype.closeBlock = function () {
+        this.updateIZnote(this.ClickedSelectedModel);
         this.parentSwitch = true;
         // to do something more here: disable navbar, save the data!
         this.childEvent.emit(this.parentSwitch);
@@ -1655,39 +1795,30 @@ var ModellService = (function () {
 /*!***************************!*\
   !*** ./src/app/modell.ts ***!
   \***************************/
-/*! exports provided: Modell */
+/*! exports provided: Modell, Ist, Ziel */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Modell", function() { return Modell; });
-// export class Modell {
-//   _id: string;
-//   Kriterium: string;
-//   Beschreibung:  string;
-//   Auspraegung_0: string;
-//   Auspraegung_1: string;
-//   Auspraegung_2: string;
-//   Auspraegung_3: string;
-//   Auspraegung_4: string;
-//   Auspraegung_5: string;
-//   Auspraegung_6: string;
-//   Auspraegung_7: string;
-//   ggf_weitere_Auspraegungn: string;
-//   TOP_Zuordnung: string;
-//   Zustaendige_Partner: string;
-//   Hinweise_Anmerkungen: string;
-//   Produktionsplanung_langfristig: string;
-//   Produktionssteuerung_kurzfristig: string;
-//   Produktion_Fertigung_Montage: string;
-//   Personal: string;
-//   IT: string;
-//   Logistik: string;
-// }
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Ist", function() { return Ist; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Ziel", function() { return Ziel; });
 var Modell = (function () {
     function Modell() {
     }
     return Modell;
+}());
+
+var Ist = (function () {
+    function Ist() {
+    }
+    return Ist;
+}());
+
+var Ziel = (function () {
+    function Ziel() {
+    }
+    return Ziel;
 }());
 
 
@@ -1727,10 +1858,8 @@ var SelectedModel = (function () {
         this.kriterium_id = '0';
         this.isselected = false;
         this.isEvaluated = false;
-        this.ist_id = 'N';
-        this.ist_note = '';
-        this.ziel_note = '';
-        this.ziel_id = 'N';
+        this.Iste = [];
+        this.Ziele = [];
         this.priority = 0;
         this.Kosten = '3,000';
         this.Massnahmen = ' ';
@@ -2025,7 +2154,7 @@ var UserService = (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".myform{\n  width:100%;\n  float:left;\n  padding: 0;\n}\n\n/*#label1{*/\n\n/*background: #EFD9C1;*/\n\n/*width: 100%;*/\n\n/*margin-bottom: 10px;*/\n\n/*margin-top: 30px;*/\n\n/*font: normal 20px courier !important;*/\n\n/*padding:10px;*/\n\n/*}*/\n\n#three-labels{\n  float: right;\n  width: 35%;\n  margin-bottom: 20px;\n  margin-top: 15px;\n  margin-right: 80px;\n}\n\n#three-labels label{\n  display: -ms-inline-grid;\n  display: inline-grid;\n  float:right;\n  background-color: #C7D8C6;\n  margin-left: 20px;\n  margin-right: 30px;\n  width: 80px;\n  text-align: center;\n  font-weight: bolder;\n  font-size: medium;\n  padding: 3px;\n}\n\n.form-group label{\n  float: left;\n  width: 60%;\n  background-color:#A9B7C0;\n  color:#333;\n  font-weight: bold;\n  font-size: medium;\n  padding:5px;\n  border:none;\n  margin-bottom: 10px;\n  margin-top: 10px;\n  display: -ms-inline-grid;\n  display: inline-grid;\n}\n\n.input-group button{\n  float: left;\n  width: 60%;\n  background-color:#A9B7C0;\n  color:#333;\n  padding:5px;\n  border:none;\n  margin-bottom: 10px;\n  margin-top: 10px;\n  display: -ms-inline-grid;\n  display: inline-grid;\n  font-size: medium;\n  font-weight: bold;\n  text-align: left;\n  cursor: zoom-in;\n}\n\n.numberCircle {\n  display: block;\n  margin-right: 52px;\n  margin-top: 12px;\n  margin-left: 35px;\n  background: #EFD9C1;\n  border-radius: 100%;\n  width: 36px;\n  height: 36px;\n  padding: 3px;\n  border: 2px solid #EFD9C1;\n  color: #808080;\n  text-align: center;\n  font: 24px Arial, sans-serif;\n}\n"
+module.exports = ".myform{\n  width:100%;\n  float:left;\n  padding: 0;\n}\n\n/*#label1{*/\n\n/*background: #EFD9C1;*/\n\n/*width: 100%;*/\n\n/*margin-bottom: 10px;*/\n\n/*margin-top: 30px;*/\n\n/*font: normal 20px courier !important;*/\n\n/*padding:10px;*/\n\n/*}*/\n\n#three-labels{\n  float: right;\n  width: 35%;\n  margin-bottom: 20px;\n  margin-top: 15px;\n  margin-right: 80px;\n}\n\n#three-labels label{\n  display: -ms-inline-grid;\n  display: inline-grid;\n  float:right;\n  background-color: #C7D8C6;\n  margin-left: 20px;\n  margin-right: 30px;\n  width: 80px;\n  text-align: center;\n  font-weight: bolder;\n  font-size: medium;\n  padding: 3px;\n}\n\n.form-group label{\n  float: left;\n  width: 60%;\n  background-color:#A9B7C0;\n  color:#333;\n  font-weight: bold;\n  font-size: medium;\n  padding:5px;\n  border:none;\n  margin-bottom: 10px;\n  margin-top: 10px;\n  display: -ms-inline-grid;\n  display: inline-grid;\n}\n\n.input-group button{\n  float: left;\n  width: 60%;\n  background-color:#A9B7C0;\n  color:#333;\n  padding:5px;\n  border:none;\n  margin-bottom: 10px;\n  margin-top: 10px;\n  display: -ms-inline-grid;\n  display: inline-grid;\n  font-size: medium;\n  font-weight: bold;\n  text-align: left;\n  cursor: zoom-in;\n}\n\n.numberCircle {\n  display: block;\n  margin-right: 52px;\n  margin-top: 12px;\n  margin-left: 55px;\n  background: #EFD9C1;\n  border-radius: 100%;\n  width: 36px;\n  height: 36px;\n  padding: 3px;\n  border: 2px solid #EFD9C1;\n  color: #808080;\n  text-align: center;\n  font: 24px Arial, sans-serif;\n}\n\n.izLable {\n  display: block;\n  margin-top: 12px;\n  margin-right: 15px;\n  width: 80px;\n  height: 33px;\n  margin-left: 18px;\n  background: #EFD9C1;\n  text-align: center;\n  font: 18px Arial, sans-serif;\n  color: #808080;\n  padding: 8px;\n}\n"
 
 /***/ }),
 
@@ -2036,7 +2165,7 @@ module.exports = ".myform{\n  width:100%;\n  float:left;\n  padding: 0;\n}\n\n/*
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--Zustaede as the parentComponet and Modell-design as the child component-->\n\n<div *ngIf = \"displayThenBlock; then thenBlock  else elseBlock\"></div>\n\n<ng-template #thenBlock>\n  <!-- for testing\n  <h2>  this is then block</h2>\n  <button (click)= hideThenBlock()> hide </button>-->\n\n\n  <div id=\"label1\">\n    <label> Was sind die Ist-, Ziel-Zustände und Prioritäten für die ausgewählten Kriterien? </label>\n  </div>\n\n    <div id=\"three-labels\">\n      <label> Priorität </label>\n      <label> Ziel </label>\n      <label> Ist </label>\n    </div>\n\n\n  <div *ngFor=\"let cmodle of checkedModells | sortArr:'priority'; let m = index;\" >\n    <div class =\"input-group\">\n      <button type=\"text\" (click)=openEditor(cmodle)> {{cmodle.kriterium_id}}. {{cmodle.kriterium}} </button>\n      <div class=\"numberCircle\">{{cmodle.ist_id}}</div>\n      <div class=\"numberCircle\">{{cmodle.ziel_id}}</div>\n      <div class=\"numberCircle\">{{cmodle.priority}}</div>\n    </div>\n  </div>\n\n\n</ng-template>\n\n\n<ng-template #elseBlock>\n  <!--<h2>  this is else block</h2>-->\n  <!--<button (click)= showThenBlock()> show</button>-->\n\n  <app-modell-design (childEvent)=\"receiveChanage($event)\" [parentSwitch]=\"displayThenBlock\" [ClickedSelectedModel]=\"csMod\" [ClickedModell] =\"cMod\"> </app-modell-design>\n\n</ng-template>\n"
+module.exports = "<!--Zustaede as the parentComponet and Modell-design as the child component-->\n\n<div *ngIf = \"displayThenBlock; then thenBlock  else elseBlock\"></div>\n\n<ng-template #thenBlock>\n  <!-- for testing\n  <h2>  this is then block</h2>\n  <button (click)= hideThenBlock()> hide </button>-->\n\n\n  <div id=\"label1\">\n    <label> Was sind die Ist-, Ziel-Zustände und Prioritäten für die ausgewählten Kriterien? </label>\n  </div>\n\n    <div id=\"three-labels\">\n      <label> Priorität </label>\n      <label> Ziel </label>\n      <label> Ist </label>\n    </div>\n\n\n  <div *ngFor=\"let cmodle of checkedModells | sortArr:'priority'; let m = index;\" >\n    <div class =\"input-group\">\n      <button type=\"text\" (click)=openEditor(cmodle)> {{cmodle.kriterium_id}}. {{cmodle.kriterium}} </button>\n      <!--<div class=\"numberCircle\">{{getISTE(cmodle, 'i')}}</div>-->\n      <!--<div class=\"numberCircle\">{{getISTE(cmodle, 'z')}}</div>-->\n      <div class=\"izLable\">{{getISTE(cmodle, 'i')}}</div>\n      <div class=\"izLable\">{{getISTE(cmodle, 'z')}}</div>\n      <div class=\"numberCircle\">{{cmodle.priority}}</div>\n    </div>\n  </div>\n\n\n</ng-template>\n\n\n<ng-template #elseBlock>\n  <!--<h2>  this is else block</h2>-->\n  <!--<button (click)= showThenBlock()> show</button>-->\n\n  <app-modell-design (childEvent)=\"receiveChanage($event)\" [parentSwitch]=\"displayThenBlock\" [ClickedSelectedModel]=\"csMod\" [ClickedModell] =\"cMod\"> </app-modell-design>\n\n</ng-template>\n"
 
 /***/ }),
 
@@ -2112,6 +2241,28 @@ var ZustaendeComponent = (function () {
     ZustaendeComponent.prototype.receiveChanage = function ($event) {
         this.displayThenBlock = $event;
     };
+    ZustaendeComponent.prototype.getISTE = function (csModell, iz) {
+        var temp_list;
+        if (iz === 'i') {
+            temp_list = csModell.Iste;
+        }
+        else if (iz === 'z') {
+            temp_list = csModell.Ziele;
+        }
+        else {
+            temp_list = [];
+        }
+        if (temp_list.length === 0) {
+            return 'N';
+        }
+        else {
+            var temp_ist_ids = temp_list.map(function (ist) {
+                return ist.id;
+            });
+            console.log('... tge temp_istZiel_string: ', temp_ist_ids.join(','));
+            return temp_ist_ids.join(',');
+        }
+    };
     ZustaendeComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-zustaende',
@@ -2182,7 +2333,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/xiwa03/Applications/WebAppDeve/test/MockUp/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/xiawang/Applications/mockup/src/main.ts */"./src/main.ts");
 
 
 /***/ })

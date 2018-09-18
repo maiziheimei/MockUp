@@ -621,9 +621,9 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/xiwa03/Applications/WebAppDeve/test/MockUp/src/styles.css */"./src/styles.css");
-__webpack_require__(/*! /Users/xiwa03/Applications/WebAppDeve/test/MockUp/node_modules/bootstrap/dist/css/bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
-module.exports = __webpack_require__(/*! /Users/xiwa03/Applications/WebAppDeve/test/MockUp/node_modules/font-awesome/css/font-awesome.css */"./node_modules/font-awesome/css/font-awesome.css");
+__webpack_require__(/*! /Users/xiawang/Applications/mockup/src/styles.css */"./src/styles.css");
+__webpack_require__(/*! /Users/xiawang/Applications/mockup/node_modules/bootstrap/dist/css/bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
+module.exports = __webpack_require__(/*! /Users/xiawang/Applications/mockup/node_modules/font-awesome/css/font-awesome.css */"./node_modules/font-awesome/css/font-awesome.css");
 
 
 /***/ })

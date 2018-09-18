@@ -5,8 +5,11 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { element} from 'protractor';
 import { forEach} from '@angular/router/src/utils/collection';
 import { UserService} from '../user.service';
+import { MassnahmenComponent } from "../massnahmen/massnahmen.component";
+import {SelectedModel} from "../selectedModel";
 
 @Component({
+  providers:[ MassnahmenComponent ],
   selector: 'app-evaluation',
   templateUrl: './evaluation.component.html',
   styleUrls: ['./evaluation.component.css']
@@ -24,7 +27,7 @@ export class EvaluationComponent implements OnInit {
   balls = ['1 -> 2', '1 -> 2', '2 -> 3', '0 -> 2', '0 -> 3'];
   resJsonResponse: any;
   downloadJsonHref: any;
-  constructor( private _modellService: ModellService, private  _data: DataService, private sanitizer: DomSanitizer, private _userService: UserService) {}
+  constructor( private _modellService: ModellService, private  _data: DataService, private sanitizer: DomSanitizer, private _userService: UserService, private _massna: MassnahmenComponent) {}
 
   ngOnInit() {
     this._modellService.sharedModells.subscribe(res => this.CModells = res);
@@ -101,6 +104,10 @@ export class EvaluationComponent implements OnInit {
         this.number += 1;
         console.log ('item is checked', entry.isEvaluated); }
     }
+  }
+
+  get_izIDs(cdModel: SelectedModel, iz:string){
+     return this._massna.get_izIDs(cdModel, iz);
   }
 
 }
