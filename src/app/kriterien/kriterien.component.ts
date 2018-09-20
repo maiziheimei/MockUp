@@ -16,6 +16,8 @@ import { User} from '../user';
 })
 export class KriterienComponent implements OnInit {
 
+
+  checked10th:boolean;
   isLoggedIn = true;
   // showUnderline = true;
   sms = [];
@@ -86,7 +88,7 @@ export class KriterienComponent implements OnInit {
       // console.log('... to get the check status of model: ', mid);
       const mo =  this.sms.find(x => x.kriterium_id === mid);
       if (mo != null) {
-        // console.log('... mo size is ', mo.length, mid, ' checked status is: ', mo.isselected);
+         console.log('... mo size is ', mo.length, mid, ' checked status is: ', mo.isselected);
         return mo.isselected; }
     } else {
       return false;
@@ -98,7 +100,7 @@ export class KriterienComponent implements OnInit {
     this.lastAction = 'index: ' + index + ', label: ' + item.label + ', checked: ' + item.checked;
 
     console.log('before: ', index, event, item);
-     item.checked = event.checked;
+    item.checked = event.checked;
 
     this.lastAction = 'index: ' + index + ', label: ' + item.label + ', checked: ' + item.checked;
 
@@ -112,15 +114,23 @@ export class KriterienComponent implements OnInit {
     console.log('... now ', kid, ' hasChecked ...: ');
 
     if (item.checked)  {
+      item.isSelected= true;
       if (!this.smsExist(kid)) { // not exist in sms
         this.addItem(kid, item.Kriterium); // add
-         }
+      }
+      if (kid === '10' || kid === 10) {
+        this.checked10th = true;
+      }
     }
     if (!item.checked) { // uncheck
+      item.isSelected= false;
       if (this.smsExist(kid)) {
         this.removeItem(kid);
       }
-  }
+      if (kid === '10' || kid === 10) {
+        this.checked10th = false;
+      }
+    }
     this._modellService.changeModel(this.modells);
 
     console.log('... the persisted sms ...: ', this.sms.length);

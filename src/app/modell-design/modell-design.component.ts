@@ -169,7 +169,8 @@ checkInList(i) {
     }
 
     // testing cretiria_10
-    if (cIndex === 9 && (optionValue === '2' || optionValue === '3')) {
+    if (this.ClickedSelectedModel.kriterium_id === '10' && cIndex === 3 && (optionValue === '2' || optionValue === '3')) {
+      console.log('...getting in here !!')
       this.ClickedSelectedModel.Auspraegung_note[3] = '9. Methodik der Fertigungs und Montagesteuerung - Ausprägung 2\n' +
         '7. Betriebsdatenerfassung - Ausprägung 2\n' +
         '20. Produktionsstücklisten und Rezepturen - Ausprägung 1\n' +
@@ -178,7 +179,7 @@ checkInList(i) {
 
     // console.log('... currently, priority:', this.ClickedSelectedModel.priority, ' ist_id : ', this.ClickedSelectedModel.ist_id, ' ziel_id : ', this.ClickedSelectedModel.ziel_id);
     // console.log('... ist_note:', this.ClickedSelectedModel.ist_note, ' ziel_id : ', this.ClickedSelectedModel.ziel_note);
-    console.log('... this.niz[]:', this.niz);
+    console.log(cIndex, '... this.niz[]:', this.niz);
   }
 
   removeIZ(cIndex) {
