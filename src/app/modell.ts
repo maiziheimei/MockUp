@@ -1,7 +1,10 @@
+import {CRLObj} from "./ComLR";
+
 export class Modell {
   _id: string;
   Kriterium: string;
   Beschreibung:  string;
+  Kompetenzen: string;
   Auspraegung_0: string;
   Auspraegung_1: string;
   Auspraegung_2: string;
@@ -33,6 +36,7 @@ export class Modell {
     id: string,
     createdDate: string
   };
+  clrlist: CRLObj[];
 }
 
 export class Ist {
@@ -45,4 +49,9 @@ export class Ziel {
   id: string;
   note: string;
   content: string;
+}
+
+export class PriKid {
+  pri: any;
+  kid: any;
 }

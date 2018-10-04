@@ -1,13 +1,13 @@
 <div class="container">
 
   <div id="label1">
-    <label> Welche Maßnahmen sollen die Lücken zwischen Ist- und Ziel-Zuständen schließen? </label>
+    <label>Welche Maßnahmen wurden umgesetzt? </label>
   </div>
 
   <div>
     <div class="info"> You have evaluated {{number}} Kriterien. </div>
-    <button class="btn" (click)="preview()" disabled> Preview </button>
-    <button class="btn" (click)="exportJson()"> Download (.json)</button>
+    <button class="btn" (click)="preview()"> Preview </button>
+    <button class="btn" (click)="save2Json()"> Download (.json)</button>
     <!--<a class="btn btn-clear" title="Download JSON" [href]="downloadJsonHref" download="download.json"></a>-->
   </div>
   <div *ngFor="let cm of sms; index as i">
@@ -26,23 +26,23 @@
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text">Erklärung: &nbsp;&nbsp;&nbsp;</span>
+          <span class="input-group-text" style="color:black"> Notiz: </span>
         </div>
-        <textarea class="form-control" aria-label="Erklärung:" value="{{cm.Erklaerung}}" matTextareaAutosize matAutosizeMinRows="3" matAutosizeMaxRows="15" disabled></textarea>
+        <textarea class="form-control-2" aria-label="Notiz:" [(ngModel)]="cm.Evaluation_note"  matTextareaAutosize matAutosizeMinRows="3" matAutosizeMaxRows="15" ></textarea>
       </div>
 
 
       <form class="KTV-form">
         <table class="example-full-width" cellspacing="0">
           <tr>
-            <td><mat-form-field class="example-full-width">
-              <input matInput type="text" placeholder="Kosten: (EUR)" value="{{cm.Kosten}}">
+            <td><mat-form-field class="example-full-width" >
+              <input matInput type="text" placeholder="Kosten: (EUR)" value="{{cm.Kosten| currency:'EUR':true}}" disabled>
             </mat-form-field></td>
             <td><mat-form-field class="example-full-width">
-              <input matInput  placeholder="Termin:" value="{{cm.Termin | date : 'dd.MM.y' }}">
+              <input matInput  placeholder="Termin:" value="{{cm.Termin | date:'mm/dd/yyyy'}}" disabled>
             </mat-form-field></td>
             <td><mat-form-field class="example-full-width">
-              <input matInput placeholder="Verantwortlich:" maxlength="30" value="{{cm.Verantwortlich}}">
+              <input matInput placeholder="Verantwortlich:" maxlength="30" value="{{cm.Verantwortlich}}" disabled>
             </mat-form-field></td>
           </tr></table>
       </form>

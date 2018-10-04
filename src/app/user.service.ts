@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { User } from './user';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { NewUser } from './newuser';
 import { Subject } from 'rxjs/Subject';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
@@ -24,7 +24,7 @@ export class UserService {
 
 
  getUser(): Observable<User> {
-      return Observable.of(NewUser);
+      return of(NewUser);
  }
 
 

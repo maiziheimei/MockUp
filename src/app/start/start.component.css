@@ -94,9 +94,19 @@ a {
 
 .input-group-text {
   background-color: #A9B7C0;
+  width: 106px;
   font-size: small;
   font-weight: normal;
   font-style: italic;
+}
+
+.zielText{
+  background-color: #A9B7C0;
+  font-size: small;
+  font-weight: normal;
+  font-style: italic;
+  padding-top: 45px;
+  color: #495057;
 }
 
 .form-control {

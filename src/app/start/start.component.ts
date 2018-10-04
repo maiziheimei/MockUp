@@ -94,7 +94,7 @@ export class StartComponent implements OnInit {
           this.loadUser = JSON.parse(resSTR);
           this.slist = this.loadUser.kriterienList;
 
-          this.cUser.id = this.loadUser.id;
+          this.cUser.uuid = this.loadUser.id;
           this.cUser.vision = this.loadUser.vision;
           this.cUser.mission = this.loadUser.mission;
           this.cUser.strategy = this.loadUser.strategy;
@@ -102,7 +102,7 @@ export class StartComponent implements OnInit {
           console.log('... mission: ', this.cUser.mission);
           console.log('... vision: ', this.cUser.vision);
           this.vision = this.loadUser.vision;
-          console.log('... uuid of cUser: ', this.cUser.id);
+          console.log('... uuid of cUser: ', this.cUser.uuid);
           // alert('file content = \n' + this.slist[0].kriterium_id + '  length:' + this.slist.length);
 
           this._userService.changeUser(this.cUser);
@@ -120,7 +120,7 @@ export class StartComponent implements OnInit {
  createNewUser() {
     console.log('... will create a new user: ');
     // this.cUser = new User( uuid(), ' ',  ' ',  ' ',  ' ', []);
-    this.cUser.id = uuid();
+    this.cUser.uuid = uuid();
     this.cUser.mission = '';
     this.cUser.vision = '';
     this.cUser.strategy = '';

@@ -15,7 +15,7 @@
 
 .labs label{
   float: left;
-  width: 10%;
+  width: 8%;
   display: block;
   margin-right: 0;
   margin-left: 5px;
@@ -50,7 +50,41 @@
   margin-top: 0px;
 }
 
+.labs mat-form-field {
+  height: 37px;
+}
 
+.labs .mat-form-field-wrapper {
+  float: left;
+  width: 10%;
+  height: 35px;
+}
+
+.prioritySection{
+  float: left;
+  width: 12%;
+  height: 37px;
+  margin-top: 0px;
+  margin-right: 10px;
+  /*font-weight: bold;*/
+  /*font-size: medium;*/
+  /*text-align: center;*/
+  /*padding:5px;*/
+  /*border:0;*/
+  /*margin-left: 2px;*/
+  /*margin-top: 0px;*/
+}
+
+.prioritySection mat-select{
+  height: 37px;
+  font-weight: normal;
+  font-size: medium;
+  text-align: center;
+  padding:0px;
+  border:0;
+  margin-left: 2px;
+  margin-top: 0px;
+}
 
 .labs input[type=number]::-webkit-inner-spin-button,
 .labs input[type=number]::-webkit-outer-spin-button {
@@ -68,22 +102,39 @@ button#info.mat-button {
   float: right;
   margin-top: -15px;
 }
+
+button#help-icon {
+  width: 40px;
+  height: 36px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0px;
+  background-color: transparent;
+  border: none;
+}
 /*.mat-icon-button.small {*/
  /*width:15%;*/
 /*}*/
 
-.modell-card{
+.mat-card.model-detail.mat-card{
+  float: left;
+  display: block;
   width:97%;
+  /*height:160px;*/
   background-color: #A9B7C0;
   margin-top: 15px;
   margin-left: 10px;
   padding-bottom:5px;
+  overflow: no-display;
 }
 
 #model-text {
   width: 90%;
   float:left;
   display: block;
+  background-color: #A9B7C0;
+  border: 0px;
+  margin-bottom: 2px;
 }
 
 
@@ -99,6 +150,7 @@ button#info.mat-button {
 }
 
 .mat-icon {
+  /*margin-left: 25px;*/
   width: 36px;
   height:36px;
 }
@@ -124,13 +176,13 @@ button#info.mat-button {
   align-content: center;
 }
 
-.mat-form-field{
-  width:95%;
-}
+/*.mat-form-field{*/
+  /*width:95%;*/
+/*}*/
 
-.mat-form-field-wrapper {
-  padding-bottom: -1.25em;
-}
+/*.mat-form-field-wrapper {*/
+  /*padding-bottom: -1.25em;*/
+/*}*/
 
 .example-card-0, .example-card-3, .example-card-4, .example-card-5, .example-card-6, .example-card-7{
   float:left;
@@ -148,40 +200,40 @@ button#info.mat-button {
   padding-bottom: 2px;
 }
 
-.example-card-1{
-  float:left;
-  width:23%;
-  display: block;
-  background: #7272fd;
-  margin-top: 15px;
-  margin-left: 10px;
-  margin-right:8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 2px;
-  overflow: no-display;
-}
-.example-card-2{
-  float:left;
-  width:23%;
-  display: block;
-  background: #FA8072;
-  margin-top: 15px;
-  margin-left: 10px;
-  margin-right:8px;
-  overflow: no-display;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 2px;
-}
+/*.example-card-1{*/
+  /*float:left;*/
+  /*width:23%;*/
+  /*display: block;*/
+  /*background: #7272fd;*/
+  /*margin-top: 15px;*/
+  /*margin-left: 10px;*/
+  /*margin-right:8px;*/
+  /*padding-left: 10px;*/
+  /*padding-right: 10px;*/
+  /*padding-top: 5px;*/
+  /*padding-bottom: 2px;*/
+  /*overflow: no-display;*/
+/*}*/
+/*.example-card-2{*/
+  /*float:left;*/
+  /*width:23%;*/
+  /*display: block;*/
+  /*background: #FA8072;*/
+  /*margin-top: 15px;*/
+  /*margin-left: 10px;*/
+  /*margin-right:8px;*/
+  /*overflow: no-display;*/
+  /*padding-left: 10px;*/
+  /*padding-right: 10px;*/
+  /*padding-top: 5px;*/
+  /*padding-bottom: 2px;*/
+/*}*/
 
 .mat-select{
   background: #A9B7C0;
   height: 30px;
   padding: 2px;
-  width:100%;
+  width:85%;
   font-size: large;
   font-weight: normal;
   margin:2px;
@@ -199,13 +251,47 @@ button#info.mat-button {
 }
 
  textarea{
+  float: left;
   background: #C7D8C6;
   width: 100%;
   /*padding: 2px;*/
   /*margin:0;*/
 }
 
-.aug_note{
-  font-size: 11px;
+.big-note-editor{
+  float: left;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.big-aug_note{
+  float: left;
+  width: 90%;
   color:  darkblue;
+  font-size: medium;
+  margin-right: 20px;
+}
+
+.big-note-label {
+  float:right;
+  width: 5%;
+}
+
+
+.note-editor{
+   float: left;
+   width: 100%;
+   margin-top: 5px;
+ }
+
+.aug_note{
+  float: left;
+  width: 85%;
+  color:  darkblue;
+  font-size: medium;
+}
+
+.note-label {
+  float:right;
+  width:8%;
 }

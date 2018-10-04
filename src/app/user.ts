@@ -2,7 +2,7 @@ import { v4 as uuid } from 'uuid';
 import {SelectedModel} from './selectedModel';
 
 export class User {
-  id: string;
+  uuid: string;
   name: string;
   vision: string;
   mission: string;
@@ -11,7 +11,7 @@ export class User {
 
  // constructor () {}
   constructor(_id, _name, _mission, _vision, _strategy, _kriList) {
-    this.id = _id;
+    this.uuid = _id;
     this.name = _name;
     this.vision = _mission;
     this.mission = _vision;

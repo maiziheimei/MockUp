@@ -15,11 +15,18 @@
 
          <!--<div> <img height="30" width="30" background-color="" src="assets/images/arrow1.png"></div>-->
          <div><input class="smallLable" disabled type="text" value="Ziel: "></div>
-         <div class="izLable" [ngStyle]="{'background-color': hiddenShowZiel[i]? '#FA8072' : '#EFD9C1'}" (click)="showZiel(i)">{{get_izIDs(cm, 'z')}}</div>
+         <div class="izLable" [ngStyle]="{'background-color': hiddenShowZiel[i]? '#a0d878' : '#EFD9C1'}" (click)="showZiel(i)">{{get_izIDs(cm, 'z')}}</div>
          <div class="priority"> <input  type="text" disabled value=" Priorität: {{cm.priority}}"></div>
 
+       <button id="help-icon" (click)="openCLRDialog(cm)"
+               matTooltip="View related competencies and learning resources"
+               aria-label="Button that displays a tooltip when focused or hovered over">
+         <mat-icon> help </mat-icon>
+       </button>
+
+
        <textarea disabled style="background-color: #71B7FD" class="diplayContent" [hidden]="!hiddenShowIst[i]" matInput placeholder="" matTextareaAutosize matAutosizeMinRows="5" matAutosizeMaxRows="10"> {{get_izContent(cm, 'i')}}</textarea>
-       <textarea disabled style="background-color: #FA8072" class="diplayContent" [hidden]="!hiddenShowZiel[i]" matInput placeholder="" matTextareaAutosize matAutosizeMinRows="5" matAutosizeMaxRows="10"> {{get_izContent(cm, 'z')}}</textarea>
+       <textarea disabled style="background-color: #a0d878" class="diplayContent" [hidden]="!hiddenShowZiel[i]" matInput placeholder="" matTextareaAutosize matAutosizeMinRows="5" matAutosizeMaxRows="10"> {{get_izContent(cm, 'z')}}</textarea>
 
        <div class="input-group mb-3">
          <div class="input-group-prepend">
@@ -28,25 +35,31 @@
          <textarea class="form-control" aria-label="Maßnahme: "  [(ngModel)]="cm.Massnahmen"  matTextareaAutosize matAutosizeMinRows="3" matAutosizeMaxRows="15"></textarea>
        </div>
 
-       <div class="input-group mb-3">
-         <div class="input-group-prepend">
-           <span class="input-group-text">Erklärung: &nbsp;&nbsp;</span>
-         </div>
-         <textarea class="form-control" aria-label="Erklärung: " [(ngModel)]="cm.Erklaerung" matTextareaAutosize matAutosizeMinRows="3" matAutosizeMaxRows="15"></textarea>
-       </div>
+       <!--<div class="input-group mb-3">-->
+         <!--<div class="input-group-prepend">-->
+           <!--<span class="input-group-text">Erklärung: &nbsp;&nbsp;</span>-->
+         <!--</div>-->
+         <!--<textarea class="form-control" aria-label="Erklärung: " [(ngModel)]="cm.Erklaerung" matTextareaAutosize matAutosizeMinRows="3" matAutosizeMaxRows="15"></textarea>-->
+       <!--</div>-->
 
        <div class="mass">
 
          <form class="KTV-form">
          <table class="example-full-width" cellspacing="0">
            <tr>
-              <td><mat-form-field class="example-full-width">
-                <input matInput type="text" [(ngModel)]="cm.Kosten" placeholder="Kosten: (EUR)" [ngModelOptions]="{standalone: true}">
-              </mat-form-field></td>
+              <!--<td><mat-form-field class="example-full-width" >-->
+                <!--<input matInput [(ngModel)]="cm.Kosten" placeholder="Kosten: (€)" [ngModelOptions]="{standalone: true}" (keypress)="numberOnly($event)">-->
+                <!--<mat-hint align="end">Nummer nur</mat-hint>-->
+              <!--</mat-form-field></td>-->
+             <td><mat-form-field class="example-full-width">
+               <input  matInput #box (keyup.enter)="update(box.value)" (blur)="update(box.value, cm)" placeholder="Kosten: (€)" [ngModel]="cm.Kosten| currency:'EUR':true" name="money">
+               <mat-hint align="end">Nummer nur</mat-hint>
+             </mat-form-field></td>
+
               <td><mat-form-field class="example-full-width">
                 <input matInput [matDatepicker]="picker" placeholder="Termin:" [(ngModel)]="cm.Termin"  [ngModelOptions]="{standalone: true}" >
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+                <mat-datepicker #picker ></mat-datepicker>
               </mat-form-field></td>
               <td><mat-form-field class="example-full-width">
                 <input matInput #postalCode maxlength="30" placeholder="Verantwortlich" [(ngModel)]="cm.Verantwortlich" [ngModelOptions]="{standalone: true}" >

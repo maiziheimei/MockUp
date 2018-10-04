@@ -19,14 +19,18 @@
     </div>
 
 
-  <div *ngFor="let cmodle of checkedModells | sortArr:'priority'; let m = index;" >
+  <!--<div *ngFor="let cmodle of checkedModells | sortArr:'priority': 'descending '| sortArr:'kriterium_id'; let m = index;" >-->
+    <div *ngFor="let cmodle of sortPK(checkedModells); let m = index;" >
+
     <div class ="input-group">
       <button type="text" (click)=openEditor(cmodle)> {{cmodle.kriterium_id}}. {{cmodle.kriterium}} </button>
-      <!--<div class="numberCircle">{{getISTE(cmodle, 'i')}}</div>-->
-      <!--<div class="numberCircle">{{getISTE(cmodle, 'z')}}</div>-->
-      <div class="izLable">{{getISTE(cmodle, 'i')}}</div>
-      <div class="izLable">{{getISTE(cmodle, 'z')}}</div>
-      <div class="numberCircle">{{cmodle.priority}}</div>
+      <!--<div class="izLable">{{getISTE(cmodle, 'i')}}</div>-->
+      <!--<div class="izLable">{{getISTE(cmodle, 'z')}}</div>-->
+      <!--<div title= "{{cmodle.priority}}" class="numberCircle">{{getPriorityLevel(cmodle)}}</div>-->
+
+      <div (click)=openEditor(cmodle) class="izLable">{{getISTE(cmodle, 'i')}}</div>
+      <div (click)=openEditor(cmodle) class="izLable">{{getISTE(cmodle, 'z')}}</div>
+      <div (click)=openEditor(cmodle) title= "{{cmodle.priority}}" class="numberCircle">{{getPriorityLevel(cmodle)}}</div>
     </div>
   </div>
 

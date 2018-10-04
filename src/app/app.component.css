@@ -1,3 +1,33 @@
 a {
   color: #B8B8B8;
 }
+
+.header-logout {
+  background-color: #808080;
+  color: #ffffff;
+  height :50px;
+  margin:auto;
+}
+.he{
+  float: left;
+  width: 75%;
+}
+
+.app-header{
+  float: right;
+  width: 78%;
+}
+.lo{
+  float: left;
+  width: 25%;
+  font-size: 2.4em !important;
+  text-align: -moz-left;
+  font-weight: 400;
+  display: inline;
+}
+
+button {
+  background-color: transparent;
+  border-style: hidden;
+}
+

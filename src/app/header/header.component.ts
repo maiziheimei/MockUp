@@ -2,6 +2,8 @@
 import { Observable } from 'rxjs';
 import { AuthService } from './../auth/auth.service';
 import { Component, OnInit } from '@angular/core';
+import {DownloadAlertComponent} from "../download-alert/download-alert.component";
+import {MatDialog} from "@angular/material";
 
 @Component({
   selector: 'app-header',
@@ -22,13 +24,23 @@ export class HeaderComponent implements OnInit {
 
   isLoggedIn$: Observable<boolean>;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.isLoggedIn$ = this.authService.isLoggedIn;
   }
 
-  onLogout() {
-    this.authService.logout();
-  }
+  // onLogout() {
+  //     console.log('... the current this.isLoggedIn', this.isLoggedIn$);
+  //     // open download-alert dialog
+  //     let dialogRef = this.dialog.open(DownloadAlertComponent);
+  //     dialogRef.afterClosed().subscribe(result => {
+  //       // NOTE: The result can also be nothing if the user presses the `esc` key or clicks outside the dialog
+  //       if (result == 'confirm') {
+  //         console.log('... to download');
+  //       }
+  //     });
+  //
+  //   this.authService.logout();
+  // }
 }

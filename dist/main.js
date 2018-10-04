@@ -11,7 +11,7 @@ function webpackEmptyAsyncContext(req) {
 	// Here Promise.resolve().then() is used instead of new Promise() to prevent
 	// uncaught exception popping up in devtools
 	return Promise.resolve().then(function() {
-		var e = new Error('Cannot find module "' + req + '".');
+		var e = new Error("Cannot find module '" + req + "'");
 		e.code = 'MODULE_NOT_FOUND';
 		throw e;
 	});
@@ -20,6 +20,40 @@ webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
 webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
+
+/***/ }),
+
+/***/ "./src/app/ComLR.ts":
+/*!**************************!*\
+  !*** ./src/app/ComLR.ts ***!
+  \**************************/
+/*! exports provided: ComLR, LRObj, CRLObj */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ComLR", function() { return ComLR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LRObj", function() { return LRObj; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CRLObj", function() { return CRLObj; });
+var ComLR = /** @class */ (function () {
+    function ComLR() {
+    }
+    return ComLR;
+}());
+
+var LRObj = /** @class */ (function () {
+    function LRObj() {
+    }
+    return LRObj;
+}());
+
+var CRLObj = /** @class */ (function () {
+    function CRLObj() {
+    }
+    return CRLObj;
+}());
+
+
 
 /***/ }),
 
@@ -33,8 +67,8 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _auth_auth_guard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./auth/auth.guard */ "./src/app/auth/auth.guard.ts");
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
 /* harmony import */ var _impressum_impressum_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./impressum/impressum.component */ "./src/app/impressum/impressum.component.ts");
@@ -77,7 +111,7 @@ var routes = [
     { path: 'modellDesign', component: _modell_design_modell_design_component__WEBPACK_IMPORTED_MODULE_10__["ModellDesignComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]] },
     { path: 'models', component: _modell_center_modell_center_component__WEBPACK_IMPORTED_MODULE_5__["ModellCenterComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]] }
 ];
-var AppRoutingModule = (function () {
+var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
     AppRoutingModule = __decorate([
@@ -100,7 +134,7 @@ var AppRoutingModule = (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "a {\n  color: #B8B8B8;\n}\n"
+module.exports = "a {\n  color: #B8B8B8;\n}\n\n.header-logout {\n  background-color: #808080;\n  color: #ffffff;\n  height :50px;\n  margin:auto;\n}\n\n.he{\n  float: left;\n  width: 75%;\n}\n\n.app-header{\n  float: right;\n  width: 78%;\n}\n\n.lo{\n  float: left;\n  width: 25%;\n  font-size: 2.4em !important;\n  text-align: -moz-left;\n  font-weight: 400;\n  display: inline;\n}\n\nbutton {\n  background-color: transparent;\n  border-style: hidden;\n}\n\n"
 
 /***/ }),
 
@@ -111,7 +145,7 @@ module.exports = "a {\n  color: #B8B8B8;\n}\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--&lt;!&ndash;<nav class = \"navbar navbar-inverse\">&ndash;&gt;-->\n  <!--&lt;!&ndash;<div class=\"container-fluid\">&ndash;&gt;-->\n    <!--&lt;!&ndash;<div class=\" navbar-header\">&ndash;&gt;-->\n      <!--&lt;!&ndash;<a class=\"navbar-brand\" href=\"#\"> Mockup Modell Editor</a>&ndash;&gt;-->\n    <!--&lt;!&ndash;</div>&ndash;&gt;-->\n    <!--&lt;!&ndash;<div><ul class=\"nav navbar-nav\">&ndash;&gt;-->\n      <!--&lt;!&ndash;<li> <a routerLink=\"/home\" routerLinkActive=\"active\"> Home</a> </li>&ndash;&gt;-->\n      <!--&lt;!&ndash;<li> <a routerLink=\"/start\" routerLinkActive=\"active\"> Start</a> </li>&ndash;&gt;-->\n      <!--&lt;!&ndash;<li> <a routerLink=\"/kriteiren\" routerLinkActive=\"active\"> Kriterien</a> </li>&ndash;&gt;-->\n      <!--&lt;!&ndash;<li> <a routerLink=\"/models\" routerLinkActive=\"active\"> Model List</a> </li>&ndash;&gt;-->\n    <!--&lt;!&ndash;</ul></div>&ndash;&gt;-->\n  <!--&lt;!&ndash;</div>&ndash;&gt;-->\n<!--&lt;!&ndash;</nav>&ndash;&gt;-->\n\n\n<!--<nav id=\"navbar\">-->\n  <!--<div class=\"container\">-->\n    <!--<ul>-->\n      <!--&lt;!&ndash;<li> <a routerLink=\"/home\" > Home</a> </li>&ndash;&gt;-->\n      <!--<li> <a routerLink=\"/start\" routerLinkActive=\"active\"> Start</a> </li>-->\n      <!--<li> <a routerLink=\"/kriteiren\" routerLinkActive=\"active\"> Kriterien</a> </li>-->\n      <!--<li> <a routerLink=\"/zustaende\" routerLinkActive=\"active\"> Zustände</a> </li>-->\n      <!--<li> <a routerLink=\"/massnahman\" routerLinkActive=\"active\"> Maßnahmen</a> </li>-->\n      <!--<li> <a routerLink=\"/evaluation\" routerLinkActive=\"active\"> Evaluation</a> </li>-->\n      <!--&lt;!&ndash;<li> <a routerLink=\"/modellDesign\" routerLinkActive=\"active\"> ModelDesign</a> </li>&ndash;&gt;-->\n      <!--&lt;!&ndash;<li> <a routerLink=\"/models\" routerLinkActive=\"active\"> ModelList</a> </li>&ndash;&gt;-->\n    <!--</ul>-->\n    <!--<app-header></app-header>-->\n  <!--</div>-->\n<!--</nav>-->\n\n\n<app-header></app-header>\n\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>\n\n<div id=\"main-footer\">\n    <a routerLink=\"/impressum\" routerLinkActive=\"active\"> IMPRESSUM & DATENSCHUTZERKLÄRUNG </a>\n</div>\n"
+module.exports = "<div class=\"header-logout\" *ngIf=\"onOff | async as isLoggedIn\">\n  <div class=\"he\">\n    <app-header class=\"app-header\"></app-header></div>\n    <div class=\"lo\"><button type=\"button\" (click)=\"onLogout()\" *ngIf=\"onOff\">Logout</button></div>\n</div>\n\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>\n\n<div id=\"main-footer\">\n    <a routerLink=\"/impressum\" routerLinkActive=\"active\"> IMPRESSUM & DATENSCHUTZERKLÄRUNG </a>\n</div>\n\n"
 
 /***/ }),
 
@@ -125,24 +159,71 @@ module.exports = "<!--&lt;!&ndash;<nav class = \"navbar navbar-inverse\">&ndash;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _download_alert_download_alert_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./download-alert/download-alert.component */ "./src/app/download-alert/download-alert.component.ts");
+/* harmony import */ var _auth_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./auth/auth.service */ "./src/app/auth/auth.service.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./data.service */ "./src/app/data.service.ts");
+/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./user.service */ "./src/app/user.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'app';
+
+
+
+
+
+var AppComponent = /** @class */ (function () {
+    function AppComponent(authService, dialog, _data, _userService) {
+        this.authService = authService;
+        this.dialog = dialog;
+        this._data = _data;
+        this._userService = _userService;
+        this.sms = [];
+        this.continueLogout = false;
     }
+    AppComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._data.selectedModels.subscribe(function (res) { return _this.sms = res; });
+        this._data.changeGoal(this.sms);
+        this._userService.getUser().subscribe(function (res) { return _this.currUser = res; });
+        this._userService.changeUser(this.currUser);
+        this.onOff = this.authService.isLoggedIn;
+    };
+    AppComponent.prototype.onLogout = function () {
+        var _this = this;
+        // open download-alert dialog
+        var dialogRef = this.dialog.open(_download_alert_download_alert_component__WEBPACK_IMPORTED_MODULE_1__["DownloadAlertComponent"]);
+        dialogRef.afterClosed().subscribe(function (result) {
+            // NOTE: The result can also be nothing if the user presses the `esc` key or clicks outside the dialog
+            if (result == 'confirm') {
+                // this._data.exportJson(this.sms, this.currUser);
+                _this._data.downloadAsPDF(_this.sms, _this.currUser);
+                _this.authService.logout();
+            }
+            ;
+            if (result == 'cancel') {
+                // to clean up the cache before logout
+                _this.sms = [];
+                _this._data.changeGoal(_this.sms);
+                _this.authService.logout();
+            }
+        });
+    };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
-        })
+        }),
+        __metadata("design:paramtypes", [_auth_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialog"], _data_service__WEBPACK_IMPORTED_MODULE_4__["DataService"], _user_service__WEBPACK_IMPORTED_MODULE_5__["UserService"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -161,38 +242,47 @@ var AppComponent = (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/esm5/platform-browser.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/esm5/forms.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _impressum_impressum_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./impressum/impressum.component */ "./src/app/impressum/impressum.component.ts");
-/* harmony import */ var _modell_center_modell_center_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modell-center/modell-center.component */ "./src/app/modell-center/modell-center.component.ts");
-/* harmony import */ var _model_list_model_list_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./model-list/model-list.component */ "./src/app/model-list/model-list.component.ts");
-/* harmony import */ var _model_detail_model_detail_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./model-detail/model-detail.component */ "./src/app/model-detail/model-detail.component.ts");
-/* harmony import */ var _start_start_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./start/start.component */ "./src/app/start/start.component.ts");
-/* harmony import */ var _kriterien_kriterien_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./kriterien/kriterien.component */ "./src/app/kriterien/kriterien.component.ts");
-/* harmony import */ var _zustaende_zustaende_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./zustaende/zustaende.component */ "./src/app/zustaende/zustaende.component.ts");
-/* harmony import */ var _modell_design_modell_design_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modell-design/modell-design.component */ "./src/app/modell-design/modell-design.component.ts");
-/* harmony import */ var _massnahmen_massnahmen_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./massnahmen/massnahmen.component */ "./src/app/massnahmen/massnahmen.component.ts");
-/* harmony import */ var _evaluation_evaluation_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./evaluation/evaluation.component */ "./src/app/evaluation/evaluation.component.ts");
-/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/esm5/http.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/esm5/http.js");
-/* harmony import */ var angular_font_awesome__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! angular-font-awesome */ "./node_modules/angular-font-awesome/dist/angular-font-awesome.es5.js");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/esm5/animations.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/tooltip */ "./node_modules/@angular/material/esm5/tooltip.es5.js");
-/* harmony import */ var _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/grid-list */ "./node_modules/@angular/material/esm5/grid-list.es5.js");
-/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/material/select */ "./node_modules/@angular/material/esm5/select.es5.js");
-/* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/material/toolbar */ "./node_modules/@angular/material/esm5/toolbar.es5.js");
-/* harmony import */ var _modell_service__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./modell.service */ "./src/app/modell.service.ts");
-/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./data.service */ "./src/app/data.service.ts");
-/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./user.service */ "./src/app/user.service.ts");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-/* harmony import */ var _auth_auth_guard__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./auth/auth.guard */ "./src/app/auth/auth.guard.ts");
-/* harmony import */ var _auth_auth_service__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./auth/auth.service */ "./src/app/auth/auth.service.ts");
-/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
-/* harmony import */ var _sort_arr_pipe__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./sort-arr.pipe */ "./src/app/sort-arr.pipe.ts");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_locales_de__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/locales/de */ "./node_modules/@angular/common/locales/de.js");
+/* harmony import */ var _angular_common_locales_de__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_angular_common_locales_de__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _impressum_impressum_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./impressum/impressum.component */ "./src/app/impressum/impressum.component.ts");
+/* harmony import */ var _modell_center_modell_center_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modell-center/modell-center.component */ "./src/app/modell-center/modell-center.component.ts");
+/* harmony import */ var _model_list_model_list_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./model-list/model-list.component */ "./src/app/model-list/model-list.component.ts");
+/* harmony import */ var _model_detail_model_detail_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./model-detail/model-detail.component */ "./src/app/model-detail/model-detail.component.ts");
+/* harmony import */ var _start_start_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./start/start.component */ "./src/app/start/start.component.ts");
+/* harmony import */ var _kriterien_kriterien_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./kriterien/kriterien.component */ "./src/app/kriterien/kriterien.component.ts");
+/* harmony import */ var _zustaende_zustaende_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./zustaende/zustaende.component */ "./src/app/zustaende/zustaende.component.ts");
+/* harmony import */ var _modell_design_modell_design_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modell-design/modell-design.component */ "./src/app/modell-design/modell-design.component.ts");
+/* harmony import */ var _massnahmen_massnahmen_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./massnahmen/massnahmen.component */ "./src/app/massnahmen/massnahmen.component.ts");
+/* harmony import */ var _evaluation_evaluation_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./evaluation/evaluation.component */ "./src/app/evaluation/evaluation.component.ts");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var angular_font_awesome__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! angular-font-awesome */ "./node_modules/angular-font-awesome/dist/angular-font-awesome.es5.js");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/tooltip */ "./node_modules/@angular/material/esm5/tooltip.es5.js");
+/* harmony import */ var _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/material/grid-list */ "./node_modules/@angular/material/esm5/grid-list.es5.js");
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/material/select */ "./node_modules/@angular/material/esm5/select.es5.js");
+/* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/material/toolbar */ "./node_modules/@angular/material/esm5/toolbar.es5.js");
+/* harmony import */ var _modell_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./modell.service */ "./src/app/modell.service.ts");
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./data.service */ "./src/app/data.service.ts");
+/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./user.service */ "./src/app/user.service.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _auth_auth_guard__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./auth/auth.guard */ "./src/app/auth/auth.guard.ts");
+/* harmony import */ var _auth_auth_service__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./auth/auth.service */ "./src/app/auth/auth.service.ts");
+/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
+/* harmony import */ var _sort_arr_pipe__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./sort-arr.pipe */ "./src/app/sort-arr.pipe.ts");
+/* harmony import */ var _clrview_clrview_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./clrview/clrview.component */ "./src/app/clrview/clrview.component.ts");
+/* harmony import */ var _angular_cdk_tree__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @angular/cdk/tree */ "./node_modules/@angular/cdk/esm5/tree.es5.js");
+/* harmony import */ var _angular_cdk_table__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @angular/cdk/table */ "./node_modules/@angular/cdk/esm5/table.es5.js");
+/* harmony import */ var _download_alert_download_alert_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./download-alert/download-alert.component */ "./src/app/download-alert/download-alert.component.ts");
+/* harmony import */ var _angular_material_divider__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @angular/material/divider */ "./node_modules/@angular/material/esm5/divider.es5.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_material_radio__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @angular/material/radio */ "./node_modules/@angular/material/esm5/radio.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -203,6 +293,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+Object(_angular_common__WEBPACK_IMPORTED_MODULE_38__["registerLocaleData"])(_angular_common_locales_de__WEBPACK_IMPORTED_MODULE_3___default.a);
 
 
 
@@ -232,41 +323,56 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-var AppModule = (function () {
+
+
+
+
+
+
+
+
+
+var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
-                _impressum_impressum_component__WEBPACK_IMPORTED_MODULE_5__["ImpressumComponent"],
-                _modell_center_modell_center_component__WEBPACK_IMPORTED_MODULE_6__["ModellCenterComponent"],
-                _model_list_model_list_component__WEBPACK_IMPORTED_MODULE_7__["ModelListComponent"],
-                _model_detail_model_detail_component__WEBPACK_IMPORTED_MODULE_8__["ModelDetailComponent"],
-                _kriterien_kriterien_component__WEBPACK_IMPORTED_MODULE_10__["KriterienComponent"],
-                _start_start_component__WEBPACK_IMPORTED_MODULE_9__["StartComponent"],
-                _zustaende_zustaende_component__WEBPACK_IMPORTED_MODULE_11__["ZustaendeComponent"],
-                _massnahmen_massnahmen_component__WEBPACK_IMPORTED_MODULE_13__["MassnahmenComponent"],
-                _modell_design_modell_design_component__WEBPACK_IMPORTED_MODULE_12__["ModellDesignComponent"],
-                _evaluation_evaluation_component__WEBPACK_IMPORTED_MODULE_14__["EvaluationComponent"],
-                _login_login_component__WEBPACK_IMPORTED_MODULE_27__["LoginComponent"],
-                _header_header_component__WEBPACK_IMPORTED_MODULE_30__["HeaderComponent"],
-                _sort_arr_pipe__WEBPACK_IMPORTED_MODULE_31__["SortArrPipe"]
+                _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
+                _impressum_impressum_component__WEBPACK_IMPORTED_MODULE_6__["ImpressumComponent"],
+                _modell_center_modell_center_component__WEBPACK_IMPORTED_MODULE_7__["ModellCenterComponent"],
+                _model_list_model_list_component__WEBPACK_IMPORTED_MODULE_8__["ModelListComponent"],
+                _model_detail_model_detail_component__WEBPACK_IMPORTED_MODULE_9__["ModelDetailComponent"],
+                _kriterien_kriterien_component__WEBPACK_IMPORTED_MODULE_11__["KriterienComponent"],
+                _start_start_component__WEBPACK_IMPORTED_MODULE_10__["StartComponent"],
+                _zustaende_zustaende_component__WEBPACK_IMPORTED_MODULE_12__["ZustaendeComponent"],
+                _massnahmen_massnahmen_component__WEBPACK_IMPORTED_MODULE_14__["MassnahmenComponent"],
+                _modell_design_modell_design_component__WEBPACK_IMPORTED_MODULE_13__["ModellDesignComponent"],
+                _evaluation_evaluation_component__WEBPACK_IMPORTED_MODULE_15__["EvaluationComponent"],
+                _login_login_component__WEBPACK_IMPORTED_MODULE_28__["LoginComponent"],
+                _header_header_component__WEBPACK_IMPORTED_MODULE_31__["HeaderComponent"],
+                _sort_arr_pipe__WEBPACK_IMPORTED_MODULE_32__["SortArrPipe"],
+                _clrview_clrview_component__WEBPACK_IMPORTED_MODULE_33__["ClrviewComponent"],
+                _download_alert_download_alert_component__WEBPACK_IMPORTED_MODULE_36__["DownloadAlertComponent"],
+                _evaluation_evaluation_component__WEBPACK_IMPORTED_MODULE_15__["DialogOverviewExampleDialogComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ReactiveFormsModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormsModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_16__["HttpClientModule"],
-                _angular_http__WEBPACK_IMPORTED_MODULE_15__["HttpModule"],
-                angular_font_awesome__WEBPACK_IMPORTED_MODULE_17__["AngularFontAwesomeModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_18__["BrowserAnimationsModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_19__["MatCheckboxModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_23__["MatToolbarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_19__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_19__["MatFormFieldModule"], _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_21__["MatGridListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_19__["MatDatepickerModule"], _angular_material__WEBPACK_IMPORTED_MODULE_19__["MatNativeDateModule"], _angular_material__WEBPACK_IMPORTED_MODULE_19__["MatCardModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_22__["MatSelectModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_19__["MatInputModule"], _angular_material__WEBPACK_IMPORTED_MODULE_19__["MatIconModule"], _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_20__["MatTooltipModule"]
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_17__["HttpClientModule"],
+                _angular_http__WEBPACK_IMPORTED_MODULE_16__["HttpModule"],
+                angular_font_awesome__WEBPACK_IMPORTED_MODULE_18__["AngularFontAwesomeModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_19__["BrowserAnimationsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_20__["MatCheckboxModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_24__["MatToolbarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_20__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_20__["MatFormFieldModule"], _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_22__["MatGridListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_20__["MatDatepickerModule"], _angular_material__WEBPACK_IMPORTED_MODULE_20__["MatNativeDateModule"], _angular_material__WEBPACK_IMPORTED_MODULE_20__["MatCardModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_23__["MatSelectModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_39__["MatRadioModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_20__["MatInputModule"], _angular_material__WEBPACK_IMPORTED_MODULE_20__["MatIconModule"], _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_21__["MatTooltipModule"], _angular_material__WEBPACK_IMPORTED_MODULE_20__["MatTreeModule"], _angular_cdk_tree__WEBPACK_IMPORTED_MODULE_34__["CdkTreeModule"], _angular_cdk_table__WEBPACK_IMPORTED_MODULE_35__["CdkTableModule"], _angular_material__WEBPACK_IMPORTED_MODULE_20__["MatDialogModule"], _angular_material__WEBPACK_IMPORTED_MODULE_20__["MatListModule"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_37__["MatDividerModule"]
             ],
-            providers: [_angular_common_http__WEBPACK_IMPORTED_MODULE_16__["HttpClientModule"], _modell_service__WEBPACK_IMPORTED_MODULE_24__["ModellService"], _data_service__WEBPACK_IMPORTED_MODULE_25__["DataService"], _user_service__WEBPACK_IMPORTED_MODULE_26__["UserService"], _auth_auth_service__WEBPACK_IMPORTED_MODULE_29__["AuthService"], _auth_auth_guard__WEBPACK_IMPORTED_MODULE_28__["AuthGuard"]],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
+            providers: [_angular_common_http__WEBPACK_IMPORTED_MODULE_17__["HttpClientModule"], _modell_service__WEBPACK_IMPORTED_MODULE_25__["ModellService"], _modell_design_modell_design_component__WEBPACK_IMPORTED_MODULE_13__["ModellDesignComponent"], _data_service__WEBPACK_IMPORTED_MODULE_26__["DataService"], _user_service__WEBPACK_IMPORTED_MODULE_27__["UserService"], _auth_auth_service__WEBPACK_IMPORTED_MODULE_30__["AuthService"], _auth_auth_guard__WEBPACK_IMPORTED_MODULE_29__["AuthGuard"], { provide: _angular_material__WEBPACK_IMPORTED_MODULE_20__["MAT_DATE_LOCALE"], useValue: 'en-GB' },
+                { provide: _angular_core__WEBPACK_IMPORTED_MODULE_2__["LOCALE_ID"], useValue: 'de-DE' },
+                { provide: _angular_material__WEBPACK_IMPORTED_MODULE_20__["MAT_DIALOG_DATA"], useValue: {} }, { provide: _angular_material__WEBPACK_IMPORTED_MODULE_20__["MatDialogRef"], useValue: {} }],
+            entryComponents: [_clrview_clrview_component__WEBPACK_IMPORTED_MODULE_33__["ClrviewComponent"], _download_alert_download_alert_component__WEBPACK_IMPORTED_MODULE_36__["DownloadAlertComponent"], _evaluation_evaluation_component__WEBPACK_IMPORTED_MODULE_15__["DialogOverviewExampleDialogComponent"]],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -286,9 +392,9 @@ var AppModule = (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthGuard", function() { return AuthGuard; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/esm5/router.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 /* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./auth.service */ "./src/app/auth/auth.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -303,7 +409,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var AuthGuard = (function () {
+var AuthGuard = /** @class */ (function () {
     function AuthGuard(authService, router) {
         this.authService = authService;
         this.router = router;
@@ -339,10 +445,9 @@ var AuthGuard = (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthService", function() { return AuthService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/esm5/router.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/Rx.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(rxjs__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -355,7 +460,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var AuthService = (function () {
+var AuthService = /** @class */ (function () {
     function AuthService(router) {
         this.router = router;
         this.loggedIn = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"](false);
@@ -388,6 +493,229 @@ var AuthService = (function () {
 
 /***/ }),
 
+/***/ "./src/app/clr.service.ts":
+/*!********************************!*\
+  !*** ./src/app/clr.service.ts ***!
+  \********************************/
+/*! exports provided: ClrService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClrService", function() { return ClrService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/add/operator/toPromise */ "./node_modules/rxjs-compat/_esm5/add/operator/toPromise.js");
+/* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs-compat/_esm5/add/operator/map.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+// import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+
+
+
+var ClrService = /** @class */ (function () {
+    function ClrService(http) {
+        var _this = this;
+        this.http = http;
+        this.http.get('assets/learningResource.json')
+            .map(function (res) { return res.json(); })
+            .subscribe(function (data) { return _this.testdata = data; }, function (err) { return console.log(err); }, function () { return console.log(_this.testdata.length + ' comlearningResource got from local json file'); });
+    }
+    // to get learning resource of a competence
+    ClrService.prototype.getLRObj = function (compt_name) {
+        // console.log('... again the testdata.length:  ' + this.testdata.length);
+        for (var _i = 0, _a = this.testdata; _i < _a.length; _i++) {
+            var entry = _a[_i];
+            if (compt_name.indexOf('D3') > -1) {
+                console.log('...  D3 index at: ' + compt_name.indexOf('D3'));
+            }
+            if (entry.competence_name === compt_name || compt_name.indexOf(entry.competence_id) > -1) {
+                console.log('... to get lr:  ' + entry.LearningResources[0].lr_name + '...' + entry.LearningResources[0].lr_link);
+                return entry.LearningResources;
+            }
+        }
+        return null;
+    };
+    ClrService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"]])
+    ], ClrService);
+    return ClrService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/clrview/clrview.component.css":
+/*!***********************************************!*\
+  !*** ./src/app/clrview/clrview.component.css ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".example-tree-invisible {\n  display: none;\n}\n\n\n.example-tree-node.cdk-tree-node.cdk-nested-tree-node.ng-star-inserted{\n  font-size: 1.5rem;\n  color: #cc8334;\n}\n\n\n.example-tree ul,\n.example-tree li {\n  margin-top: 0;\n  margin-bottom: 0;\n  list-style-type: none;\n}\n\n\n.example-tree-node {\n  display: block;\n  padding-left: 40px;\n}\n"
+
+/***/ }),
+
+/***/ "./src/app/clrview/clrview.component.html":
+/*!************************************************!*\
+  !*** ./src/app/clrview/clrview.component.html ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h1 style=\"color: #368AC0\" mat-dialog-title>Overview the related Competences and Learning Resources</h1>\n<div mat-dialog-content>\n\n  <cdk-tree [dataSource]=\"nestedDataSource\" [treeControl]=\"nestedTreeControl\">\n    <cdk-nested-tree-node *cdkTreeNodeDef=\"let node\" class=\"example-tree-node\" cdkTreeNodeToggle [cdkTreeNodeToggleRecursive]=\"true\">\n      <button mat-icon-button disabled></button>\n\n      <a href=\"{{node.type}}\"  target=\"_blank\">\n        -> &nbsp; {{node.filename}}\n      </a>\n    </cdk-nested-tree-node>\n    <cdk-nested-tree-node *cdkTreeNodeDef=\"let node; when: hasNestedChild\" class=\"example-tree-node\">\n      <button mat-icon-button [attr.aria-label]=\"'toggle ' + node.filename\" cdkTreeNodeToggle>\n        <mat-icon class=\"mat-icon-rtl-mirror\">\n          {{nestedTreeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}\n        </mat-icon>\n      </button>\n      {{node.filename}}:  {{node.type}}\n\n      <div [class.example-tree-invisible]=\"nestedTreeControl.isExpanded(node)\">\n        <ng-container cdkTreeNodeOutlet></ng-container>\n      </div>\n    </cdk-nested-tree-node>\n  </cdk-tree>\n\n\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/clrview/clrview.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/clrview/clrview.component.ts ***!
+  \**********************************************/
+/*! exports provided: FileNode, FileDatabase, ClrviewComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileNode", function() { return FileNode; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileDatabase", function() { return FileDatabase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClrviewComponent", function() { return ClrviewComponent; });
+/* harmony import */ var _angular_cdk_tree__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/tree */ "./node_modules/@angular/cdk/esm5/tree.es5.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_tree__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/tree */ "./node_modules/@angular/material/esm5/tree.es5.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+
+// import { DialogOverviewExampleDialogComponent} from '../modell-design/modell-design.component';
+
+/**
+ * Json node data with nested structure. Each node has a filename and a value or a list of children
+ */
+var FileNode = /** @class */ (function () {
+    function FileNode() {
+    }
+    return FileNode;
+}());
+
+/**
+ * File database, it can build a tree structured Json object from string.
+ * Each node in Json object represents a file or a directory. For a file, it has filename and type.
+ * For a directory, it has filename and children (a list of files or directories).
+ * The input will be a json object string, and the output is a list of `FileNode` with nested
+ * structure.
+ */
+var FileDatabase = /** @class */ (function () {
+    function FileDatabase(treedata) {
+        this.treedata = treedata;
+        this.dataChange = new rxjs__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"]([]);
+        this.initialize(treedata);
+    }
+    Object.defineProperty(FileDatabase.prototype, "data", {
+        get: function () { return this.dataChange.value; },
+        enumerable: true,
+        configurable: true
+    });
+    FileDatabase.prototype.initialize = function (treedata) {
+        if (this.treedata === null) {
+            console.log('... the treedata is null');
+        }
+        else {
+            console.log('... the treedata got from local jsonfile length is: ' + this.treedata.length);
+            // Build the tree nodes from Json object. The result is a list of `FileNode` with nested
+            //     file node as children.
+            var data = this.buildFileTree(this.treedata, 0);
+            // Notify the change.
+            this.dataChange.next(data);
+        }
+    };
+    /**
+     * Build the file structure tree. The `value` is the Json object, or a sub-tree of a Json object.
+     * The return value is the list of `FileNode`.
+     */
+    FileDatabase.prototype.buildFileTree = function (value, level) {
+        var data = [];
+        for (var _i = 0, _a = Object.keys(value); _i < _a.length; _i++) {
+            var k = _a[_i];
+            var v = value[k];
+            var node = new FileNode();
+            node.filename = "" + k;
+            if (v === null || v === undefined) {
+                // no action
+            }
+            else if (typeof v === 'object') {
+                node.children = this.buildFileTree(v, level + 1);
+            }
+            else {
+                node.type = v;
+            }
+            data.push(node);
+        }
+        return data;
+    };
+    FileDatabase = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_4__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [Object])
+    ], FileDatabase);
+    return FileDatabase;
+}());
+
+var ClrviewComponent = /** @class */ (function () {
+    function ClrviewComponent(database, treedata) {
+        var _this = this;
+        this.treedata = treedata;
+        this._getChildren = function (node) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(node.children); };
+        this.hasNestedChild = function (_, nodeData) { return !(nodeData.type); };
+        this.nestedTreeControl = new _angular_cdk_tree__WEBPACK_IMPORTED_MODULE_0__["NestedTreeControl"](this._getChildren);
+        this.nestedDataSource = new _angular_material_tree__WEBPACK_IMPORTED_MODULE_2__["MatTreeNestedDataSource"]();
+        database.dataChange.subscribe(function (data) { return _this.nestedDataSource.data = data; });
+    }
+    ClrviewComponent.prototype.ngOnInit = function () {
+    };
+    ClrviewComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-clrview',
+            template: __webpack_require__(/*! ./clrview.component.html */ "./src/app/clrview/clrview.component.html"),
+            styles: [__webpack_require__(/*! ./clrview.component.css */ "./src/app/clrview/clrview.component.css")],
+            providers: [FileDatabase]
+        }),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Optional"])()), __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_4__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [FileDatabase, Object])
+    ], ClrviewComponent);
+    return ClrviewComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/data.service.ts":
 /*!*********************************!*\
   !*** ./src/app/data.service.ts ***!
@@ -398,8 +726,10 @@ var AuthService = (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataService", function() { return DataService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var rxjs_BehaviorSubject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/BehaviorSubject */ "./node_modules/rxjs/_esm5/BehaviorSubject.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs_BehaviorSubject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/BehaviorSubject */ "./node_modules/rxjs-compat/_esm5/BehaviorSubject.js");
+/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.min.js");
+/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jspdf__WEBPACK_IMPORTED_MODULE_2__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -411,14 +741,128 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
-var DataService = (function () {
+
+var DataService = /** @class */ (function () {
     function DataService() {
         // this used to persist the selected models, which will be used by all the other pages
         this.seModels = new rxjs_BehaviorSubject__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]([]);
         this.selectedModels = this.seModels.asObservable();
+        this.priorities = [
+            { value: '3', viewValue: 'High' },
+            { value: '2', viewValue: 'Medium' },
+            { value: '1', viewValue: 'Low' },
+            { value: '0', viewValue: 'None' }
+        ];
     }
     DataService.prototype.changeGoal = function (selectedModels) {
         this.seModels.next(selectedModels);
+    };
+    DataService.prototype.sortMulti = function (obj) {
+        var newArray = obj.map(function (o) {
+            return { pri: o.prioirtyNum, kid: o.kriterium_id };
+        });
+        console.log('.... 1111');
+        newArray.forEach(function (element) {
+            console.log(element);
+        });
+        obj.sort(function (a, b) {
+            return b['prioirtyNum'] - a['prioirtyNum'] || a['kriterium_id'] - b['kriterium_id'];
+        });
+        console.log('.... sorted by new multity: ');
+        obj.forEach(function (element) {
+            console.log(element.kriterium_id);
+        });
+        return obj;
+    };
+    // public sortMultiple(obj: SelectedModel[]) {
+    //   const newArray = obj.map(o => {
+    //     return { pri: o.priority, kid: o.kriterium_id };
+    //   });
+    //
+    //   // console.log('.... 1111');
+    //   // newArray.forEach(element => {
+    //   //   console.log(element);
+    //   // });
+    //
+    //   let tempArr = [];
+    //  newArray.forEach(element => {
+    //     let pk = new PriKid();
+    //     pk.pri = 3 - this.priorities.findIndex(x => x.viewValue === element.pri);
+    //     pk.kid = parseInt(element.kid);
+    //     tempArr.push(pk);
+    //   });
+    //
+    //   console.log('.... 222');
+    //   tempArr.forEach(element => {
+    //     console.log(element);
+    //   });
+    //
+    // // newArray.forEach(o => o.pri = (this.priorities.find(x => x.viewValue === o.pri).value) );
+    //
+    //   // const newObj = tempArr.map(o => {
+    //   //   return { npri: parseInt(o.pri), nkid: parseInt(o.kid) };
+    //   // });
+    //
+    //  tempArr.sort(function(a, b) {
+    //     return b['pri'] - a['pri'] || a['kid'] - b['kid'];
+    //   });
+    //
+    //  console.log('.... xxxx');
+    //  let newObj2: SelectedModel[] =[];
+    //  for(let element of tempArr){
+    //    newObj2.push(obj.find(x=> x.kriterium_id === element.kid.toString()));
+    //    console.log(element);
+    //  }
+    //
+    //   console.log('.... yyy');
+    //   newObj2.forEach(element => {
+    //     console.log(element.kriterium_id);
+    //   });
+    //  return newObj2;
+    // }
+    DataService.prototype.exportJson = function (sms, currentUser) {
+        var arrForJson = [];
+        for (var i = 0; i < sms.length; i++) {
+            arrForJson.push(sms[i]);
+        }
+        currentUser.kriterienList = arrForJson.map(function (x) { return Object.assign({}, x); });
+        var c = JSON.stringify(currentUser, null, '\t');
+        var file = new Blob([c], { type: 'text/json' });
+        this.downloadAsJson(file, 'Your_Criteria.json');
+    };
+    DataService.prototype.downloadAsJson = function (blob, filename) {
+        if (window.navigator.msSaveOrOpenBlob) { // IE10+
+            window.navigator.msSaveOrOpenBlob(blob, filename);
+        }
+        else { // Others
+            var a_1 = document.createElement('a'), url_1 = URL.createObjectURL(blob);
+            a_1.href = url_1;
+            a_1.download = filename;
+            document.body.appendChild(a_1);
+            a_1.click();
+            setTimeout(function () {
+                document.body.removeChild(a_1);
+                window.URL.revokeObjectURL(url_1);
+            }, 0);
+        }
+    };
+    DataService.prototype.downloadAsPDF = function (sms, currentUser) {
+        var doc = new jspdf__WEBPACK_IMPORTED_MODULE_2__();
+        doc.setFont('helvetica');
+        doc.setFontType('normal');
+        doc.setFontSize(10);
+        var arrForJson = [];
+        for (var i = 0; i < sms.length; i++) {
+            arrForJson.push(sms[i]);
+            var jsonStr = JSON.stringify(sms[i], null, '\t');
+            doc.text(jsonStr, 5, 2);
+            if (i < sms.length - 1) {
+                doc.addPage();
+            }
+        }
+        // currentUser.kriterienList = arrForJson.map(x => Object.assign({}, x));
+        // const jsonStr = JSON.stringify(currentUser, null, '\t');
+        doc.save('your_criteria.pdf');
     };
     DataService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
@@ -431,6 +875,74 @@ var DataService = (function () {
 
 /***/ }),
 
+/***/ "./src/app/download-alert/download-alert.component.css":
+/*!*************************************************************!*\
+  !*** ./src/app/download-alert/download-alert.component.css ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/download-alert/download-alert.component.html":
+/*!**************************************************************!*\
+  !*** ./src/app/download-alert/download-alert.component.html ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n<mat-dialog-content>\n  <h2>Once you logout, all your data will be removed. </h2>\n</mat-dialog-content>\n<mat-dialog-actions align=\"end\">\n  <button mat-button matDialogClose=\"confirm\" color=\"primary\">Download(.pdf)</button>\n  <button mat-button matDialogClose=\"cancel\" color=\"warn\">No, thanks</button>\n</mat-dialog-actions>\n"
+
+/***/ }),
+
+/***/ "./src/app/download-alert/download-alert.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/download-alert/download-alert.component.ts ***!
+  \************************************************************/
+/*! exports provided: DownloadAlertComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DownloadAlertComponent", function() { return DownloadAlertComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var DownloadAlertComponent = /** @class */ (function () {
+    function DownloadAlertComponent() {
+    }
+    DownloadAlertComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-download-alert',
+            template: __webpack_require__(/*! ./download-alert.component.html */ "./src/app/download-alert/download-alert.component.html"),
+            styles: [__webpack_require__(/*! ./download-alert.component.css */ "./src/app/download-alert/download-alert.component.css")]
+        })
+    ], DownloadAlertComponent);
+    return DownloadAlertComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/evaluation/dialog-overview-example-dialog-component.html":
+/*!**************************************************************************!*\
+  !*** ./src/app/evaluation/dialog-overview-example-dialog-component.html ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h1 mat-dialog-title>Preview Your Criteria: </h1>\n<div mat-dialog-content>\n\n    <textarea type=\"text\" maxlength=\"1000000\" style=\"font-family: Arial; font-size: 12pt; width:100%; height: 800px;\" value=\"{{data}} \" disabled>  </textarea>\n\n</div>\n"
+
+/***/ }),
+
 /***/ "./src/app/evaluation/evaluation.component.css":
 /*!*****************************************************!*\
   !*** ./src/app/evaluation/evaluation.component.css ***!
@@ -438,7 +950,7 @@ var DataService = (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/*.container{*/\n  /*background-color: #fac9ae;*/\n  /*}*/\n  div.input-group{\n  float: left;\n  width: 80%;\n  /*border: 1px dotted #A9B7C0;*/\n  border-radius: 25px;\n  background: lightgrey;\n  padding: 20px;\n  margin-top: 20px;\n}\n  #label1{\n  float: left;\n  width: 80%;\n}\n  .input-select{\n  float: right;\n  width: 15%;\n  margin-left: 15px;\n  margin-top: 110px;\n}\n  .checkedModel{\n  float: left;\n  width: 60%;\n  margin:2px;\n}\n  .checkedModel input{\n  background-color:#A9B7C0;\n  width:95%;\n  color:black;\n  font-size: medium;\n  font-weight: bold;\n  padding:5px;\n  border:none;\n  margin-bottom: 5px;\n  display: block;\n}\n  .balls{\n  width: 15%;\n  background-color: #d7d7d7;\n  color:darkgrey;\n  height: 30px;\n  margin-right: 30px;\n  font-size: medium;\n  font-weight: bold;\n  text-align: center;\n}\n  .priority{\n  float:right;\n  width: 6%;\n  margin:2px;\n}\n  .priority input{\n  font-size: medium;\n  height: 30px;\n  width: 140px;\n  font-weight: bold;\n  margin-right: 80px;\n  background-color: #d7d7d7;\n  border:none;\n  display: block;\n  text-align: center;\n  padding:5px;\n  margin-bottom: 5px;\n  color:darkgrey;\n}\n  div.input-group.mb-3{\n  float: left;\n  width: 95%;\n  padding: 0px;\n  margin-top: 2px;\n  background: lightgrey;\n}\n  .input-group-text{\n  font-size: medium;\n  font-weight: bold;\n  background: lightgrey;\n}\n  .form-control{\n  font-size: medium;\n  background: lightgrey;\n  border-style: none;\n}\n  .mass{\n  float:left;\n  width: 100%;\n  display: block;\n}\n  .mass  textarea{\n  float: left;\n  width: 95%;\n  background-color: #d7d7d7;\n  overflow: hidden;\n  display: block;\n  margin-top: 5px;\n  margin-bottom: 5px;\n  border:1px;\n  font-size: medium;\n  color:darkgrey;\n  font-weight: normal;\n}\n  .KTV-form {\n  min-width: 150px;\n  max-width: 100%;\n  width: 100%;\n  margin-top: 15px;\n}\n  .example-full-width {\n  width: 95%;\n  font-size: medium;\n  font-weight: bold;\n  background-color: #d7d7d7;\n  color:darkgrey;\n}\n  .btn {\n  float: left;\n  width: 15%;\n  background-color: #989898;\n  border: none;\n  color: white;\n  padding: 12px 30px;\n  font-size: medium;\n  cursor: pointer;\n  margin-left: 15px;\n  margin-right: 15px;\n  margin-top: 10px;\n  padding: 3px;\n}\n  /* Darker background on mouse-over */\n  .btn:hover {\n  background-color: #787878;\n}\n  .info{\n  float: left;\n  width: 20%;\n  margin-left: 295px;\n  margin-top: 10px;\n  font-size: medium;\n}\n"
+module.exports = "/*.container{*/\n  /*background-color: #fac9ae;*/\n  /*}*/\n  div.input-group{\n  float: left;\n  width: 88%;\n  /*border: 1px dotted #A9B7C0;*/\n  border-radius: 25px;\n  background: lightgrey;\n  padding: 20px;\n  margin-top: 20px;\n}\n  #label1{\n  float: left;\n  width: 90%;\n}\n  .input-select{\n  float: right;\n  width: 5%;\n  align-content: left;\n  margin-left: 15px;\n  margin-top: 110px;\n}\n  .checkedModel{\n  float: left;\n  width: 60%;\n  margin:2px;\n}\n  .checkedModel input{\n  background-color:#A9B7C0;\n  width:95%;\n  color:black;\n  font-size: medium;\n  font-weight: bold;\n  padding:5px;\n  border:none;\n  margin-bottom: 5px;\n  display: block;\n}\n  .balls{\n  width: 15%;\n  background-color: #d7d7d7;\n  color:darkgrey;\n  height: 30px;\n  margin-right: 10px;\n  font-size: medium;\n  font-weight: bold;\n  text-align: center;\n}\n  .priority{\n  float:right;\n  width: 18%;\n  margin:2px;\n}\n  .priority input{\n  font-size: medium;\n  height: 30px;\n  width: 100%;\n  font-weight: bold;\n  margin-right: 80px;\n  background-color: #d7d7d7;\n  border:none;\n  display: block;\n  text-align: center;\n  padding:5px;\n  margin-bottom: 5px;\n  color:darkgrey;\n}\n  div.input-group.mb-3{\n  float: left;\n  width: 95%;\n  padding: 0px;\n  margin-top: 2px;\n  background: lightgrey;\n}\n  div.input-group-prepend {\n  float: left;\n  width: 15%;\n}\n  .input-group-text{\n  font-size: medium;\n  font-weight: bold;\n  background: lightgrey;\n  color: gray;\n}\n  .form-control{\n  font-size: medium;\n  background: lightgrey;\n  border-style: solid;\n  border-width: 2px;\n}\n  .form-control-2{\n  font-size: medium;\n  background-color: whitesmoke;\n  border-style: none;\n  width: 778px;\n}\n  .mass{\n  float:left;\n  width: 100%;\n  display: block;\n}\n  .mass  textarea{\n  float: left;\n  width: 95%;\n  background-color: #d7d7d7;\n  overflow: hidden;\n  display: block;\n  margin-top: 5px;\n  margin-bottom: 5px;\n  border:1px;\n  font-size: medium;\n  color:darkgrey;\n  font-weight: normal;\n}\n  .KTV-form {\n  min-width: 150px;\n  max-width: 100%;\n  width: 100%;\n  margin-top: 0px;\n}\n  .example-full-width {\n  width: 95%;\n  font-size: medium;\n  font-weight: bold;\n  background-color: #d7d7d7;\n  color:darkgrey;\n}\n  .btn {\n  float: left;\n  width: 15%;\n  background-color: #989898;\n  border: none;\n  color: white;\n  padding: 12px 30px;\n  font-size: medium;\n  cursor: pointer;\n  margin-left: 15px;\n  margin-right: 15px;\n  margin-top: 10px;\n  padding: 3px;\n}\n  /* Darker background on mouse-over */\n  .btn:hover {\n  background-color: #787878;\n}\n  .info{\n  float: left;\n  width: 20%;\n  margin-left: 405px;\n  margin-top: 10px;\n  font-size: medium;\n}\n"
 
 /***/ }),
 
@@ -449,7 +961,7 @@ module.exports = "/*.container{*/\n  /*background-color: #fac9ae;*/\n  /*}*/\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n\n  <div id=\"label1\">\n    <label> Welche Maßnahmen sollen die Lücken zwischen Ist- und Ziel-Zuständen schließen? </label>\n  </div>\n\n  <div>\n    <div class=\"info\"> You have evaluated {{number}} Kriterien. </div>\n    <button class=\"btn\" (click)=\"preview()\" disabled> Preview </button>\n    <button class=\"btn\" (click)=\"exportJson()\"> Download (.json)</button>\n    <!--<a class=\"btn btn-clear\" title=\"Download JSON\" [href]=\"downloadJsonHref\" download=\"download.json\"></a>-->\n  </div>\n  <div *ngFor=\"let cm of sms; index as i\">\n    <div class =\"input-group\">\n      <div class=\"checkedModel\"> <input  disabled type=\"text\" id=\"{{cm.kriterium_id}}\" value=\"{{cm.kriterium_id}}. {{cm.kriterium}}\"></div>\n      <div class=\"balls\"> {{get_izIDs(cm, 'i')}} -> {{get_izIDs(cm, 'z')}}</div>\n      <div class=\"priority\"> <input  type=\"text\" disabled value=\" Priorität: {{cm.priority}}\"></div>\n\n\n      <div class=\"input-group mb-3\">\n        <div class=\"input-group-prepend\">\n          <span class=\"input-group-text\">Maßnahme: </span>\n        </div>\n        <textarea class=\"form-control\" aria-label=\"Maßnahme: \"  value=\"{{cm.Massnahmen}}\"  matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\" disabled></textarea>\n      </div>\n\n      <div class=\"input-group mb-3\">\n        <div class=\"input-group-prepend\">\n          <span class=\"input-group-text\">Erklärung: &nbsp;&nbsp;&nbsp;</span>\n        </div>\n        <textarea class=\"form-control\" aria-label=\"Erklärung:\" value=\"{{cm.Erklaerung}}\" matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\" disabled></textarea>\n      </div>\n\n\n      <form class=\"KTV-form\">\n        <table class=\"example-full-width\" cellspacing=\"0\">\n          <tr>\n            <td><mat-form-field class=\"example-full-width\">\n              <input matInput type=\"text\" placeholder=\"Kosten: (EUR)\" value=\"{{cm.Kosten}}\">\n            </mat-form-field></td>\n            <td><mat-form-field class=\"example-full-width\">\n              <input matInput  placeholder=\"Termin:\" value=\"{{cm.Termin | date : 'dd.MM.y' }}\">\n            </mat-form-field></td>\n            <td><mat-form-field class=\"example-full-width\">\n              <input matInput placeholder=\"Verantwortlich:\" maxlength=\"30\" value=\"{{cm.Verantwortlich}}\">\n            </mat-form-field></td>\n          </tr></table>\n      </form>\n    </div><!--input Group-->\n\n    <div class=\"input-select\" *ngIf=\"sms[i]\">\n    <!--<div class=\"input-select\">-->\n      <mat-checkbox type=\"checkbox\" checked=\"false\" [checked]=\"sms[i].isEvaluated\" (change)=\"onChange($event, i, cm)\" ></mat-checkbox>\n    </div>\n  </div>\n\n\n</div><!--container-->\n"
+module.exports = "<div class=\"container\">\n\n  <div id=\"label1\">\n    <label>Welche Maßnahmen wurden umgesetzt? </label>\n  </div>\n\n  <div>\n    <div class=\"info\"> You have evaluated {{number}} Kriterien. </div>\n    <button class=\"btn\" (click)=\"preview()\"> Preview </button>\n    <button class=\"btn\" (click)=\"save2Json()\"> Download (.json)</button>\n    <!--<a class=\"btn btn-clear\" title=\"Download JSON\" [href]=\"downloadJsonHref\" download=\"download.json\"></a>-->\n  </div>\n  <div *ngFor=\"let cm of sms; index as i\">\n    <div class =\"input-group\">\n      <div class=\"checkedModel\"> <input  disabled type=\"text\" id=\"{{cm.kriterium_id}}\" value=\"{{cm.kriterium_id}}. {{cm.kriterium}}\"></div>\n      <div class=\"balls\"> {{get_izIDs(cm, 'i')}} -> {{get_izIDs(cm, 'z')}}</div>\n      <div class=\"priority\"> <input  type=\"text\" disabled value=\" Priorität: {{cm.priority}}\"></div>\n\n\n      <div class=\"input-group mb-3\">\n        <div class=\"input-group-prepend\">\n          <span class=\"input-group-text\">Maßnahme: </span>\n        </div>\n        <textarea class=\"form-control\" aria-label=\"Maßnahme: \"  value=\"{{cm.Massnahmen}}\"  matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\" disabled></textarea>\n      </div>\n\n      <div class=\"input-group mb-3\">\n        <div class=\"input-group-prepend\">\n          <span class=\"input-group-text\" style=\"color:black\"> Notiz: </span>\n        </div>\n        <textarea class=\"form-control-2\" aria-label=\"Notiz:\" [(ngModel)]=\"cm.Evaluation_note\"  matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\" ></textarea>\n      </div>\n\n\n      <form class=\"KTV-form\">\n        <table class=\"example-full-width\" cellspacing=\"0\">\n          <tr>\n            <td><mat-form-field class=\"example-full-width\" >\n              <input matInput type=\"text\" placeholder=\"Kosten: (EUR)\" value=\"{{cm.Kosten| currency:'EUR':true}}\" disabled>\n            </mat-form-field></td>\n            <td><mat-form-field class=\"example-full-width\">\n              <input matInput  placeholder=\"Termin:\" value=\"{{cm.Termin | date:'mm/dd/yyyy'}}\" disabled>\n            </mat-form-field></td>\n            <td><mat-form-field class=\"example-full-width\">\n              <input matInput placeholder=\"Verantwortlich:\" maxlength=\"30\" value=\"{{cm.Verantwortlich}}\" disabled>\n            </mat-form-field></td>\n          </tr></table>\n      </form>\n    </div><!--input Group-->\n\n    <div class=\"input-select\" *ngIf=\"sms[i]\">\n    <!--<div class=\"input-select\">-->\n      <mat-checkbox type=\"checkbox\" checked=\"false\" [checked]=\"sms[i].isEvaluated\" (change)=\"onChange($event, i, cm)\" ></mat-checkbox>\n    </div>\n  </div>\n\n\n</div><!--container-->\n"
 
 /***/ }),
 
@@ -457,18 +969,20 @@ module.exports = "<div class=\"container\">\n\n  <div id=\"label1\">\n    <label
 /*!****************************************************!*\
   !*** ./src/app/evaluation/evaluation.component.ts ***!
   \****************************************************/
-/*! exports provided: EvaluationComponent */
+/*! exports provided: EvaluationComponent, DialogOverviewExampleDialogComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EvaluationComponent", function() { return EvaluationComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DialogOverviewExampleDialogComponent", function() { return DialogOverviewExampleDialogComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data.service */ "./src/app/data.service.ts");
 /* harmony import */ var _modell_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modell.service */ "./src/app/modell.service.ts");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/esm5/platform-browser.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../user.service */ "./src/app/user.service.ts");
 /* harmony import */ var _massnahmen_massnahmen_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../massnahmen/massnahmen.component */ "./src/app/massnahmen/massnahmen.component.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -478,19 +992,24 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 
 
 
 
 
 
-var EvaluationComponent = (function () {
-    function EvaluationComponent(_modellService, _data, sanitizer, _userService, _massna) {
+
+var EvaluationComponent = /** @class */ (function () {
+    function EvaluationComponent(_modellService, _data, sanitizer, _userService, _massna, dialog) {
         this._modellService = _modellService;
         this._data = _data;
         this.sanitizer = sanitizer;
         this._userService = _userService;
         this._massna = _massna;
+        this.dialog = dialog;
         this.sms = [];
         this.tmpArray = [];
         this.number = 0;
@@ -513,52 +1032,53 @@ var EvaluationComponent = (function () {
         this._userService.getUser().subscribe(function (res) { return _this.currentUser = res; });
         this._userService.changeUser(this.currentUser);
     };
-    EvaluationComponent.prototype.preview = function () {
-        var objJSON = JSON.stringify(this.tmpArray);
-        console.log(objJSON);
+    // generateDownloadJsonUri() {
+    //   const theJSON = JSON.stringify(this.resJsonResponse);
+    //   const uri = this.sanitizer.bypassSecurityTrustUrl('data:text/json;charset=UTF-8,' + encodeURIComponent(theJSON));
+    //   this.downloadJsonHref = uri;
+    // }
+    EvaluationComponent.prototype.save2Json = function () {
+        this._data.exportJson(this.sms, this.currentUser);
     };
-    EvaluationComponent.prototype.generateDownloadJsonUri = function () {
-        var theJSON = JSON.stringify(this.resJsonResponse);
-        var uri = this.sanitizer.bypassSecurityTrustUrl('data:text/json;charset=UTF-8,' + encodeURIComponent(theJSON));
-        this.downloadJsonHref = uri;
-    };
-    EvaluationComponent.prototype.exportJson = function () {
-        console.log(this.sms);
-        // this.tmpArray.push(this.currentUser);
-        var arrForJson = [];
-        console.log('... the current user: ', this.currentUser);
-        // this will leave out the ones of unchecked
-        for (var i = 0; i < this.sms.length; i++) {
-            // if (this.sms[i].isEvaluated) {
-            //  // this.tmpArray.push(this.sms[i]);
-            arrForJson.push(this.sms[i]);
-            // }
-        }
-        //  this.currentUser.kriterienList = this.arrForJson;
-        this.currentUser.kriterienList = arrForJson.map(function (x) { return Object.assign({}, x); });
-        //  this.tmpArray.push(this.currentUser);
-        //  // this.tmpArray.push(this.arrForJson);
-        // const c = JSON.stringify(this.tmpArray);
-        var c = JSON.stringify(this.currentUser);
-        var file = new Blob([c], { type: 'text/json' });
-        this.download(file, 'Your_Kriterions.json');
-    };
-    EvaluationComponent.prototype.download = function (blob, filename) {
-        if (window.navigator.msSaveOrOpenBlob) {
-            window.navigator.msSaveOrOpenBlob(blob, filename);
-        }
-        else {
-            var a_1 = document.createElement('a'), url_1 = URL.createObjectURL(blob);
-            a_1.href = url_1;
-            a_1.download = filename;
-            document.body.appendChild(a_1);
-            a_1.click();
-            setTimeout(function () {
-                document.body.removeChild(a_1);
-                window.URL.revokeObjectURL(url_1);
-            }, 0);
-        }
-    };
+    //  public exportJson(sms): void {
+    //    // console.log(this.sms);
+    //    // this.tmpArray.push(this.currentUser);
+    //    const arrForJson = [];
+    //    console.log ('... the current user: ', this.currentUser);
+    //    // this will leave out the ones of unchecked
+    //    for (let i = 0; i < this.sms.length; i ++) {
+    //     // if (this.sms[i].isEvaluated) {
+    //      //  // this.tmpArray.push(this.sms[i]);
+    //        arrForJson.push(this.sms[i]);
+    //     // }
+    //    }
+    //
+    //    //  this.currentUser.kriterienList = this.arrForJson;
+    //    this.currentUser.kriterienList = arrForJson.map(x => Object.assign({}, x));
+    //    //  this.tmpArray.push(this.currentUser);
+    //    //  // this.tmpArray.push(this.arrForJson);
+    //
+    //   // const c = JSON.stringify(this.tmpArray);
+    //    const c = JSON.stringify(this.currentUser);
+    //    const file = new Blob([c], {type: 'text/json'});
+    //    this.download(file, 'Your_Kriterions.json');
+    //  }
+    // download(blob, filename) {
+    //    if (window.navigator.msSaveOrOpenBlob) { // IE10+
+    //      window.navigator.msSaveOrOpenBlob(blob, filename);
+    //    } else { // Others
+    //      const a = document.createElement('a'),
+    //        url = URL.createObjectURL(blob);
+    //      a.href = url;
+    //      a.download = filename;
+    //      document.body.appendChild(a);
+    //      a.click();
+    //      setTimeout(function() {
+    //        document.body.removeChild(a);
+    //        window.URL.revokeObjectURL(url);
+    //      }, 0);
+    //    }
+    //  }
     // check or uncheck
     EvaluationComponent.prototype.onChange = function (event, index, item) {
         this.number = 0;
@@ -575,6 +1095,27 @@ var EvaluationComponent = (function () {
     EvaluationComponent.prototype.get_izIDs = function (cdModel, iz) {
         return this._massna.get_izIDs(cdModel, iz);
     };
+    EvaluationComponent.prototype.preview = function () {
+        var arrForJson = [];
+        for (var i = 0; i < this.sms.length; i++) {
+            arrForJson.push(this.sms[i]);
+        }
+        this.currentUser.kriterienList = arrForJson.map(function (x) { return Object.assign({}, x); });
+        var objJSON = JSON.stringify(this.currentUser, null, '\t');
+        console.log('.... preview json: ', objJSON);
+        this.openDialogPreview(objJSON);
+    };
+    EvaluationComponent.prototype.openDialogPreview = function (TestTree_DATA) {
+        var dialogRef = this.dialog.open(DialogOverviewExampleDialogComponent, {
+            width: '1200px',
+            height: '1000px',
+            // data: { name: this.test_name, animal: this.test_animal }
+            data: TestTree_DATA
+        });
+        dialogRef.afterClosed().subscribe(function (result) {
+            console.log('The preview dialog was closed; ');
+        });
+    };
     EvaluationComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             providers: [_massnahmen_massnahmen_component__WEBPACK_IMPORTED_MODULE_5__["MassnahmenComponent"]],
@@ -582,9 +1123,28 @@ var EvaluationComponent = (function () {
             template: __webpack_require__(/*! ./evaluation.component.html */ "./src/app/evaluation/evaluation.component.html"),
             styles: [__webpack_require__(/*! ./evaluation.component.css */ "./src/app/evaluation/evaluation.component.css")]
         }),
-        __metadata("design:paramtypes", [_modell_service__WEBPACK_IMPORTED_MODULE_2__["ModellService"], _data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"], _user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"], _massnahmen_massnahmen_component__WEBPACK_IMPORTED_MODULE_5__["MassnahmenComponent"]])
+        __metadata("design:paramtypes", [_modell_service__WEBPACK_IMPORTED_MODULE_2__["ModellService"], _data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"], _user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"], _massnahmen_massnahmen_component__WEBPACK_IMPORTED_MODULE_5__["MassnahmenComponent"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialog"]])
     ], EvaluationComponent);
     return EvaluationComponent;
+}());
+
+var DialogOverviewExampleDialogComponent = /** @class */ (function () {
+    function DialogOverviewExampleDialogComponent(dialogRef, data) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+    }
+    DialogOverviewExampleDialogComponent.prototype.onNoClick = function () {
+        this.dialogRef.close();
+    };
+    DialogOverviewExampleDialogComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'dialog-overview-example-dialog',
+            template: __webpack_require__(/*! ./dialog-overview-example-dialog-component.html */ "./src/app/evaluation/dialog-overview-example-dialog-component.html"),
+        }),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_6__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialogRef"], Object])
+    ], DialogOverviewExampleDialogComponent);
+    return DialogOverviewExampleDialogComponent;
 }());
 
 
@@ -598,7 +1158,7 @@ var EvaluationComponent = (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--<mat-toolbar color=\"primary\" *ngIf=\"isLoggedIn$ | async as isLoggedIn\">-->\n  <!--<span>-->\n    <!--Angular NavBar + Login Example #01-->\n  <!--</span>-->\n  <!--<span class=\"fill-remaining-space\"></span>-->\n  <!--<button mat-button>Menu Option 01</button>-->\n  <!--<button mat-button>Menu Option 02</button>-->\n  <!--&lt;!&ndash;button mat-button routerLink=\"login\" *ngIf=\"!isLoggedIn; else notLoggedIn\">Login</button>-->\n  <!--<ng-template #notLoggedIn>-->\n    <!--<button mat-button (click)=\"onLogout()\">Logout</button>-->\n  <!--</ng-template &ndash;&gt;-->\n  <!--<button mat-button (click)=\"onLogout()\" *ngIf=\"isLoggedIn\">Logout</button>-->\n<!--</mat-toolbar>-->\n\n\n<nav id=\"navbar\" *ngIf=\"isLoggedIn$ | async as isLoggedIn\">\n  <div class=\"container\">\n    <ul>\n      <!--<li> <a routerLink=\"/home\" > Home</a> </li>-->\n      <li> <a routerLink=\"/start\" routerLinkActive=\"active\"> Start</a> </li>\n      <li> <a routerLink=\"/kriteiren\" routerLinkActive=\"active\"> Kriterien</a> </li>\n      <li> <a routerLink=\"/zustaende\" routerLinkActive=\"active\"> Zustände</a> </li>\n      <li> <a routerLink=\"/massnahman\" routerLinkActive=\"active\"> Maßnahmen</a> </li>\n      <li> <a routerLink=\"/evaluation\" routerLinkActive=\"active\"> Evaluation</a> </li>\n      <!--<li> <a routerLink=\"/modellDesign\" routerLinkActive=\"active\"> ModelDesign</a> </li>-->\n      <!--<li> <a routerLink=\"/models\" routerLinkActive=\"active\"> ModelList</a> </li>-->\n      <!--<button mat-button (click)=\"onLogout()\" *ngIf=\"isLoggedIn\">Logout</button>-->\n      <li><button class=\"logout\" type=\"button\" (click)=\"onLogout()\" *ngIf=\"isLoggedIn\" >Logout</button></li>\n    </ul>\n\n  </div>\n</nav>\n"
+module.exports = "<!--<mat-toolbar color=\"primary\" *ngIf=\"isLoggedIn$ | async as isLoggedIn\">-->\n  <!--<span>-->\n    <!--Angular NavBar + Login Example #01-->\n  <!--</span>-->\n  <!--<span class=\"fill-remaining-space\"></span>-->\n  <!--<button mat-button>Menu Option 01</button>-->\n  <!--<button mat-button>Menu Option 02</button>-->\n  <!--&lt;!&ndash;button mat-button routerLink=\"login\" *ngIf=\"!isLoggedIn; else notLoggedIn\">Login</button>-->\n  <!--<ng-template #notLoggedIn>-->\n    <!--<button mat-button (click)=\"onLogout()\">Logout</button>-->\n  <!--</ng-template &ndash;&gt;-->\n  <!--<button mat-button (click)=\"onLogout()\" *ngIf=\"isLoggedIn\">Logout</button>-->\n<!--</mat-toolbar>-->\n\n\n<!--<nav id=\"navbar\" *ngIf=\"isLoggedIn$ | async as isLoggedIn\">-->\n<nav id=\"navbar\">\n  <div class=\"container\">\n    <ul>\n      <!--<li> <a routerLink=\"/home\" > Home</a> </li>-->\n      <li> <a routerLink=\"/start\" routerLinkActive=\"active\"> Start</a> </li>\n      <li> <a routerLink=\"/kriteiren\" routerLinkActive=\"active\"> Kriterien</a> </li>\n      <li> <a routerLink=\"/zustaende\" routerLinkActive=\"active\"> Zustände</a> </li>\n      <li> <a routerLink=\"/massnahman\" routerLinkActive=\"active\"> Maßnahmen</a> </li>\n      <li> <a routerLink=\"/evaluation\" routerLinkActive=\"active\"> Evaluation</a> </li>\n      <!--<li> <a routerLink=\"/modellDesign\" routerLinkActive=\"active\"> ModelDesign</a> </li>-->\n      <!--<li> <a routerLink=\"/models\" routerLinkActive=\"active\"> ModelList</a> </li>-->\n      <!--<button mat-button (click)=\"onLogout()\" *ngIf=\"isLoggedIn\">Logout</button>-->\n      <!--<li><button class=\"logout\" type=\"button\" (click)=\"onLogout()\" *ngIf=\"isLoggedIn\" >Logout</button></li>-->\n    </ul>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -613,7 +1173,8 @@ module.exports = "<!--<mat-toolbar color=\"primary\" *ngIf=\"isLoggedIn$ | async
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeaderComponent", function() { return HeaderComponent; });
 /* harmony import */ var _auth_auth_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../auth/auth.service */ "./src/app/auth/auth.service.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -625,15 +1186,14 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
-var HeaderComponent = (function () {
-    function HeaderComponent(authService) {
+
+var HeaderComponent = /** @class */ (function () {
+    function HeaderComponent(authService, dialog) {
         this.authService = authService;
+        this.dialog = dialog;
     }
     HeaderComponent.prototype.ngOnInit = function () {
         this.isLoggedIn$ = this.authService.isLoggedIn;
-    };
-    HeaderComponent.prototype.onLogout = function () {
-        this.authService.logout();
     };
     HeaderComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -643,7 +1203,7 @@ var HeaderComponent = (function () {
                 ".angular-logo {\n        margin: 0 4px 3px 0;\n        height: 35px;\n        vertical-align: middle;\n    }\n    .fill-remaining-space {\n      flex: 1 1 auto;\n    }\n    "
             ]
         }),
-        __metadata("design:paramtypes", [_auth_auth_service__WEBPACK_IMPORTED_MODULE_0__["AuthService"]])
+        __metadata("design:paramtypes", [_auth_auth_service__WEBPACK_IMPORTED_MODULE_0__["AuthService"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]])
     ], HeaderComponent);
     return HeaderComponent;
 }());
@@ -684,7 +1244,7 @@ module.exports = "<div class=\"jumbotron\">\n  <h2 align=\"center\">IMPRESSUM & 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ImpressumComponent", function() { return ImpressumComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -695,7 +1255,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var ImpressumComponent = (function () {
+var ImpressumComponent = /** @class */ (function () {
     function ImpressumComponent() {
     }
     ImpressumComponent.prototype.ngOnInit = function () {
@@ -722,7 +1282,7 @@ var ImpressumComponent = (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".myform{\n  width:100%;\n  float:left;\n  padding: 20px;\n}\n\n#close-icon {\n  width:10%;\n}\n\n.myform .form-group{\n  padding: 0;\n  margin:0;\n}\n\n.myform .form-group label{\n  float:left;\n  width: 60%;\n  height: 30px;\n  background-color:#A9B7C0;\n  color:#333;\n  font-weight: bolder;\n  padding:0;\n  border:none;\n  margin-bottom: 20px;\n  margin-top: 15px;\n  font-size: medium;\n  cursor: zoom-in;\n}\n\n.myform .form-group mat-checkbox {\n  float: right;\n  width: 20%;\n  margin-right: -80px;\n  margin-top: 20px;\n  padding: 0;\n}\n\n.fa-check-circle-o{\n  font-size:40px;\n  color:orange;\n  width: 20%;\n  float:right;\n  margin-right: -80px;\n  margin-top: 20px;\n  padding: 0;\n  box-sizing: border-box;\n  position: center;\n}\n\n.fa-check-circle{\n  font-size:40px;\n  color:orange;\n  float:right;\n  width: 20%;\n  box-sizing: border-box;\n  position: center;\n  margin-right: -80px;\n  margin-top: 20px;\n  padding: 0;\n}\n\n.myform .form-group textarea {\n  padding: 8px;\n  width: 75%;\n  border-radius: 0;\n  overflow: hidden;\n  background: #EFD9C1;\n  display: block;\n  border-color: lightgrey;\n  font-size: medium;\n}\n\n.mat-form-field{\n  width:100% !important;\n  border:0;\n  margin:0;\n  padding:0;\n}\n\n#wrapper {\n}\n\n#content {\n  float: left;\n  width: 80%;\n}\n\n#sidebar {\n  float: right;\n  width: 20%;\n  margin-right: -100px;\n  margin-bottom: 0;\n  margin-top: 0;\n}\n\n#cleared {\n  clear: both;\n}\n\n"
+module.exports = ".myform{\n  width:100%;\n  float:left;\n  padding: 20px;\n}\n\n#close-icon {\n  width:10%;\n}\n\n.myform .form-group{\n  padding: 0;\n  margin: 0;\n}\n\n.myform .smsPart{\n  margin-bottom: 10px;\n  margin-top: 10px;\n  background-color: yellow;\n}\n\n.myform .msPart{\n  margin-bottom: 10px;\n  margin-top: 10px;\n  background-color: greenyellow;\n}\n\n.myform .form-group label{\n  float:left;\n  width: 60%;\n  height: 30px;\n  background-color:#A9B7C0;\n  color:#333;\n  font-weight: bolder;\n  padding:0;\n  border:none;\n  margin-bottom: 20px;\n  margin-top: 15px;\n  font-size: medium;\n  cursor: zoom-in;\n}\n\n.hange {\n  float: left;\n  width:18%;\n  height:30px;\n  background-color: #EFD9C1;\n  font-size: 12px;\n  margin-top: 15px;\n  margin-left: 1px;\n}\n\n.myform .form-group mat-checkbox {\n  float: right;\n  width: 20%;\n  margin-right: -80px;\n  margin-top: 20px;\n  padding: 0;\n}\n\n.fa-check-circle-o{\n  font-size:40px;\n  color:orange;\n  width: 20%;\n  float:right;\n  margin-right: -80px;\n  margin-top: 20px;\n  padding: 0;\n  box-sizing: border-box;\n  position: center;\n}\n\n.fa-check-circle{\n  font-size:40px;\n  color:orange;\n  float:right;\n  width: 20%;\n  box-sizing: border-box;\n  position: center;\n  margin-right: -80px;\n  margin-top: 20px;\n  padding: 0;\n}\n\n.myform .form-group textarea {\n  padding: 8px;\n  width: 75%;\n  border-radius: 0;\n  overflow: hidden;\n  background: #EFD9C1;\n  display: block;\n  border-color: lightgrey;\n  font-size: medium;\n  resize: none;\n  overflow-y: scroll;\n}\n\n.mat-form-field{\n  width:100% !important;\n  border:0;\n  margin:0;\n  padding:0;\n}\n\n#wrapper {\n}\n\n#content {\n  float: left;\n  width: 80%;\n}\n\n#sidebar {\n  float: right;\n  width: 20%;\n  margin-right: -100px;\n  margin-bottom: 0;\n  margin-top: 0;\n}\n\n#cleared {\n  clear: both;\n}\n\n.mat-radio-button  {\n  margin-right: 20px;\n  margin-left: 20px;\n}\n\n.mat-radio-group {\n  float: right;\n  margin-right: 15px;\n}\n\n#filter {\n  float: right;\n  width: 100%;\n  margin-right: 80px;\n}\n\n.rb {\n  font: normal 20px courier !important;\n  color: grey;\n}\n"
 
 /***/ }),
 
@@ -733,7 +1293,7 @@ module.exports = ".myform{\n  width:100%;\n  float:left;\n  padding: 20px;\n}\n\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n      <div class=\"container\">\n        <form class=\"myform\">\n           <div id=\"label1\">\n             <label> Welche Kriterien benötigen Sie für Ihre Ziele?  </label>\n            </div>\n\n           <div class =\"form-group\" *ngFor=\"let modell of modells | sortArr:'_id'; let i = index;\">\n                 <label title=\"click to see description\" (click)=\"showBeschreibung(i)\" >{{modell._id}}. {{modell.Kriterium}}</label>\n                  <mat-checkbox type=\"checkbox\" checked=\"false\" [checked]=\"getCheckState(modell._id)\" (change)=\"onChange($event, i, modell)\" ></mat-checkbox>\n                  <textarea [hidden]=\"!hiddenValue[i]\" matInput placeholder=\"\" matTextareaAutosize matAutosizeMinRows=\"6\" matAutosizeMaxRows=\"50\">{{modell.Beschreibung}}</textarea>\n              </div>\n        </form>\n    </div>\n\n\n"
+module.exports = "\n<div class=\"container\">\n  <form class=\"myform\">\n    <div id=\"label1\">\n      <label> Welche Kriterien benötigen Sie für Ihre Ziele?  </label>\n    </div>\n    <!--<div id=\"showAll\">-->\n      <!--<label (click)=\"allParts()\"> {{showAll}} </label>-->\n    <!--</div>-->\n\n    <div id=\"filter\">\n    <mat-radio-group  [(ngModel)]=\"selectedAll\" name=\"radio\">\n      <mat-radio-button class=\"rb\" *ngFor=\"let sa of saOptions\" [value]=\"sa\">\n        {{sa}}\n      </mat-radio-button>\n    </mat-radio-group>\n    </div>\n    <!--<div >Your favorite season is: {{selectedAll}}</div>-->\n\n\n    <div *ngIf=\"selectedAll==='selected'\">\n    <div class =\"form-group\" *ngFor=\"let modell of modells | sortArr:'_id': 'ascending'; let i = index;\">\n      <div *ngIf=\"modell.isSelected\">\n        <label title=\"click to see description\" (click)=\"showBeschreibung(i)\" >{{modell._id}}. {{modell.Kriterium}}</label>\n        <p class=\"hange\" *ngIf=\"i === 9 && getCheckState(modell)\"> \"Zusammenhängende: 46, 27, 28\"</p>\n        <mat-checkbox type=\"checkbox\" checked=\"false\" [checked]=\"getCheckState(modell)\" (change)=\"onChange($event, i, modell)\" ></mat-checkbox>\n        <textarea [hidden]=\"!hiddenValue[i]\" placeholder=\"\"  rows=\"5\" >{{modell.Beschreibung}}</textarea>\n      </div>\n    </div>\n    </div>\n\n\n    <div *ngIf=\"selectedAll==='all'\">\n    <div class =\"form-group\" *ngFor=\"let modell of modells | sortArr:'_id': 'ascending'; let i = index;\">\n        <label title=\"click to see description\" (click)=\"showBeschreibung(i)\" >{{modell._id}}. {{modell.Kriterium}}</label>\n        <p class=\"hange\" *ngIf=\"i === 9 && getCheckState(modell)\"> \"Zusammenhängende: 46, 27, 28\"</p>\n        <mat-checkbox type=\"checkbox\" checked=\"false\" [checked]=\"getCheckState(modell)\" (change)=\"onChange($event, i, modell)\" ></mat-checkbox>\n        <textarea [hidden]=\"!hiddenValue[i]\"  placeholder=\"\"  rows=\"5\" >{{modell.Beschreibung}}</textarea>\n      </div>\n    </div>\n  </form>\n</div>\n"
 
 /***/ }),
 
@@ -747,11 +1307,13 @@ module.exports = "\n      <div class=\"container\">\n        <form class=\"myfor
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "KriterienComponent", function() { return KriterienComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _modell_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modell.service */ "./src/app/modell.service.ts");
 /* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data.service */ "./src/app/data.service.ts");
 /* harmony import */ var _selectedModel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../selectedModel */ "./src/app/selectedModel.ts");
 /* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../user.service */ "./src/app/user.service.ts");
+/* harmony import */ var _ComLR__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../ComLR */ "./src/app/ComLR.ts");
+/* harmony import */ var _clr_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../clr.service */ "./src/app/clr.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -766,45 +1328,82 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var KriterienComponent = (function () {
-    function KriterienComponent(_modellService, _data, _userService) {
+
+
+var KriterienComponent = /** @class */ (function () {
+    function KriterienComponent(_modellService, _data, _userService, _clrService) {
         this._modellService = _modellService;
         this._data = _data;
         this._userService = _userService;
-        this.isLoggedIn = true;
-        // showUnderline = true;
+        this._clrService = _clrService;
+        // showAll = 'show Selected';
         this.sms = [];
         this.hiddenValue = new Array(42).fill(false);
+        this.selectedAll = 'all';
+        // shortLong: boolean;
+        this.saOptions = [
+            'selected',
+            'all',
+        ];
+        this.amount = 0.0;
+        this.formattedAmount = '';
     }
     KriterienComponent.prototype.ngOnInit = function () {
         var _this = this;
         this._modellService.sharedModells.subscribe(function (res) { return _this.modells = res; });
         this._modellService.changeModel(this.modells);
-        // console.log('... get from DB, the modell length is: ', this.modells.length);
-        // this.itemCount = this.sms.length;
-        // console.log('... the sms length is: first ', this.itemCount);
         this._data.selectedModels.subscribe(function (res) { return _this.sms = res; });
         this._data.changeGoal(this.sms);
         console.log('... the sms length is: ', this.sms.length);
-        // this._userService.currentUser.subscribe(res => this.loadUser = res);
-        // this._userService.changeUser(this.loadUser);
-        // this.sms = this.loadUser.kriterienList.map(x => Object.assign({}, x));
-        // console.log('... kri page loadUser.id is: ', this.loadUser.id);
-        // this.sortModells();
-        // this._userService.getUser().subscribe(res => this.sms = res.kriterienList);
     };
     KriterienComponent.prototype.sortModells = function () {
         var size = Object.keys(this.modells).length;
         console.log('... length of dbMmodels: ', size);
         // console.log('... length of modells: ', xxx);
-        // this.modells.sort((a, b) => +a._id < +b._id ? -1 : +a._id > +b._id ? 1 : 0);
+    };
+    // allParts(){
+    //   console.log('... showALL click before: ', this.showAll);
+    //   if(this.showAll === "show Selected") {
+    //     this.shortLong = true;
+    //     console.log('... hey 1 ');
+    //     this.showAll = 'show All';
+    //     console.log('... showALL click after: ', this.showAll);
+    //   }
+    //   else if(this.showAll === "show All") {
+    //     console.log('... hey 2 ');
+    //     this.shortLong = false;
+    //     this.showAll = 'show Selected';
+    //     console.log('... showALL click after: ', this.showAll);
+    //   }
+    //
+    // }
+    KriterienComponent.prototype.getCLRObjList = function (mod) {
+        var crl_KompetenzenStr = mod.Kompetenzen;
+        if (crl_KompetenzenStr != null) {
+            var crl_KompetenzenList = crl_KompetenzenStr.split(';');
+            var clr_list = [];
+            for (var _i = 0, crl_KompetenzenList_1 = crl_KompetenzenList; _i < crl_KompetenzenList_1.length; _i++) {
+                var kom = crl_KompetenzenList_1[_i];
+                var new_clrobj = new _ComLR__WEBPACK_IMPORTED_MODULE_5__["CRLObj"]();
+                new_clrobj.competence_name = kom.trim();
+                new_clrobj.learningresources = Array();
+                new_clrobj.learningresources = this._clrService.getLRObj(kom);
+                // for ( let i = 0; i < crl_current.length; i++) {
+                //   vals.push(vals[i].val);
+                // }
+                clr_list.push(new_clrobj);
+            }
+            mod.clrlist = clr_list;
+            console.log('... the clr of checked model: ', mod);
+        }
     };
     // selectedIndex is actually the model ID
-    KriterienComponent.prototype.addItem = function (selectedIndex, kri) {
+    KriterienComponent.prototype.addItem = function (selectedIndex, kri, clrcontent) {
         var newItem = new _selectedModel__WEBPACK_IMPORTED_MODULE_3__["SelectedModel"]();
         newItem.isselected = true;
         newItem.kriterium = kri;
         newItem.kriterium_id = selectedIndex;
+        newItem.clrlist = clrcontent;
         if (this.sms.length === 0) {
             this.sms[0] = newItem;
             console.log('... to add the checked model: ', selectedIndex);
@@ -823,48 +1422,78 @@ var KriterienComponent = (function () {
         console.log('... to remove the unchecked model: ', selectedIndex);
         this._data.changeGoal(this.sms);
     };
-    KriterienComponent.prototype.getCheckState = function (mid) {
+    KriterienComponent.prototype.getCheckState = function (model) {
         // if (this.loadUser.kriterienList.length > 0) {
         //   console.log('... this loadeUser length is: ', this.loadUser.kriterienList.length);
         // }
         if (this.sms != null) {
             // console.log('... to get the check status of model: ', mid);
-            var mo = this.sms.find(function (x) { return x.kriterium_id === mid; });
+            var mo = this.sms.find(function (x) { return x.kriterium_id === model._id; });
             if (mo != null) {
+                model.isSelected = true;
                 // console.log('... mo size is ', mo.length, mid, ' checked status is: ', mo.isselected);
                 return mo.isselected;
             }
         }
         else {
+            model.isSelected = false;
             return false;
         }
     };
+    KriterienComponent.prototype.onSMSChange = function (event, i, modell) {
+    };
     // check or uncheck modell
     KriterienComponent.prototype.onChange = function (event, index, item) {
-        this.lastAction = 'index: ' + index + ', label: ' + item.label + ', checked: ' + item.checked;
-        console.log('before: ', index, event, item);
+        var _this = this;
+        // this.lastAction = 'index: ' + index + ', label: ' + item.label + ', checked: ' + item.checked;
+        //
+        // console.log('before: ', index, event, item);
         item.checked = event.checked;
-        this.lastAction = 'index: ' + index + ', label: ' + item.label + ', checked: ' + item.checked;
-        console.log('after: ', index, event, item);
+        //
+        // this.lastAction = 'index: ' + index + ', label: ' + item.label + ', checked: ' + item.checked;
+        //
+        // console.log('after: ', index, event, item);
         var checkedID = index;
         var kid = item._id;
         this.modells[checkedID].isSelected = item.checked;
-        console.log('... now ', kid, ' hasChecked ...: ');
+        console.log('... now ', kid, ' isSelected : ', this.modells[checkedID].isSelected);
+        // retrieve ComLR list
+        var mo = this.modells[checkedID];
+        this.getCLRObjList(mo);
         if (item.checked) {
-            if (!this.smsExist(kid)) {
-                this.addItem(kid, item.Kriterium); // add
+            item.isSelected = true;
+            if (!this.smsExist(kid)) { // not exist in sms
+                this.addItem(kid, item.Kriterium, item.clrlist); // add
+            }
+            if (kid === '10' || kid === 10) {
+                this.checked10th = true;
             }
         }
-        if (!item.checked) {
+        if (!item.checked) { // uncheck
+            item.isSelected = false;
             if (this.smsExist(kid)) {
                 this.removeItem(kid);
             }
+            if (kid === '10' || kid === 10) {
+                this.checked10th = false;
+            }
         }
         this._modellService.changeModel(this.modells);
+        this._data.changeGoal(this.sms);
         console.log('... the persisted sms ...: ', this.sms.length);
+        var _loop_1 = function (i) {
+            var temp = this_1.modells.findIndex(function (x) { return x._id === _this.sms[i].kriterium_id; });
+            if (temp > -1) {
+                this_1.modells[temp].isSelected = true;
+            }
+            console.log(this_1.sms[i].kriterium_id, this_1.sms[i].kriterium, this_1.sms[i].isselected);
+        };
+        var this_1 = this;
         for (var i = 0; i < this.sms.length; i++) {
-            console.log(this.sms[i].kriterium_id, this.sms[i].isselected);
+            _loop_1(i);
         }
+    };
+    KriterienComponent.prototype.snycro = function () {
     };
     KriterienComponent.prototype.smsExist = function (kid) {
         if (this.sms.length === 0) {
@@ -896,7 +1525,7 @@ var KriterienComponent = (function () {
             styles: [__webpack_require__(/*! ./kriterien.component.css */ "./src/app/kriterien/kriterien.component.css")],
             providers: [_modell_service__WEBPACK_IMPORTED_MODULE_1__["ModellService"]]
         }),
-        __metadata("design:paramtypes", [_modell_service__WEBPACK_IMPORTED_MODULE_1__["ModellService"], _data_service__WEBPACK_IMPORTED_MODULE_2__["DataService"], _user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"]])
+        __metadata("design:paramtypes", [_modell_service__WEBPACK_IMPORTED_MODULE_1__["ModellService"], _data_service__WEBPACK_IMPORTED_MODULE_2__["DataService"], _user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"], _clr_service__WEBPACK_IMPORTED_MODULE_6__["ClrService"]])
     ], KriterienComponent);
     return KriterienComponent;
 }());
@@ -937,8 +1566,8 @@ module.exports = "<div class=\"signin-content\">\n  <mat-card>\n    <mat-card-co
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _auth_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../auth/auth.service */ "./src/app/auth/auth.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -952,7 +1581,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var LoginComponent = (function () {
+var LoginComponent = /** @class */ (function () {
     // fixPassword = 'xw';
     function LoginComponent(fb, authService) {
         this.fb = fb;
@@ -1023,7 +1652,7 @@ var LoginComponent = (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".input-group{\n  float: left;\n  width: 90%;\n  /*border: 1px dotted #A9B7C0;*/\n  border-radius: 25px;\n  background: lightgrey;\n  padding: 20px;\n  margin-top: 20px;\n}\n\ndiv.input-group.mb-3{\n  float: left;\n  width: 95%;\n  padding: 0px;\n  margin-top: 2px;\n}\n\n.input-group-text{\n  font-size: medium;\n  font-weight: bold;\n}\n\n.form-control{\n  font-size: medium;\n  background-color: #F7F9F9;\n}\n\n.checkedModel{\n  float: left;\n  width: 50%;\n  margin:2px;\n}\n\n.checkedModel input{\n  background-color:#A9B7C0;\n  width:90%;\n  color:#333;\n  font-size: medium;\n  font-weight: bold;\n  padding:5px;\n  border:none;\n  margin-bottom: 5px;\n  display: block;\n}\n\n.smallLable {\n  background-color:#A9B7C0;\n  width:45px;\n  height: 34px;\n  color:#333;\n  font-size: medium;\n  font-weight: bold;\n  padding:5px;\n  border:none;\n  margin-bottom: 0px;\n  margin-left: 20px;\n  display: block;\n}\n\n.balls{\n  width: 15%;\n  background-color: #EFD9C1;\n  height: 30px;\n  margin-right: 30px;\n  font-size: medium;\n  font-weight: bold;\n  text-align: center;\n  cursor: zoom-in;\n}\n\n.numberCircle {\n  width: 15%;\n  display: block;\n  margin-right: 10px;\n  margin-top: 0px;\n  margin-left: 10px;\n  background: #EFD9C1;\n  border-radius: 100%;\n  width: 36px;\n  height: 36px;\n  padding: 3px;\n  border: 2px solid #EFD9C1;\n  color: #808080;\n  text-align: center;\n  font: 24px Arial, sans-serif;\n  cursor: zoom-in;\n}\n\n.izLable {\n  display: block;\n  margin-top:0px;\n  margin-right: 5px;\n  width: 80px;\n  height: 33px;\n  margin-left: 2px;\n  background: #EFD9C1;\n  text-align: center;\n  font: 18px Arial, sans-serif;\n  color: #808080;\n  padding: 8px;\n}\n\n.diplayContent {\n  padding: 8px;\n  width: 95%;\n  border-radius: 0;\n  overflow: hidden;\n  background: #F2E0CD;\n  display: block;\n  border-color: lightgrey;\n  font-size: medium;\n  resize: vertical;\n  overflow-y: scroll;\n  margin-bottom: 10px;\n}\n\n.priority{\n  float:right;\n  width: 15%;\n  margin:2px;\n}\n\n.priority input{\n  font-size: medium;\n   width: 120px;\n  height: 34px;\n  margin-left: 10px;\n  font-weight: bold;\n  margin-right: 80px;\n  background-color: #EFD9C1;\n  border:none;\n  display: block;\n  text-align: center;\n  padding:5px;\n  margin-bottom: 5px;\n}\n\n.mass{\n  float:left;\n  width: 100%;\n  display: block;\n}\n\n.mass  textarea{\n  float: left;\n  width: 100%;\n  background-color: #f9f9f9;\n  overflow: hidden;\n  display: block;\n  margin-top: 5px;\n  margin-bottom: 5px;\n  border:1px;\n  font-size: medium;\n}\n\n.KTV-form {\n  min-width: 150px;\n  max-width: 100%;\n  width: 100%;\n  margin-top: 15px;\n}\n\n.example-full-width {\n  width: 95%;\n  font-size: medium;\n  font-weight: bold;\n  background-color: #C7D8C6;\n}\n\n.example2-form {\n  width: 95%;\n}\n\n.example2-full-width {\n  width: 100%;\n  font-size: large;\n  font-weight: bold;\n}\n\n#myCarousel{\n  width: 100%;\n  margin-top: 3px;\n  padding: 10px;\n  background: darkgray;\n  height: 800px;\n}\n\n.carousel-inner{\n  width: 80%;\n}\n\n#myCarousel .carousel-inner .item {\n  width:70%;\n  margin-left: 280px;\n  margin-right: 280px;\n  font-size: medium;\n}\n\n#myCarousel .carousel-inner .left .carousel-control {\n  float: left;\n  margin-left: 0;\n  padding-left: 0;\n}\n\n#myCarousel .carousel-inner .right .carousel-control{\n  float: right;\n  margin-right: 0;\n  padding-right: 0;\n}\n"
+module.exports = ".input-group{\n  float: left;\n  width: 90%;\n  /*border: 1px dotted #A9B7C0;*/\n  border-radius: 25px;\n  background: lightgrey;\n  padding: 20px;\n  margin-top: 20px;\n}\n\ndiv.input-group.mb-3{\n  float: left;\n  width: 95%;\n  padding: 0px;\n  margin-top: 2px;\n}\n\n.input-group-text{\n  font-size: medium;\n  font-weight: bold;\n}\n\n.form-control{\n  font-size: medium;\n  background-color: #F7F9F9;\n}\n\n.checkedModel{\n  float: left;\n  width: 45%;\n  margin:2px;\n}\n\n.checkedModel input{\n  background-color:#A9B7C0;\n  width:95%;\n  color:#333;\n  font-size: medium;\n  font-weight: bold;\n  padding:5px;\n  border:none;\n  margin-bottom: 5px;\n  display: block;\n}\n\n.smallLable {\n  background-color:#A9B7C0;\n  width:45px;\n  height: 34px;\n  color:#333;\n  font-size: medium;\n  font-weight: bold;\n  padding:5px;\n  border:none;\n  margin-bottom: 0px;\n  margin-left: 15px;\n  display: block;\n}\n\n.balls{\n  width: 15%;\n  background-color: #EFD9C1;\n  height: 30px;\n  margin-right: 30px;\n  font-size: medium;\n  font-weight: bold;\n  text-align: center;\n  cursor: zoom-in;\n}\n\n.numberCircle {\n  width: 15%;\n  display: block;\n  margin-right: 10px;\n  margin-top: 0px;\n  margin-left: 10px;\n  background: #EFD9C1;\n  border-radius: 100%;\n  width: 36px;\n  height: 36px;\n  padding: 3px;\n  border: 2px solid #EFD9C1;\n  color: #808080;\n  text-align: center;\n  font: 24px Arial, sans-serif;\n  cursor: zoom-in;\n}\n\nbutton#help-icon {\n  width: 40px;\n  height: 36px;\n  padding-left: 0px;\n  padding-right: 0px;\n  margin-left: 20px;\n  background-color: transparent;\n  border: none;\n}\n\n.izLable {\n  display: block;\n  margin-top:0px;\n  margin-right: 5px;\n  width: 80px;\n  height: 33px;\n  margin-left: 2px;\n  background: #EFD9C1;\n  text-align: center;\n  font: 18px Arial, sans-serif;\n  color: #808080;\n  padding: 8px;\n}\n\n.diplayContent {\n  padding: 8px;\n  width: 95%;\n  border-radius: 0;\n  overflow: hidden;\n  background: #F2E0CD;\n  display: block;\n  border-color: lightgrey;\n  font-size: medium;\n  resize: vertical;\n  overflow-y: scroll;\n  margin-bottom: 10px;\n  color: black;\n}\n\n.priority{\n  float:right;\n  width: 15%;\n  margin:2px;\n}\n\n.priority input{\n  font-size: medium;\n  width: 100%;\n  height: 34px;\n  margin-left: 10px;\n  font-weight: bold;\n  margin-right: 80px;\n  background-color: #EFD9C1;\n  border:none;\n  display: block;\n  text-align: center;\n  padding:5px;\n  margin-bottom: 5px;\n}\n\n.mass{\n  float:left;\n  width: 100%;\n  display: block;\n}\n\n.mass  textarea{\n  float: left;\n  width: 100%;\n  background-color: #f9f9f9;\n  overflow: hidden;\n  display: block;\n  margin-top: 5px;\n  margin-bottom: 5px;\n  border:1px;\n  font-size: medium;\n}\n\n.KTV-form {\n  min-width: 150px;\n  max-width: 100%;\n  width: 100%;\n  margin-top: 0px;\n}\n\n.example-full-width {\n  width: 95%;\n  font-size: medium;\n  font-weight: bold;\n  background-color: #C7D8C6;\n}\n\n.example2-form {\n  width: 95%;\n}\n\n.example2-full-width {\n  width: 100%;\n  font-size: large;\n  font-weight: bold;\n}\n\n#myCarousel{\n  width: 100%;\n  margin-top: 3px;\n  padding: 10px;\n  background: darkgray;\n  height: 800px;\n}\n\n.carousel-inner{\n  width: 80%;\n}\n\n#myCarousel .carousel-inner .item {\n  width:70%;\n  margin-left: 280px;\n  margin-right: 280px;\n  font-size: medium;\n}\n\n#myCarousel .carousel-inner .left .carousel-control {\n  float: left;\n  margin-left: 0;\n  padding-left: 0;\n}\n\n#myCarousel .carousel-inner .right .carousel-control{\n  float: right;\n  margin-right: 0;\n  padding-right: 0;\n}\n\n.material-icons {\n  font-size: 32px;\n  color: #666666;\n}\n"
 
 /***/ }),
 
@@ -1034,7 +1663,7 @@ module.exports = ".input-group{\n  float: left;\n  width: 90%;\n  /*border: 1px 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n\n  <div id=\"label1\">\n    <label> Welche Maßnahmen sollen die Lücken zwischen Ist- und Ziel-Zuständen schließen? </label>\n  </div>\n\n  <div *ngFor=\"let cm of ssms; index as i\">\n     <!--<div class =\"input-group\" *ngIf=\"sms[i]\">-->\n     <div class =\"input-group\">\n\n         <div class=\"checkedModel\"> <input  disabled type=\"text\" id=\"{{cm.kriterium_id}}\" value=\"{{cm.kriterium_id}}. {{cm.kriterium}}\"></div>\n         <!--<div class=\"balls\" (click)=\"showContent(i)\"> {{cm.ist_id}} -> {{cm.ziel_id}}</div>-->\n         <div><input class=\"smallLable\" disabled type=\"text\" value=\"Ist: \"></div>\n         <div class=\"izLable\" [ngStyle]=\"{'background-color': hiddenShowIst[i]? '#71B7FD' : '#EFD9C1'}\" (click)=\"showIst(i)\">{{get_izIDs(cm, 'i')}}</div>\n\n         <!--<div> <img height=\"30\" width=\"30\" background-color=\"\" src=\"assets/images/arrow1.png\"></div>-->\n         <div><input class=\"smallLable\" disabled type=\"text\" value=\"Ziel: \"></div>\n         <div class=\"izLable\" [ngStyle]=\"{'background-color': hiddenShowZiel[i]? '#FA8072' : '#EFD9C1'}\" (click)=\"showZiel(i)\">{{get_izIDs(cm, 'z')}}</div>\n         <div class=\"priority\"> <input  type=\"text\" disabled value=\" Priorität: {{cm.priority}}\"></div>\n\n       <textarea disabled style=\"background-color: #71B7FD\" class=\"diplayContent\" [hidden]=\"!hiddenShowIst[i]\" matInput placeholder=\"\" matTextareaAutosize matAutosizeMinRows=\"5\" matAutosizeMaxRows=\"10\"> {{get_izContent(cm, 'i')}}</textarea>\n       <textarea disabled style=\"background-color: #FA8072\" class=\"diplayContent\" [hidden]=\"!hiddenShowZiel[i]\" matInput placeholder=\"\" matTextareaAutosize matAutosizeMinRows=\"5\" matAutosizeMaxRows=\"10\"> {{get_izContent(cm, 'z')}}</textarea>\n\n       <div class=\"input-group mb-3\">\n         <div class=\"input-group-prepend\">\n           <span class=\"input-group-text\">Maßnahme: </span>\n         </div>\n         <textarea class=\"form-control\" aria-label=\"Maßnahme: \"  [(ngModel)]=\"cm.Massnahmen\"  matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\"></textarea>\n       </div>\n\n       <div class=\"input-group mb-3\">\n         <div class=\"input-group-prepend\">\n           <span class=\"input-group-text\">Erklärung: &nbsp;&nbsp;</span>\n         </div>\n         <textarea class=\"form-control\" aria-label=\"Erklärung: \" [(ngModel)]=\"cm.Erklaerung\" matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\"></textarea>\n       </div>\n\n       <div class=\"mass\">\n\n         <form class=\"KTV-form\">\n         <table class=\"example-full-width\" cellspacing=\"0\">\n           <tr>\n              <td><mat-form-field class=\"example-full-width\">\n                <input matInput type=\"text\" [(ngModel)]=\"cm.Kosten\" placeholder=\"Kosten: (EUR)\" [ngModelOptions]=\"{standalone: true}\">\n              </mat-form-field></td>\n              <td><mat-form-field class=\"example-full-width\">\n                <input matInput [matDatepicker]=\"picker\" placeholder=\"Termin:\" [(ngModel)]=\"cm.Termin\"  [ngModelOptions]=\"{standalone: true}\" >\n                <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n                <mat-datepicker #picker startView=\"year\" [startAt]=\"startDate\"></mat-datepicker>\n              </mat-form-field></td>\n              <td><mat-form-field class=\"example-full-width\">\n                <input matInput #postalCode maxlength=\"30\" placeholder=\"Verantwortlich\" [(ngModel)]=\"cm.Verantwortlich\" [ngModelOptions]=\"{standalone: true}\" >\n              </mat-form-field></td>\n        </tr></table>\n      </form>\n\n       <!--<div> current Mass {{cm.Massnahmen}} Erk:{{cm.Erklaerung}}  Kost: {{cm.Kosten}} Ver: {{cm.Verantwortlich}} Termin: {{cm.Termin}}</div>-->\n\n     </div><!--input Group-->\n\n\n  </div>\n\n</div>\n\n</div>\n\n\n"
+module.exports = "<div class=\"container\">\n\n  <div id=\"label1\">\n    <label> Welche Maßnahmen sollen die Lücken zwischen Ist- und Ziel-Zuständen schließen? </label>\n  </div>\n\n  <div *ngFor=\"let cm of ssms; index as i\">\n     <!--<div class =\"input-group\" *ngIf=\"sms[i]\">-->\n     <div class =\"input-group\">\n\n         <div class=\"checkedModel\"> <input  disabled type=\"text\" id=\"{{cm.kriterium_id}}\" value=\"{{cm.kriterium_id}}. {{cm.kriterium}}\"></div>\n         <!--<div class=\"balls\" (click)=\"showContent(i)\"> {{cm.ist_id}} -> {{cm.ziel_id}}</div>-->\n         <div><input class=\"smallLable\" disabled type=\"text\" value=\"Ist: \"></div>\n         <div class=\"izLable\" [ngStyle]=\"{'background-color': hiddenShowIst[i]? '#71B7FD' : '#EFD9C1'}\" (click)=\"showIst(i)\">{{get_izIDs(cm, 'i')}}</div>\n\n         <!--<div> <img height=\"30\" width=\"30\" background-color=\"\" src=\"assets/images/arrow1.png\"></div>-->\n         <div><input class=\"smallLable\" disabled type=\"text\" value=\"Ziel: \"></div>\n         <div class=\"izLable\" [ngStyle]=\"{'background-color': hiddenShowZiel[i]? '#a0d878' : '#EFD9C1'}\" (click)=\"showZiel(i)\">{{get_izIDs(cm, 'z')}}</div>\n         <div class=\"priority\"> <input  type=\"text\" disabled value=\" Priorität: {{cm.priority}}\"></div>\n\n       <button id=\"help-icon\" (click)=\"openCLRDialog(cm)\"\n               matTooltip=\"View related competencies and learning resources\"\n               aria-label=\"Button that displays a tooltip when focused or hovered over\">\n         <mat-icon> help </mat-icon>\n       </button>\n\n\n       <textarea disabled style=\"background-color: #71B7FD\" class=\"diplayContent\" [hidden]=\"!hiddenShowIst[i]\" matInput placeholder=\"\" matTextareaAutosize matAutosizeMinRows=\"5\" matAutosizeMaxRows=\"10\"> {{get_izContent(cm, 'i')}}</textarea>\n       <textarea disabled style=\"background-color: #a0d878\" class=\"diplayContent\" [hidden]=\"!hiddenShowZiel[i]\" matInput placeholder=\"\" matTextareaAutosize matAutosizeMinRows=\"5\" matAutosizeMaxRows=\"10\"> {{get_izContent(cm, 'z')}}</textarea>\n\n       <div class=\"input-group mb-3\">\n         <div class=\"input-group-prepend\">\n           <span class=\"input-group-text\">Maßnahme: </span>\n         </div>\n         <textarea class=\"form-control\" aria-label=\"Maßnahme: \"  [(ngModel)]=\"cm.Massnahmen\"  matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\"></textarea>\n       </div>\n\n       <!--<div class=\"input-group mb-3\">-->\n         <!--<div class=\"input-group-prepend\">-->\n           <!--<span class=\"input-group-text\">Erklärung: &nbsp;&nbsp;</span>-->\n         <!--</div>-->\n         <!--<textarea class=\"form-control\" aria-label=\"Erklärung: \" [(ngModel)]=\"cm.Erklaerung\" matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\"></textarea>-->\n       <!--</div>-->\n\n       <div class=\"mass\">\n\n         <form class=\"KTV-form\">\n         <table class=\"example-full-width\" cellspacing=\"0\">\n           <tr>\n              <!--<td><mat-form-field class=\"example-full-width\" >-->\n                <!--<input matInput [(ngModel)]=\"cm.Kosten\" placeholder=\"Kosten: (€)\" [ngModelOptions]=\"{standalone: true}\" (keypress)=\"numberOnly($event)\">-->\n                <!--<mat-hint align=\"end\">Nummer nur</mat-hint>-->\n              <!--</mat-form-field></td>-->\n             <td><mat-form-field class=\"example-full-width\">\n               <input  matInput #box (keyup.enter)=\"update(box.value)\" (blur)=\"update(box.value, cm)\" placeholder=\"Kosten: (€)\" [ngModel]=\"cm.Kosten| currency:'EUR':true\" name=\"money\">\n               <mat-hint align=\"end\">Nummer nur</mat-hint>\n             </mat-form-field></td>\n\n              <td><mat-form-field class=\"example-full-width\">\n                <input matInput [matDatepicker]=\"picker\" placeholder=\"Termin:\" [(ngModel)]=\"cm.Termin\"  [ngModelOptions]=\"{standalone: true}\" >\n                <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n                <mat-datepicker #picker ></mat-datepicker>\n              </mat-form-field></td>\n              <td><mat-form-field class=\"example-full-width\">\n                <input matInput #postalCode maxlength=\"30\" placeholder=\"Verantwortlich\" [(ngModel)]=\"cm.Verantwortlich\" [ngModelOptions]=\"{standalone: true}\" >\n              </mat-form-field></td>\n        </tr></table>\n      </form>\n\n       <!--<div> current Mass {{cm.Massnahmen}} Erk:{{cm.Erklaerung}}  Kost: {{cm.Kosten}} Ver: {{cm.Verantwortlich}} Termin: {{cm.Termin}}</div>-->\n\n     </div><!--input Group-->\n\n\n  </div>\n\n</div>\n\n</div>\n\n\n"
 
 /***/ }),
 
@@ -1048,9 +1677,10 @@ module.exports = "<div class=\"container\">\n\n  <div id=\"label1\">\n    <label
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MassnahmenComponent", function() { return MassnahmenComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data.service */ "./src/app/data.service.ts");
 /* harmony import */ var _modell_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modell.service */ "./src/app/modell.service.ts");
+/* harmony import */ var _modell_design_modell_design_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modell-design/modell-design.component */ "./src/app/modell-design/modell-design.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1063,41 +1693,14 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var MassnahmenComponent = (function () {
-    function MassnahmenComponent(_modellService, _data) {
+
+var MassnahmenComponent = /** @class */ (function () {
+    function MassnahmenComponent(_modellService, _data, mdc) {
         this._modellService = _modellService;
         this._data = _data;
-        // public CModells = [
-        //   {'_id': '1', 'Kriterium': 'Digitale Konnektivität von Maschinen'},
-        //   {'_id': '3', 'Kriterium': 'Produkt als digitaler Informationstraeger'},
-        //   {'_id': '6', 'Kriterium': 'Mensch-Roboter-Kollaboration'},
-        //   {'_id': '7', 'Kriterium': 'Betriebsdatenerfassung (BDE)'},
-        //   {'_id': '9', 'Kriterium': 'Methodik der Fertigungs- und Montagesteuerung'},
-        //   {'_id': '14', 'Kriterium': 'Kostentransparenz'},
-        //   {'_id': '20', 'Kriterium': 'Dokumentation und Analyse von Qualitaetsdaten'},
-        //   {'_id': '24', 'Kriterium': 'IT-Sicherheit / Industrial Security'}
-        // ];
-        // show = false;
-        // myVar = 1;
-        // balls = ['1 -> 2', '1 -> 2', '2 -> 3', '0 -> 2', '0 -> 3', '3 -> 4' ];
-        //  public mass= ['Maßnahme: Die Machinen bekommen einfache I/O-Schnittstellen (z.B. Klemmen einer SPS) über welche binäre ode analoge Singale ausgetauscht werder. ',
-        //    '1 Maßnahme: Die Machinen bekommen einfache I/O-Schnittstellen (z.B. Klemmen einer SPS) über welche binäre ode analoge Singale ausgetauscht werder. ',
-        //    '2 Maßnahme: Die Machinen bekommen einfache I/O-Schnittstellen (z.B. Klemmen einer SPS) über welche binäre ode analoge Singale ausgetauscht werder. ',
-        //    '3 Maßnahme: Die Machinen bekommen einfache I/O-Schnittstellen (z.B. Klemmen einer SPS) über welche binäre ode analoge Singale ausgetauscht werder. ',
-        //    '4 Maßnahme: Die Machinen bekommen einfache I/O-Schnittstellen (z.B. Klemmen einer SPS) über welche binäre ode analoge Singale ausgetauscht werder. ',
-        //    'Maßnahme: Die Machinen bekommen einfache I/O-Schnittstellen (z.B. Klemmen einer SPS) über welche binäre ode analoge Singale ausgetauscht werder. ',
-        //    'Maßnahme: Die Machinen bekommen einfache I/O-Schnittstellen (z.B. Klemmen einer SPS) über welche binäre ode analoge Singale ausgetauscht werder. '];
-        // public  erk= ['Erklärung: Neue (informations-) technischen Schnittstellen zwischen Hard- und Software sowie Maschinen und Anagen werden gebraucht',
-        //    'Erklärung: Neue (informations-) technischen Schnittstellen zwischen Hard- und Software sowie Maschinen und Anagen werden gebraucht',
-        //    'Erklärung: Neue (informations-) technischen Schnittstellen zwischen Hard- und Software sowie Maschinen und Anagen werden gebraucht',
-        //    'Erklärung: Neue (informations-) technischen Schnittstellen zwischen Hard- und Software sowie Maschinen und Anagen werden gebraucht',
-        //    'Erklärung: Neue (informations-) technischen Schnittstellen zwischen Hard- und Software sowie Maschinen und Anagen werden gebraucht',
-        //    'Erklärung: Neue (informations-) technischen Schnittstellen zwischen Hard- und Software sowie Maschinen und Anagen werden gebraucht',
-        //    'Erklärung: Neue (informations-) technischen Schnittstellen zwischen Hard- und Software sowie Maschinen und Anagen werden gebraucht',
-        //    'Erklärung: Neue (informations-) technischen Schnittstellen zwischen Hard- und Software sowie Maschinen und Anagen werden gebraucht'];
-        //
-        //
+        this.mdc = mdc;
         this.ssms = [];
+        this.money = 13495;
     }
     MassnahmenComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1148,7 +1751,7 @@ var MassnahmenComponent = (function () {
         if (iz === 'i') {
             var temp_ist_contents = cdModel.Iste.map(function (ist) {
                 if (ist.content !== null) {
-                    return 'Ist_' + ist.id + ': ' + ist.content;
+                    return 'Ist ' + ist.id + ': ' + ist.content;
                 }
             });
             return temp_ist_contents.join('\n\n');
@@ -1156,19 +1759,54 @@ var MassnahmenComponent = (function () {
         if (iz === 'z') {
             var temp_ziel_contents = cdModel.Ziele.map(function (ziel) {
                 if (ziel.content !== null) {
-                    return 'Ziel_' + ziel.id + ': ' + ziel.content;
+                    return 'Ziel ' + ziel.id + ': ' + ziel.content;
                 }
             });
             return temp_ziel_contents.join('\n\n');
         }
     };
+    MassnahmenComponent.prototype.openCLRDialog = function (cm) {
+        this.mdc.openDialog3(cm);
+    };
+    // currencyInputChanged(value) {
+    //   var num = value.replace('.', ",");
+    //   return Number(num);
+    // }
+    //
+    // validateOnlyNumbers(evt) {
+    //   var theEvent = evt || window.event;
+    //   var key = theEvent.keyCode || theEvent.which;
+    //   key = String.fromCharCode( key );
+    //   var regex = /[0-9]|\./;
+    //   if( !regex.test(key) ) {
+    //     theEvent.returnValue = false;
+    //     if(theEvent.preventDefault) theEvent.preventDefault();
+    //   }
+    // }
+    //
+    // valuechange(newValue) {
+    //   this.money = newValue;
+    //   console.log(newValue)
+    // }
+    MassnahmenComponent.prototype.update = function (value, cmodel) {
+        this.money = value;
+        cmodel.Kosten = value.toString();
+    };
+    MassnahmenComponent.prototype.numberOnly = function (event) {
+        var charCode = (event.which) ? event.which : event.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
+    };
     MassnahmenComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-massnahmen',
             template: __webpack_require__(/*! ./massnahmen.component.html */ "./src/app/massnahmen/massnahmen.component.html"),
-            styles: [__webpack_require__(/*! ./massnahmen.component.css */ "./src/app/massnahmen/massnahmen.component.css")]
+            styles: [__webpack_require__(/*! ./massnahmen.component.css */ "./src/app/massnahmen/massnahmen.component.css")],
+            providers: [_modell_design_modell_design_component__WEBPACK_IMPORTED_MODULE_3__["ModellDesignComponent"]]
         }),
-        __metadata("design:paramtypes", [_modell_service__WEBPACK_IMPORTED_MODULE_2__["ModellService"], _data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"]])
+        __metadata("design:paramtypes", [_modell_service__WEBPACK_IMPORTED_MODULE_2__["ModellService"], _data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"], _modell_design_modell_design_component__WEBPACK_IMPORTED_MODULE_3__["ModellDesignComponent"]])
     ], MassnahmenComponent);
     return MassnahmenComponent;
 }());
@@ -1209,7 +1847,7 @@ module.exports = "<div>\n  <form>\n    <h3 *ngIf=\"!editId\" (click)=\"onIdClick
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModelDetailComponent", function() { return ModelDetailComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1220,7 +1858,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var ModelDetailComponent = (function () {
+var ModelDetailComponent = /** @class */ (function () {
     function ModelDetailComponent() {
         this.editId = false;
         this.updateModelEvent = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
@@ -1289,7 +1927,7 @@ module.exports = "<ul class=\"nav nav-pills nav-stacked\">\n  <li  (click)=\"onS
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModelListComponent", function() { return ModelListComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1300,7 +1938,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var ModelListComponent = (function () {
+var ModelListComponent = /** @class */ (function () {
     function ModelListComponent() {
         this.SelectModel = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
     }
@@ -1358,7 +1996,7 @@ module.exports = "<div class=\"row\">\n  <div class=\"col-sm-9\">\n      <div *n
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModellCenterComponent", function() { return ModellCenterComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _modell_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modell.service */ "./src/app/modell.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1371,7 +2009,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
-var ModellCenterComponent = (function () {
+var ModellCenterComponent = /** @class */ (function () {
     function ModellCenterComponent(_modellService) {
         this._modellService = _modellService;
         this.hidenewModel = true;
@@ -1442,7 +2080,7 @@ var ModellCenterComponent = (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".labs{\n  margin-top: 30px;\n  width: 100%;\n  margin-bottom: 10px;\n  position: relative;\n}\n\n#close-icon{\n  float:left;\n  width:5%;\n  margin-right: 10px;\n  margin-left: 2px;\n  margin-top: -10px;\n}\n\n.labs label{\n  float: left;\n  width: 10%;\n  display: block;\n  margin-right: 0;\n  margin-left: 5px;\n  background-color: #EFD9C1;\n  font-size: large;\n  color: #555555;\n  padding:5px;\n  text-align: center;\n}\n\n.labs input[type='text']{\n  float: left;\n  width: 55%;\n  height: 37px;\n  background-color: #A9B7C0;\n  border: 0;\n  font: bold 20px courier !important;\n  padding: 5px;\n  margin-left:10px;\n  margin-right:10px;\n}\n\n.labs input[type='number']{\n  float: left;\n  width: 5%;\n  background-color: #C7D8C6;\n  font-weight: bold;\n  font-size: large;\n  text-align: center;\n  padding:5px;\n  border:0;\n  margin-left: 2px;\n  margin-top: 0px;\n}\n\n.labs input[type=number]::-webkit-inner-spin-button,\n.labs input[type=number]::-webkit-outer-spin-button {\n\n  opacity: 1;\n}\n\nbutton.mat-button{\n  width:5%;\n  margin-left: 10px;\n}\n\nbutton#info.mat-button {\n  /*width: 5%;*/\n  float: right;\n  margin-top: -15px;\n}\n\n/*.mat-icon-button.small {*/\n\n/*width:15%;*/\n\n/*}*/\n\n.modell-card{\n  width:97%;\n  background-color: #A9B7C0;\n  margin-top: 15px;\n  margin-left: 10px;\n  padding-bottom:5px;\n}\n\n#model-text {\n  width: 90%;\n  float:left;\n  display: block;\n}\n\n/*the following 4 styling is for changing the size of icon*/\n\n.mat-icon-button.small {\n  width: 42px;\n  height: 42px;\n  line-height: 42px;\n}\n\n.mat-icon, .mat-icon-button i {\n  line-height: 36px;\n}\n\n.mat-icon {\n  width: 36px;\n  height:36px;\n}\n\n.material-icons {\n  font-size: 32px;\n  color: #666666;\n}\n\n#model_note{\n  width: 85%;\n  display: block;\n  margin-top: 20px;\n  margin-bottom: 5px;\n}\n\n.aug-cards{\n  width: 100%;\n}\n\n.aug-cards mat-card-title{\n  align-content: center;\n}\n\n.mat-form-field{\n  width:95%;\n}\n\n.mat-form-field-wrapper {\n  padding-bottom: -1.25em;\n}\n\n.example-card-0, .example-card-3, .example-card-4, .example-card-5, .example-card-6, .example-card-7{\n  float:left;\n  width:23%;\n  align-items: center;\n  display: block;\n  background: lightgrey;\n  margin-top: 15px;\n  margin-left: 10px;\n  margin-right:8px;\n  overflow: no-display;\n  padding-left: 13px;\n  padding-right: 10px;\n  padding-top: 5px;\n  padding-bottom: 2px;\n}\n\n.example-card-1{\n  float:left;\n  width:23%;\n  display: block;\n  background: #7272fd;\n  margin-top: 15px;\n  margin-left: 10px;\n  margin-right:8px;\n  padding-left: 10px;\n  padding-right: 10px;\n  padding-top: 5px;\n  padding-bottom: 2px;\n  overflow: no-display;\n}\n\n.example-card-2{\n  float:left;\n  width:23%;\n  display: block;\n  background: #FA8072;\n  margin-top: 15px;\n  margin-left: 10px;\n  margin-right:8px;\n  overflow: no-display;\n  padding-left: 10px;\n  padding-right: 10px;\n  padding-top: 5px;\n  padding-bottom: 2px;\n}\n\n.mat-select{\n  background: #A9B7C0;\n  height: 30px;\n  padding: 2px;\n  width:100%;\n  font-size: large;\n  font-weight: normal;\n  margin:2px;\n}\n\n.mat-card-title {\n  margin-bottom: 5px;\n}\n\n.aus_text{\n  width:95%;\n  background: none;\n  border:none;\n  padding:0;\n}\n\ntextarea{\n  background: #C7D8C6;\n  width: 100%;\n  /*padding: 2px;*/\n  /*margin:0;*/\n}\n\n.aug_note{\n  font-size: medium;\n  color:  #FA8072;\n}\n"
+module.exports = ".labs{\n  margin-top: 30px;\n  width: 100%;\n  margin-bottom: 10px;\n  position: relative;\n}\n\n#close-icon{\n  float:left;\n  width:5%;\n  margin-right: 10px;\n  margin-left: 2px;\n  margin-top: -10px;\n}\n\n.labs label{\n  float: left;\n  width: 8%;\n  display: block;\n  margin-right: 0;\n  margin-left: 5px;\n  background-color: #EFD9C1;\n  font-size: large;\n  color: #555555;\n  padding:5px;\n  text-align: center;\n}\n\n.labs input[type='text']{\n  float: left;\n  width: 55%;\n  height: 37px;\n  background-color: #A9B7C0;\n  border: 0;\n  font: bold 20px courier !important;\n  padding: 5px;\n  margin-left:10px;\n  margin-right:10px;\n}\n\n.labs input[type='number']{\n  float: left;\n  width: 5%;\n  background-color: #C7D8C6;\n  font-weight: bold;\n  font-size: large;\n  text-align: center;\n  padding:5px;\n  border:0;\n  margin-left: 2px;\n  margin-top: 0px;\n}\n\n.labs mat-form-field {\n  height: 37px;\n}\n\n.labs .mat-form-field-wrapper {\n  float: left;\n  width: 10%;\n  height: 35px;\n}\n\n.prioritySection{\n  float: left;\n  width: 12%;\n  height: 37px;\n  margin-top: 0px;\n  margin-right: 10px;\n  /*font-weight: bold;*/\n  /*font-size: medium;*/\n  /*text-align: center;*/\n  /*padding:5px;*/\n  /*border:0;*/\n  /*margin-left: 2px;*/\n  /*margin-top: 0px;*/\n}\n\n.prioritySection mat-select{\n  height: 37px;\n  font-weight: normal;\n  font-size: medium;\n  text-align: center;\n  padding:0px;\n  border:0;\n  margin-left: 2px;\n  margin-top: 0px;\n}\n\n.labs input[type=number]::-webkit-inner-spin-button,\n.labs input[type=number]::-webkit-outer-spin-button {\n\n  opacity: 1;\n}\n\nbutton.mat-button{\n  width:5%;\n  margin-left: 10px;\n}\n\nbutton#info.mat-button {\n  /*width: 5%;*/\n  float: right;\n  margin-top: -15px;\n}\n\nbutton#help-icon {\n  width: 40px;\n  height: 36px;\n  padding-left: 0px;\n  padding-right: 0px;\n  margin-left: 0px;\n  background-color: transparent;\n  border: none;\n}\n\n/*.mat-icon-button.small {*/\n\n/*width:15%;*/\n\n/*}*/\n\n.mat-card.model-detail.mat-card{\n  float: left;\n  display: block;\n  width:97%;\n  /*height:160px;*/\n  background-color: #A9B7C0;\n  margin-top: 15px;\n  margin-left: 10px;\n  padding-bottom:5px;\n  overflow: no-display;\n}\n\n#model-text {\n  width: 90%;\n  float:left;\n  display: block;\n  background-color: #A9B7C0;\n  border: 0px;\n  margin-bottom: 2px;\n}\n\n/*the following 4 styling is for changing the size of icon*/\n\n.mat-icon-button.small {\n  width: 42px;\n  height: 42px;\n  line-height: 42px;\n}\n\n.mat-icon, .mat-icon-button i {\n  line-height: 36px;\n}\n\n.mat-icon {\n  /*margin-left: 25px;*/\n  width: 36px;\n  height:36px;\n}\n\n.material-icons {\n  font-size: 32px;\n  color: #666666;\n}\n\n#model_note{\n  width: 85%;\n  display: block;\n  margin-top: 20px;\n  margin-bottom: 5px;\n}\n\n.aug-cards{\n  width: 100%;\n}\n\n.aug-cards mat-card-title{\n  align-content: center;\n}\n\n/*.mat-form-field{*/\n\n/*width:95%;*/\n\n/*}*/\n\n/*.mat-form-field-wrapper {*/\n\n/*padding-bottom: -1.25em;*/\n\n/*}*/\n\n.example-card-0, .example-card-3, .example-card-4, .example-card-5, .example-card-6, .example-card-7{\n  float:left;\n  width:23%;\n  align-items: center;\n  display: block;\n  background: lightgrey;\n  margin-top: 15px;\n  margin-left: 10px;\n  margin-right:8px;\n  overflow: no-display;\n  padding-left: 13px;\n  padding-right: 10px;\n  padding-top: 5px;\n  padding-bottom: 2px;\n}\n\n/*.example-card-1{*/\n\n/*float:left;*/\n\n/*width:23%;*/\n\n/*display: block;*/\n\n/*background: #7272fd;*/\n\n/*margin-top: 15px;*/\n\n/*margin-left: 10px;*/\n\n/*margin-right:8px;*/\n\n/*padding-left: 10px;*/\n\n/*padding-right: 10px;*/\n\n/*padding-top: 5px;*/\n\n/*padding-bottom: 2px;*/\n\n/*overflow: no-display;*/\n\n/*}*/\n\n/*.example-card-2{*/\n\n/*float:left;*/\n\n/*width:23%;*/\n\n/*display: block;*/\n\n/*background: #FA8072;*/\n\n/*margin-top: 15px;*/\n\n/*margin-left: 10px;*/\n\n/*margin-right:8px;*/\n\n/*overflow: no-display;*/\n\n/*padding-left: 10px;*/\n\n/*padding-right: 10px;*/\n\n/*padding-top: 5px;*/\n\n/*padding-bottom: 2px;*/\n\n/*}*/\n\n.mat-select{\n  background: #A9B7C0;\n  height: 30px;\n  padding: 2px;\n  width:85%;\n  font-size: large;\n  font-weight: normal;\n  margin:2px;\n}\n\n.mat-card-title {\n  margin-bottom: 5px;\n}\n\n.aus_text{\n  width:95%;\n  background: none;\n  border:none;\n  padding:0;\n}\n\ntextarea{\n  float: left;\n  background: #C7D8C6;\n  width: 100%;\n  /*padding: 2px;*/\n  /*margin:0;*/\n}\n\n.big-note-editor{\n  float: left;\n  width: 100%;\n  margin-top: 5px;\n}\n\n.big-aug_note{\n  float: left;\n  width: 90%;\n  color:  darkblue;\n  font-size: medium;\n  margin-right: 20px;\n}\n\n.big-note-label {\n  float:right;\n  width: 5%;\n}\n\n.note-editor{\n   float: left;\n   width: 100%;\n   margin-top: 5px;\n }\n\n.aug_note{\n  float: left;\n  width: 85%;\n  color:  darkblue;\n  font-size: medium;\n}\n\n.note-label {\n  float:right;\n  width:8%;\n}\n"
 
 /***/ }),
 
@@ -1453,7 +2091,7 @@ module.exports = ".labs{\n  margin-top: 30px;\n  width: 100%;\n  margin-bottom: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n<!--<div> current Priority {{ClickedSelectedModel.priority}} Ist: {{ClickedSelectedModel.ist_id}} Ziel: {{ClickedSelectedModel.ziel_id}}</div>-->\n\n  <div class=\"labs\">\n    <!--<a mat-icon-button id=\"close-icon\" (click)=\"closeBlock()\"><mat-icon> clear </mat-icon></a>-->\n    <a mat-icon-button id=\"close-icon\" (click)=\"closeBlock()\"><img src=\"assets/images/saveback.png\" width=\"50\" height=\"50\"></a>\n    <label id=\"R\"> Relevant</label>\n    <input type=\"text\" [(ngModel)]=\"ClickedModell.Kriterium\">\n    <label >  Priorität</label>\n    <input matInput type=\"number\" placeholder=\"1\" min=\"1\" max=\"42\" [(ngModel)]=\"ClickedSelectedModel.priority\"/>\n    <!--<a mat-icon-button id=\"help-icon\"><mat-icon> help </mat-icon></a>-->\n    <button mat-button id=\"help-icon\"\n            matTooltip=\"Help information about the Kriterium\"\n            aria-label=\"Button that displays a tooltip when focused or hovered over\">\n      <mat-icon> help </mat-icon>\n    </button>\n  </div>\n\n  <mat-card class=\"modell-card\">\n    <mat-card-content>\n      <p id=\"model-text\">{{ClickedModell.Beschreibung}}</p>\n      <!--<a mat-icon-button class=\"small\"><mat-icon> info </mat-icon></a>-->\n      <button mat-button id=\"info\"\n              matTooltip=\"More info about this\"\n              aria-label=\"Button that displays a tooltip when focused or hovered over\">\n        <mat-icon> info </mat-icon>\n      </button>\n\n      <textarea class=\"aug_note\" matInput placeholder=\"Notiz \" [(ngModel)]=\"ClickedSelectedModel.Kriterium_note\"> </textarea>\n    </mat-card-content>\n  </mat-card>\n\n\n  <div class=\"aug-cards\">\n  <!--<mat-card  *ngFor=\" let au of auspraegung; index as ind\" class=\"example-card-{{ind % 8}}\">-->\n    <mat-card class=\"example-card-0\" [ngStyle]=\"{'background': getBColor(niz[ind])}\" *ngFor=\" let au of auspraegung; index as ind\" >\n    <mat-card-header>\n      <mat-card-title><h3> Ausprägung {{ind}}</h3></mat-card-title>\n    </mat-card-header>\n    <mat-card-content>\n        <textarea class=\"aus_text\"  rows=\"6\" disabled> {{au}} </textarea>\n      <mat-form-field style=\" margin-bottom: -1.25em\" >\n        <!--<mat-select [ngClass]=\"colorClass\"  placeholder=\"\" [value]=\"selectedOption\"-->\n                    <!--#device (change)=\"onChange($event, device.value, ind)\">-->\n\n\n          <!--<mat-select  [ngClass]=\"{'example-card-0': value == '0', 'example-card-1': value == '1', 'example-card-2': value =='2'}\"-->\n                       <!--placeholder=\"\" [value]=\"selectedOption\"-->\n                       <!--#device (change)=\"onChange($event, device.value, ind)\">-->\n\n        <mat-select [value]=\"niz[ind]\"  #device (change)=\"onChange($event, device.value, ind)\">\n\n            <!--<mat-select  [formControl]=\"panelColor\" panelClass=\"example-card-{{panelColor.value}}}\"-->\n                         <!--placeholder=\"\" [value]=\"selectedOption\"-->\n                         <!--#device (change)=\"onChange($event, device.value, ind)\">-->\n          <mat-option value=\"0\">Keine</mat-option>\n          <mat-option value=\"1\">Ist</mat-option>\n          <mat-option value=\"2\">Ziel</mat-option>\n          <mat-option value=\"3\">Ist+Ziel</mat-option>\n        </mat-select>\n\n\n        <!--<select [ngModel]=\"selected\" (ngModelChange)=\"onChange($event.target.value, ind)\" name=\"sel2\">-->\n          <!--<option [value]=\"selected\" *ngFor=\"let i of iz_selects\">{{i}}</option>-->\n        <!--</select>-->\n\n        <!--<div ng-init=\"students=['None', 'Ist', 'Ziel']\">-->\n          <!--Students: <select ngModel=\"student\"-->\n                            <!--ngOptions=\"student as student for student in students\"-->\n                            <!--ngChange=\"changedValue(ind,student)\"></select>-->\n          <!--<pre>Student: {{student}}</pre>-->\n        <!--</div>-->\n\n      </mat-form-field>\n      <mat-form-field  style=\" margin-bottom: -1.25em\">\n           <textarea class=\"aug_note\" matInput placeholder=\"Notiz\"  matTextareaAutosize matAutosizeMinRows=\"8\" matAutosizeMaxRows=\"15\" [(ngModel)]=\"ClickedSelectedModel.Auspraegung_note[ind]\"></textarea>\n      </mat-form-field>\n    </mat-card-content>\n  </mat-card>\n  </div>\n</div>\n\n\n\n\n\n\n\n\n\n\n"
+module.exports = "<div class=\"container\" xmlns=\"http://www.w3.org/1999/html\">\n<!--<div> current Priority {{ClickedSelectedModel.priority}} Ist: {{ClickedSelectedModel.ist_id}} Ziel: {{ClickedSelectedModel.ziel_id}}</div>-->\n\n  <div class=\"labs\">\n    <!--<a mat-icon-button id=\"close-icon\" (click)=\"closeBlock()\"><mat-icon> clear </mat-icon></a>-->\n    <a mat-icon-button id=\"close-icon\" (click)=\"closeBlock()\"><img src=\"assets/images/saveback.png\" width=\"50\" height=\"50\"></a>\n    <label id=\"R\"> Relevant</label>\n    <input type=\"text\" [(ngModel)]=\" ClickedModell._id + '. ' + ClickedModell.Kriterium\">\n\n    <label> Priorität: </label>\n    <!--<input matInput type=\"number\" placeholder=\"1\" min=\"1\" max=\"42\" [(ngModel)]=\"ClickedSelectedModel.priority\"/>-->\n    <div class=\"prioritySection\">\n    <!--<mat-form-field>-->\n      <mat-select  [(value)]=\"priorityLevels.values[ClickedSelectedModel.priority]\" (selectionChange)=\"changePri($event)\">\n        <mat-option (onSelectionChange)=\"changePri($event)\" *ngFor=\"let level of priorityLevels\" [value]=\"level.value\">\n          {{ level.viewValue }}\n        </mat-option>\n      </mat-select>\n    <!--</mat-form-field>-->\n    </div>\n\n    <button id=\"help-icon\"  (click)=\"openDialog2()\"\n            matTooltip=\"View related compentences and learning resources\"\n            aria-label=\"Button that displays a tooltip when focused or hovered over\">\n      <mat-icon> help </mat-icon>\n    </button>\n  </div>\n\n  <mat-card class=\"model-detail\">\n    <mat-card-content>\n      <textarea id=\"model-text\" rows=\"3\">{{ClickedModell.Beschreibung}}</textarea>\n      <!--<a mat-icon-button class=\"small\"><mat-icon> info </mat-icon></a>-->\n      <button mat-button id=\"info\"\n              matTooltip=\"More info about this\"\n              aria-label=\"Button that displays a tooltip when focused or hovered over\">\n        <mat-icon> info </mat-icon>\n      </button>\n\n      <div class=\"big-note-editor\">\n        <mat-icon class=\"big-note-label\" (click)=\"showNote(8)\"> edit </mat-icon>\n        <textarea class=\"big-aug_note\" title=\"edit note\"  matInput [rows]=\"hiddeRow[8]\" placeholder=\"Notiz\" [(ngModel)]= \"ClickedSelectedModel.Kriterium_note\"> </textarea>\n      </div>\n    </mat-card-content>\n  </mat-card>\n\n  <mat-card class=\"example-card-0\" [ngStyle]=\"{'background': getBColor(niz[ind])}\" *ngFor=\" let au of auspraegung; index as ind\" >\n    <mat-card-header>\n      <mat-card-title><h3> Ausprägung {{ind}}</h3></mat-card-title>\n    </mat-card-header>\n    <mat-card-content>\n      <textarea class=\"aus_text\"  rows=\"4\" disabled> {{au}} </textarea>\n      <mat-select [value]=\"niz[ind]\"  #device (selectionChange)=\"onChange($event, device.value, ind)\">\n        <mat-option value=\"0\">Keine</mat-option>\n        <mat-option value=\"1\">Ist</mat-option>\n        <mat-option value=\"2\">Ziel</mat-option>\n        <mat-option value=\"3\">Ist+Ziel</mat-option>\n      </mat-select>\n      <div class=\"note-editor\">\n        <mat-icon class=\"note-label\" (click)=\"showNote(ind)\"> edit </mat-icon>  <!--<label class=\"note-label\" (click)=\"showNote(ind)\" > {{noteOnLabel}}</label>-->\n        <textarea class=\"aug_note\" title=\"edit note\"  placeholder=\"Notiz\"   matInput  [rows]=\"hiddeRow[ind]\" [(ngModel)]=\"ClickedSelectedModel.Auspraegung_note[ind]\"></textarea>\n      </div>\n    </mat-card-content>\n  </mat-card>\n\n\n  </div>\n<!--</div>-->\n\n\n\n\n\n\n\n\n\n\n"
 
 /***/ }),
 
@@ -1467,10 +2105,13 @@ module.exports = "<div class=\"container\">\n<!--<div> current Priority {{Clicke
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModellDesignComponent", function() { return ModellDesignComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _modell__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modell */ "./src/app/modell.ts");
 /* harmony import */ var _selectedModel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../selectedModel */ "./src/app/selectedModel.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _clrview_clrview_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../clrview/clrview.component */ "./src/app/clrview/clrview.component.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../data.service */ "./src/app/data.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1484,29 +2125,23 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var ModellDesignComponent = (function () {
-    function ModellDesignComponent() {
+
+
+
+var ModellDesignComponent = /** @class */ (function () {
+    function ModellDesignComponent(dialog, _data) {
+        this.dialog = dialog;
+        this._data = _data;
         this.childEvent = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        this.selectedOption = 1;
-        // data from Modell_1
-        // auspraegung = ['Keine Konnektivität gegeben, d.h., es stehen keine Schnittstellen für die digitale Datenkommunikation zur Verfügung.',
-        //   'Es existieren lediglich Schnittstellen, die den manuellen Transfer von digitalen Daten vor Ort mittels physischer Speichermedien ermöglichen. Es gibt keinen permanenten Kommunikationskanal.',
-        //   'Die Maschinen bzw. Anlagen verfügen über einfache I/O-Schnittstellen (z.B. Klemmen einer SPS) über welche nur binaere oder analoge Signale ausgetauscht werden.',
-        //   'Die Maschinen und Anlagen sind mittels Punkt-zu-Punkt-Kommunikationssystemen (z.B. IO-Link, HART) bzw. Low-Level-Feldbussen (z.B. AS-Interface) angebunden.',
-        //   'Mit den Maschinen und Anlagen kann über (High-Level-)Feldbusse kommuniziert werden (z.B. Profi-Bus, CANOpen, CC-Link, Foundation Fieldbus).',
-        //   'Die Maschinen und Anlagen sind an ein lokales IP-basiertes Netzwerk angeschlossen. Dies kann kabelgebunden oder drahtlos erfolgen (z.B. Industrial Ethernet, WLAN). Die Maschinen und Anlagen sind nicht (unmittelbar) mit dem Internet verbunden.',
-        //   'Die Maschinen bzw. Anlagen sind kabelgebunden (z.B. Ethernet) oder drahtlos (z.B. WLAN, Mobilfunk) an das Internet angeschlossen und  können über dieses aktiv mit anderen Systemen kommunizieren (Internet of Things).',
-        //   'null'];
         this.auspraegung = new Array();
         this.niz = new Array(8);
-        this.iz_selects = ['None', 'Ist', 'Ziel'];
-        // selected = this.iz_selects[0];;
+        this.iz_selects = ['None', 'Ist', 'Ziel', 'Ist+Ziel'];
         this.selected = '0';
+        this.selectedPri = 0;
         this.panelColor = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('0');
+        this.hiddeText = new Array(9).fill(false);
+        this.hiddeRow = new Array(9).fill(1);
         this.colorClass = [
-            // 'example-card-0': this.selected === 'None',
-            // 'example-card-1': this.selected === 'Ist',
-            // 'example-card-2': this.selected === 'Ziel'
             { className: 'example-card-0' },
             { className: 'example-card-1' },
             { className: 'example-card-2' }
@@ -1522,12 +2157,13 @@ var ModellDesignComponent = (function () {
         this.auspraegung.push(this.ClickedModell.Auspraegung_5);
         this.auspraegung.push(this.ClickedModell.Auspraegung_6);
         this.auspraegung.push(this.ClickedModell.Auspraegung_7);
-        this.value_p = this.ClickedSelectedModel.priority;
+        // this.value_p = this.ClickedSelectedModel.priority;
         this.knote = this.ClickedModell.Kriterium_note;
+        this.priorityLevels = this._data.priorities;
         for (var i = 0; i < this.niz.length; i++) {
             this.niz[i] = this.checkInList(i);
         }
-        // console.log('... current niz[]: ', this.niz);
+        console.log('... init niz[]: ', this.niz);
     };
     ModellDesignComponent.prototype.getBColor = function (nizValue) {
         // console.log('... nizValue:', nizValue);
@@ -1537,9 +2173,23 @@ var ModellDesignComponent = (function () {
             case '1':
                 return '#71B7FD';
             case '2':
-                return '#FA8072';
+                return '#a0d878';
             case '3':
                 return '#EFD9C1';
+        }
+    };
+    // priorityLevels = [
+    //   {value: '3', viewValue: 'High'},
+    //   {value: '2', viewValue: 'Medium'},
+    //   {value: '1', viewValue: 'Low'},
+    //   {value: '0', viewValue: 'None'}
+    // ];
+    // deal with priority change
+    ModellDesignComponent.prototype.changePri = function (event) {
+        if (event.isUserInput) {
+            this.ClickedSelectedModel.priority = event.source.viewValue;
+            this.ClickedSelectedModel.prioirtyNum = event.source.value;
+            console.log('.... priority changed: ', event.source.value, event.source.selected);
         }
     };
     ModellDesignComponent.prototype.checkInList = function (i) {
@@ -1549,52 +2199,23 @@ var ModellDesignComponent = (function () {
         var temp_ziel_ids = this.ClickedSelectedModel.Ziele.map(function (ziel) {
             return ziel.id;
         });
-        if (this.exitObj(i, temp_ist_ids) && this.exitObj(i, temp_ziel_ids)) {
+        if (this.existsObj(i, temp_ist_ids) && this.existsObj(i, temp_ziel_ids)) {
             return '3';
         }
-        if (this.exitObj(i, temp_ist_ids) && !this.exitObj(i, temp_ziel_ids)) {
+        if (this.existsObj(i, temp_ist_ids) && !this.existsObj(i, temp_ziel_ids)) {
             return '1';
         }
-        if (!this.exitObj(i, temp_ist_ids) && this.exitObj(i, temp_ziel_ids)) {
+        if (!this.existsObj(i, temp_ist_ids) && this.existsObj(i, temp_ziel_ids)) {
             return '2';
         }
         return '0';
     };
-    ModellDesignComponent.prototype.exitObj = function (c_index, iz_list) {
+    ModellDesignComponent.prototype.existsObj = function (c_index, iz_list) {
         return iz_list.findIndex(function (x) { return parseInt(x) === c_index; }) > -1;
     };
-    // getValue(aug_index) {
-    //   if ( this.ClickedSelectedModel.ziel_id !== 'N' && aug_index === this.ClickedSelectedModel.ziel_id ) {
-    //     console.log('... ang_index is ', aug_index, '... ziel id: ', this.ClickedSelectedModel.ziel_id);
-    //     this.selectedOption = 2; }
-    //   if ( this.ClickedSelectedModel.ist_id !== 'N' && aug_index === this.ClickedSelectedModel.ist_id ) {
-    //     console.log('... ang_index is ', aug_index, '... ist id: ', this.ClickedSelectedModel.ist_id);
-    //     this.selectedOption = 1; }
-    // }
-    // onChange(event, optionValue, cIndex) {
-    //   console.log('... hey option is', this.iz_selects[optionValue], cIndex);
-    //   if (optionValue === '1') {
-    //     this.value_s = cIndex;
-    //     this.ClickedSelectedModel.ist_id = cIndex;
-    //     this.ClickedSelectedModel.ist_content = this.auspraegung[cIndex];
-    //     this.ClickedSelectedModel.ist_note = this.ClickedSelectedModel.Auspraegung_note[cIndex];
-    //     this.selected = '1';
-    //     this.niz[cIndex] = '1';
-    //   }
-    //   if (optionValue === '2') {
-    //     this.value_z = cIndex;
-    //     this.ClickedSelectedModel.ziel_id = cIndex;
-    //     this.ClickedSelectedModel.ziel_content = this.auspraegung[cIndex];
-    //     this.ClickedSelectedModel.ziel_note = this.ClickedSelectedModel.Auspraegung_note[cIndex];
-    //     this.selected = '2';
-    //     this.niz[cIndex] = '2';
-    //   }
-    //   console.log('... currently, priority:', this.ClickedSelectedModel.priority, ' ist_id : ', this.ClickedSelectedModel.ist_id, ' ziel_id : ', this.ClickedSelectedModel.ziel_id);
-    //   console.log('... ist_note:', this.ClickedSelectedModel.ist_note, ' ziel_id : ', this.ClickedSelectedModel.ziel_note);
-    // }
     ModellDesignComponent.prototype.onChange = function (event, optionValue, cIndex) {
         console.log('... hey I am here');
-        console.log('... hey option is', this.iz_selects[optionValue], cIndex);
+        console.log('... hey option is', this.iz_selects[optionValue], cIndex, this.ClickedSelectedModel.kriterium_id);
         // this.value_z = cIndex;
         this.removeIZ(cIndex);
         if (optionValue === '3') {
@@ -1617,17 +2238,29 @@ var ModellDesignComponent = (function () {
             this.selected = '2';
             this.niz[cIndex] = '2';
         }
+        if (optionValue === '0') {
+            this.selected = '0';
+            this.niz[cIndex] = '0';
+        }
         // testing cretiria_10
-        if (cIndex === 9 && (optionValue === '2' || optionValue === '3')) {
-            this.ClickedSelectedModel.Auspraegung_note[3] = '9. Methodik der Fertigungs und Montagesteuerung - Ausprägung 2\n' +
+        if (this.ClickedSelectedModel.kriterium_id == 10 && cIndex === 3) {
+            var dependency = 'Abhängigkeit: 9. Methodik der Fertigungs und Montagesteuerung - Ausprägung 2\n' +
                 '7. Betriebsdatenerfassung - Ausprägung 2\n' +
                 '20. Produktionsstücklisten und Rezepturen - Ausprägung 1\n' +
                 '28. Auswertung von Daten - Ausprägung 1';
+            if (optionValue === '2' || optionValue === '3') {
+                console.log('...  getting in here !!');
+                this.ClickedSelectedModel.Auspraegung_note[3] = dependency;
+            }
+            else {
+                this.ClickedSelectedModel.Auspraegung_note[3] = '';
+            }
         }
         // console.log('... currently, priority:', this.ClickedSelectedModel.priority, ' ist_id : ', this.ClickedSelectedModel.ist_id, ' ziel_id : ', this.ClickedSelectedModel.ziel_id);
         // console.log('... ist_note:', this.ClickedSelectedModel.ist_note, ' ziel_id : ', this.ClickedSelectedModel.ziel_note);
-        console.log('... this.niz[]:', this.niz);
+        console.log(cIndex, '... this.niz[]:', this.niz);
     };
+    // call by onChange
     ModellDesignComponent.prototype.removeIZ = function (cIndex) {
         if (this.ClickedSelectedModel.Iste.find(function (x) { return x.id === cIndex; })) {
             this.ClickedSelectedModel.Iste = this.ClickedSelectedModel.Iste.filter(function (obj) { return obj.id !== cIndex; });
@@ -1636,6 +2269,7 @@ var ModellDesignComponent = (function () {
             this.ClickedSelectedModel.Ziele = this.ClickedSelectedModel.Ziele.filter(function (obj) { return obj.id !== cIndex; });
         }
     };
+    // call by onChange
     ModellDesignComponent.prototype.newZEIT = function (cIndex) {
         var newZiel = new _modell__WEBPACK_IMPORTED_MODULE_1__["Ziel"]();
         newZiel.id = cIndex;
@@ -1643,6 +2277,7 @@ var ModellDesignComponent = (function () {
         newZiel.content = this.auspraegung[cIndex];
         return newZiel;
     };
+    // call by onChange
     ModellDesignComponent.prototype.newIST = function (cIndex) {
         var newIst = new _modell__WEBPACK_IMPORTED_MODULE_1__["Ist"]();
         newIst.id = cIndex;
@@ -1650,9 +2285,8 @@ var ModellDesignComponent = (function () {
         newIst.content = this.auspraegung[cIndex];
         return newIst;
     };
+    // called by closeBlock;   update the ist and Ziel note
     ModellDesignComponent.prototype.updateIZnote = function (entry) {
-        // let  temp_iste: Ist[] = entry.Iste;
-        // let  temp_ziele: Ziel[] = entry.Ziele;
         for (var _i = 0, _a = entry.Iste; _i < _a.length; _i++) {
             var em = _a[_i];
             console.log('ist... em.id', em.id);
@@ -1670,6 +2304,7 @@ var ModellDesignComponent = (function () {
             }
         }
     };
+    // called by updateIZnote
     ModellDesignComponent.prototype.noteIndexContains = function (id, entry) {
         for (var i = 0; i < entry.Auspraegung_note.length; i++) {
             if (id === i) {
@@ -1678,7 +2313,83 @@ var ModellDesignComponent = (function () {
         }
         return false;
     };
+    ModellDesignComponent.prototype.openDialog3 = function (csModel) {
+        console.log('... openDialog2() to test on string this.ClickedSelectedModel.clrlist ' + this.createTreeString(csModel.clrlist));
+        var crlstring = this.createTreeString(csModel.clrlist);
+        var dialogRef = this.dialog.open(_clrview_clrview_component__WEBPACK_IMPORTED_MODULE_4__["ClrviewComponent"], {
+            width: '850px',
+            data: JSON.parse(crlstring)
+        });
+        dialogRef.afterClosed().subscribe(function (result) {
+            console.log('The dialog was closed; name: ' + result);
+        });
+    };
+    ModellDesignComponent.prototype.openDialog2 = function () {
+        var TestTree_DATA = {
+            'D3: Dokumentations- und Lesekompetenzen von Messdaten zz': {
+                'IT-Berufe und IT-Kompetenzen in der Industrie 4.0 zz': 'https://www.bibb.de/veroeffentlichungen/de/publication/show/7833'
+            },
+            'F4: Überwachung und Instandhaltung der vernetzten Systeme': {
+                'Hands on Industrie 4.0: 1.7 Die neue Qualität der Flexibilität': 'https://mooc.house/courses/industrie40-2016/items/7tUdCRZIAGu1GtiUM3GBqG',
+                'Hands on Industrie 4.0: 1.6 Enterprise Internet of Things': 'https://mooc.house/courses/industrie40-2016/items/3ENBLZInxWxpVj4vzcjdzl'
+            }
+        };
+        console.log('... openDialog2() to test on string this.ClickedSelectedModel.clrlist ' + this.createTreeString(this.ClickedSelectedModel.clrlist));
+        var crlstring = this.createTreeString(this.ClickedSelectedModel.clrlist);
+        var dialogRef = this.dialog.open(_clrview_clrview_component__WEBPACK_IMPORTED_MODULE_4__["ClrviewComponent"], {
+            width: '850px',
+            // data: { name: this.test_name, animal: this.test_animal }
+            // data: <JSON> TestTree_DATA
+            data: JSON.parse(crlstring)
+        });
+        dialogRef.afterClosed().subscribe(function (result) {
+            console.log('The dialog was closed; name: ' + result);
+            // this.test_animal = result;
+        });
+    };
+    // input this.ClickedSelectedModel.clrlist
+    // output: TestTree_DATA
+    ModellDesignComponent.prototype.createTreeString = function (clrobj_list) {
+        var tree_string = '{';
+        for (var _i = 0, clrobj_list_1 = clrobj_list; _i < clrobj_list_1.length; _i++) {
+            var entry = clrobj_list_1[_i];
+            var ename = entry.competence_name.replace(/"/g, '\'');
+            tree_string = tree_string + '\"' + ename + '\":{' + this.getLRString(entry.learningresources) + '},';
+        }
+        tree_string = tree_string.substring(0, tree_string.length - 1) + '\}';
+        console.log('The built tree string is: ' + tree_string);
+        return tree_string;
+    };
+    ModellDesignComponent.prototype.getLRString = function (lrob) {
+        var subtree_string = '';
+        for (var _i = 0, lrob_1 = lrob; _i < lrob_1.length; _i++) {
+            var entry = lrob_1[_i];
+            var eename = entry.lr_name;
+            var eelink = entry.lr_link;
+            subtree_string = subtree_string + '\"' + eename + '\": ' + '\"' + eelink + '\",';
+        }
+        subtree_string = subtree_string.substring(0, subtree_string.length - 1);
+        // subtree_string = subtree_string + '\}';
+        return subtree_string;
+    };
+    // to expand the Beschreibung section
+    ModellDesignComponent.prototype.showNote = function (i) {
+        if (this.hiddeText[i]) {
+            this.hiddeText[i] = false;
+            this.hiddeRow[i] = 1;
+        }
+        else {
+            this.hiddeText[i] = true;
+            if (i === 8) {
+                this.hiddeRow[i] = 5;
+            }
+            else {
+                this.hiddeRow[i] = 5;
+            }
+        }
+    };
     ModellDesignComponent.prototype.closeBlock = function () {
+        this.selectedPri = 0;
         this.updateIZnote(this.ClickedSelectedModel);
         this.parentSwitch = true;
         // to do something more here: disable navbar, save the data!
@@ -1706,7 +2417,7 @@ var ModellDesignComponent = (function () {
             template: __webpack_require__(/*! ./modell-design.component.html */ "./src/app/modell-design/modell-design.component.html"),
             styles: [__webpack_require__(/*! ./modell-design.component.css */ "./src/app/modell-design/modell-design.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialog"], _data_service__WEBPACK_IMPORTED_MODULE_6__["DataService"]])
     ], ModellDesignComponent);
     return ModellDesignComponent;
 }());
@@ -1725,10 +2436,10 @@ var ModellDesignComponent = (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModellService", function() { return ModellService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/esm5/http.js");
-/* harmony import */ var rxjs_BehaviorSubject__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/BehaviorSubject */ "./node_modules/rxjs/_esm5/BehaviorSubject.js");
-/* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var rxjs_BehaviorSubject__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/BehaviorSubject */ "./node_modules/rxjs-compat/_esm5/BehaviorSubject.js");
+/* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs-compat/_esm5/add/operator/map.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1742,7 +2453,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var ModellService = (function () {
+var ModellService = /** @class */ (function () {
     function ModellService(_http) {
         var _this = this;
         this._http = _http;
@@ -1795,7 +2506,7 @@ var ModellService = (function () {
 /*!***************************!*\
   !*** ./src/app/modell.ts ***!
   \***************************/
-/*! exports provided: Modell, Ist, Ziel */
+/*! exports provided: Modell, Ist, Ziel, PriKid */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1803,22 +2514,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Modell", function() { return Modell; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Ist", function() { return Ist; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Ziel", function() { return Ziel; });
-var Modell = (function () {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PriKid", function() { return PriKid; });
+var Modell = /** @class */ (function () {
     function Modell() {
     }
     return Modell;
 }());
 
-var Ist = (function () {
+var Ist = /** @class */ (function () {
     function Ist() {
     }
     return Ist;
 }());
 
-var Ziel = (function () {
+var Ziel = /** @class */ (function () {
     function Ziel() {
     }
     return Ziel;
+}());
+
+var PriKid = /** @class */ (function () {
+    function PriKid() {
+    }
+    return PriKid;
 }());
 
 
@@ -1838,7 +2556,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/index.js");
 /* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(uuid__WEBPACK_IMPORTED_MODULE_0__);
 
-var NewUser = { id: Object(uuid__WEBPACK_IMPORTED_MODULE_0__["v4"])(), name: '', mission: ' ', vision: '', strategy: '', kriterienList: [] };
+var NewUser = { uuid: Object(uuid__WEBPACK_IMPORTED_MODULE_0__["v4"])(), name: '', mission: ' ', vision: '', strategy: '', kriterienList: [] };
 
 
 /***/ }),
@@ -1853,20 +2571,24 @@ var NewUser = { id: Object(uuid__WEBPACK_IMPORTED_MODULE_0__["v4"])(), name: '',
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectedModel", function() { return SelectedModel; });
-var SelectedModel = (function () {
+var SelectedModel = /** @class */ (function () {
     function SelectedModel() {
-        this.kriterium_id = '0';
+        this.kriterium_id = 0;
+        this.kriterium = '';
         this.isselected = false;
         this.isEvaluated = false;
         this.Iste = [];
         this.Ziele = [];
-        this.priority = 0;
-        this.Kosten = '3,000';
+        this.priority = 'N';
+        this.prioirtyNum = 0;
+        this.Kosten = '';
+        this.Evaluation_note = '';
         this.Massnahmen = ' ';
         this.Erklaerung = '  ';
-        this.Verantwortlich = ' ';
-        this.Termin = new Date(2018, 0, 1);
-        this.Auspraegung_note = new Array(3);
+        this.Verantwortlich = '';
+        this.Termin = null;
+        this.Auspraegung_note = new Array(8);
+        this.clrlist = [];
     }
     return SelectedModel;
 }());
@@ -1885,7 +2607,7 @@ var SelectedModel = (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SortArrPipe", function() { return SortArrPipe; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1893,10 +2615,13 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 
-var SortArrPipe = (function () {
+var SortArrPipe = /** @class */ (function () {
     function SortArrPipe() {
     }
-    SortArrPipe.prototype.transform = function (array, field) {
+    SortArrPipe.prototype.transform = function (array, field, ad) {
+        if (array !== null && array[0].priority !== undefined) {
+            this.editPriority(array);
+        }
         if (array !== null) {
             array.sort(function (a, b) {
                 if (a[field] * 1 < b[field] * 1) {
@@ -1909,7 +2634,49 @@ var SortArrPipe = (function () {
                     return 0;
                 }
             });
+            if (array !== null && array[0].priority !== undefined) {
+                this.changePriBack(array);
+            }
+            // ad as string, either 'ascending' or 'descending'
+            if (ad === 'descending') {
+                return array.reverse();
+            }
             return array;
+        }
+    };
+    SortArrPipe.prototype.editPriority = function (array) {
+        for (var _i = 0, array_1 = array; _i < array_1.length; _i++) {
+            var ar = array_1[_i];
+            console.log('... ar.priority: ', ar.priority);
+            if (ar.priority.charAt(0) === 'M') {
+                ar.priority = '2';
+            }
+            if (ar.priority.charAt(0) === 'H') {
+                ar.priority = '3';
+            }
+            if (ar.priority.charAt(0) === 'L') {
+                ar.priority = '1';
+            }
+            if (ar.priority.charAt(0) === 'N') {
+                ar.priority = '0';
+            }
+        }
+    };
+    SortArrPipe.prototype.changePriBack = function (array) {
+        for (var _i = 0, array_2 = array; _i < array_2.length; _i++) {
+            var ar = array_2[_i];
+            if (ar.priority === '3') {
+                ar.priority = 'High';
+            }
+            if (ar.priority === '2') {
+                ar.priority = 'Medium';
+            }
+            if (ar.priority === '1') {
+                ar.priority = 'Low';
+            }
+            if (ar.priority === '0') {
+                ar.priority = 'None';
+            }
         }
     };
     SortArrPipe = __decorate([
@@ -1931,7 +2698,7 @@ var SortArrPipe = (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".containerStart {\n  display: -ms-grid;\n  display: grid;\n  -ms-grid-columns: 50% auto;\n      grid-template-columns: 50% auto;\n}\n.col {\n  padding: .4em 1.3em;\n}\n.titleTable{\n  width: 100%;\n  height: 60px;\n  margin-top: 20px;\n  margin-bottom: 0px;\n  background-color: #A9B7C0;\n}\n.td2{\n  float:left;\n  width:240px;\n  height: 30px;\n  text-align: left;\n  margin-top:10px;\n  margin-right: 45px;\n  margin-left: 10px;\n  font-size: 150%;\n}\n.td1{\n  float:left;\n  width: 40%;\n  margin-top: 5px;\n}\n.textlink {\n  background-color: #A9B7C0;\n  /*font-family: \"Times New Roman\", Times, serif;*/\n  font-size: 150%;\n  width: 100%;\n  padding:auto;\n  margin-bottom: 0px;\n  margin-top: -60px;\n  box-sizing: border-box;\n  border: 0;\n  text-align: left;\n}\na {\n  color: #0067a2;\n}\n.loadButton {\n  background-color: #EFD9C1;;\n  width: 98px;\n  margin-left: 20px;\n}\n.textarea.ng-invalid {\n  /*background-color: rgba(211,211,211, 0.8);*/\n  background-color: #A9B7C0;\n  /*font-family: \"Times New Roman\", Times, serif;*/\n  font-size: 150%;\n  padding:auto;\n  margin-bottom: 5px;\n  margin-top: -15px;\n  box-sizing: border-box;\n  width: 100%;\n  height: 450px;\n  border: 0;\n  text-align: left;\n}\n.textarea.ng-invalid-2 {\n  /*background-color: rgba(211,211,211, 0.8);*/\n  background-color: #A9B7C0;\n  /*font-family: \"Times New Roman\", Times, serif;*/\n  font-size: 150%;\n  padding:auto;\n  margin-bottom: 20px;\n  margin-top: 18px;\n  box-sizing: border-box;\n  width: 100%;\n  height: 315px;\n  border: 0;\n  text-align: left;\n}\n.input-group {\n  margin-bottom: 15px;\n  box-sizing: border-box;\n  width: 100%;\n  height: 156px;\n  border: 0;\n  margin-top: 20px;\n}\n.input-group-text {\n  background-color: #A9B7C0;\n  font-size: small;\n  font-weight: normal;\n  font-style: italic;\n}\n.form-control {\n font-size: 12pt;\n background-color: #8c9ca7;\n color:  #EFD9C1;\n}\n.textarea.ng-valid {\n  background-color: #EFD9C1;\n  font-size: 150%;\n  font-style: italic;\n  margin-bottom: 2px;\n  box-sizing: border-box;\n  width: 100%;\n  height:150px;\n  border: 0;\n  margin-top: 50px;\n}\n.textarea.ng-valid-2 {\n  background-color: #EFD9C1;\n  font-size: 150%;\n  font-style: italic;\n  margin-bottom: 2px;\n  box-sizing: border-box;\n  width: 100%;\n  height: 150px;\n  border: 0;\n  margin-top: 2px;\n}\ninput.btn {\n  border: 0;\n  display:block;\n  padding:1em 3em;\n  background:brown;\n  color:white;\n  margin-bottom:1em;\n  cursor:pointer;\n}\n.video {\n  box-sizing: border-box;\n  width: 100%;\n  height: 450px;\n  margin-top: 20px;\n}\n.uuidLableLeft {\n  margin-top: 30px;\n  height: 20px;\n  text-align: left;\n  font-size: small;\n}\n.uuidLable {\n  margin-top: 30px;\n  height: 20px;\n  text-align: right;\n  font-size: small;\n}\n.newButton {\n  background-color: #EFD9C1;;\n  width: 98px;\n  position: absolute;\n  left: 15px;\n}\n"
+module.exports = ".containerStart {\n  display: -ms-grid;\n  display: grid;\n  -ms-grid-columns: 50% auto;\n      grid-template-columns: 50% auto;\n}\n.col {\n  padding: .4em 1.3em;\n}\n.titleTable{\n  width: 100%;\n  height: 60px;\n  margin-top: 20px;\n  margin-bottom: 0px;\n  background-color: #A9B7C0;\n}\n.td2{\n  float:left;\n  width:240px;\n  height: 30px;\n  text-align: left;\n  margin-top:10px;\n  margin-right: 45px;\n  margin-left: 10px;\n  font-size: 150%;\n}\n.td1{\n  float:left;\n  width: 40%;\n  margin-top: 5px;\n}\n.textlink {\n  background-color: #A9B7C0;\n  /*font-family: \"Times New Roman\", Times, serif;*/\n  font-size: 150%;\n  width: 100%;\n  padding:auto;\n  margin-bottom: 0px;\n  margin-top: -60px;\n  box-sizing: border-box;\n  border: 0;\n  text-align: left;\n}\na {\n  color: #0067a2;\n}\n.loadButton {\n  background-color: #EFD9C1;;\n  width: 98px;\n  margin-left: 20px;\n}\n.textarea.ng-invalid {\n  /*background-color: rgba(211,211,211, 0.8);*/\n  background-color: #A9B7C0;\n  /*font-family: \"Times New Roman\", Times, serif;*/\n  font-size: 150%;\n  padding:auto;\n  margin-bottom: 5px;\n  margin-top: -15px;\n  box-sizing: border-box;\n  width: 100%;\n  height: 450px;\n  border: 0;\n  text-align: left;\n}\n.textarea.ng-invalid-2 {\n  /*background-color: rgba(211,211,211, 0.8);*/\n  background-color: #A9B7C0;\n  /*font-family: \"Times New Roman\", Times, serif;*/\n  font-size: 150%;\n  padding:auto;\n  margin-bottom: 20px;\n  margin-top: 18px;\n  box-sizing: border-box;\n  width: 100%;\n  height: 315px;\n  border: 0;\n  text-align: left;\n}\n.input-group {\n  margin-bottom: 15px;\n  box-sizing: border-box;\n  width: 100%;\n  height: 156px;\n  border: 0;\n  margin-top: 20px;\n}\n.input-group-text {\n  background-color: #A9B7C0;\n  width: 106px;\n  font-size: small;\n  font-weight: normal;\n  font-style: italic;\n}\n.zielText{\n  background-color: #A9B7C0;\n  font-size: small;\n  font-weight: normal;\n  font-style: italic;\n  padding-top: 45px;\n  color: #495057;\n}\n.form-control {\n font-size: 12pt;\n background-color: #8c9ca7;\n color:  #EFD9C1;\n}\n.textarea.ng-valid {\n  background-color: #EFD9C1;\n  font-size: 150%;\n  font-style: italic;\n  margin-bottom: 2px;\n  box-sizing: border-box;\n  width: 100%;\n  height:150px;\n  border: 0;\n  margin-top: 50px;\n}\n.textarea.ng-valid-2 {\n  background-color: #EFD9C1;\n  font-size: 150%;\n  font-style: italic;\n  margin-bottom: 2px;\n  box-sizing: border-box;\n  width: 100%;\n  height: 150px;\n  border: 0;\n  margin-top: 2px;\n}\ninput.btn {\n  border: 0;\n  display:block;\n  padding:1em 3em;\n  background:brown;\n  color:white;\n  margin-bottom:1em;\n  cursor:pointer;\n}\n.video {\n  box-sizing: border-box;\n  width: 100%;\n  height: 450px;\n  margin-top: 20px;\n}\n.uuidLableLeft {\n  margin-top: 30px;\n  height: 20px;\n  text-align: left;\n  font-size: small;\n}\n.uuidLable {\n  margin-top: 30px;\n  height: 20px;\n  text-align: right;\n  font-size: small;\n}\n.newButton {\n  background-color: #EFD9C1;;\n  width: 98px;\n  position: absolute;\n  left: 15px;\n}\n"
 
 /***/ }),
 
@@ -1942,7 +2709,7 @@ module.exports = ".containerStart {\n  display: -ms-grid;\n  display: grid;\n  -
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"containerStart\">\n  <div class=\"col\">\n    <div class=\"uuidLableLeft\"> <b>Do your want to import your previous file (.json)?</b>\n      <!--<button >import</button>-->\n      <input style=\"display: none\" type=\"file\" accept=\".json\" (change)=\"onFileLoad($event)\" #fileinput>\n      <button class=\"loadButton\" type=\"button\" (click)=\"fileinput.click()\"> load </button>\n    </div>\n\n    <div class=\"titleTable\">\n        <!--<div  class=\"td2\"> <a href=\"http://www.adaption-projekt.de/\"><h1>Projekt ADAPTION</h1></a></div>-->\n      <div  class=\"td2\"> <h1>Projekt ADAPTION</h1></div>\n        <div class=\"td1\"> <img src=\"assets/images/adaption.png\" width=55% height=35%> </div>\n    </div>\n\n    <div>\n    <br><textarea disabled class =\"textarea ng-invalid\"   name=\"item\" rows=\"30\"  cols=\"50\" placeholder=\"Ziel des Forschungsprojektes ADAPTION ist es, KMU und Unternehmen bei der Migration zum Cyber-physischen System für Produktion und Fertigung zu unterstützen. Gefördert vom BMBF wird ein reifegradbasiertes Vorgehensmodell hierzu entwickelt, das die Ableitung eines individuellen Migrationspfades unter Beachtung von Wirtschaftlichkeitsgesichtspunkten ermöglicht. Der optimale Zielreifegrad wird individuell nach Nutzen und Wirtschaftlichkeit für jedes Unternehmen festgelegt. Das Vorgehensmodell verfolgt einen Ansatz, der die drei betrieblichen Gestaltungsdimensionen Technik, Organisation und Personal berücksichtigt.\n      &#10;Die Aufgabe des Educational Technology Lab in ADAPTION besteht in der Formalisierung und software-technischen Umsetzung eines Reifegrad- und Vorgehensmodell bei der Migration zum Cyber-physischen Produktionssystem. Weiterhin in der Erweiterung eines existierenden Assistenzsystems um digitale Lernszenarien, die für Cyber-physische Produktionssysteme relevant sind. Die Migration wird bei Anwendungspartnern verschiedener Größe (Konzern, KMU) unter realen Bedingungen untersucht, gewonnene Erkenntnisse werden in das allgemeine Vorgehensmodell überführt.\"></textarea>\n      <div class=\"textlink\"><a target=\"_blank\" href=\"http://www.adaption-projekt.de/\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Mehr Info]</a></div><br>\n\n    </div>\n    <br><textarea disabled class =\"textarea ng-invalid-2\" type=\"textarea\"  name=\"item\" placeholder=\"&#10; ADAPTION Tool (ADAPTION) entwickelt ein Selbstbewertungstool für ein Industrie 4.0-Audit, um den vorliegenden Reifegrad zu ermitteln und auf dieser Grundlage den unter wirtschaftlichen Gesichtspunkten optimalen Reifegrad festzulegen. Das Ziel ist die Unterstützung dieses Prozesses:\n          1. Strategische Ausrichtung\n          2. Industrie 4.0 Audit\n          3. Zielstellung\n          4. Maßnahmen-planung\n          5. Evaluation \" ></textarea><br>\n\n  </div>\n\n  <div class=\"col\">\n\n\n    <div class=\"uuidLable\">  <button class=\"newButton\" type=\"button\" (click)=\"createNewUser()\"> new </button>\n      Welcome! &nbsp; Your User_ID is: <b style=\"color:#EFD9C1; background-color: #8c9ca7; font-weight: 200\">{{cUser.id}}</b></div>\n\n    <!--<br><textarea class =\"textarea ng-valid-2\" name=\"item\"-->\n                  <!--placeholder=\"Was ist Ihre Vision?\"  [(ngModel)]=\"cUser.vision\"  ></textarea><br>-->\n    <!--<br><textarea class =\"textarea ng-valid-2\"  name=\"item\"-->\n                  <!--placeholder=\"Was ist Ihre Mission?\"  [(ngModel)]=\"cUser.mission\"  ></textarea><br>-->\n\n    <!--<br><textarea class =\"textarea ng-valid-2\"  name=\"item\"-->\n                  <!--placeholder=\"Was sind Ihre Strategische Ziele? (z.B. für 6 Monate) \" [(ngModel)]=\"cUser.strategy\" ></textarea><br>-->\n\n    <div class=\"input-group\">\n      <div class=\"input-group-prepend\">\n        <span class=\"input-group-text\">Vision: &nbsp; </span>\n      </div>\n      <textarea class=\"form-control\" aria-label=\"Vision:  \" placeholder=\"Was ist Ihre Vision?\"  [(ngModel)]=\"cUser.vision\" ></textarea>\n    </div>\n    <div class=\"input-group\">\n      <div class=\"input-group-prepend\">\n        <span class=\"input-group-text\" >Mission: </span>\n      </div>\n      <textarea class=\"form-control\" aria-label=\"Mission:\"  placeholder=\"Was ist Ihre Mission?\"  [(ngModel)]=\"cUser.mission\"  ></textarea>\n    </div>\n    <div class=\"input-group\">\n      <div class=\"input-group-prepend\">\n        <span class=\"input-group-text\">Ziel:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>\n      </div>\n      <textarea class=\"form-control\" aria-label=\"Ziel:  \"  placeholder=\"Was sind Ihre Strategische Ziele? (z.B. für 6 Monate) \" [(ngModel)]=\"cUser.strategy\" ></textarea>\n    </div>\n\n    <div class=\"video\">\n      <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/kQLbVVPNTMQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>\n    </div>\n\n  </div>\n\n  <!--<div> current User vision: {{cUser.vision}} </div>-->\n  <!--<div> current User mission : {{cUser.mission}} </div>-->\n  <!--<div> current User mission : {{cUser.strategy}} </div>-->\n</div>\n\n"
+module.exports = "<div class=\"containerStart\">\n  <div class=\"col\">\n    <div class=\"uuidLableLeft\"> <b>Do your want to import your previous file (.json)?</b>\n      <!--<button >import</button>-->\n      <input style=\"display: none\" type=\"file\" accept=\".json\" (change)=\"onFileLoad($event)\" #fileinput>\n      <button class=\"loadButton\" type=\"button\" (click)=\"fileinput.click()\"> load </button>\n    </div>\n\n    <div class=\"titleTable\">\n        <!--<div  class=\"td2\"> <a href=\"http://www.adaption-projekt.de/\"><h1>Projekt ADAPTION</h1></a></div>-->\n      <div  class=\"td2\"> <h1>Projekt ADAPTION</h1></div>\n        <div class=\"td1\"> <img src=\"assets/images/adaption.png\" width=55% height=35%> </div>\n    </div>\n\n    <div>\n    <br><textarea disabled class =\"textarea ng-invalid\"   name=\"item\" rows=\"30\"  cols=\"50\" placeholder=\"Ziel des Forschungsprojektes ADAPTION ist es, KMU und Unternehmen bei der Migration zum Cyber-physischen System für Produktion und Fertigung zu unterstützen. Gefördert vom BMBF wird ein reifegradbasiertes Vorgehensmodell hierzu entwickelt, das die Ableitung eines individuellen Migrationspfades unter Beachtung von Wirtschaftlichkeitsgesichtspunkten ermöglicht. Der optimale Zielreifegrad wird individuell nach Nutzen und Wirtschaftlichkeit für jedes Unternehmen festgelegt. Das Vorgehensmodell verfolgt einen Ansatz, der die drei betrieblichen Gestaltungsdimensionen Technik, Organisation und Personal berücksichtigt.\n      &#10;Die Aufgabe des Educational Technology Lab in ADAPTION besteht in der Formalisierung und software-technischen Umsetzung eines Reifegrad- und Vorgehensmodell bei der Migration zum Cyber-physischen Produktionssystem. Weiterhin in der Erweiterung eines existierenden Assistenzsystems um digitale Lernszenarien, die für Cyber-physische Produktionssysteme relevant sind. Die Migration wird bei Anwendungspartnern verschiedener Größe (Konzern, KMU) unter realen Bedingungen untersucht, gewonnene Erkenntnisse werden in das allgemeine Vorgehensmodell überführt.\"></textarea>\n      <div class=\"textlink\"><a target=\"_blank\" href=\"http://www.adaption-projekt.de/\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Mehr Info]</a></div><br>\n\n    </div>\n    <br><textarea disabled class =\"textarea ng-invalid-2\" type=\"textarea\"  name=\"item\" placeholder=\"&#10; ADAPTION Tool (ADAPTION) entwickelt ein Selbstbewertungstool für ein Industrie 4.0-Audit, um den vorliegenden Reifegrad zu ermitteln und auf dieser Grundlage den unter wirtschaftlichen Gesichtspunkten optimalen Reifegrad festzulegen. Das Ziel ist die Unterstützung dieses Prozesses:\n          1. Strategische Ausrichtung\n          2. Industrie 4.0 Audit\n          3. Zielstellung\n          4. Maßnahmen-planung\n          5. Evaluation \" ></textarea><br>\n\n  </div>\n\n  <div class=\"col\">\n\n\n    <div class=\"uuidLable\">  <button class=\"newButton\" type=\"button\" (click)=\"createNewUser()\"> new </button>\n      Welcome! &nbsp; Your User_ID is: <b style=\"color:#EFD9C1; background-color: #8c9ca7; font-weight: 200\">{{cUser.uuid}}</b></div>\n\n    <!--<br><textarea class =\"textarea ng-valid-2\" name=\"item\"-->\n                  <!--placeholder=\"Was ist Ihre Vision?\"  [(ngModel)]=\"cUser.vision\"  ></textarea><br>-->\n    <!--<br><textarea class =\"textarea ng-valid-2\"  name=\"item\"-->\n                  <!--placeholder=\"Was ist Ihre Mission?\"  [(ngModel)]=\"cUser.mission\"  ></textarea><br>-->\n\n    <!--<br><textarea class =\"textarea ng-valid-2\"  name=\"item\"-->\n                  <!--placeholder=\"Was sind Ihre Strategische Ziele? (z.B. für 6 Monate) \" [(ngModel)]=\"cUser.strategy\" ></textarea><br>-->\n\n    <div class=\"input-group\">\n      <div class=\"input-group-prepend\">\n        <span class=\"input-group-text\">Vision: &nbsp; </span>\n      </div>\n      <textarea class=\"form-control\" aria-label=\"Vision:  \" placeholder=\"Was ist Ihre Vision?\"  [(ngModel)]=\"cUser.vision\" ></textarea>\n    </div>\n    <div class=\"input-group\">\n      <div class=\"input-group-prepend\">\n        <span class=\"input-group-text\" >Mission: </span>\n      </div>\n      <textarea class=\"form-control\" aria-label=\"Mission:\"  placeholder=\"Was ist Ihre Mission?\"  [(ngModel)]=\"cUser.mission\"  ></textarea>\n    </div>\n    <div class=\"input-group\">\n      <div class=\"input-group-prepend\">\n        <textarea class=\"zielText\" rows=\"4\" cols=\"12\" disabled>Strategische Zielausrichtung: </textarea>\n      </div>\n      <textarea class=\"form-control\" aria-label=\"Ziel:  \"  placeholder=\"Was sind Ihre Strategische Ziele? (z.B. für 6 Monate) \" [(ngModel)]=\"cUser.strategy\" ></textarea>\n    </div>\n\n    <div class=\"video\">\n      <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/kQLbVVPNTMQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>\n    </div>\n\n  </div>\n\n  <!--<div> current User vision: {{cUser.vision}} </div>-->\n  <!--<div> current User mission : {{cUser.mission}} </div>-->\n  <!--<div> current User mission : {{cUser.strategy}} </div>-->\n</div>\n\n"
 
 /***/ }),
 
@@ -1956,15 +2723,15 @@ module.exports = "<div class=\"containerStart\">\n  <div class=\"col\">\n    <di
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StartComponent", function() { return StartComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/esm5/platform-browser.js");
-/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/esm5/http.js");
-/* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs-compat/_esm5/add/operator/map.js");
 /* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../user.service */ "./src/app/user.service.ts");
 /* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/index.js");
 /* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(uuid__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../data.service */ "./src/app/data.service.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1982,7 +2749,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var StartComponent = (function () {
+var StartComponent = /** @class */ (function () {
     function StartComponent(sanitizer, _userService, http, _data) {
         this.sanitizer = sanitizer;
         this._userService = _userService;
@@ -2046,7 +2813,7 @@ var StartComponent = (function () {
                     console.log('... resSTR: ', resSTR);
                     _this.loadUser = JSON.parse(resSTR);
                     _this.slist = _this.loadUser.kriterienList;
-                    _this.cUser.id = _this.loadUser.id;
+                    _this.cUser.uuid = _this.loadUser.id;
                     _this.cUser.vision = _this.loadUser.vision;
                     _this.cUser.mission = _this.loadUser.mission;
                     _this.cUser.strategy = _this.loadUser.strategy;
@@ -2054,7 +2821,7 @@ var StartComponent = (function () {
                     console.log('... mission: ', _this.cUser.mission);
                     console.log('... vision: ', _this.cUser.vision);
                     _this.vision = _this.loadUser.vision;
-                    console.log('... uuid of cUser: ', _this.cUser.id);
+                    console.log('... uuid of cUser: ', _this.cUser.uuid);
                     // alert('file content = \n' + this.slist[0].kriterium_id + '  length:' + this.slist.length);
                     _this._userService.changeUser(_this.cUser);
                     _this._data.changeGoal(_this.slist);
@@ -2070,7 +2837,7 @@ var StartComponent = (function () {
     StartComponent.prototype.createNewUser = function () {
         console.log('... will create a new user: ');
         // this.cUser = new User( uuid(), ' ',  ' ',  ' ',  ' ', []);
-        this.cUser.id = Object(uuid__WEBPACK_IMPORTED_MODULE_5__["v4"])();
+        this.cUser.uuid = Object(uuid__WEBPACK_IMPORTED_MODULE_5__["v4"])();
         this.cUser.mission = '';
         this.cUser.vision = '';
         this.cUser.strategy = '';
@@ -2106,10 +2873,9 @@ var StartComponent = (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return UserService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var rxjs_BehaviorSubject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/BehaviorSubject */ "./node_modules/rxjs/_esm5/BehaviorSubject.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/Rx.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(rxjs__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs_BehaviorSubject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/BehaviorSubject */ "./node_modules/rxjs-compat/_esm5/BehaviorSubject.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 /* harmony import */ var _newuser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./newuser */ "./src/app/newuser.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2124,7 +2890,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var UserService = (function () {
+var UserService = /** @class */ (function () {
     function UserService() {
         //  private user = new ReplaySubject<User>(1);
         this.user = new rxjs_BehaviorSubject__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](null);
@@ -2134,7 +2900,7 @@ var UserService = (function () {
         this.user.next(currentUser);
     };
     UserService.prototype.getUser = function () {
-        return rxjs__WEBPACK_IMPORTED_MODULE_2__["Observable"].of(_newuser__WEBPACK_IMPORTED_MODULE_3__["NewUser"]);
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(_newuser__WEBPACK_IMPORTED_MODULE_3__["NewUser"]);
     };
     UserService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
@@ -2154,7 +2920,7 @@ var UserService = (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".myform{\n  width:100%;\n  float:left;\n  padding: 0;\n}\n\n/*#label1{*/\n\n/*background: #EFD9C1;*/\n\n/*width: 100%;*/\n\n/*margin-bottom: 10px;*/\n\n/*margin-top: 30px;*/\n\n/*font: normal 20px courier !important;*/\n\n/*padding:10px;*/\n\n/*}*/\n\n#three-labels{\n  float: right;\n  width: 35%;\n  margin-bottom: 20px;\n  margin-top: 15px;\n  margin-right: 80px;\n}\n\n#three-labels label{\n  display: -ms-inline-grid;\n  display: inline-grid;\n  float:right;\n  background-color: #C7D8C6;\n  margin-left: 20px;\n  margin-right: 30px;\n  width: 80px;\n  text-align: center;\n  font-weight: bolder;\n  font-size: medium;\n  padding: 3px;\n}\n\n.form-group label{\n  float: left;\n  width: 60%;\n  background-color:#A9B7C0;\n  color:#333;\n  font-weight: bold;\n  font-size: medium;\n  padding:5px;\n  border:none;\n  margin-bottom: 10px;\n  margin-top: 10px;\n  display: -ms-inline-grid;\n  display: inline-grid;\n}\n\n.input-group button{\n  float: left;\n  width: 60%;\n  background-color:#A9B7C0;\n  color:#333;\n  padding:5px;\n  border:none;\n  margin-bottom: 10px;\n  margin-top: 10px;\n  display: -ms-inline-grid;\n  display: inline-grid;\n  font-size: medium;\n  font-weight: bold;\n  text-align: left;\n  cursor: zoom-in;\n}\n\n.numberCircle {\n  display: block;\n  margin-right: 52px;\n  margin-top: 12px;\n  margin-left: 55px;\n  background: #EFD9C1;\n  border-radius: 100%;\n  width: 36px;\n  height: 36px;\n  padding: 3px;\n  border: 2px solid #EFD9C1;\n  color: #808080;\n  text-align: center;\n  font: 24px Arial, sans-serif;\n}\n\n.izLable {\n  display: block;\n  margin-top: 12px;\n  margin-right: 15px;\n  width: 80px;\n  height: 33px;\n  margin-left: 18px;\n  background: #EFD9C1;\n  text-align: center;\n  font: 18px Arial, sans-serif;\n  color: #808080;\n  padding: 8px;\n}\n"
+module.exports = ".myform{\n  width:100%;\n  float:left;\n  padding: 0;\n}\n\n/*#label1{*/\n\n/*background: #EFD9C1;*/\n\n/*width: 100%;*/\n\n/*margin-bottom: 10px;*/\n\n/*margin-top: 30px;*/\n\n/*font: normal 20px courier !important;*/\n\n/*padding:10px;*/\n\n/*}*/\n\n#three-labels{\n  float: right;\n  width: 35%;\n  margin-bottom: 20px;\n  margin-top: 15px;\n  margin-right: 90px;\n}\n\n#three-labels label{\n  display: -ms-inline-grid;\n  display: inline-grid;\n  float:right;\n  background-color: #C7D8C6;\n  margin-left: 20px;\n  margin-right: 20px;\n  width: 80px;\n  text-align: center;\n  font-weight: bolder;\n  font-size: medium;\n  padding: 3px;\n}\n\n.form-group label{\n  float: left;\n  width: 60%;\n  background-color:#A9B7C0;\n  color:#333;\n  font-weight: bold;\n  font-size: medium;\n  padding:5px;\n  border:none;\n  margin-bottom: 10px;\n  margin-top: 10px;\n  display: -ms-inline-grid;\n  display: inline-grid;\n}\n\n.input-group button{\n  float: left;\n  width: 60%;\n  background-color:#A9B7C0;\n  color:#333;\n  padding:5px;\n  border:none;\n  margin-bottom: 10px;\n  margin-top: 10px;\n  display: -ms-inline-grid;\n  display: inline-grid;\n  font-size: medium;\n  font-weight: bold;\n  text-align: left;\n  cursor: zoom-in;\n}\n\n.numberCircle {\n  display: block;\n  margin-right: 40px;\n  margin-top: 12px;\n  margin-left: 40px;\n  background: #EFD9C1;\n  border-radius: 100%;\n  width: 36px;\n  height: 36px;\n  padding: 3px;\n  border: 2px solid #EFD9C1;\n  color: #808080;\n  text-align: center;\n  font: 20px Arial, sans-serif;\n}\n\n.izLable {\n  display: block;\n  margin-top: 12px;\n  margin-right: 20px;\n  width: 80px;\n  height: 33px;\n  margin-left: 25px;\n  background: #EFD9C1;\n  text-align: center;\n  font: 18px Arial, sans-serif;\n  color: #808080;\n  padding: 8px;\n}\n"
 
 /***/ }),
 
@@ -2165,7 +2931,7 @@ module.exports = ".myform{\n  width:100%;\n  float:left;\n  padding: 0;\n}\n\n/*
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--Zustaede as the parentComponet and Modell-design as the child component-->\n\n<div *ngIf = \"displayThenBlock; then thenBlock  else elseBlock\"></div>\n\n<ng-template #thenBlock>\n  <!-- for testing\n  <h2>  this is then block</h2>\n  <button (click)= hideThenBlock()> hide </button>-->\n\n\n  <div id=\"label1\">\n    <label> Was sind die Ist-, Ziel-Zustände und Prioritäten für die ausgewählten Kriterien? </label>\n  </div>\n\n    <div id=\"three-labels\">\n      <label> Priorität </label>\n      <label> Ziel </label>\n      <label> Ist </label>\n    </div>\n\n\n  <div *ngFor=\"let cmodle of checkedModells | sortArr:'priority'; let m = index;\" >\n    <div class =\"input-group\">\n      <button type=\"text\" (click)=openEditor(cmodle)> {{cmodle.kriterium_id}}. {{cmodle.kriterium}} </button>\n      <!--<div class=\"numberCircle\">{{getISTE(cmodle, 'i')}}</div>-->\n      <!--<div class=\"numberCircle\">{{getISTE(cmodle, 'z')}}</div>-->\n      <div class=\"izLable\">{{getISTE(cmodle, 'i')}}</div>\n      <div class=\"izLable\">{{getISTE(cmodle, 'z')}}</div>\n      <div class=\"numberCircle\">{{cmodle.priority}}</div>\n    </div>\n  </div>\n\n\n</ng-template>\n\n\n<ng-template #elseBlock>\n  <!--<h2>  this is else block</h2>-->\n  <!--<button (click)= showThenBlock()> show</button>-->\n\n  <app-modell-design (childEvent)=\"receiveChanage($event)\" [parentSwitch]=\"displayThenBlock\" [ClickedSelectedModel]=\"csMod\" [ClickedModell] =\"cMod\"> </app-modell-design>\n\n</ng-template>\n"
+module.exports = "<!--Zustaede as the parentComponet and Modell-design as the child component-->\n\n<div *ngIf = \"displayThenBlock; then thenBlock  else elseBlock\"></div>\n\n<ng-template #thenBlock>\n  <!-- for testing\n  <h2>  this is then block</h2>\n  <button (click)= hideThenBlock()> hide </button>-->\n\n\n  <div id=\"label1\">\n    <label> Was sind die Ist-, Ziel-Zustände und Prioritäten für die ausgewählten Kriterien? </label>\n  </div>\n\n    <div id=\"three-labels\">\n      <label> Priorität </label>\n      <label> Ziel </label>\n      <label> Ist </label>\n    </div>\n\n\n  <!--<div *ngFor=\"let cmodle of checkedModells | sortArr:'priority': 'descending '| sortArr:'kriterium_id'; let m = index;\" >-->\n    <div *ngFor=\"let cmodle of sortPK(checkedModells); let m = index;\" >\n\n    <div class =\"input-group\">\n      <button type=\"text\" (click)=openEditor(cmodle)> {{cmodle.kriterium_id}}. {{cmodle.kriterium}} </button>\n      <!--<div class=\"izLable\">{{getISTE(cmodle, 'i')}}</div>-->\n      <!--<div class=\"izLable\">{{getISTE(cmodle, 'z')}}</div>-->\n      <!--<div title= \"{{cmodle.priority}}\" class=\"numberCircle\">{{getPriorityLevel(cmodle)}}</div>-->\n\n      <div (click)=openEditor(cmodle) class=\"izLable\">{{getISTE(cmodle, 'i')}}</div>\n      <div (click)=openEditor(cmodle) class=\"izLable\">{{getISTE(cmodle, 'z')}}</div>\n      <div (click)=openEditor(cmodle) title= \"{{cmodle.priority}}\" class=\"numberCircle\">{{getPriorityLevel(cmodle)}}</div>\n    </div>\n  </div>\n\n\n</ng-template>\n\n\n<ng-template #elseBlock>\n  <!--<h2>  this is else block</h2>-->\n  <!--<button (click)= showThenBlock()> show</button>-->\n\n  <app-modell-design (childEvent)=\"receiveChanage($event)\" [parentSwitch]=\"displayThenBlock\" [ClickedSelectedModel]=\"csMod\" [ClickedModell] =\"cMod\"> </app-modell-design>\n\n</ng-template>\n"
 
 /***/ }),
 
@@ -2179,7 +2945,7 @@ module.exports = "<!--Zustaede as the parentComponet and Modell-design as the ch
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ZustaendeComponent", function() { return ZustaendeComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _modell_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modell.service */ "./src/app/modell.service.ts");
 /* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data.service */ "./src/app/data.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
@@ -2194,7 +2960,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var ZustaendeComponent = (function () {
+var ZustaendeComponent = /** @class */ (function () {
     function ZustaendeComponent(_modellService, _data) {
         this._modellService = _modellService;
         this._data = _data;
@@ -2237,10 +3003,26 @@ var ZustaendeComponent = (function () {
         this.cMod = this.allmodels.find(function (el) { return el._id === m_index; });
         console.log('..... the clicked cmodel.des: ', m_index);
         console.log('..... the clicked cmodel.priorty: ', cmodle.priority);
+        console.log('..... the clicked cmodel: ', cmodle);
+    };
+    ZustaendeComponent.prototype.sortPK = function (arr) {
+        // this.checkedModells = this._data.sortMultiple(arr);
+        this.checkedModells = this._data.sortMulti(arr);
+        console.log('.... ccc');
+        this.checkedModells.forEach(function (element) {
+            console.log(element);
+        });
+        return this.checkedModells;
     };
     ZustaendeComponent.prototype.receiveChanage = function ($event) {
         this.displayThenBlock = $event;
     };
+    ZustaendeComponent.prototype.getPriorityLevel = function (sms) {
+        return sms.priority.charAt(0);
+    };
+    // getFullPri(sms) {
+    //   return this._data.priorities.find(x => x.value === sms.priority);
+    // }
     ZustaendeComponent.prototype.getISTE = function (csModell, iz) {
         var temp_list;
         if (iz === 'i') {
@@ -2309,8 +3091,8 @@ var environment = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/esm5/platform-browser-dynamic.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
 /* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
 

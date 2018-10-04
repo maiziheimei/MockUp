@@ -1,56 +1,27 @@
 import { Component, OnInit, } from '@angular/core';
 import { DataService } from '../data.service';
 import { ModellService} from '../modell.service';
-import {SelectedModel} from "../selectedModel";
+import { SelectedModel} from "../selectedModel";
+import {Ist, Modell, Ziel} from "../modell";
 import {ModellDesignComponent} from "../modell-design/modell-design.component";
-import {Ist, Ziel} from "../modell";
 
 
 @Component({
   selector: 'app-massnahmen',
   templateUrl: './massnahmen.component.html',
-  styleUrls: ['./massnahmen.component.css']
+  styleUrls: ['./massnahmen.component.css'],
+  providers:[ ModellDesignComponent]
 })
 export class MassnahmenComponent implements OnInit {
-
-  // public CModells = [
-  //   {'_id': '1', 'Kriterium': 'Digitale Konnektivität von Maschinen'},
-  //   {'_id': '3', 'Kriterium': 'Produkt als digitaler Informationstraeger'},
-  //   {'_id': '6', 'Kriterium': 'Mensch-Roboter-Kollaboration'},
-  //   {'_id': '7', 'Kriterium': 'Betriebsdatenerfassung (BDE)'},
-  //   {'_id': '9', 'Kriterium': 'Methodik der Fertigungs- und Montagesteuerung'},
-  //   {'_id': '14', 'Kriterium': 'Kostentransparenz'},
-  //   {'_id': '20', 'Kriterium': 'Dokumentation und Analyse von Qualitaetsdaten'},
-  //   {'_id': '24', 'Kriterium': 'IT-Sicherheit / Industrial Security'}
-  // ];
-  // show = false;
-  // myVar = 1;
-  // balls = ['1 -> 2', '1 -> 2', '2 -> 3', '0 -> 2', '0 -> 3', '3 -> 4' ];
- //  public mass= ['Maßnahme: Die Machinen bekommen einfache I/O-Schnittstellen (z.B. Klemmen einer SPS) über welche binäre ode analoge Singale ausgetauscht werder. ',
- //    '1 Maßnahme: Die Machinen bekommen einfache I/O-Schnittstellen (z.B. Klemmen einer SPS) über welche binäre ode analoge Singale ausgetauscht werder. ',
- //    '2 Maßnahme: Die Machinen bekommen einfache I/O-Schnittstellen (z.B. Klemmen einer SPS) über welche binäre ode analoge Singale ausgetauscht werder. ',
- //    '3 Maßnahme: Die Machinen bekommen einfache I/O-Schnittstellen (z.B. Klemmen einer SPS) über welche binäre ode analoge Singale ausgetauscht werder. ',
- //    '4 Maßnahme: Die Machinen bekommen einfache I/O-Schnittstellen (z.B. Klemmen einer SPS) über welche binäre ode analoge Singale ausgetauscht werder. ',
- //    'Maßnahme: Die Machinen bekommen einfache I/O-Schnittstellen (z.B. Klemmen einer SPS) über welche binäre ode analoge Singale ausgetauscht werder. ',
- //    'Maßnahme: Die Machinen bekommen einfache I/O-Schnittstellen (z.B. Klemmen einer SPS) über welche binäre ode analoge Singale ausgetauscht werder. '];
- // public  erk= ['Erklärung: Neue (informations-) technischen Schnittstellen zwischen Hard- und Software sowie Maschinen und Anagen werden gebraucht',
- //    'Erklärung: Neue (informations-) technischen Schnittstellen zwischen Hard- und Software sowie Maschinen und Anagen werden gebraucht',
- //    'Erklärung: Neue (informations-) technischen Schnittstellen zwischen Hard- und Software sowie Maschinen und Anagen werden gebraucht',
- //    'Erklärung: Neue (informations-) technischen Schnittstellen zwischen Hard- und Software sowie Maschinen und Anagen werden gebraucht',
- //    'Erklärung: Neue (informations-) technischen Schnittstellen zwischen Hard- und Software sowie Maschinen und Anagen werden gebraucht',
- //    'Erklärung: Neue (informations-) technischen Schnittstellen zwischen Hard- und Software sowie Maschinen und Anagen werden gebraucht',
- //    'Erklärung: Neue (informations-) technischen Schnittstellen zwischen Hard- und Software sowie Maschinen und Anagen werden gebraucht',
- //    'Erklärung: Neue (informations-) technischen Schnittstellen zwischen Hard- und Software sowie Maschinen und Anagen werden gebraucht'];
- //
- //
   ssms = [];
   CModells: any;
   itemCount: any;
   hiddenShowIst: any;
   hiddenShowZiel: any;
+  money: number =13495;
 
 
-  constructor( private _modellService: ModellService, private  _data: DataService) {}
+  constructor( private _modellService: ModellService, private  _data: DataService, private mdc: ModellDesignComponent) {}
 
   ngOnInit() {
     this._modellService.sharedModells.subscribe(res => this.CModells = res);
@@ -102,7 +73,7 @@ export class MassnahmenComponent implements OnInit {
     if(iz === 'i') {
       const temp_ist_contents = cdModel.Iste.map(function (ist) {
         if(ist.content !== null) {
-          return 'Ist_' + ist.id + ': ' + ist.content;
+          return 'Ist ' + ist.id + ': ' + ist.content;
         } });
       return temp_ist_contents.join('\n\n');
     }
@@ -110,60 +81,51 @@ export class MassnahmenComponent implements OnInit {
     if(iz === 'z') {
       const temp_ziel_contents = cdModel.Ziele.map(function (ziel) {
         if(ziel.content !== null){
-        return 'Ziel_' + ziel.id + ': ' + ziel.content;
+        return 'Ziel ' + ziel.id + ': ' + ziel.content;
         } });
       return temp_ziel_contents.join('\n\n');
     }
 
   }
 
+  openCLRDialog(cm: SelectedModel): void {
+    this.mdc.openDialog3(cm);
+  }
+
+  // currencyInputChanged(value) {
+  //   var num = value.replace('.', ",");
+  //   return Number(num);
+  // }
+  //
+  // validateOnlyNumbers(evt) {
+  //   var theEvent = evt || window.event;
+  //   var key = theEvent.keyCode || theEvent.which;
+  //   key = String.fromCharCode( key );
+  //   var regex = /[0-9]|\./;
+  //   if( !regex.test(key) ) {
+  //     theEvent.returnValue = false;
+  //     if(theEvent.preventDefault) theEvent.preventDefault();
+  //   }
+  // }
+  //
+  // valuechange(newValue) {
+  //   this.money = newValue;
+  //   console.log(newValue)
+  // }
+
+  update(value: number, cmodel: SelectedModel) {
+    this.money = value;
+    cmodel.Kosten = value.toString();
+  }
 
 
-  // updateIZnote() {
-  //   if (this.ssms.length >0) {
-  //     for(const entry of this.ssms) {
-  //       for(let i=0; i< entry.Auspraegung_note.length; i++) {
-  //         if(entry.Auspraegung_note[i] !== null) {
-  //           this.updateIZ_List(i, entry);
-  //         }
-  //
-  //       }
-  //
-  //     }
-  //   }
-  // }
-  //
-  //
-  // updateIZ_List(i: number, entry: SelectedModel) {
-  //   const temp_ist_ids = entry.Iste.map(function (ist) {
-  //     return ist.id;
-  //   });
-  //
-  //   const temp_ziel_ids = entry.Ziele.map(function (ziel) {
-  //     return ziel.id;
-  //   });
-  //
-  //   if(this.existObj (i, temp_ist_ids) && this.existObj(i,temp_ziel_ids)) {
-  //     this.updateNote(entry, temp_ist_ids, 'i', i);
-  //     this.updateNote(entry,temp_ziel_ids, 'z',i);
-  //   }
-  //   if(this.existObj (i, temp_ist_ids) && !this.existObj(i,temp_ziel_ids)) { this.updateNote(entry, temp_ist_ids, 'i', i);}
-  //   if(!this.existObj (i, temp_ist_ids) && this.existObj(i,temp_ziel_ids)) { this.updateNote(entry,temp_ziel_ids, 'z',i);}
-  //
-  // }
-  //
-  // existObj (c_index, iz_list) {
-  //   return iz_list.findIndex(x=> parseInt(x) === c_index)> -1;
-  // }
-  //
-  // updateNote(entry: SelectedModel,list_ids, iz, i) {
-  //  // let tp = list_ids.findIndex(x => parseInt(x.id) === i);
-  //   if (iz = 'i') {
-  //     entry.Iste.find( x => x.id === i).note = entry.Auspraegung_note[i];
-  //   }
-  //   if (iz = 'z') {
-  //     entry.Ziele.find( x => x.id === i).note = entry.Auspraegung_note[i];
-  //   }
-  // }
+  numberOnly(event): boolean {
+    const charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
+    }
+    return true;
+
+  }
 
 }

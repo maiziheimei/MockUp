@@ -31,7 +31,7 @@
 
 
     <div class="uuidLable">  <button class="newButton" type="button" (click)="createNewUser()"> new </button>
-      Welcome! &nbsp; Your User_ID is: <b style="color:#EFD9C1; background-color: #8c9ca7; font-weight: 200">{{cUser.id}}</b></div>
+      Welcome! &nbsp; Your User_ID is: <b style="color:#EFD9C1; background-color: #8c9ca7; font-weight: 200">{{cUser.uuid}}</b></div>
 
     <!--<br><textarea class ="textarea ng-valid-2" name="item"-->
                   <!--placeholder="Was ist Ihre Vision?"  [(ngModel)]="cUser.vision"  ></textarea><br>-->
@@ -55,7 +55,7 @@
     </div>
     <div class="input-group">
       <div class="input-group-prepend">
-        <span class="input-group-text">Ziel:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <textarea class="zielText" rows="4" cols="12" disabled>Strategische Zielausrichtung: </textarea>
       </div>
       <textarea class="form-control" aria-label="Ziel:  "  placeholder="Was sind Ihre Strategische Ziele? (z.B. für 6 Monate) " [(ngModel)]="cUser.strategy" ></textarea>
     </div>

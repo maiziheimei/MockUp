@@ -1,0 +1,1041 @@
+[{
+    "competence_id": "F1",
+    "competence_name": "F1: Prozesswissen / ganzheitliches Verständnis Produktionsprozess und der Abläufe",
+    "competence_type": "Fachliche Kompetenz",
+    "competence_definition": "Grund- und Spezialwissen aus dem eigenen Fachgebiet/Disziplin",
+    "LearningResources": [
+        {
+          "lr_id": "Hol40 1.1",
+          "lr_name": "Hands on Industrie 4.0: 1.1 Was ist Industrie 4.0?",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/4CGCkHUrlFKjnuo6SbXjx2"
+        },
+          {
+          "lr_id": "Hol40 1.3",
+          "lr_name": "Hands on Industrie 4.0: 1.3 Daten für optimierte Produktionsprozesse nutzen",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/2gybFlRFD79wWJk7HC2uU"
+        },
+        {
+          "lr_id": "Hol40 1.9",
+          "lr_name": "Hands on Industrie 4.0: 1.9 Mobiles Produktionsmanagement",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/3Cb1PnRKKqaAO8LBeY1TYU"
+        }
+    ]
+  },
+  {
+    "competence_id": "F2",
+    "competence_name": "F2: Systemkenntnisse / -wissen / -verständnis",
+    "competence_type": "Fachliche Kompetenz",
+    "competence_definition": "Grund- und Spezialwissen aus dem eigenen Fachgebiet/Disziplin",
+    "LearningResources": [
+        {
+          "lr_id": "Hol40 2.1",
+          "lr_name": "Hands on Industrie 4.0: 2.1 Technologische Grundlagen der Industrie 4.0",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/5YGeqSfYXVQhW2zGfIrDkb"
+        },
+        {
+          "lr_id": "Hol40 2.5",
+          "lr_name": "Hands on Industrie 4.0: 2.5 Intelligente technische Systeme",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/6pHXmhiFQFeW4TTUL8luKV"
+        },
+        {
+          "lr_id": "Hol40 3.7",
+          "lr_name": "Hands on Industrie 4.0: 3.7 Assistenzsysteme in der Produktion",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/4Zw5t7TpRDYLaJzJRw1lMu"
+        }
+    ]
+  },
+  {
+      "competence_id": "F3",
+      "competence_name": "F3: Interventionsfähigkeit bei Störfällen und Problemen",
+      "competence_type": "Fachliche Kompetenz",
+      "competence_definition": "Grund- und Spezialwissen aus dem eigenen Fachgebiet/Disziplin",
+      "LearningResources": [
+          {
+            "lr_id": "Hol40 1.2",
+            "lr_name": "Hands on Industrie 4.0: 1.2 Logistik 4.0",
+            "lr_link": "https://mooc.house/courses/industrie40-2016/items/2xy6K5aCnL5hCC4H8vJQ0r"
+          },
+          {
+            "lr_id": "Hol40 1.7",
+            "lr_name": "Hands on Industrie 4.0: 1.7 Die neue Qualität der Flexibilität",
+            "lr_link": "https://mooc.house/courses/industrie40-2016/items/7tUdCRZIAGu1GtiUM3GBqG"
+          }
+      ]
+    },
+    {
+        "competence_id": "F4",
+        "competence_name": "F4: Überwachung und Instandhaltung der vernetzten Systeme",
+        "competence_type": "Fachliche Kompetenz",
+        "competence_definition": "Grund- und Spezialwissen aus dem eigenen Fachgebiet/Disziplin",
+        "LearningResources": [
+            {
+              "lr_id": "Hol40 1.6",
+              "lr_name": "Hands on Industrie 4.0: 1.6 Enterprise Internet of Things",
+              "lr_link": "https://mooc.house/courses/industrie40-2016/items/3ENBLZInxWxpVj4vzcjdzl"
+            },
+            {
+              "lr_id": "Hol40 1.7",
+              "lr_name": "Hands on Industrie 4.0: 1.7 Die neue Qualität der Flexibilität",
+              "lr_link": "https://mooc.house/courses/industrie40-2016/items/7tUdCRZIAGu1GtiUM3GBqG"
+            }
+        ]
+  },
+{
+    "competence_id": "F5",
+    "competence_name": "F5: Einstellung, Steuerung und Kontrolle von komplexen Systemen",
+    "competence_type": "Fachliche Kompetenz",
+    "competence_definition": "Grund- und Spezialwissen aus dem eigenen Fachgebiet/Disziplin",
+    "LearningResources": [
+            {
+              "lr_id": "Hol40 1.6",
+              "lr_name": "Hands on Industrie 4.0: 1.6 Enterprise Internet of Things",
+              "lr_link": "https://mooc.house/courses/industrie40-2016/items/3ENBLZInxWxpVj4vzcjdzl"
+            },
+            {
+              "lr_id": "Hol40 1.7",
+              "lr_name": "Hands on Industrie 4.0: 1.7 Die neue Qualität der Flexibilität",
+              "lr_link": "https://mooc.house/courses/industrie40-2016/items/7tUdCRZIAGu1GtiUM3GBqG"
+            }
+        ]
+  },
+{
+    "competence_id": "F6",
+    "competence_name": "F6: Kommunikation mit Maschinen und vernetzten Systemen",
+    "competence_type": "Fachliche Kompetenz",
+    "competence_definition": "Grund- und Spezialwissen aus dem eigenen Fachgebiet/Disziplin",
+    "LearningResources": [
+            {
+              "lr_id": "Hol40 1.5",
+              "lr_name": "Hands on Industrie 4.0: 1.5 Industrie 4.0 als Plattformisierungsprozess",
+              "lr_link": "https://mooc.house/courses/industrie40-2016/items/4O2Ss8lVyfloxzn4WSyYM1"
+            },
+            {
+              "lr_id": "Hol40 1.6",
+              "lr_name": "Hands on Industrie 4.0: 1.6 Enterprise Internet of Things",
+              "lr_link": "https://mooc.house/courses/industrie40-2016/items/3ENBLZInxWxpVj4vzcjdzl"
+
+            }
+        ]
+  },
+
+ {
+    "competence_id": "F7",
+    "competence_name": "F7: 'Dashboards' von cyber-physischen Systemen bedienen, auswerten und korrektive Maßnahmen durchführen",
+    "competence_type": "Fachliche Kompetenz",
+    "competence_definition": "Grund- und Spezialwissen aus dem eigenen Fachgebiet/Disziplin",
+     "LearningResources": [
+        {
+          "lr_id": "Hol40 1.1",
+          "lr_name": "Hands on Industrie 4.0: 1.1 Was ist Industrie 4.0?",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/4CGCkHUrlFKjnuo6SbXjx2"
+        },
+        {
+          "lr_id": "Hol40 2.1",
+          "lr_name": "Hands on Industrie 4.0: 2.1 Technologische Grundlagen der Industrie 4.0",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/5YGeqSfYXVQhW2zGfIrDkb"
+        }
+      ]
+  },
+  {
+    "competence_id": "F8",
+    "competence_name": "F8: Prozessmanagement",
+    "competence_type": "Fachliche Kompetenz",
+    "competence_definition": "Grund- und Spezialwissen aus dem eigenen Fachgebiet/Disziplin",
+    "LearningResources": [
+       {
+          "lr_id": "Hol40 1.3",
+          "lr_name": "Hands on Industrie 4.0: 1.3 Daten für optimierte Produktionsprozesse nutzen",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/2gybFlRFD79wWJk7HC2uU"
+        }
+    ]
+  },
+{
+    "competence_id": "F9",
+    "competence_name": "F9: Prozessverantwortung",
+    "competence_type": "Fachliche Kompetenz",
+    "competence_definition": "Grund- und Spezialwissen aus dem eigenen Fachgebiet/Disziplin",
+    "LearningResources": [
+       {
+          "lr_id": "Hol40 1.3",
+          "lr_name": "Hands on Industrie 4.0: 1.3 Daten für optimierte Produktionsprozesse nutzen",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/2gybFlRFD79wWJk7HC2uU"
+        }
+    ]
+  },
+  {
+    "competence_id": "F10",
+    "competence_name": "F10: Datenbasierte Entscheidungen treffen",
+    "competence_type": "Fachliche Kompetenz",
+    "competence_definition": "Grund- und Spezialwissen aus dem eigenen Fachgebiet/Disziplin",
+    "LearningResources": [
+       {
+          "lr_id": "Hol40 1.3",
+          "lr_name": "Hands on Industrie 4.0: 1.3 Daten für optimierte Produktionsprozesse nutzen",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/2gybFlRFD79wWJk7HC2uU"
+        },
+        {
+          "lr_id": "Hol40 1.4",
+          "lr_name": "https://mooc.house/courses/industrie40-2016/items/AA8hngIGxJTaFL2JwoMNj",
+          "lr_link": "Hands on Industrie 4.0: 1.4 Datenbasierte Geschäftsmodelle"
+        }
+    ]
+  },
+{
+    "competence_id": "F11",
+    "competence_name": "F11: Qualitätssicherung",
+    "competence_type": "Fachliche Kompetenz",
+    "competence_definition": "Grund- und Spezialwissen aus dem eigenen Fachgebiet/Disziplin",
+    "LearningResources": [
+        {
+              "lr_id": "Hol40 1.7",
+              "lr_name": "Hands on Industrie 4.0: 1.7 Die neue Qualität der Flexibilität",
+              "lr_link": "https://mooc.house/courses/industrie40-2016/items/7tUdCRZIAGu1GtiUM3GBqG"
+        }
+    ]
+  },
+{
+    "competence_id": "F12",
+    "competence_name": "F12: Verständnis für die Logistikanforderungen und Lieferbedienungen",
+    "competence_type": "Fachliche Kompetenz",
+    "competence_definition": "Grund- und Spezialwissen aus dem eigenen Fachgebiet/Disziplin",
+    "LearningResources": [
+        {
+            "lr_id": "Hol40 1.2",
+            "lr_name": "Hands on Industrie 4.0: 1.2 Logistik 4.0",
+            "lr_link": "https://mooc.house/courses/industrie40-2016/items/2xy6K5aCnL5hCC4H8vJQ0r"
+        },
+         {
+              "lr_id": "Hol40 1.8",
+              "lr_name": "Hands on Industrie 4.0: 1.8 Urbane Produktion",
+              "lr_link": "https://mooc.house/courses/industrie40-2016/items/6sxZzXJIAKdvXj5x04uLrK"
+        }
+    ]
+  },
+{
+    "competence_id": "F13",
+    "competence_name": "F13: Interdisziplinäre Entwicklung von Produktionssystemen",
+    "competence_type": "Fachliche Kompetenz",
+    "competence_definition": "Grund- und Spezialwissen aus dem eigenen Fachgebiet/Disziplin",
+    "LearningResources": [
+       {
+          "lr_id": "Hol40 1.1",
+          "lr_name": "Hands on Industrie 4.0: 1.1 Was ist Industrie 4.0?",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/4CGCkHUrlFKjnuo6SbXjx2"
+        },
+        {
+          "lr_id": "Hol40 1.3",
+          "lr_name": "Hands on Industrie4.0: 1.3 Daten für optimierte Produktionsprozesse nutzen",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/2gybFlRFD79wWJk7HC2uU"
+        },
+        {
+          "lr_id": "Hol40 1.9",
+          "lr_name": "Hands on Industrie 4.0: 1.9 Mobiles Produktionsmanagement",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/3Cb1PnRKKqaAO8LBeY1TYU"
+        }
+    ]
+  },
+
+{
+    "competence_id": "D1",
+    "competence_name": "D1: Datenauswertung und -analyse",
+    "competence_type": "Daten- und IT-Kompetenz",
+    "competence_definition": "Steuerung, Nutzung, Kontrolle datenbasierter Systeme, Datenanalyse, Data-Security/Datenschutz etc.",
+    "LearningResources": [
+        {
+          "lr_id": "Hol40 1.3",
+          "lr_name": "Hands on Industrie4.0: 1.3 Daten für optimierte Produktionsprozesse nutzen",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/2gybFlRFD79wWJk7HC2uU"
+        },
+        {
+          "lr_id": "Hol40 1.4",
+          "lr_name": "Hands on Industrie 4.0: 1.4 Datenbasierte Geschäftsmodelle",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/AA8hngIGxJTaFL2JwoMNj"
+        }
+    ]
+  },
+  {
+    "competence_id": "D2",
+    "competence_name": "D2: IT-Sicherheit und Schutz, Umgang mit sensiblen Daten",
+    "competence_type": "Daten- und IT-Kompetenz",
+    "competence_definition": "Steuerung, Nutzung, Kontrolle datenbasierter Systeme, Datenanalyse, Data-Security/Datenschutz etc.",
+    "LearningResources": [
+        {
+          "lr_id": "Hol40 1.10",
+          "lr_name": "Hands on Industrie 4.0: 1.10 Industrie 4.0 - Rechtliche Rahmenbedingungen",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/3VdLCniGyx1j3iGBKABCCm"
+        },
+        {
+          "lr_id": "Hol40 4",
+          "lr_name": "Hands on Industrie 4.0: 4 Sicherheit",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/3nFauYKLm8SoiQ0wKppYik"
+        }
+    ]
+  },
+{
+    "competence_id": "D3",
+    "competence_name": "D3: Dokumentations- und Lesekompetenzen von Messdaten",
+    "competence_type": "Daten- und IT-Kompetenz",
+    "competence_definition": "Steuerung, Nutzung, Kontrolle datenbasierter Systeme, Datenanalyse, Data-Security/Datenschutz etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "IT-Berufe und IT-Kompetenzen in der Industrie 4.0",
+          "lr_link": "https://www.bibb.de/veroeffentlichungen/de/publication/show/7833"
+        }
+    ]
+  },
+{
+    "competence_id": "D4",
+    "competence_name": "D4: Cloud-Computing / -architekturen",
+    "competence_type": "Daten- und IT-Kompetenz",
+    "competence_definition": "Steuerung, Nutzung, Kontrolle datenbasierter Systeme, Datenanalyse, Data-Security/Datenschutz etc.",
+    "LearningResources": [
+        {
+          "lr_id": "Hol40 2.7",
+          "lr_name": "Hands on Industrie 4.0: 2.7 Cloud- und Echtzeitcomputing - Teil 1",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/3RDyqEcNmjYPMeWwxaA4vV"
+        },
+        {
+          "lr_id": "Hol40 2.8",
+          "lr_name": "Hands on Industrie 4.0: 2.8 Cloud- und Echtzeitcomputing - Teil 2",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/4G03ijBTHa57cjw89XqGgL"
+        }
+    ]
+  },
+{
+    "competence_id": "D5",
+    "competence_name": "D5: Kritischer Umgang mit Entscheidungs- und Analysetools",
+    "competence_type": "Daten- und IT-Kompetenz",
+    "competence_definition": "Steuerung, Nutzung, Kontrolle datenbasierter Systeme, Datenanalyse, Data-Security/Datenschutz etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Big Data Analytics sind die Basis für fundierte Geschäftsentscheidungen",
+          "lr_link": "https://www.bigdata-insider.de/big-data-analytics-sind-die-basis-fuer-fundierte-geschaeftsentscheidungen-a-458444/"
+        }
+    ]
+  },
+{
+    "competence_id": "D6",
+    "competence_name": "D6: Programmieren",
+    "competence_type": "Daten- und IT-Kompetenz",
+    "competence_definition": "Steuerung, Nutzung, Kontrolle datenbasierter Systeme, Datenanalyse, Data-Security/Datenschutz etc.",
+    "LearningResources": [
+        {
+          "lr_id": "Hol40 2.8",
+          "lr_name": "Hands on Industrie 4.0: 2.8 Cloud- und Echtzeitcomputing - Teil 2",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/4G03ijBTHa57cjw89XqGgL"
+        },
+        {
+          "lr_id": "Hol40 2.9",
+          "lr_name": "Hands on Industrie 4.0: 2.9 Real-time M2M Communication - I",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/65kVxLwNgErmnR8NyEGx9S"
+        }
+    ]
+  },
+
+{
+    "competence_id": "D7",
+    "competence_name": "D7: Softwareentwicklung von modularen Applikationen",
+    "competence_type": "Daten- und IT-Kompetenz",
+    "competence_definition": "Steuerung, Nutzung, Kontrolle datenbasierter Systeme, Datenanalyse, Data-Security/Datenschutz etc.",
+    "LearningResources": [
+        {
+          "lr_id": "Hol40 2.2",
+          "lr_name": "Hands on Industrie 4.0: 2.2 Interoperabilität in der Smart Factory - Teil 1",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/15wna8YhXaPg0H7ZWoZWX4"
+        },
+        {
+          "lr_id": "Hol40 2.3",
+          "lr_name": "Hands on Industrie 4.0: 2.3 Interoperabilität in der Smart Factory - Teil 2",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/7IQN0wRPhWLLo9gNjZaLTp"
+        },
+        {
+          "lr_id": "Hol40 2.4",
+          "lr_name": "Hands on Industrie 4.0: 2.4 RAMI 4.0",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/6SIQvDyCvEFnYmW9eTvLwo"
+        }
+    ]
+  },
+{
+    "competence_id": "D8",
+    "competence_name": "D8: ",
+    "competence_type": "Daten- und IT-Kompetenz",
+    "competence_definition": "Steuerung, Nutzung, Kontrolle datenbasierter Systeme, Datenanalyse, Data-Security/Datenschutz etc.",
+    "LearningResources": [
+        {
+          "lr_id": "Hol40 2.5",
+          "lr_name": "Hands on Industrie 4.0: 2.5 Intelligente technische Systeme",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/6pHXmhiFQFeW4TTUL8luKV"
+        },
+        {
+          "lr_id": "Hol40 2.6",
+          "lr_name": "Hands on Industrie 4.0: 2.6 Funktionsweise intelligenter Komponenten",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/5N5LkBf664ryrWmZMLqIcQ"
+        }
+    ]
+  },
+{
+    "competence_id": "D9",
+    "competence_name": "D9: Kollaborationssoftware",
+    "competence_type": "Daten- und IT-Kompetenz",
+    "competence_definition": "Steuerung, Nutzung, Kontrolle datenbasierter Systeme, Datenanalyse, Data-Security/Datenschutz etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Kategorie:Kollaborationssoftware",
+          "lr_link": "https://de.wikipedia.org/wiki/Kategorie:Kollaborationssoftware"
+        }
+    ]
+  },
+{
+    "competence_id": "D10",
+    "competence_name": "D10: Anwendung von digitalen Tools, 3D-Druck",
+    "competence_type": "Daten- und IT-Kompetenz",
+    "competence_definition": "Steuerung, Nutzung, Kontrolle datenbasierter Systeme, Datenanalyse, Data-Security/Datenschutz etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "3D-Druck",
+          "lr_link": "https://de.wikipedia.org/wiki/3D-Druck"
+        },
+         {
+          "lr_id": null,
+          "lr_name": "Einsatz digitaler Technologien wie Industrie 4.0 oder 3D-Druck in Deutschland mittlerweile weit verbreitet",
+          "lr_link": "https://www.3dmake.de/3d-druck-software/einsatz-digitaler-technologien-wie-industrie-4-0-oder-3d-druck-in-deutschland-mittlerweile-weit-verbreitet/"
+        }
+    ]
+  },
+{
+    "competence_id": "D11",
+    "competence_name": "D11: Wissens- und Dokumentationssysteme anwenden",
+    "competence_type": "Daten- und IT-Kompetenz",
+    "competence_definition": "Steuerung, Nutzung, Kontrolle datenbasierter Systeme, Datenanalyse, Data-Security/Datenschutz etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Was Wissensmanagement von Technischer Dokumentation lernen kann",
+          "lr_link": "http://www.tanner.de/infoportal/1023/was-wissensmanagement-von-technischer-dokumentation-lernen-kann/"
+        }
+    ]
+  },
+{
+    "competence_id": "D12",
+    "competence_name": "D12: Benutzerorientiertes IT-Design",
+    "competence_type": "Daten- und IT-Kompetenz",
+    "competence_definition": "Steuerung, Nutzung, Kontrolle datenbasierter Systeme, Datenanalyse, Data-Security/Datenschutz etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Design Thinking",
+          "lr_link": "https://de.wikipedia.org/wiki/Design_Thinking"
+        },
+        {
+          "lr_id": null,
+          "lr_name": "User Experience Design: Mehr Effizienz im Unternehmen",
+          "lr_link": "https://www.datagroup.de/magazin/user-experience-design-mehr-effizienz-im-unternehmen/"
+        }
+    ]
+  },
+{
+    "competence_id": "D13",
+    "competence_name": "D13: IT-gestützte Fehlerdiagnose mit Hilfe von Assistenz- und Diagnosesystemen",
+    "competence_type": "Daten- und IT-Kompetenz",
+    "competence_definition": "Steuerung, Nutzung, Kontrolle datenbasierter Systeme, Datenanalyse, Data-Security/Datenschutz etc.",
+    "LearningResources": [
+        {
+          "lr_id": "Hol40 2.7",
+          "lr_name": "Intelligente Fehlerdiagnose in Industrie 4.0",
+          "lr_link": "https://www.springer-vdi-verlag.de/libary/common/090.pdf"
+        }
+    ]
+  },
+{
+    "competence_id": "D14",
+    "competence_name": "D14: Daten-, Netzwerk-, Cloud- und Prozessbefähigung",
+    "competence_type": "Daten- und IT-Kompetenz",
+    "competence_definition": "Steuerung, Nutzung, Kontrolle datenbasierter Systeme, Datenanalyse, Data-Security/Datenschutz etc.",
+    "LearningResources": [
+      {
+          "lr_id": "Hol40 2.7",
+          "lr_name": "Intelligente Fehlerdiagnose in Industrie 4.0",
+          "lr_link": "https://www.springer-vdi-verlag.de/libary/common/090.pdf"
+        },
+        {
+          "lr_id": "Hol40 2.8",
+          "lr_name": "Hands on Industrie 4.0: 2.8 Cloud- und Echtzeitcomputing - Teil 2",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/4G03ijBTHa57cjw89XqGgL"
+        }
+    ]
+  },
+  {
+    "competence_id": "S1",
+    "competence_name": "S1: Kooperation / Kollaboration, Team- und Kooperationsfähigkeit",
+    "competence_type": "Soziale Kompetenz",
+    "competence_definition": "Interdisziplinäre Kooperation, Projektmanagement, Kommunikationskompetenz, Organisations- und Führungskompetenz, Entscheidungskompetenz etc.",
+    "LearningResources": [
+        {
+          "lr_id": "Hol40 3.2",
+          "lr_name": "Hands on Industrie 4.0: 3.2 Wandel der Arbeitsorganisation",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/2KACkBbu0n6CGZQgKdcq6W"
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Kooperationsfähigkeit",
+          "lr_link": "https://www.einstellungstest.de/sozial-kommunikative-kompetenz-kooperationsfaehigkeit/"
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Teamfähigkeit",
+          "lr_link": "https://www.einstellungstest.de/sozial-kommunikative-kompetenz-teamfaehigkeit/"
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Soziale Kompetenz",
+          "lr_link": "https://www.soft-skills.com/soft-skills-wuerfel/soziale-kompetenz/"
+        }
+    ]
+  },
+{
+    "competence_id": "S2",
+    "competence_name": "S2: Kommunikative Kompetenzen",
+    "competence_type": "Soziale Kompetenz",
+    "competence_definition": "Interdisziplinäre Kooperation, Projektmanagement, Kommunikationskompetenz, Organisations- und Führungskompetenz, Entscheidungskompetenz etc.",
+    "LearningResources": [
+        {
+          "lr_id": "Hol40 3.3",
+          "lr_name": "Hands on Industrie 4.0: 3.3 Wandel der Produktionsarbeit",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/700JpWnjsaQx8gyBDFLYI8"
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Kommunikationsfähigkeit 1",
+          "lr_link": "https://www.einstellungstest.de/sozial-kommunikative-kompetenz-kommunikationsfaehigkeit/"
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Kommunikationsfähigkeit 2",
+          "lr_link": "https://www.campusjaeger.de/karriereguide/softskills/kommunikationsfaehigkeit"
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Kommunikative Kompetenz",
+          "lr_link": "https://www.soft-skills.com/soft-skills-wuerfel/kommunikative-kompetenz/ "
+        }
+    ]
+  },
+ {
+    "competence_id": "S3",
+    "competence_name": "S3: Interdisziplinäre Zusammenarbeit",
+    "competence_type": "Soziale Kompetenz",
+    "competence_definition": "Interdisziplinäre Kooperation, Projektmanagement, Kommunikationskompetenz, Organisations- und Führungskompetenz, Entscheidungskompetenz etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Interdisziplinarität",
+          "lr_link": "https://hhc-duesseldorf.de/wie-wirkt-sich-interdisziplinaritaet-auf-die-arbeitsleistung-in-projektteams-aus/"
+        }
+    ]
+  },
+   {
+    "competence_id": "S4",
+    "competence_name": "S4: Interkulturelle Kompetenzen",
+    "competence_type": "Soziale Kompetenz",
+    "competence_definition": "Interdisziplinäre Kooperation, Projektmanagement, Kommunikationskompetenz, Organisations- und Führungskompetenz, Entscheidungskompetenz etc.",
+    "LearningResources": [
+         {
+          "lr_id": null,
+          "lr_name": "Interkulturelle Kompetenz",
+          "lr_link": "https://www.campusjaeger.de/karriereguide/softskills/interkulturelle-kompetenz"
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Interkulturelle Kompetenz – Die Schlüsselkompetenz im 21. Jahrhundert?",
+          "lr_link": "http://www.bertelsmann-stiftung.de/fileadmin/files/BSt/Presse/imported/downloads/xcms_bst_dms_30236_30237_2.pdf "
+        },
+         {
+          "lr_id": null,
+          "lr_name": "Definition Interkulturelle Kompetenz",
+          "lr_link": "https://www.eidam-und-partner.de/de/hintergrundinformationen/definitionen/definition-interkulturelle-kompetenz "
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Intra-/Interkulturelle Kompetenz",
+          "lr_link": "https://www.soft-skills.com/soft-skills-wuerfel/soziale-kompetenz/intra-interkulturelle-kompetenz/"
+        }
+    ]
+  },
+{
+    "competence_id": "S5",
+    "competence_name": "S5: Führungskompetenz ",
+    "competence_type": "Soziale Kompetenz",
+    "competence_definition": "Interdisziplinäre Kooperation, Projektmanagement, Kommunikationskompetenz, Organisations- und Führungskompetenz, Entscheidungskompetenz etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "http://www.management-innovation.com/download/Fuehrungskompetenzen.pdf",
+          "lr_link": "Führungskompetenz - MI"
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Führungskompetenz - MANAGERSYSTEM",
+          "lr_link": "https://www.managersystem.de/wiki/fuehrungskompetenz/"
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Führungskompetenz",
+          "lr_link": "https://www.soft-skills.com/soft-skills-wuerfel/fuehrungskompetenz/"
+        }
+    ]
+  },
+{
+    "competence_id": "S6",
+    "competence_name": "S6: Übersetzungs- und Vermittlungsfähigkeiten",
+    "competence_type": "Soziale Kompetenz",
+    "competence_definition": "Interdisziplinäre Kooperation, Projektmanagement, Kommunikationskompetenz, Organisations- und Führungskompetenz, Entscheidungskompetenz etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Vermittlungskompetenz",
+          "lr_link": "https://de.wikipedia.org/wiki/Vermittlungskompetenz "
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Vermittlungsfähigkeit",
+          "lr_link": "https://www.koordination.ch/fileadmin/files/alv/avig-praxis/ale-b/ale_b215-b218_14.pdf "
+        }
+    ]
+  },
+{
+    "competence_id": "S7",
+    "competence_name": "S7: Prozessmanagement als bereichsübergreifende Vernetzung",
+    "competence_type": "Soziale Kompetenz",
+    "competence_definition": "Interdisziplinäre Kooperation, Projektmanagement, Kommunikationskompetenz, Organisations- und Führungskompetenz, Entscheidungskompetenz etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Prozeßmanagement im Mittelstand",
+          "lr_link": "https://www.wi-inf.uni-duisburg-essen.de/MobisPortal/pages/rundbrief/pdf/LeRe00.pdf"
+        }
+    ]
+  },
+{
+    "competence_id": "S8",
+    "competence_name": "S8: Verständnis der Kundenprobleme",
+    "competence_type": "Soziale Kompetenz",
+    "competence_definition": "Interdisziplinäre Kooperation, Projektmanagement, Kommunikationskompetenz, Organisations- und Führungskompetenz, Entscheidungskompetenz etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Kundenproblem-Analyse: Problemtabellen als Wissensspeicher",
+          "lr_link": "https://www.salesjob.de/vertriebnews/vertriebstipps/kundenproblem-analyse-problemtabellen-als-wissensspeicher/"
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Kundenwünsche analysieren und verstehen",
+          "lr_link": "http://www.weissensee-verlag.de/autoren/Lass/lass_kundenwuensche_analysieren_verstehen_kurz.pdf"
+        }
+    ]
+  },
+{
+    "competence_id": "S9",
+    "competence_name": "S9: Beteiligung an Problemlösungs- und Optimierungsprozessen",
+    "competence_type": "Soziale Kompetenz",
+    "competence_definition": "Interdisziplinäre Kooperation, Projektmanagement, Kommunikationskompetenz, Organisations- und Führungskompetenz, Entscheidungskompetenz etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Werden wir alle Entscheider?",
+          "lr_link": "http://www.manager-magazin.de/unternehmen/it/industrie-muss-gestaltungsoffensive-fuer-arbeitswelt-starten-a-1028023.html"
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Industrie 4.0 – Wo steht die Revolution der Arbeitsgestaltung?",
+          "lr_link": "https://www.ingenics.com/assets/downloads/de/Industrie40_Studie2016_Ingenics_IAO_de_VM.pdf?m=1474972068"
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Der Faktor Mensch in der digitalisierten Arbeitswelt",
+          "lr_link": "https://www.b4bschwaben.de/b4b-wissen/digitalisierung_artikel,-der-faktor-mensch-in-der-digitalisierten-arbeitswelt-_arid,160722.html"
+        }
+    ]
+  },
+{
+    "competence_id": "S10",
+    "competence_name": "S10: Führungsebene: Facilitating des Arbeitssystems, Klimaarbeit",
+    "competence_type": "Soziale Kompetenz",
+    "competence_definition": "Interdisziplinäre Kooperation, Projektmanagement, Kommunikationskompetenz, Organisations- und Führungskompetenz, Entscheidungskompetenz etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Arbeitssystem",
+          "lr_link": "https://de.wikipedia.org/wiki/Arbeitssystem"
+        }
+    ]
+  },
+  {
+    "competence_id": "S11",
+    "competence_name": "S11: Management- und Projektsteuerungskompetenzen",
+    "competence_type": "Soziale Kompetenz",
+    "competence_definition": "Interdisziplinäre Kooperation, Projektmanagement, Kommunikationskompetenz, Organisations- und Führungskompetenz, Entscheidungskompetenz etc.",
+    "LearningResources": [
+        {
+          "lr_id": "HoI40 5.1",
+          "lr_name": "Hands on Industrie 4.0: 5.1 Einführung in den Betrieb",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/1D2ENPHeNO373MaJtwZxBo"
+        },
+        {
+          "lr_id": "HoI40 5.5",
+          "lr_name": "Hands on Industrie 4.0: 5.5 Industrie 4.0 - Einführung im Betrieb",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/61I78SyA0ubLQHoCMh0bS8"
+        },
+        {
+          "lr_id": "HoI40 5.6 ",
+          "lr_name": "Hands on Industrie 4.0: 5.6 Closed Loop Lifecycle Management",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/4tzNzjn82T2ICTXeRJHGli"
+        }
+    ]
+  },
+{
+    "competence_id": "S12",
+    "competence_name": "S12: Ermunterung zu Innovation, Loyalität und Leistungsbereitschaft",
+    "competence_type": "Soziale Kompetenz",
+    "competence_definition": "Interdisziplinäre Kooperation, Projektmanagement, Kommunikationskompetenz, Organisations- und Führungskompetenz, Entscheidungskompetenz etc.",
+    "LearningResources": [
+        {
+          "lr_id": "HoI40 5.8",
+          "lr_name":"Hands on Industrie 4.0: 5.8 Vom Geschäftsmodell zur Umsetzung",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/3gLIRw02P1jAHD3il4MobV"
+        }
+    ]
+  },
+ {
+    "competence_id": "P1",
+    "competence_name": "P1: Kontinuierliches, lebenslanges, selbstgesteuertes Lernen / Lernbereitschaft",
+    "competence_type": "Personale Kompetenz",
+    "competence_definition": "Selbstlernkompetenz, analytisches Denken, Problemlösungsorientierung, Abstraktionsvermögen, Offenheit, Flexibilität etc.",
+    "LearningResources": [
+        {
+          "lr_id": "HoI40 3.1",
+          "lr_name": "Hands on Industrie 4.0: 3.1 Der Wandel der Arbeitswelt",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/2fVZduk6J3gtwH0hcEtau2    "
+        },
+        {
+          "lr_id": "HoI40 3.8",
+          "lr_name": "Hands on Industrie 4.0: 3.8 Digitale Transformation von Qualifizierung",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/1WXluuJFq7nM2c88LosrDP"
+        },
+        {
+          "lr_id": "HoI40 3.9",
+          "lr_name": "Hands on Industrie 4.0: 3.9 Personalisiertes Lernen",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/7uvYpxKdG1GJYD9lUnpcV1"
+        },
+        {
+          "lr_id": "HoI40 3.10",
+          "lr_name": "Hands on Industrie 4.0: 3.10 Herausforderungen bei der Kompetenzentwicklung",
+          "lr_link": "https://mooc.house/courses/industrie40-2016/items/54QA6Fhu7n7gDu8HOfp3E"
+        }
+    ]
+  },
+{
+    "competence_id": "P2",
+    "competence_name": "P2: Analytisches Denkvermögen / Fähigkeiten / Vorgehen",
+    "competence_type": "Personale Kompetenz",
+    "competence_definition": "Selbstlernkompetenz, analytisches Denken, Problemlösungsorientierung, Abstraktionsvermögen, Offenheit, Flexibilität etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Analytisches Denken",
+          "lr_link": "https://www.campusjaeger.de/karriereguide/softskills/analytisches-denken"
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Analytisches Denken - Aufgaben",
+          "lr_link": "https://analytisches-denken.plakos.de/"
+        }
+    ]
+  },
+{
+    "competence_id": "P3",
+    "competence_name": "P3: Interdisziplinäres Denken und Handeln / Problemlösung  ",
+    "competence_type": "Personale Kompetenz",
+    "competence_definition": "Selbstlernkompetenz, analytisches Denken, Problemlösungsorientierung, Abstraktionsvermögen, Offenheit, Flexibilität etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Problemlösung: In 4 simplen Schritten",
+          "lr_link": "https://karrierebibel.de/problemloesung/"
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Techniken und Tipps für Problemlösungen",
+          "lr_link": "https://www.wrike.com/de/blog/techniken-und-tipps-fuer-problemloesungen-die-tatsaechlich-funktionieren/  "
+        }
+    ]
+  },
+{
+    "competence_id": "P4",
+    "competence_name": "P4: Kreatives Nachdenken und Arbeiten",
+    "competence_type": "Personale Kompetenz",
+    "competence_definition": "Selbstlernkompetenz, analytisches Denken, Problemlösungsorientierung, Abstraktionsvermögen, Offenheit, Flexibilität etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Kreativität",
+          "lr_link": "https://www.soft-skills.com/soft-skills-wuerfel/mentale-kompetenz/kreativitaet/  "
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Warum kreative Köpfe die besten Mitarbeiter sind",
+          "lr_link": "https://www.campusjaeger.de/karriereguide/softskills/kreativitaet"
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Kreativer werden: 7 clevere Tricks",
+          "lr_link": "https://karrierebibel.de/kreativer-werden/"
+        }
+    ]
+  },
+{
+    "competence_id": "P5",
+    "competence_name": "P5: Selbstorganisation / -management",
+    "competence_type": "Personale Kompetenz",
+    "competence_definition": "Selbstlernkompetenz, analytisches Denken, Problemlösungsorientierung, Abstraktionsvermögen, Offenheit, Flexibilität etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Selbstorganisation: Wie dir Zeitmanagement und Selbstdisziplin das Leben erleichtern",
+          "lr_link": "https://www.campusjaeger.de/karriereguide/softskills/selbstorganisation"
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Selbstmanagement und Selbstorganisation",
+          "lr_link": "https://www.vertriebslexikon.de/Selbstmanagement-Selbstorganisation.html"
+        }
+    ]
+  },
+{
+    "competence_id": "P6",
+    "competence_name": "P6: Systemisches Denken",
+    "competence_type": "Personale Kompetenz",
+    "competence_definition": "Selbstlernkompetenz, analytisches Denken, Problemlösungsorientierung, Abstraktionsvermögen, Offenheit, Flexibilität etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Systemisches Denken",
+          "lr_link": "https://www.soft-skills.com/soft-skills-wuerfel/mentale-kompetenz/systemisches-denken/"
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Was bedeutet systemisches Denken?",
+          "lr_link": "http://www.zentrum-systemisches-denken.de/was-ist-systemisches-denken/"
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Systemisch Denken und Handeln",
+          "lr_link": "https://www.inntal-institut.de/content/grundkurs-systemik"
+        }
+    ]
+  },
+{
+    "competence_id": "P7",
+    "competence_name": "P7: Ganzheitliches Denken",
+    "competence_type": "Personale Kompetenz",
+    "competence_definition": "Selbstlernkompetenz, analytisches Denken, Problemlösungsorientierung, Abstraktionsvermögen, Offenheit, Flexibilität etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Leistung ganzheitlich denken lernen",
+          "lr_link": "https://www.humanresourcesmanager.de/news/leistung-ganzheitlich-denken-lernen.html"
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Wie ganzheitliches Denken die Persönlichkeitsentwicklung fördert",
+          "lr_link": "https://diepsyche.de/ganzheitliches-denken/"
+        }
+    ]
+  },
+{
+    "competence_id": "P8",
+    "competence_name": "P8: Innovationsfähigkeit / -freudigkeit ",
+    "competence_type": "Personale Kompetenz",
+    "competence_definition": "Selbstlernkompetenz, analytisches Denken, Problemlösungsorientierung, Abstraktionsvermögen, Offenheit, Flexibilität etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Kritische Erfolgsfaktoren zur Steigerung der Innovationsfähigkeit",
+          "lr_link": "http://wiki.iao.fraunhofer.de/index.php/Kritische_Erfolgsfaktoren_zur_Steigerung_der_Innovationsf%C3%A4higkeit"
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Innovativ sein - ein Selbsttest zur Innovationsfähigkeit",
+          "lr_link": "https://innovation.plakos.de/"
+        }
+    ]
+  },
+  {
+    "competence_id": "P9",
+    "competence_name": "P9: Umgang mit Komplexität",
+    "competence_type": "Personale Kompetenz",
+    "competence_definition": "Selbstlernkompetenz, analytisches Denken, Problemlösungsorientierung, Abstraktionsvermögen, Offenheit, Flexibilität etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Systemdenken: Grundregeln für den optimalen Umgang mit Komplexität",
+          "lr_link": "http://www.solidia.de/wp-content/uploads/2016/04/22-methoden_Margret_richter-version090427.pdf"
+        }
+    ]
+  },
+{
+    "competence_id": "P10",
+    "competence_name": "P10: Eigenverantwortung",
+    "competence_type": "Personale Kompetenz",
+    "competence_definition": "Selbstlernkompetenz, analytisches Denken, Problemlösungsorientierung, Abstraktionsvermögen, Offenheit, Flexibilität etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Eigenverantwortung übernehmen – eigenverantwortlich handeln",
+          "lr_link": "https://karrierebibel.de/eigenverantwortung/"
+        },
+        {
+          "lr_id": null,
+          "lr_name": "Die 3. Säule des Selbstwertgefühls: Eigenverantwortlich leben",
+          "lr_link": "http://www.fuehren-und-wirken.de/die-3-saeule-des-selbstwertgefuehls-eigenverantwortlich-leben/"
+        }
+    ]
+  },
+{
+    "competence_id": "P11",
+    "competence_name": "P11: Transferfähigkeit von Kompetenzen",
+    "competence_type": "Personale Kompetenz",
+    "competence_definition": "Selbstlernkompetenz, analytisches Denken, Problemlösungsorientierung, Abstraktionsvermögen, Offenheit, Flexibilität etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Persönlichkeitskompetenz",
+          "lr_link": "http://qualifikation.kenline.de/qualifikation/fachkkompetenz.htm"
+        }
+    ]
+  },
+  {
+    "competence_id": "P12",
+    "competence_name": "P12: Reaktionsgeschwindigkeit",
+    "competence_type": "Personale Kompetenz",
+    "competence_definition": "Selbstlernkompetenz, analytisches Denken, Problemlösungsorientierung, Abstraktionsvermögen, Offenheit, Flexibilität etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Reaktionsgeschwindigkeit verbessern",
+          "lr_link": "https://de.wikihow.com/Reaktionsgeschwindigkeit-verbessern"
+        }
+    ]
+  },
+{
+    "competence_id": "P13",
+    "competence_name": "P13: Methodenkompetenzen",
+    "competence_type": "Personale Kompetenz",
+    "competence_definition": "Selbstlernkompetenz, analytisches Denken, Problemlösungsorientierung, Abstraktionsvermögen, Offenheit, Flexibilität etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Methodenkompetenz",
+          "lr_link": "http://www.olev.de/m/methodenkompetenz.htm"
+        }
+    ]
+  },
+{
+    "competence_id": "P14",
+    "competence_name": "P14: Umgang mit unvorhersehbaren Situationen ",
+    "competence_type": "Personale Kompetenz",
+    "competence_definition": "Selbstlernkompetenz, analytisches Denken, Problemlösungsorientierung, Abstraktionsvermögen, Offenheit, Flexibilität etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Management des Unvorhersehbaren",
+          "lr_link": "http://www.perspektive-blau.de/artikel/0603a/0603a.htm"
+        }
+    ]
+  },
+{
+    "competence_id": "P15",
+    "competence_name": "P15: Belastbarkeit in Stresssituationen",
+    "competence_type": "Personale Kompetenz",
+    "competence_definition": "Selbstlernkompetenz, analytisches Denken, Problemlösungsorientierung, Abstraktionsvermögen, Offenheit, Flexibilität etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Stressbewältigungsvermögen",
+          "lr_link": "https://www.soft-skills.com/stressbewaeltigungsvermoegen/"
+        }
+    ]
+  },
+  {
+    "competence_id": "P16",
+    "competence_name": "P16: Zusammenführen verschiedener Disziplinen und Vermittlung",
+    "competence_type": "Personale Kompetenz",
+    "competence_definition": "Selbstlernkompetenz, analytisches Denken, Problemlösungsorientierung, Abstraktionsvermögen, Offenheit, Flexibilität etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Vermittlungskompetenz",
+          "lr_link": "https://de.wikipedia.org/wiki/Vermittlungskompetenz"
+        }
+    ]
+  },
+{
+    "competence_id": "P17",
+    "competence_name": "P17: Mobilität ",
+    "competence_type": "Personale Kompetenz",
+    "competence_definition": "Selbstlernkompetenz, analytisches Denken, Problemlösungsorientierung, Abstraktionsvermögen, Offenheit, Flexibilität etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Mobilitätskompetenz",
+          "lr_link": "https://de.wikipedia.org/wiki/Mobilit%C3%A4tskompetenz"
+        }
+    ]
+  },
+{
+    "competence_id": "P18",
+    "competence_name": "P18: Ambiguitätstoleranz",
+    "competence_type": "Personale Kompetenz",
+    "competence_definition": "Selbstlernkompetenz, analytisches Denken, Problemlösungsorientierung, Abstraktionsvermögen, Offenheit, Flexibilität etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Ambiguitätstoleranz",
+          "lr_link": "https://de.wikipedia.org/wiki/Ambiguit%C3%A4tstoleranz"
+        }
+    ]
+  },
+{
+    "competence_id": "P19",
+    "competence_name": "P19: Flexibilität  ",
+    "competence_type": "Personale Kompetenz",
+    "competence_definition": "Selbstlernkompetenz, analytisches Denken, Problemlösungsorientierung, Abstraktionsvermögen, Offenheit, Flexibilität etc.",
+    "LearningResources": [
+        {
+          "lr_id": null,
+          "lr_name": "Was ist Flexibilität?",
+          "lr_link": "https://www.jobanzeigen.de/karriere/soft-skills/flexibilitaet"
+        }
+    ]
+  }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

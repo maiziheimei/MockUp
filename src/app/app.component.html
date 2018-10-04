@@ -1,36 +1,8 @@
-<!--&lt;!&ndash;<nav class = "navbar navbar-inverse">&ndash;&gt;-->
-  <!--&lt;!&ndash;<div class="container-fluid">&ndash;&gt;-->
-    <!--&lt;!&ndash;<div class=" navbar-header">&ndash;&gt;-->
-      <!--&lt;!&ndash;<a class="navbar-brand" href="#"> Mockup Modell Editor</a>&ndash;&gt;-->
-    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-    <!--&lt;!&ndash;<div><ul class="nav navbar-nav">&ndash;&gt;-->
-      <!--&lt;!&ndash;<li> <a routerLink="/home" routerLinkActive="active"> Home</a> </li>&ndash;&gt;-->
-      <!--&lt;!&ndash;<li> <a routerLink="/start" routerLinkActive="active"> Start</a> </li>&ndash;&gt;-->
-      <!--&lt;!&ndash;<li> <a routerLink="/kriteiren" routerLinkActive="active"> Kriterien</a> </li>&ndash;&gt;-->
-      <!--&lt;!&ndash;<li> <a routerLink="/models" routerLinkActive="active"> Model List</a> </li>&ndash;&gt;-->
-    <!--&lt;!&ndash;</ul></div>&ndash;&gt;-->
-  <!--&lt;!&ndash;</div>&ndash;&gt;-->
-<!--&lt;!&ndash;</nav>&ndash;&gt;-->
-
-
-<!--<nav id="navbar">-->
-  <!--<div class="container">-->
-    <!--<ul>-->
-      <!--&lt;!&ndash;<li> <a routerLink="/home" > Home</a> </li>&ndash;&gt;-->
-      <!--<li> <a routerLink="/start" routerLinkActive="active"> Start</a> </li>-->
-      <!--<li> <a routerLink="/kriteiren" routerLinkActive="active"> Kriterien</a> </li>-->
-      <!--<li> <a routerLink="/zustaende" routerLinkActive="active"> Zustände</a> </li>-->
-      <!--<li> <a routerLink="/massnahman" routerLinkActive="active"> Maßnahmen</a> </li>-->
-      <!--<li> <a routerLink="/evaluation" routerLinkActive="active"> Evaluation</a> </li>-->
-      <!--&lt;!&ndash;<li> <a routerLink="/modellDesign" routerLinkActive="active"> ModelDesign</a> </li>&ndash;&gt;-->
-      <!--&lt;!&ndash;<li> <a routerLink="/models" routerLinkActive="active"> ModelList</a> </li>&ndash;&gt;-->
-    <!--</ul>-->
-    <!--<app-header></app-header>-->
-  <!--</div>-->
-<!--</nav>-->
-
-
-<app-header></app-header>
+<div class="header-logout" *ngIf="onOff | async as isLoggedIn">
+  <div class="he">
+    <app-header class="app-header"></app-header></div>
+    <div class="lo"><button type="button" (click)="onLogout()" *ngIf="onOff">Logout</button></div>
+</div>
 
 <div class="container">
   <router-outlet></router-outlet>
@@ -39,3 +11,4 @@
 <div id="main-footer">
     <a routerLink="/impressum" routerLinkActive="active"> IMPRESSUM & DATENSCHUTZERKLÄRUNG </a>
 </div>
+

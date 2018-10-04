@@ -6,6 +6,9 @@ import { DataService } from '../data.service';
 import { SelectedModel } from '../selectedModel';
 import { UserService } from '../user.service';
 import { User} from '../user';
+import {CRLObj, LRObj} from "../ComLR";
+import {ClrService} from "../clr.service";
+import {CurrencyPipe} from "@angular/common";
 
 
 @Component({
@@ -16,51 +19,84 @@ import { User} from '../user';
 })
 export class KriterienComponent implements OnInit {
 
-
   checked10th:boolean;
-  isLoggedIn = true;
-  // showUnderline = true;
+  // showAll = 'show Selected';
   sms = [];
-  loadUser: User;
-  itemCount: any;
   modells: any;
   lastAction: string;
   hiddenValue = new Array(42).fill(false);
 
-  constructor(private _modellService: ModellService, private  _data: DataService,  private _userService: UserService) { }
+  selectedAll: string = 'all';
+  // shortLong: boolean;
+
+  saOptions= [
+    'selected',
+    'all',
+  ];
+
+  constructor(private _modellService: ModellService, private  _data: DataService,  private _userService: UserService, private  _clrService: ClrService) { }
 
   ngOnInit() {
     this._modellService.sharedModells.subscribe(res => this.modells = res);
     this._modellService.changeModel(this.modells);
-   // console.log('... get from DB, the modell length is: ', this.modells.length);
-
-    // this.itemCount = this.sms.length;
-    // console.log('... the sms length is: first ', this.itemCount);
-
     this._data.selectedModels.subscribe(res => this.sms = res);
     this._data.changeGoal(this.sms);
     console.log('... the sms length is: ', this.sms.length);
-    // this._userService.currentUser.subscribe(res => this.loadUser = res);
-    // this._userService.changeUser(this.loadUser);
-    // this.sms = this.loadUser.kriterienList.map(x => Object.assign({}, x));
-    // console.log('... kri page loadUser.id is: ', this.loadUser.id);
-    // this.sortModells();
-    // this._userService.getUser().subscribe(res => this.sms = res.kriterienList);
   }
 
   sortModells() {
     const size = Object.keys(this.modells).length;
     console.log('... length of dbMmodels: ', size);
     // console.log('... length of modells: ', xxx);
-    // this.modells.sort((a, b) => +a._id < +b._id ? -1 : +a._id > +b._id ? 1 : 0);
+  }
+
+
+  // allParts(){
+  //   console.log('... showALL click before: ', this.showAll);
+  //   if(this.showAll === "show Selected") {
+  //     this.shortLong = true;
+  //     console.log('... hey 1 ');
+  //     this.showAll = 'show All';
+  //     console.log('... showALL click after: ', this.showAll);
+  //   }
+  //   else if(this.showAll === "show All") {
+  //     console.log('... hey 2 ');
+  //     this.shortLong = false;
+  //     this.showAll = 'show Selected';
+  //     console.log('... showALL click after: ', this.showAll);
+  //   }
+  //
+  // }
+
+  getCLRObjList(mod: Modell) {
+    const crl_KompetenzenStr = mod.Kompetenzen;
+    if (crl_KompetenzenStr != null) {
+      const crl_KompetenzenList: string[] = crl_KompetenzenStr.split(';');
+
+      const clr_list: CRLObj[] = [];
+      for (const kom of crl_KompetenzenList) {
+        const new_clrobj: CRLObj = new CRLObj();
+        new_clrobj.competence_name = kom.trim();
+        new_clrobj.learningresources = Array<LRObj> ();
+        new_clrobj.learningresources = this._clrService.getLRObj(kom);
+        // for ( let i = 0; i < crl_current.length; i++) {
+        //   vals.push(vals[i].val);
+        // }
+        clr_list.push(new_clrobj);
+      }
+      mod.clrlist = clr_list;
+
+      console.log('... the clr of checked model: ', mod);
+    }
   }
 
   // selectedIndex is actually the model ID
-  addItem(selectedIndex, kri) {
+  addItem(selectedIndex, kri, clrcontent) {
     const newItem = new SelectedModel();
     newItem.isselected = true;
     newItem.kriterium = kri;
     newItem.kriterium_id = selectedIndex;
+    newItem.clrlist = clrcontent;
     if (this.sms.length === 0) {
       this.sms[0] = newItem;
       console.log('... to add the checked model: ', selectedIndex);
@@ -79,44 +115,53 @@ export class KriterienComponent implements OnInit {
     this._data.changeGoal(this.sms);
   }
 
-  getCheckState(mid) {
+  getCheckState(model) {
     // if (this.loadUser.kriterienList.length > 0) {
     //   console.log('... this loadeUser length is: ', this.loadUser.kriterienList.length);
     // }
 
     if (this.sms != null) {
       // console.log('... to get the check status of model: ', mid);
-      const mo =  this.sms.find(x => x.kriterium_id === mid);
+      const mo =  this.sms.find(x => x.kriterium_id === model._id);
       if (mo != null) {
-         console.log('... mo size is ', mo.length, mid, ' checked status is: ', mo.isselected);
+        model.isSelected = true;
+        // console.log('... mo size is ', mo.length, mid, ' checked status is: ', mo.isselected);
         return mo.isselected; }
     } else {
+      model.isSelected = false;
       return false;
     }
+
+  }
+
+  onSMSChange(event, i, modell){
+
   }
 
   // check or uncheck modell
   onChange(event, index, item) {
-    this.lastAction = 'index: ' + index + ', label: ' + item.label + ', checked: ' + item.checked;
-
-    console.log('before: ', index, event, item);
-    item.checked = event.checked;
-
-    this.lastAction = 'index: ' + index + ', label: ' + item.label + ', checked: ' + item.checked;
-
-    console.log('after: ', index, event, item);
-
-
+    // this.lastAction = 'index: ' + index + ', label: ' + item.label + ', checked: ' + item.checked;
+    //
+    // console.log('before: ', index, event, item);
+     item.checked = event.checked;
+    //
+    // this.lastAction = 'index: ' + index + ', label: ' + item.label + ', checked: ' + item.checked;
+    //
+    // console.log('after: ', index, event, item);
 
     const checkedID = index;
     const kid = item._id;
     this.modells[checkedID].isSelected = item.checked;
-    console.log('... now ', kid, ' hasChecked ...: ');
+    console.log('... now ', kid, ' isSelected : ',  this.modells[checkedID].isSelected );
+
+    // retrieve ComLR list
+    const mo: Modell = this.modells[checkedID];
+    this.getCLRObjList(mo);
 
     if (item.checked)  {
       item.isSelected= true;
       if (!this.smsExist(kid)) { // not exist in sms
-        this.addItem(kid, item.Kriterium); // add
+        this.addItem(kid, item.Kriterium, item.clrlist); // add
       }
       if (kid === '10' || kid === 10) {
         this.checked10th = true;
@@ -132,10 +177,22 @@ export class KriterienComponent implements OnInit {
       }
     }
     this._modellService.changeModel(this.modells);
+    this._data.changeGoal(this.sms);
 
     console.log('... the persisted sms ...: ', this.sms.length);
     for (let i = 0; i < this.sms.length; i++) {
-      console.log(this.sms[i].kriterium_id, this.sms[i].isselected); }
+      let temp = this.modells.findIndex(x => x._id === this.sms[i].kriterium_id);
+      if(temp > -1){
+        this.modells[temp].isSelected  = true;
+      }
+      console.log(this.sms[i].kriterium_id, this.sms[i].kriterium, this.sms[i].isselected); }
+
+  }
+
+
+  snycro(){
+
+
   }
 
   smsExist(kid) {
@@ -154,6 +211,10 @@ export class KriterienComponent implements OnInit {
       this.hiddenValue[i] = true;
     }
   }
+
+  amount:number = 0.0;
+  formattedAmount: string = '';
+
 
   // // CSS binding properties
   // makeChange(checked_index) {

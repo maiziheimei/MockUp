@@ -1,24 +1,34 @@
-<div class="container">
+<div class="container" xmlns="http://www.w3.org/1999/html">
 <!--<div> current Priority {{ClickedSelectedModel.priority}} Ist: {{ClickedSelectedModel.ist_id}} Ziel: {{ClickedSelectedModel.ziel_id}}</div>-->
 
   <div class="labs">
     <!--<a mat-icon-button id="close-icon" (click)="closeBlock()"><mat-icon> clear </mat-icon></a>-->
     <a mat-icon-button id="close-icon" (click)="closeBlock()"><img src="assets/images/saveback.png" width="50" height="50"></a>
     <label id="R"> Relevant</label>
-    <input type="text" [(ngModel)]="ClickedModell.Kriterium">
-    <label >  Priorität</label>
-    <input matInput type="number" placeholder="1" min="1" max="42" [(ngModel)]="ClickedSelectedModel.priority"/>
-    <!--<a mat-icon-button id="help-icon"><mat-icon> help </mat-icon></a>-->
-    <button mat-button id="help-icon"
-            matTooltip="Help information about the Kriterium"
+    <input type="text" [(ngModel)]=" ClickedModell._id + '. ' + ClickedModell.Kriterium">
+
+    <label> Priorität: </label>
+    <!--<input matInput type="number" placeholder="1" min="1" max="42" [(ngModel)]="ClickedSelectedModel.priority"/>-->
+    <div class="prioritySection">
+    <!--<mat-form-field>-->
+      <mat-select  [(value)]="priorityLevels.values[ClickedSelectedModel.priority]" (selectionChange)="changePri($event)">
+        <mat-option (onSelectionChange)="changePri($event)" *ngFor="let level of priorityLevels" [value]="level.value">
+          {{ level.viewValue }}
+        </mat-option>
+      </mat-select>
+    <!--</mat-form-field>-->
+    </div>
+
+    <button id="help-icon"  (click)="openDialog2()"
+            matTooltip="View related compentences and learning resources"
             aria-label="Button that displays a tooltip when focused or hovered over">
       <mat-icon> help </mat-icon>
     </button>
   </div>
 
-  <mat-card class="modell-card">
+  <mat-card class="model-detail">
     <mat-card-content>
-      <p id="model-text">{{ClickedModell.Beschreibung}}</p>
+      <textarea id="model-text" rows="3">{{ClickedModell.Beschreibung}}</textarea>
       <!--<a mat-icon-button class="small"><mat-icon> info </mat-icon></a>-->
       <button mat-button id="info"
               matTooltip="More info about this"
@@ -26,59 +36,35 @@
         <mat-icon> info </mat-icon>
       </button>
 
-      <textarea class="aug_note" matInput placeholder="Notiz " [(ngModel)]="ClickedSelectedModel.Kriterium_note"> </textarea>
+      <div class="big-note-editor">
+        <mat-icon class="big-note-label" (click)="showNote(8)"> edit </mat-icon>
+        <textarea class="big-aug_note" title="edit note"  matInput [rows]="hiddeRow[8]" placeholder="Notiz" [(ngModel)]= "ClickedSelectedModel.Kriterium_note"> </textarea>
+      </div>
     </mat-card-content>
   </mat-card>
 
-
-  <div class="aug-cards">
-  <!--<mat-card  *ngFor=" let au of auspraegung; index as ind" class="example-card-{{ind % 8}}">-->
-    <mat-card class="example-card-0" [ngStyle]="{'background': getBColor(niz[ind])}" *ngFor=" let au of auspraegung; index as ind" >
+  <mat-card class="example-card-0" [ngStyle]="{'background': getBColor(niz[ind])}" *ngFor=" let au of auspraegung; index as ind" >
     <mat-card-header>
       <mat-card-title><h3> Ausprägung {{ind}}</h3></mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <textarea class="aus_text"  rows="6" disabled> {{au}} </textarea>
-      <mat-form-field style=" margin-bottom: -1.25em" >
-        <!--<mat-select [ngClass]="colorClass"  placeholder="" [value]="selectedOption"-->
-                    <!--#device (change)="onChange($event, device.value, ind)">-->
-
-
-          <!--<mat-select  [ngClass]="{'example-card-0': value == '0', 'example-card-1': value == '1', 'example-card-2': value =='2'}"-->
-                       <!--placeholder="" [value]="selectedOption"-->
-                       <!--#device (change)="onChange($event, device.value, ind)">-->
-
-        <mat-select [value]="niz[ind]"  #device (change)="onChange($event, device.value, ind)">
-
-            <!--<mat-select  [formControl]="panelColor" panelClass="example-card-{{panelColor.value}}}"-->
-                         <!--placeholder="" [value]="selectedOption"-->
-                         <!--#device (change)="onChange($event, device.value, ind)">-->
-          <mat-option value="0">Keine</mat-option>
-          <mat-option value="1">Ist</mat-option>
-          <mat-option value="2">Ziel</mat-option>
-          <mat-option value="3">Ist+Ziel</mat-option>
-        </mat-select>
-
-
-        <!--<select [ngModel]="selected" (ngModelChange)="onChange($event.target.value, ind)" name="sel2">-->
-          <!--<option [value]="selected" *ngFor="let i of iz_selects">{{i}}</option>-->
-        <!--</select>-->
-
-        <!--<div ng-init="students=['None', 'Ist', 'Ziel']">-->
-          <!--Students: <select ngModel="student"-->
-                            <!--ngOptions="student as student for student in students"-->
-                            <!--ngChange="changedValue(ind,student)"></select>-->
-          <!--<pre>Student: {{student}}</pre>-->
-        <!--</div>-->
-
-      </mat-form-field>
-      <mat-form-field  style=" margin-bottom: -1.25em">
-           <textarea class="aug_note" matInput placeholder="Notiz"  matTextareaAutosize matAutosizeMinRows="8" matAutosizeMaxRows="15" [(ngModel)]="ClickedSelectedModel.Auspraegung_note[ind]"></textarea>
-      </mat-form-field>
+      <textarea class="aus_text"  rows="4" disabled> {{au}} </textarea>
+      <mat-select [value]="niz[ind]"  #device (selectionChange)="onChange($event, device.value, ind)">
+        <mat-option value="0">Keine</mat-option>
+        <mat-option value="1">Ist</mat-option>
+        <mat-option value="2">Ziel</mat-option>
+        <mat-option value="3">Ist+Ziel</mat-option>
+      </mat-select>
+      <div class="note-editor">
+        <mat-icon class="note-label" (click)="showNote(ind)"> edit </mat-icon>  <!--<label class="note-label" (click)="showNote(ind)" > {{noteOnLabel}}</label>-->
+        <textarea class="aug_note" title="edit note"  placeholder="Notiz"   matInput  [rows]="hiddeRow[ind]" [(ngModel)]="ClickedSelectedModel.Auspraegung_note[ind]"></textarea>
+      </div>
     </mat-card-content>
   </mat-card>
+
+
   </div>
-</div>
+<!--</div>-->
 
 
 

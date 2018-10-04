@@ -48,11 +48,32 @@ export class ZustaendeComponent implements OnInit {
     this.cMod = this.allmodels.find(el => el._id === m_index);
     console.log('..... the clicked cmodel.des: ', m_index);
     console.log('..... the clicked cmodel.priorty: ', cmodle.priority);
+    console.log('..... the clicked cmodel: ', cmodle);
+  }
+
+  sortPK(arr){
+   // this.checkedModells = this._data.sortMultiple(arr);
+    this.checkedModells = this._data.sortMulti(arr);
+
+    console.log('.... ccc');
+    this.checkedModells.forEach(element => {
+      console.log(element);
+    });
+
+    return this.checkedModells;
   }
 
   receiveChanage($event) {
     this.displayThenBlock = $event;
   }
+
+  getPriorityLevel(sms: SelectedModel) {
+    return sms.priority.charAt(0);
+  }
+
+  // getFullPri(sms) {
+  //   return this._data.priorities.find(x => x.value === sms.priority);
+  // }
 
   getISTE(csModell: SelectedModel, iz: string) {
     let temp_list: any;
