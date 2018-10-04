@@ -20,7 +20,7 @@ mongoose.Promise = global.Promise;
 //   } else { console.log("... connected to "+db.toString());}
 // });
 
-mongoose.connection.openUri(db)
+mongoose.connection.openUri(db, { useNewUrlParser: true })
   .once('open', function(){
     console.log("... connected to "+db.toString());
     console.log('Good to go !');})
