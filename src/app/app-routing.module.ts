@@ -15,10 +15,10 @@ import { EvaluationComponent} from './evaluation/evaluation.component';
 
 
 const routes: Routes = [
-  { path: '', component: StartComponent, canActivate: [AuthGuard], pathMatch: 'full'},
+ // { path: '', component: StartComponent, canActivate: [AuthGuard], pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
   // { path: '**', redirectTo: ''},
-  // {path: '', redirectTo: '/start', pathMatch: 'full'},
+  { path: '', redirectTo: '/start', canActivate: [AuthGuard], pathMatch: 'full'},
   {path: 'impressum', component: ImpressumComponent},
   {path: 'start', component: StartComponent, canActivate: [AuthGuard]},
   {path: 'kriteiren', component: KriterienComponent, canActivate: [AuthGuard]},

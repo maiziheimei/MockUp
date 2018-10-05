@@ -15,7 +15,7 @@ export class SelectedModel {
   Massnahmen: string;
   Erklaerung: string;
   Kosten: string;
-  Termin: Date;
+  Termin:  Date;
   Verantwortlich: string;
   Auspraegung_note: string[];
   clrlist: CRLObj[];
@@ -26,9 +26,9 @@ export class SelectedModel {
     this.kriterium ='';
     this.isselected = false;
     this.isEvaluated = false;
-    this.Iste = []
+    this.Iste = [];
     this.Ziele = [];
-    this.priority = 'N';
+    this.priority = 'keiner';
     this.prioirtyNum = 0;
     this.Kosten = '';
     this.Evaluation_note = '';

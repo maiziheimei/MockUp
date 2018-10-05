@@ -3,6 +3,7 @@ import { BehaviorSubject} from 'rxjs/BehaviorSubject';
 import { SelectedModel } from './selectedModel';
 import * as jsPDF from 'jspdf';
 import {PriKid} from "./modell";
+import {v4 as uuid} from "uuid";
 
 @Injectable()
 export class DataService {
@@ -19,10 +20,10 @@ export class DataService {
 
 
   public priorities = [
-    {value: '3', viewValue: 'High'},
-    {value: '2', viewValue: 'Medium'},
-    {value: '1', viewValue: 'Low'},
-    {value: '0', viewValue: 'None'}
+    {value: '3', viewValue: 'hoch'},
+    {value: '2', viewValue: 'mittel'},
+    {value: '1', viewValue: 'niedrig'},
+    {value: '0', viewValue: 'keiner'}
   ];
 
   public sortMulti(obj: SelectedModel[]) {
@@ -132,7 +133,6 @@ export class DataService {
     doc.setFont('helvetica');
     doc.setFontType('normal');
     doc.setFontSize(10);
-
 
     const arrForJson = [];
     for (let i = 0; i < sms.length; i ++) {

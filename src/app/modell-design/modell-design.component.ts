@@ -54,7 +54,7 @@ export class ModellDesignComponent implements OnInit {
     for (let i = 0; i < this.niz.length; i++) {
       this.niz[i] = this.checkInList(i);
     }
-     console.log('... init niz[]: ', this.niz);
+     console.log('... init niz[]: ', this.niz, this.ClickedSelectedModel.prioirtyNum, );
   }
 
   getBColor(nizValue) {

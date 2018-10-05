@@ -98,10 +98,10 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 var routes = [
-    { path: '', component: _start_start_component__WEBPACK_IMPORTED_MODULE_6__["StartComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]], pathMatch: 'full' },
+    // { path: '', component: StartComponent, canActivate: [AuthGuard], pathMatch: 'full'},
     { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"] },
     // { path: '**', redirectTo: ''},
-    // {path: '', redirectTo: '/start', pathMatch: 'full'},
+    { path: '', redirectTo: '/start', canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]], pathMatch: 'full' },
     { path: 'impressum', component: _impressum_impressum_component__WEBPACK_IMPORTED_MODULE_4__["ImpressumComponent"] },
     { path: 'start', component: _start_start_component__WEBPACK_IMPORTED_MODULE_6__["StartComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]] },
     { path: 'kriteiren', component: _kriterien_kriterien_component__WEBPACK_IMPORTED_MODULE_7__["KriterienComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]] },
@@ -145,7 +145,7 @@ module.exports = "a {\n  color: #B8B8B8;\n}\n\n.header-logout {\n  background-co
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"header-logout\" *ngIf=\"onOff | async as isLoggedIn\">\n  <div class=\"he\">\n    <app-header class=\"app-header\"></app-header></div>\n    <div class=\"lo\"><button type=\"button\" (click)=\"onLogout()\" *ngIf=\"onOff\">Logout</button></div>\n</div>\n\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>\n\n<div id=\"main-footer\">\n    <a routerLink=\"/impressum\" routerLinkActive=\"active\"> IMPRESSUM & DATENSCHUTZERKLÄRUNG </a>\n</div>\n\n"
+module.exports = "<div class=\"header-logout\" *ngIf=\"onOff | async as isLoggedIn\">\n  <div class=\"he\">\n    <app-header class=\"app-header\"></app-header></div>\n    <div class=\"lo\"><button type=\"button\" (click)=\"onLogout()\" *ngIf=\"onOff\">Exit</button></div>\n</div>\n\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>\n\n<div id=\"main-footer\">\n    <a routerLink=\"/impressum\" routerLinkActive=\"active\"> IMPRESSUM & DATENSCHUTZERKLÄRUNG </a>\n</div>\n\n"
 
 /***/ }),
 
@@ -165,6 +165,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./data.service */ "./src/app/data.service.ts");
 /* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./user.service */ "./src/app/user.service.ts");
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/index.js");
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(uuid__WEBPACK_IMPORTED_MODULE_6__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -174,6 +176,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -206,15 +209,21 @@ var AppComponent = /** @class */ (function () {
             if (result == 'confirm') {
                 // this._data.exportJson(this.sms, this.currUser);
                 _this._data.downloadAsPDF(_this.sms, _this.currUser);
-                _this.authService.logout();
+                // this.authService.logout();
             }
             ;
-            if (result == 'cancel') {
-                // to clean up the cache before logout
-                _this.sms = [];
-                _this._data.changeGoal(_this.sms);
-                _this.authService.logout();
-            }
+            // if (result == 'cancel') {
+            // to clean up the cache before logout
+            _this.sms = [];
+            _this._data.changeGoal(_this.sms);
+            _this.currUser.uuid = Object(uuid__WEBPACK_IMPORTED_MODULE_6__["v4"])();
+            _this.currUser.mission = '';
+            _this.currUser.vision = '';
+            _this.currUser.strategy = '';
+            _this.currUser.kriterienList = [];
+            _this._userService.changeUser(_this.currUser);
+            _this.authService.logout();
+            // }
         });
     };
     AppComponent = __decorate([
@@ -576,7 +585,7 @@ module.exports = ".example-tree-invisible {\n  display: none;\n}\n\n\n.example-t
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1 style=\"color: #368AC0\" mat-dialog-title>Overview the related Competences and Learning Resources</h1>\n<div mat-dialog-content>\n\n  <cdk-tree [dataSource]=\"nestedDataSource\" [treeControl]=\"nestedTreeControl\">\n    <cdk-nested-tree-node *cdkTreeNodeDef=\"let node\" class=\"example-tree-node\" cdkTreeNodeToggle [cdkTreeNodeToggleRecursive]=\"true\">\n      <button mat-icon-button disabled></button>\n\n      <a href=\"{{node.type}}\"  target=\"_blank\">\n        -> &nbsp; {{node.filename}}\n      </a>\n    </cdk-nested-tree-node>\n    <cdk-nested-tree-node *cdkTreeNodeDef=\"let node; when: hasNestedChild\" class=\"example-tree-node\">\n      <button mat-icon-button [attr.aria-label]=\"'toggle ' + node.filename\" cdkTreeNodeToggle>\n        <mat-icon class=\"mat-icon-rtl-mirror\">\n          {{nestedTreeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}\n        </mat-icon>\n      </button>\n      {{node.filename}}:  {{node.type}}\n\n      <div [class.example-tree-invisible]=\"nestedTreeControl.isExpanded(node)\">\n        <ng-container cdkTreeNodeOutlet></ng-container>\n      </div>\n    </cdk-nested-tree-node>\n  </cdk-tree>\n\n\n</div>\n"
+module.exports = "<h1 style=\"color: #368AC0\" mat-dialog-title>Übersicht der zugehörigen Kompetenzen und Lernressourcen</h1>\n<div mat-dialog-content>\n\n  <cdk-tree [dataSource]=\"nestedDataSource\" [treeControl]=\"nestedTreeControl\">\n    <cdk-nested-tree-node *cdkTreeNodeDef=\"let node\" class=\"example-tree-node\" cdkTreeNodeToggle [cdkTreeNodeToggleRecursive]=\"true\">\n      <button mat-icon-button disabled></button>\n\n      <a href=\"{{node.type}}\"  target=\"_blank\">\n        -> &nbsp; {{node.filename}}\n      </a>\n    </cdk-nested-tree-node>\n    <cdk-nested-tree-node *cdkTreeNodeDef=\"let node; when: hasNestedChild\" class=\"example-tree-node\">\n      <button mat-icon-button [attr.aria-label]=\"'toggle ' + node.filename\" cdkTreeNodeToggle>\n        <mat-icon class=\"mat-icon-rtl-mirror\">\n          {{nestedTreeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}\n        </mat-icon>\n      </button>\n      {{node.filename}}:  {{node.type}}\n\n      <div [class.example-tree-invisible]=\"nestedTreeControl.isExpanded(node)\">\n        <ng-container cdkTreeNodeOutlet></ng-container>\n      </div>\n    </cdk-nested-tree-node>\n  </cdk-tree>\n\n\n</div>\n"
 
 /***/ }),
 
@@ -748,10 +757,10 @@ var DataService = /** @class */ (function () {
         this.seModels = new rxjs_BehaviorSubject__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]([]);
         this.selectedModels = this.seModels.asObservable();
         this.priorities = [
-            { value: '3', viewValue: 'High' },
-            { value: '2', viewValue: 'Medium' },
-            { value: '1', viewValue: 'Low' },
-            { value: '0', viewValue: 'None' }
+            { value: '3', viewValue: 'hoch' },
+            { value: '2', viewValue: 'mittel' },
+            { value: '1', viewValue: 'niedrig' },
+            { value: '0', viewValue: 'keiner' }
         ];
     }
     DataService.prototype.changeGoal = function (selectedModels) {
@@ -893,7 +902,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<mat-dialog-content>\n  <h2>Once you logout, all your data will be removed. </h2>\n</mat-dialog-content>\n<mat-dialog-actions align=\"end\">\n  <button mat-button matDialogClose=\"confirm\" color=\"primary\">Download(.pdf)</button>\n  <button mat-button matDialogClose=\"cancel\" color=\"warn\">No, thanks</button>\n</mat-dialog-actions>\n"
+module.exports = "\n<mat-dialog-content>\n  <h2>Sobald Sie sich abmelden, werden alle Ihre Daten entfernt. </h2>\n</mat-dialog-content>\n<mat-dialog-actions align=\"end\">\n  <button mat-button matDialogClose=\"confirm\" color=\"primary\">herunterladen(.pdf)</button>\n  <button mat-button matDialogClose=\"cancel\" color=\"warn\">Nein, Danke</button>\n</mat-dialog-actions>\n"
 
 /***/ }),
 
@@ -939,7 +948,7 @@ var DownloadAlertComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1 mat-dialog-title>Preview Your Criteria: </h1>\n<div mat-dialog-content>\n\n    <textarea type=\"text\" maxlength=\"1000000\" style=\"font-family: Arial; font-size: 12pt; width:100%; height: 800px;\" value=\"{{data}} \" disabled>  </textarea>\n\n</div>\n"
+module.exports = "<h1 mat-dialog-title>Vorschau Ihrer Kriterien: </h1>\n<div mat-dialog-content>\n\n    <textarea type=\"text\" maxlength=\"1000000\" style=\"font-family: Arial; font-size: 12pt; width:100%; height: 800px;\" value=\"{{data}} \" disabled>  </textarea>\n\n</div>\n"
 
 /***/ }),
 
@@ -961,7 +970,7 @@ module.exports = "/*.container{*/\n  /*background-color: #fac9ae;*/\n  /*}*/\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n\n  <div id=\"label1\">\n    <label>Welche Maßnahmen wurden umgesetzt? </label>\n  </div>\n\n  <div>\n    <div class=\"info\"> You have evaluated {{number}} Kriterien. </div>\n    <button class=\"btn\" (click)=\"preview()\"> Preview </button>\n    <button class=\"btn\" (click)=\"save2Json()\"> Download (.json)</button>\n    <!--<a class=\"btn btn-clear\" title=\"Download JSON\" [href]=\"downloadJsonHref\" download=\"download.json\"></a>-->\n  </div>\n  <div *ngFor=\"let cm of sms; index as i\">\n    <div class =\"input-group\">\n      <div class=\"checkedModel\"> <input  disabled type=\"text\" id=\"{{cm.kriterium_id}}\" value=\"{{cm.kriterium_id}}. {{cm.kriterium}}\"></div>\n      <div class=\"balls\"> {{get_izIDs(cm, 'i')}} -> {{get_izIDs(cm, 'z')}}</div>\n      <div class=\"priority\"> <input  type=\"text\" disabled value=\" Priorität: {{cm.priority}}\"></div>\n\n\n      <div class=\"input-group mb-3\">\n        <div class=\"input-group-prepend\">\n          <span class=\"input-group-text\">Maßnahme: </span>\n        </div>\n        <textarea class=\"form-control\" aria-label=\"Maßnahme: \"  value=\"{{cm.Massnahmen}}\"  matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\" disabled></textarea>\n      </div>\n\n      <div class=\"input-group mb-3\">\n        <div class=\"input-group-prepend\">\n          <span class=\"input-group-text\" style=\"color:black\"> Notiz: </span>\n        </div>\n        <textarea class=\"form-control-2\" aria-label=\"Notiz:\" [(ngModel)]=\"cm.Evaluation_note\"  matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\" ></textarea>\n      </div>\n\n\n      <form class=\"KTV-form\">\n        <table class=\"example-full-width\" cellspacing=\"0\">\n          <tr>\n            <td><mat-form-field class=\"example-full-width\" >\n              <input matInput type=\"text\" placeholder=\"Kosten: (EUR)\" value=\"{{cm.Kosten| currency:'EUR':true}}\" disabled>\n            </mat-form-field></td>\n            <td><mat-form-field class=\"example-full-width\">\n              <input matInput  placeholder=\"Termin:\" value=\"{{cm.Termin | date:'mm/dd/yyyy'}}\" disabled>\n            </mat-form-field></td>\n            <td><mat-form-field class=\"example-full-width\">\n              <input matInput placeholder=\"Verantwortlich:\" maxlength=\"30\" value=\"{{cm.Verantwortlich}}\" disabled>\n            </mat-form-field></td>\n          </tr></table>\n      </form>\n    </div><!--input Group-->\n\n    <div class=\"input-select\" *ngIf=\"sms[i]\">\n    <!--<div class=\"input-select\">-->\n      <mat-checkbox type=\"checkbox\" checked=\"false\" [checked]=\"sms[i].isEvaluated\" (change)=\"onChange($event, i, cm)\" ></mat-checkbox>\n    </div>\n  </div>\n\n\n</div><!--container-->\n"
+module.exports = "<div class=\"container\">\n\n  <div id=\"label1\">\n    <label>Welche Maßnahmen wurden umgesetzt? </label>\n  </div>\n\n  <div>\n    <div class=\"info\"> Sie haben evaluiert {{number}} Kriterien. </div>\n    <button class=\"btn\" (click)=\"preview()\"> Vorschau </button>\n    <button class=\"btn\" (click)=\"save2Json()\"> herunterladen (.json)</button>\n    <!--<a class=\"btn btn-clear\" title=\"Download JSON\" [href]=\"downloadJsonHref\" download=\"download.json\"></a>-->\n  </div>\n  <div *ngFor=\"let cm of sms; index as i\">\n    <div class =\"input-group\">\n      <div class=\"checkedModel\"> <input  disabled type=\"text\" id=\"{{cm.kriterium_id}}\" value=\"{{cm.kriterium_id}}. {{cm.kriterium}}\"></div>\n      <div class=\"balls\"> {{get_izIDs(cm, 'i')}} -> {{get_izIDs(cm, 'z')}}</div>\n      <div class=\"priority\"> <input  type=\"text\" disabled value=\" Priorität: {{cm.priority}}\"></div>\n\n\n      <div class=\"input-group mb-3\">\n        <div class=\"input-group-prepend\">\n          <span class=\"input-group-text\">Maßnahme: </span>\n        </div>\n        <textarea class=\"form-control\" aria-label=\"Maßnahme: \"  value=\"{{cm.Massnahmen}}\"  matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\" disabled></textarea>\n      </div>\n\n      <div class=\"input-group mb-3\">\n        <div class=\"input-group-prepend\">\n          <span class=\"input-group-text\" style=\"color:black\"> Notiz: </span>\n        </div>\n        <textarea class=\"form-control-2\" aria-label=\"Notiz:\" [(ngModel)]=\"cm.Evaluation_note\"  matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\" ></textarea>\n      </div>\n\n\n      <form class=\"KTV-form\">\n        <table class=\"example-full-width\" cellspacing=\"0\">\n          <tr>\n            <td><mat-form-field class=\"example-full-width\" >\n              <input matInput type=\"text\" placeholder=\"Kosten: (EUR)\" value=\"{{ cm.Kosten| currency:'EUR':true}}\" disabled>\n            </mat-form-field></td>\n            <td>\n              <mat-form-field class=\"example-full-width\">\n              <input matInput [matDatepicker]=\"picker2\"  placeholder=\"Termin:\" [value]=\"cm.Termin\" disabled name=\"myDate\">\n                <mat-datepicker-toggle matSuffix [for]=\"picker2\"></mat-datepicker-toggle>\n                <mat-datepicker #picker2 disabled></mat-datepicker>\n            </mat-form-field>\n            </td>\n            <!--<td>-->\n              <!--<mat-form-field>-->\n                <!--<input matInput [matDatepicker]=\"picker3\" placeholder=\"Termin2\" [value]=\"cm.Termin\">-->\n                <!--<mat-datepicker-toggle matSuffix [for]=\"picker3\"></mat-datepicker-toggle>-->\n                <!--<mat-datepicker #picker3 disabled></mat-datepicker>-->\n              <!--</mat-form-field>-->\n            <!--</td>-->\n            <td><mat-form-field class=\"example-full-width\">\n              <input matInput placeholder=\"Verantwortlich:\" maxlength=\"30\" value=\"{{cm.Verantwortlich}}\" disabled>\n            </mat-form-field></td>\n          </tr></table>\n      </form>\n    </div><!--input Group-->\n\n    <div class=\"input-select\" *ngIf=\"sms[i]\">\n    <!--<div class=\"input-select\">-->\n      <mat-checkbox type=\"checkbox\" checked=\"false\" [checked]=\"sms[i].isEvaluated\" (change)=\"onChange($event, i, cm)\" ></mat-checkbox>\n    </div>\n  </div>\n\n\n</div><!--container-->\n"
 
 /***/ }),
 
@@ -983,6 +992,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../user.service */ "./src/app/user.service.ts");
 /* harmony import */ var _massnahmen_massnahmen_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../massnahmen/massnahmen.component */ "./src/app/massnahmen/massnahmen.component.ts");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -995,6 +1005,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+
 
 
 
@@ -1094,6 +1105,10 @@ var EvaluationComponent = /** @class */ (function () {
     };
     EvaluationComponent.prototype.get_izIDs = function (cdModel, iz) {
         return this._massna.get_izIDs(cdModel, iz);
+    };
+    EvaluationComponent.prototype.convert = function (_date) {
+        var date_temp = new _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormControl"](new Date());
+        return date_temp.value;
     };
     EvaluationComponent.prototype.preview = function () {
         var arrForJson = [];
@@ -1293,7 +1308,7 @@ module.exports = ".myform{\n  width:100%;\n  float:left;\n  padding: 20px;\n}\n\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container\">\n  <form class=\"myform\">\n    <div id=\"label1\">\n      <label> Welche Kriterien benötigen Sie für Ihre Ziele?  </label>\n    </div>\n    <!--<div id=\"showAll\">-->\n      <!--<label (click)=\"allParts()\"> {{showAll}} </label>-->\n    <!--</div>-->\n\n    <div id=\"filter\">\n    <mat-radio-group  [(ngModel)]=\"selectedAll\" name=\"radio\">\n      <mat-radio-button class=\"rb\" *ngFor=\"let sa of saOptions\" [value]=\"sa\">\n        {{sa}}\n      </mat-radio-button>\n    </mat-radio-group>\n    </div>\n    <!--<div >Your favorite season is: {{selectedAll}}</div>-->\n\n\n    <div *ngIf=\"selectedAll==='selected'\">\n    <div class =\"form-group\" *ngFor=\"let modell of modells | sortArr:'_id': 'ascending'; let i = index;\">\n      <div *ngIf=\"modell.isSelected\">\n        <label title=\"click to see description\" (click)=\"showBeschreibung(i)\" >{{modell._id}}. {{modell.Kriterium}}</label>\n        <p class=\"hange\" *ngIf=\"i === 9 && getCheckState(modell)\"> \"Zusammenhängende: 46, 27, 28\"</p>\n        <mat-checkbox type=\"checkbox\" checked=\"false\" [checked]=\"getCheckState(modell)\" (change)=\"onChange($event, i, modell)\" ></mat-checkbox>\n        <textarea [hidden]=\"!hiddenValue[i]\" placeholder=\"\"  rows=\"5\" >{{modell.Beschreibung}}</textarea>\n      </div>\n    </div>\n    </div>\n\n\n    <div *ngIf=\"selectedAll==='all'\">\n    <div class =\"form-group\" *ngFor=\"let modell of modells | sortArr:'_id': 'ascending'; let i = index;\">\n        <label title=\"click to see description\" (click)=\"showBeschreibung(i)\" >{{modell._id}}. {{modell.Kriterium}}</label>\n        <p class=\"hange\" *ngIf=\"i === 9 && getCheckState(modell)\"> \"Zusammenhängende: 46, 27, 28\"</p>\n        <mat-checkbox type=\"checkbox\" checked=\"false\" [checked]=\"getCheckState(modell)\" (change)=\"onChange($event, i, modell)\" ></mat-checkbox>\n        <textarea [hidden]=\"!hiddenValue[i]\"  placeholder=\"\"  rows=\"5\" >{{modell.Beschreibung}}</textarea>\n      </div>\n    </div>\n  </form>\n</div>\n"
+module.exports = "\n<div class=\"container\">\n  <form class=\"myform\">\n    <div id=\"label1\">\n      <label> Welche Kriterien benötigen Sie für Ihre Ziele?  </label>\n    </div>\n    <!--<div id=\"showAll\">-->\n      <!--<label (click)=\"allParts()\"> {{showAll}} </label>-->\n    <!--</div>-->\n\n    <div id=\"filter\">\n    <mat-radio-group  [(ngModel)]=\"selectedAll\" name=\"radio\">\n      <mat-radio-button class=\"rb\" *ngFor=\"let sa of saOptions\" [value]=\"sa\">\n        {{sa}}\n      </mat-radio-button>\n    </mat-radio-group>\n    </div>\n    <!--<div >Your favorite season is: {{selectedAll}}</div>-->\n\n\n    <div *ngIf=\"selectedAll==='auswählen'\">\n    <div class =\"form-group\" *ngFor=\"let modell of modells | sortArr:'_id': 'ascending'; let i = index;\">\n      <div *ngIf=\"modell.isSelected\">\n        <label title=\"click to see description\" (click)=\"showBeschreibung(i)\" >{{modell._id}}. {{modell.Kriterium}}</label>\n        <p class=\"hange\" *ngIf=\"i === 9 && getCheckState(modell)\"> \"Zusammenhängende: 46, 27, 28\"</p>\n        <mat-checkbox type=\"checkbox\" checked=\"false\" [checked]=\"getCheckState(modell)\" (change)=\"onChange($event, i, modell)\" ></mat-checkbox>\n        <textarea [hidden]=\"!hiddenValue[i]\" placeholder=\"\"  rows=\"5\" >{{modell.Beschreibung}}</textarea>\n      </div>\n    </div>\n    </div>\n\n\n    <div *ngIf=\"selectedAll==='alle'\">\n    <div class =\"form-group\" *ngFor=\"let modell of modells | sortArr:'_id': 'ascending'; let i = index;\">\n        <label title=\"click to see description\" (click)=\"showBeschreibung(i)\" >{{modell._id}}. {{modell.Kriterium}}</label>\n        <p class=\"hange\" *ngIf=\"i === 9 && getCheckState(modell)\"> \"Zusammenhängende: 46, 27, 28\"</p>\n        <mat-checkbox type=\"checkbox\" checked=\"false\" [checked]=\"getCheckState(modell)\" (change)=\"onChange($event, i, modell)\" ></mat-checkbox>\n        <textarea [hidden]=\"!hiddenValue[i]\"  placeholder=\"\"  rows=\"5\" >{{modell.Beschreibung}}</textarea>\n      </div>\n    </div>\n  </form>\n</div>\n"
 
 /***/ }),
 
@@ -1339,11 +1354,11 @@ var KriterienComponent = /** @class */ (function () {
         // showAll = 'show Selected';
         this.sms = [];
         this.hiddenValue = new Array(42).fill(false);
-        this.selectedAll = 'all';
+        this.selectedAll = 'alle';
         // shortLong: boolean;
         this.saOptions = [
-            'selected',
-            'all',
+            'auswählen',
+            'alle',
         ];
         this.amount = 0.0;
         this.formattedAmount = '';
@@ -1492,8 +1507,6 @@ var KriterienComponent = /** @class */ (function () {
         for (var i = 0; i < this.sms.length; i++) {
             _loop_1(i);
         }
-    };
-    KriterienComponent.prototype.snycro = function () {
     };
     KriterienComponent.prototype.smsExist = function (kid) {
         if (this.sms.length === 0) {
@@ -2091,7 +2104,7 @@ module.exports = ".labs{\n  margin-top: 30px;\n  width: 100%;\n  margin-bottom: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" xmlns=\"http://www.w3.org/1999/html\">\n<!--<div> current Priority {{ClickedSelectedModel.priority}} Ist: {{ClickedSelectedModel.ist_id}} Ziel: {{ClickedSelectedModel.ziel_id}}</div>-->\n\n  <div class=\"labs\">\n    <!--<a mat-icon-button id=\"close-icon\" (click)=\"closeBlock()\"><mat-icon> clear </mat-icon></a>-->\n    <a mat-icon-button id=\"close-icon\" (click)=\"closeBlock()\"><img src=\"assets/images/saveback.png\" width=\"50\" height=\"50\"></a>\n    <label id=\"R\"> Relevant</label>\n    <input type=\"text\" [(ngModel)]=\" ClickedModell._id + '. ' + ClickedModell.Kriterium\">\n\n    <label> Priorität: </label>\n    <!--<input matInput type=\"number\" placeholder=\"1\" min=\"1\" max=\"42\" [(ngModel)]=\"ClickedSelectedModel.priority\"/>-->\n    <div class=\"prioritySection\">\n    <!--<mat-form-field>-->\n      <mat-select  [(value)]=\"priorityLevels.values[ClickedSelectedModel.priority]\" (selectionChange)=\"changePri($event)\">\n        <mat-option (onSelectionChange)=\"changePri($event)\" *ngFor=\"let level of priorityLevels\" [value]=\"level.value\">\n          {{ level.viewValue }}\n        </mat-option>\n      </mat-select>\n    <!--</mat-form-field>-->\n    </div>\n\n    <button id=\"help-icon\"  (click)=\"openDialog2()\"\n            matTooltip=\"View related compentences and learning resources\"\n            aria-label=\"Button that displays a tooltip when focused or hovered over\">\n      <mat-icon> help </mat-icon>\n    </button>\n  </div>\n\n  <mat-card class=\"model-detail\">\n    <mat-card-content>\n      <textarea id=\"model-text\" rows=\"3\">{{ClickedModell.Beschreibung}}</textarea>\n      <!--<a mat-icon-button class=\"small\"><mat-icon> info </mat-icon></a>-->\n      <button mat-button id=\"info\"\n              matTooltip=\"More info about this\"\n              aria-label=\"Button that displays a tooltip when focused or hovered over\">\n        <mat-icon> info </mat-icon>\n      </button>\n\n      <div class=\"big-note-editor\">\n        <mat-icon class=\"big-note-label\" (click)=\"showNote(8)\"> edit </mat-icon>\n        <textarea class=\"big-aug_note\" title=\"edit note\"  matInput [rows]=\"hiddeRow[8]\" placeholder=\"Notiz\" [(ngModel)]= \"ClickedSelectedModel.Kriterium_note\"> </textarea>\n      </div>\n    </mat-card-content>\n  </mat-card>\n\n  <mat-card class=\"example-card-0\" [ngStyle]=\"{'background': getBColor(niz[ind])}\" *ngFor=\" let au of auspraegung; index as ind\" >\n    <mat-card-header>\n      <mat-card-title><h3> Ausprägung {{ind}}</h3></mat-card-title>\n    </mat-card-header>\n    <mat-card-content>\n      <textarea class=\"aus_text\"  rows=\"4\" disabled> {{au}} </textarea>\n      <mat-select [value]=\"niz[ind]\"  #device (selectionChange)=\"onChange($event, device.value, ind)\">\n        <mat-option value=\"0\">Keine</mat-option>\n        <mat-option value=\"1\">Ist</mat-option>\n        <mat-option value=\"2\">Ziel</mat-option>\n        <mat-option value=\"3\">Ist+Ziel</mat-option>\n      </mat-select>\n      <div class=\"note-editor\">\n        <mat-icon class=\"note-label\" (click)=\"showNote(ind)\"> edit </mat-icon>  <!--<label class=\"note-label\" (click)=\"showNote(ind)\" > {{noteOnLabel}}</label>-->\n        <textarea class=\"aug_note\" title=\"edit note\"  placeholder=\"Notiz\"   matInput  [rows]=\"hiddeRow[ind]\" [(ngModel)]=\"ClickedSelectedModel.Auspraegung_note[ind]\"></textarea>\n      </div>\n    </mat-card-content>\n  </mat-card>\n\n\n  </div>\n<!--</div>-->\n\n\n\n\n\n\n\n\n\n\n"
+module.exports = "<div class=\"container\" xmlns=\"http://www.w3.org/1999/html\">\n<!--<div> current Priority {{ClickedSelectedModel.priority}} Ist: {{ClickedSelectedModel.ist_id}} Ziel: {{ClickedSelectedModel.ziel_id}}</div>-->\n\n  <div class=\"labs\">\n    <!--<a mat-icon-button id=\"close-icon\" (click)=\"closeBlock()\"><mat-icon> clear </mat-icon></a>-->\n    <a mat-icon-button id=\"close-icon\" (click)=\"closeBlock()\"><img src=\"assets/images/saveback.png\" width=\"50\" height=\"50\"></a>\n    <label id=\"R\"> Relevant</label>\n    <input type=\"text\" [(ngModel)]=\" ClickedModell._id + '. ' + ClickedModell.Kriterium\">\n\n    <label> Priorität: </label>\n    <!--<input matInput type=\"number\" placeholder=\"1\" min=\"1\" max=\"42\" [(ngModel)]=\"ClickedSelectedModel.priority\"/>-->\n    <div class=\"prioritySection\">\n    <!--<mat-form-field>-->\n      <!--<mat-select  [(value)]=\"priorityLevels.values[ClickedSelectedModel.priority]\" (selectionChange)=\"changePri($event)\">-->\n        <mat-select  [value]=\"ClickedSelectedModel.prioirtyNum.toString()\" (selectionChange)=\"changePri($event)\">\n\n        <mat-option (onSelectionChange)=\"changePri($event)\" *ngFor=\"let level of priorityLevels\" [value]=\"level.value\">\n          {{ level.viewValue }}\n        </mat-option>\n      </mat-select>\n    <!--</mat-form-field>-->\n    </div>\n\n    <button id=\"help-icon\"  (click)=\"openDialog2()\"\n            matTooltip=\"View related compentences and learning resources\"\n            aria-label=\"Button that displays a tooltip when focused or hovered over\">\n      <mat-icon> help </mat-icon>\n    </button>\n  </div>\n\n  <mat-card class=\"model-detail\">\n    <mat-card-content>\n      <textarea id=\"model-text\" rows=\"3\">{{ClickedModell.Beschreibung}}</textarea>\n      <!--<a mat-icon-button class=\"small\"><mat-icon> info </mat-icon></a>-->\n      <button mat-button id=\"info\"\n              matTooltip=\"More info about this\"\n              aria-label=\"Button that displays a tooltip when focused or hovered over\">\n        <mat-icon> info </mat-icon>\n      </button>\n\n      <div class=\"big-note-editor\">\n        <mat-icon class=\"big-note-label\" (click)=\"showNote(8)\"> edit </mat-icon>\n        <textarea class=\"big-aug_note\" title=\"edit note\"  matInput [rows]=\"hiddeRow[8]\" placeholder=\"Notiz\" [(ngModel)]= \"ClickedSelectedModel.Kriterium_note\"> </textarea>\n      </div>\n    </mat-card-content>\n  </mat-card>\n\n  <mat-card class=\"example-card-0\" [ngStyle]=\"{'background': getBColor(niz[ind])}\" *ngFor=\" let au of auspraegung; index as ind\" >\n    <mat-card-header>\n      <mat-card-title><h3> Ausprägung {{ind}}</h3></mat-card-title>\n    </mat-card-header>\n    <mat-card-content>\n      <textarea class=\"aus_text\"  rows=\"4\" disabled> {{au}} </textarea>\n      <mat-select [value]=\"niz[ind]\"  #device (selectionChange)=\"onChange($event, device.value, ind)\">\n        <mat-option value=\"0\">Keine</mat-option>\n        <mat-option value=\"1\">Ist</mat-option>\n        <mat-option value=\"2\">Ziel</mat-option>\n        <mat-option value=\"3\">Ist+Ziel</mat-option>\n      </mat-select>\n      <div class=\"note-editor\">\n        <mat-icon class=\"note-label\" (click)=\"showNote(ind)\"> edit </mat-icon>  <!--<label class=\"note-label\" (click)=\"showNote(ind)\" > {{noteOnLabel}}</label>-->\n        <textarea class=\"aug_note\" title=\"edit note\"  placeholder=\"Notiz\"   matInput  [rows]=\"hiddeRow[ind]\" [(ngModel)]=\"ClickedSelectedModel.Auspraegung_note[ind]\"></textarea>\n      </div>\n    </mat-card-content>\n  </mat-card>\n\n\n  </div>\n<!--</div>-->\n\n\n\n\n\n\n\n\n\n\n"
 
 /***/ }),
 
@@ -2163,7 +2176,7 @@ var ModellDesignComponent = /** @class */ (function () {
         for (var i = 0; i < this.niz.length; i++) {
             this.niz[i] = this.checkInList(i);
         }
-        console.log('... init niz[]: ', this.niz);
+        console.log('... init niz[]: ', this.niz, this.ClickedSelectedModel.prioirtyNum);
     };
     ModellDesignComponent.prototype.getBColor = function (nizValue) {
         // console.log('... nizValue:', nizValue);
@@ -2579,7 +2592,7 @@ var SelectedModel = /** @class */ (function () {
         this.isEvaluated = false;
         this.Iste = [];
         this.Ziele = [];
-        this.priority = 'N';
+        this.priority = 'keiner';
         this.prioirtyNum = 0;
         this.Kosten = '';
         this.Evaluation_note = '';
@@ -2709,7 +2722,7 @@ module.exports = ".containerStart {\n  display: -ms-grid;\n  display: grid;\n  -
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"containerStart\">\n  <div class=\"col\">\n    <div class=\"uuidLableLeft\"> <b>Do your want to import your previous file (.json)?</b>\n      <!--<button >import</button>-->\n      <input style=\"display: none\" type=\"file\" accept=\".json\" (change)=\"onFileLoad($event)\" #fileinput>\n      <button class=\"loadButton\" type=\"button\" (click)=\"fileinput.click()\"> load </button>\n    </div>\n\n    <div class=\"titleTable\">\n        <!--<div  class=\"td2\"> <a href=\"http://www.adaption-projekt.de/\"><h1>Projekt ADAPTION</h1></a></div>-->\n      <div  class=\"td2\"> <h1>Projekt ADAPTION</h1></div>\n        <div class=\"td1\"> <img src=\"assets/images/adaption.png\" width=55% height=35%> </div>\n    </div>\n\n    <div>\n    <br><textarea disabled class =\"textarea ng-invalid\"   name=\"item\" rows=\"30\"  cols=\"50\" placeholder=\"Ziel des Forschungsprojektes ADAPTION ist es, KMU und Unternehmen bei der Migration zum Cyber-physischen System für Produktion und Fertigung zu unterstützen. Gefördert vom BMBF wird ein reifegradbasiertes Vorgehensmodell hierzu entwickelt, das die Ableitung eines individuellen Migrationspfades unter Beachtung von Wirtschaftlichkeitsgesichtspunkten ermöglicht. Der optimale Zielreifegrad wird individuell nach Nutzen und Wirtschaftlichkeit für jedes Unternehmen festgelegt. Das Vorgehensmodell verfolgt einen Ansatz, der die drei betrieblichen Gestaltungsdimensionen Technik, Organisation und Personal berücksichtigt.\n      &#10;Die Aufgabe des Educational Technology Lab in ADAPTION besteht in der Formalisierung und software-technischen Umsetzung eines Reifegrad- und Vorgehensmodell bei der Migration zum Cyber-physischen Produktionssystem. Weiterhin in der Erweiterung eines existierenden Assistenzsystems um digitale Lernszenarien, die für Cyber-physische Produktionssysteme relevant sind. Die Migration wird bei Anwendungspartnern verschiedener Größe (Konzern, KMU) unter realen Bedingungen untersucht, gewonnene Erkenntnisse werden in das allgemeine Vorgehensmodell überführt.\"></textarea>\n      <div class=\"textlink\"><a target=\"_blank\" href=\"http://www.adaption-projekt.de/\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Mehr Info]</a></div><br>\n\n    </div>\n    <br><textarea disabled class =\"textarea ng-invalid-2\" type=\"textarea\"  name=\"item\" placeholder=\"&#10; ADAPTION Tool (ADAPTION) entwickelt ein Selbstbewertungstool für ein Industrie 4.0-Audit, um den vorliegenden Reifegrad zu ermitteln und auf dieser Grundlage den unter wirtschaftlichen Gesichtspunkten optimalen Reifegrad festzulegen. Das Ziel ist die Unterstützung dieses Prozesses:\n          1. Strategische Ausrichtung\n          2. Industrie 4.0 Audit\n          3. Zielstellung\n          4. Maßnahmen-planung\n          5. Evaluation \" ></textarea><br>\n\n  </div>\n\n  <div class=\"col\">\n\n\n    <div class=\"uuidLable\">  <button class=\"newButton\" type=\"button\" (click)=\"createNewUser()\"> new </button>\n      Welcome! &nbsp; Your User_ID is: <b style=\"color:#EFD9C1; background-color: #8c9ca7; font-weight: 200\">{{cUser.uuid}}</b></div>\n\n    <!--<br><textarea class =\"textarea ng-valid-2\" name=\"item\"-->\n                  <!--placeholder=\"Was ist Ihre Vision?\"  [(ngModel)]=\"cUser.vision\"  ></textarea><br>-->\n    <!--<br><textarea class =\"textarea ng-valid-2\"  name=\"item\"-->\n                  <!--placeholder=\"Was ist Ihre Mission?\"  [(ngModel)]=\"cUser.mission\"  ></textarea><br>-->\n\n    <!--<br><textarea class =\"textarea ng-valid-2\"  name=\"item\"-->\n                  <!--placeholder=\"Was sind Ihre Strategische Ziele? (z.B. für 6 Monate) \" [(ngModel)]=\"cUser.strategy\" ></textarea><br>-->\n\n    <div class=\"input-group\">\n      <div class=\"input-group-prepend\">\n        <span class=\"input-group-text\">Vision: &nbsp; </span>\n      </div>\n      <textarea class=\"form-control\" aria-label=\"Vision:  \" placeholder=\"Was ist Ihre Vision?\"  [(ngModel)]=\"cUser.vision\" ></textarea>\n    </div>\n    <div class=\"input-group\">\n      <div class=\"input-group-prepend\">\n        <span class=\"input-group-text\" >Mission: </span>\n      </div>\n      <textarea class=\"form-control\" aria-label=\"Mission:\"  placeholder=\"Was ist Ihre Mission?\"  [(ngModel)]=\"cUser.mission\"  ></textarea>\n    </div>\n    <div class=\"input-group\">\n      <div class=\"input-group-prepend\">\n        <textarea class=\"zielText\" rows=\"4\" cols=\"12\" disabled>Strategische Zielausrichtung: </textarea>\n      </div>\n      <textarea class=\"form-control\" aria-label=\"Ziel:  \"  placeholder=\"Was sind Ihre Strategische Ziele? (z.B. für 6 Monate) \" [(ngModel)]=\"cUser.strategy\" ></textarea>\n    </div>\n\n    <div class=\"video\">\n      <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/kQLbVVPNTMQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>\n    </div>\n\n  </div>\n\n  <!--<div> current User vision: {{cUser.vision}} </div>-->\n  <!--<div> current User mission : {{cUser.mission}} </div>-->\n  <!--<div> current User mission : {{cUser.strategy}} </div>-->\n</div>\n\n"
+module.exports = "<div class=\"containerStart\">\n  <div class=\"col\">\n    <div class=\"uuidLableLeft\"> <b>Möchten Sie Ihre vorherige Datei importieren(.json)?</b>\n      <!--<button >import</button>-->\n      <input style=\"display: none\" type=\"file\" accept=\".json\" (change)=\"onFileLoad($event)\" #fileinput>\n      <button class=\"loadButton\" type=\"button\" (click)=\"fileinput.click()\"> laden </button>\n    </div>\n\n    <div class=\"titleTable\">\n        <!--<div  class=\"td2\"> <a href=\"http://www.adaption-projekt.de/\"><h1>Projekt ADAPTION</h1></a></div>-->\n      <div  class=\"td2\"> <h1>Projekt ADAPTION</h1></div>\n        <div class=\"td1\"> <img src=\"assets/images/adaption.png\" width=55% height=35%> </div>\n    </div>\n\n    <div>\n    <br><textarea disabled class =\"textarea ng-invalid\"   name=\"item\" rows=\"30\"  cols=\"50\" placeholder=\"Ziel des Forschungsprojektes ADAPTION ist es, KMU und Unternehmen bei der Migration zum Cyber-physischen System für Produktion und Fertigung zu unterstützen. Gefördert vom BMBF wird ein reifegradbasiertes Vorgehensmodell hierzu entwickelt, das die Ableitung eines individuellen Migrationspfades unter Beachtung von Wirtschaftlichkeitsgesichtspunkten ermöglicht. Der optimale Zielreifegrad wird individuell nach Nutzen und Wirtschaftlichkeit für jedes Unternehmen festgelegt. Das Vorgehensmodell verfolgt einen Ansatz, der die drei betrieblichen Gestaltungsdimensionen Technik, Organisation und Personal berücksichtigt.\n      &#10;Die Aufgabe des Educational Technology Lab in ADAPTION besteht in der Formalisierung und software-technischen Umsetzung eines Reifegrad- und Vorgehensmodell bei der Migration zum Cyber-physischen Produktionssystem. Weiterhin in der Erweiterung eines existierenden Assistenzsystems um digitale Lernszenarien, die für Cyber-physische Produktionssysteme relevant sind. Die Migration wird bei Anwendungspartnern verschiedener Größe (Konzern, KMU) unter realen Bedingungen untersucht, gewonnene Erkenntnisse werden in das allgemeine Vorgehensmodell überführt.\"></textarea>\n      <div class=\"textlink\"><a target=\"_blank\" href=\"http://www.adaption-projekt.de/\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Mehr Info]</a></div><br>\n\n    </div>\n    <br><textarea disabled class =\"textarea ng-invalid-2\" type=\"textarea\"  name=\"item\" placeholder=\"&#10; ADAPTION Tool (ADAPTION) entwickelt ein Selbstbewertungstool für ein Industrie 4.0-Audit, um den vorliegenden Reifegrad zu ermitteln und auf dieser Grundlage den unter wirtschaftlichen Gesichtspunkten optimalen Reifegrad festzulegen. Das Ziel ist die Unterstützung dieses Prozesses:\n          1. Strategische Ausrichtung\n          2. Industrie 4.0 Audit\n          3. Zielstellung\n          4. Maßnahmen-planung\n          5. Evaluation \" ></textarea><br>\n\n  </div>\n\n  <div class=\"col\">\n\n\n    <div class=\"uuidLable\">  <button class=\"newButton\" type=\"button\" (click)=\"createNewUser()\"> neu </button>\n      Willkommen!  Ihre Benutzer_ID ist: <b style=\"color:#EFD9C1; background-color: #8c9ca7; font-weight: 200\">{{cUser.uuid}}</b></div>\n\n    <!--<br><textarea class =\"textarea ng-valid-2\" name=\"item\"-->\n                  <!--placeholder=\"Was ist Ihre Vision?\"  [(ngModel)]=\"cUser.vision\"  ></textarea><br>-->\n    <!--<br><textarea class =\"textarea ng-valid-2\"  name=\"item\"-->\n                  <!--placeholder=\"Was ist Ihre Mission?\"  [(ngModel)]=\"cUser.mission\"  ></textarea><br>-->\n\n    <!--<br><textarea class =\"textarea ng-valid-2\"  name=\"item\"-->\n                  <!--placeholder=\"Was sind Ihre Strategische Ziele? (z.B. für 6 Monate) \" [(ngModel)]=\"cUser.strategy\" ></textarea><br>-->\n\n    <div class=\"input-group\">\n      <div class=\"input-group-prepend\">\n        <span class=\"input-group-text\">Vision: &nbsp; </span>\n      </div>\n      <textarea class=\"form-control\" aria-label=\"Vision:  \" placeholder=\"Was ist Ihre Vision?\"  [(ngModel)]=\"cUser.vision\" ></textarea>\n    </div>\n    <div class=\"input-group\">\n      <div class=\"input-group-prepend\">\n        <span class=\"input-group-text\" >Mission: </span>\n      </div>\n      <textarea class=\"form-control\" aria-label=\"Mission:\"  placeholder=\"Was ist Ihre Mission?\"  [(ngModel)]=\"cUser.mission\"  ></textarea>\n    </div>\n    <div class=\"input-group\">\n      <div class=\"input-group-prepend\">\n        <textarea class=\"zielText\" rows=\"4\" cols=\"12\" disabled>strategische Zielausrichtung: </textarea>\n      </div>\n      <textarea class=\"form-control\" aria-label=\"Ziel:  \"  placeholder=\"Was sind Ihre strategische Ziele? (z.B. für 6 Monate) \" [(ngModel)]=\"cUser.strategy\" ></textarea>\n    </div>\n\n    <div class=\"video\">\n      <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/kQLbVVPNTMQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>\n    </div>\n\n  </div>\n\n  <!--<div> current User vision: {{cUser.vision}} </div>-->\n  <!--<div> current User mission : {{cUser.mission}} </div>-->\n  <!--<div> current User mission : {{cUser.strategy}} </div>-->\n</div>\n\n"
 
 /***/ }),
 
@@ -2813,7 +2826,7 @@ var StartComponent = /** @class */ (function () {
                     console.log('... resSTR: ', resSTR);
                     _this.loadUser = JSON.parse(resSTR);
                     _this.slist = _this.loadUser.kriterienList;
-                    _this.cUser.uuid = _this.loadUser.id;
+                    _this.cUser.uuid = _this.loadUser.uuid;
                     _this.cUser.vision = _this.loadUser.vision;
                     _this.cUser.mission = _this.loadUser.mission;
                     _this.cUser.strategy = _this.loadUser.strategy;
@@ -2822,7 +2835,6 @@ var StartComponent = /** @class */ (function () {
                     console.log('... vision: ', _this.cUser.vision);
                     _this.vision = _this.loadUser.vision;
                     console.log('... uuid of cUser: ', _this.cUser.uuid);
-                    // alert('file content = \n' + this.slist[0].kriterium_id + '  length:' + this.slist.length);
                     _this._userService.changeUser(_this.cUser);
                     _this._data.changeGoal(_this.slist);
                 }

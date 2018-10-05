@@ -18,7 +18,7 @@
     <!--<div >Your favorite season is: {{selectedAll}}</div>-->
 
 
-    <div *ngIf="selectedAll==='selected'">
+    <div *ngIf="selectedAll==='auswählen'">
     <div class ="form-group" *ngFor="let modell of modells | sortArr:'_id': 'ascending'; let i = index;">
       <div *ngIf="modell.isSelected">
         <label title="click to see description" (click)="showBeschreibung(i)" >{{modell._id}}. {{modell.Kriterium}}</label>
@@ -30,7 +30,7 @@
     </div>
 
 
-    <div *ngIf="selectedAll==='all'">
+    <div *ngIf="selectedAll==='alle'">
     <div class ="form-group" *ngFor="let modell of modells | sortArr:'_id': 'ascending'; let i = index;">
         <label title="click to see description" (click)="showBeschreibung(i)" >{{modell._id}}. {{modell.Kriterium}}</label>
         <p class="hange" *ngIf="i === 9 && getCheckState(modell)"> "Zusammenhängende: 46, 27, 28"</p>

@@ -6,6 +6,8 @@ import {Observable} from "rxjs";
 import {EvaluationComponent} from "./evaluation/evaluation.component";
 import {DataService} from "./data.service";
 import {UserService} from "./user.service";
+import {NewUser} from "./newuser";
+import {v4 as uuid} from "uuid";
 
 @Component({
   selector: 'app-root',
@@ -39,16 +41,22 @@ export class AppComponent implements OnInit {
       if (result == 'confirm') {
         // this._data.exportJson(this.sms, this.currUser);
         this._data.downloadAsPDF(this.sms, this.currUser);
-        this.authService.logout();
+       // this.authService.logout();
       };
 
-      if (result == 'cancel') {
-        // to clean up the cache before logout
-        this.sms = [];
-        this._data.changeGoal(this.sms);
+      // if (result == 'cancel') {
+      // to clean up the cache before logout
+      this.sms = [];
+      this._data.changeGoal(this.sms);
+      this.currUser.uuid = uuid();
+      this.currUser.mission = '';
+      this.currUser.vision = '';
+      this.currUser.strategy = '';
+      this.currUser.kriterienList = [];
+      this._userService.changeUser( this.currUser );
 
-        this.authService.logout();
-      }
+      this.authService.logout();
+     // }
 
     });
   }

@@ -11,7 +11,9 @@
     <!--<input matInput type="number" placeholder="1" min="1" max="42" [(ngModel)]="ClickedSelectedModel.priority"/>-->
     <div class="prioritySection">
     <!--<mat-form-field>-->
-      <mat-select  [(value)]="priorityLevels.values[ClickedSelectedModel.priority]" (selectionChange)="changePri($event)">
+      <!--<mat-select  [(value)]="priorityLevels.values[ClickedSelectedModel.priority]" (selectionChange)="changePri($event)">-->
+        <mat-select  [value]="ClickedSelectedModel.prioirtyNum.toString()" (selectionChange)="changePri($event)">
+
         <mat-option (onSelectionChange)="changePri($event)" *ngFor="let level of priorityLevels" [value]="level.value">
           {{ level.viewValue }}
         </mat-option>

@@ -9,6 +9,7 @@ import { MassnahmenComponent } from "../massnahmen/massnahmen.component";
 import {SelectedModel} from "../selectedModel";
 import {ClrviewComponent} from "../clrview/clrview.component";
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {FormControl} from "@angular/forms";
 
 @Component({
   providers:[ MassnahmenComponent ],
@@ -115,6 +116,10 @@ export class EvaluationComponent implements OnInit {
      return this._massna.get_izIDs(cdModel, iz);
   }
 
+  convert( _date){
+    const date_temp = new FormControl(new Date());
+    return date_temp.value;
+  }
 
   preview() {
     const arrForJson = [];

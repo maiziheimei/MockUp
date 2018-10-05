@@ -94,7 +94,7 @@ export class StartComponent implements OnInit {
           this.loadUser = JSON.parse(resSTR);
           this.slist = this.loadUser.kriterienList;
 
-          this.cUser.uuid = this.loadUser.id;
+          this.cUser.uuid = this.loadUser.uuid;
           this.cUser.vision = this.loadUser.vision;
           this.cUser.mission = this.loadUser.mission;
           this.cUser.strategy = this.loadUser.strategy;
@@ -103,7 +103,6 @@ export class StartComponent implements OnInit {
           console.log('... vision: ', this.cUser.vision);
           this.vision = this.loadUser.vision;
           console.log('... uuid of cUser: ', this.cUser.uuid);
-          // alert('file content = \n' + this.slist[0].kriterium_id + '  length:' + this.slist.length);
 
           this._userService.changeUser(this.cUser);
           this._data.changeGoal(this.slist);
@@ -117,7 +116,7 @@ export class StartComponent implements OnInit {
     // alert('json global var has been set to parsed json of this file here it is unevaled = \n' + JSON.stringify(this.json));
   }
 
- createNewUser() {
+ public createNewUser() {
     console.log('... will create a new user: ');
     // this.cUser = new User( uuid(), ' ',  ' ',  ' ',  ' ', []);
     this.cUser.uuid = uuid();

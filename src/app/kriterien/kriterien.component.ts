@@ -26,12 +26,12 @@ export class KriterienComponent implements OnInit {
   lastAction: string;
   hiddenValue = new Array(42).fill(false);
 
-  selectedAll: string = 'all';
+  selectedAll: string = 'alle';
   // shortLong: boolean;
 
   saOptions= [
-    'selected',
-    'all',
+    'auswählen',
+    'alle',
   ];
 
   constructor(private _modellService: ModellService, private  _data: DataService,  private _userService: UserService, private  _clrService: ClrService) { }
@@ -189,11 +189,6 @@ export class KriterienComponent implements OnInit {
 
   }
 
-
-  snycro(){
-
-
-  }
 
   smsExist(kid) {
     if (this.sms.length === 0)  { return false; } else {
