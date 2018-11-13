@@ -1,42 +1,42 @@
 
-<div class="container">
-  <form class="myform">
-    <div id="label1">
-      <label> Welche Kriterien benötigen Sie für Ihre Ziele?  </label>
-    </div>
-    <!--<div id="showAll">-->
-      <!--<label (click)="allParts()"> {{showAll}} </label>-->
-    <!--</div>-->
+<!--<div class="container">-->
+<form class="myform">
+  <div id="label1">
+    <label> Welche Kriterien benötigen Sie für Ihre Ziele?  </label>
+  </div>
+  <!--<div id="showAll">-->
+  <!--<label (click)="allParts()"> {{showAll}} </label>-->
+  <!--</div>-->
 
-    <div id="filter">
+  <div id="filter">
     <mat-radio-group  [(ngModel)]="selectedAll" name="radio">
       <mat-radio-button class="rb" *ngFor="let sa of saOptions" [value]="sa">
         {{sa}}
       </mat-radio-button>
     </mat-radio-group>
-    </div>
-    <!--<div >Your favorite season is: {{selectedAll}}</div>-->
+  </div>
+  <!--<div >Your favorite season is: {{selectedAll}}</div>-->
 
 
-    <div *ngIf="selectedAll==='auswählen'">
+  <div *ngIf="selectedAll==='auswählen'">
     <div class ="form-group" *ngFor="let modell of modells | sortArr:'_id': 'ascending'; let i = index;">
       <div *ngIf="modell.isSelected">
         <label title="click to see description" (click)="showBeschreibung(i)" >{{modell._id}}. {{modell.Kriterium}}</label>
-        <p class="hange" *ngIf="i === 9 && getCheckState(modell)"> "Zusammenhängende: 46, 27, 28"</p>
+        <input class="hange" *ngIf="getCheckState(modell) && !(getDependentKriFromSM(modell) ===null) " [value]="getDependentKriFromSM(modell)" disabled/>
         <mat-checkbox type="checkbox" checked="false" [checked]="getCheckState(modell)" (change)="onChange($event, i, modell)" ></mat-checkbox>
         <textarea [hidden]="!hiddenValue[i]" placeholder=""  rows="5" >{{modell.Beschreibung}}</textarea>
       </div>
     </div>
-    </div>
+  </div>
 
 
-    <div *ngIf="selectedAll==='alle'">
+  <div *ngIf="selectedAll==='alle'">
     <div class ="form-group" *ngFor="let modell of modells | sortArr:'_id': 'ascending'; let i = index;">
-        <label title="click to see description" (click)="showBeschreibung(i)" >{{modell._id}}. {{modell.Kriterium}}</label>
-        <p class="hange" *ngIf="i === 9 && getCheckState(modell)"> "Zusammenhängende: 46, 27, 28"</p>
-        <mat-checkbox type="checkbox" checked="false" [checked]="getCheckState(modell)" (change)="onChange($event, i, modell)" ></mat-checkbox>
-        <textarea [hidden]="!hiddenValue[i]"  placeholder=""  rows="5" >{{modell.Beschreibung}}</textarea>
-      </div>
+      <label title="click to see description" (click)="showBeschreibung(i)" >{{modell._id}}. {{modell.Kriterium}}</label>
+      <input class="hange" *ngIf="getCheckState(modell) && !(getDependentKriFromSM(modell) === null)" [value]="getDependentKriFromSM(modell)" disabled/>
+      <mat-checkbox type="checkbox" checked="false" [checked]="getCheckState(modell)" (change)="onChange($event, i, modell)" ></mat-checkbox>
+      <textarea [hidden]="!hiddenValue[i]"  placeholder=""  rows="5" >{{modell.Beschreibung}}</textarea>
     </div>
-  </form>
-</div>
+  </div>
+</form>
+<!--</div>-->

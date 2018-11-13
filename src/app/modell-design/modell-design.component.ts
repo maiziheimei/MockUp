@@ -1,10 +1,10 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, Inject} from '@angular/core';
 import {Ist, Modell, Ziel} from '../modell';
 import { SelectedModel } from '../selectedModel';
 import {FormControl} from '@angular/forms';
-import {CRLObj, LRObj} from "../ComLR";
+import {AusPair, CRLObj, LRObj, pairObj} from "../ComLR";
 import {ClrviewComponent} from "../clrview/clrview.component";
-import {MatDialog} from "@angular/material";
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material";
 import {DataService} from "../data.service";
 
 @Component({
@@ -108,6 +108,8 @@ export class ModellDesignComponent implements OnInit {
     return iz_list.findIndex(x=> parseInt(x) === c_index)> -1;
   }
 
+
+  // any change with dropdown menu
   onChange(event, optionValue, cIndex) {
     console.log('... hey I am here');
     console.log('... hey option is', this.iz_selects[optionValue], cIndex, this.ClickedSelectedModel.kriterium_id);
@@ -144,10 +146,14 @@ export class ModellDesignComponent implements OnInit {
 
     // testing cretiria_10
     if ( this.ClickedSelectedModel.kriterium_id == 10 && cIndex === 3 ) {
-      const dependency: string = 'Abhängigkeit: 9. Methodik der Fertigungs und Montagesteuerung - Ausprägung 2\n' +
-      '7. Betriebsdatenerfassung - Ausprägung 2\n' +
-      '20. Produktionsstücklisten und Rezepturen - Ausprägung 1\n' +
-      '28. Auswertung von Daten - Ausprägung 1';
+
+      // const dependency: string = 'Abhängigkeit: 9. Methodik der Fertigungs und Montagesteuerung - Ausprägung 2\n' +
+      // '7. Betriebsdatenerfassung - Ausprägung 2\n' +
+      // '20. Produktionsstücklisten und Rezepturen - Ausprägung 1\n' +
+      // '28. Auswertung von Daten - Ausprägung 1';
+
+      const dependency: string = this.getAuspDepen4Ziel(cIndex);
+
       if( optionValue === '2' || optionValue === '3')  {
       console.log('...  getting in here !!');
       this.ClickedSelectedModel.Auspraegung_note[3] = dependency;
@@ -173,11 +179,74 @@ export class ModellDesignComponent implements OnInit {
 
   }
 
+  getAuspDepen4Ziel(fromAusID : number) {
+
+    console.log('.... the.ClickedSelectedModel is', this.ClickedSelectedModel);
+    let noteStr:string = '';
+    let count = 0;
+    let bulb: any = '💡';
+
+    const dependList: AusPair[] = this.ClickedSelectedModel.dependentAusp;
+    if(dependList !== undefined && this.ClickedSelectedModel.dependentAusp !== null){
+      const fromKriID = this.ClickedSelectedModel.kriterium_id;
+      let  tobulb = false;
+
+      for (let dep of dependList) {
+        let toKriID = -1;
+        let toAusID = -1;
+
+        if (!dep.bulb) {// buld:false
+          toKriID = dep.relatedKri_id;
+          const ap: pairObj[] = dep.pair;
+          for (var _i = 0; _i < ap.length; _i++) {
+            if (ap[_i].from === fromAusID) {
+              toAusID = ap[_i].to;
+              tobulb = ap[_i].to_bulb;
+
+              if (toAusID > 0) {
+                count++;
+                let newstr = "Kriterien_" + toKriID + " -> Ausprägung#" + toAusID + "; ";
+                if(ap[_i].to_bulb) {
+                  newstr +=  bulb + "\n";
+                } else {
+                  newstr += "\n";
+                }
+                console.log('.... newstr is: ', newstr);
+                noteStr += newstr;
+                console.log('.... noteStr is: ', noteStr)
+              }
+
+              if (toAusID === -1) {
+                count++;
+                noteStr  += "Kriterien_" + toKriID + "; " + bulb + "\n";
+              }
+
+
+              break;
+            }
+          }
+        }// if dep.bulb === false
+
+      }//loop of dependList
+    }
+
+    if(count >0){
+      noteStr = "Abhängigkeit: ("+count+")\n" + noteStr;
+      console.log('.... final noteStr is: ', noteStr);
+      return noteStr;
+    } else {
+      return null;
+    }
+
+  }
+
+
   // call by onChange
   newZEIT(cIndex) {
     const newZiel = new Ziel();
     newZiel.id = cIndex;
-    newZiel.note = this.ClickedSelectedModel.Auspraegung_note[cIndex];
+    newZiel.note = this.getAuspDepen4Ziel(cIndex);
+    this.ClickedSelectedModel.Auspraegung_note[cIndex] =  newZiel.note ;
     newZiel.content = this.auspraegung[cIndex];
     return newZiel;
   }
@@ -223,44 +292,64 @@ export class ModellDesignComponent implements OnInit {
 
 
   public openDialog3(csModel: SelectedModel): void {
-    console.log('... openDialog2() to test on string this.ClickedSelectedModel.clrlist ' + this.createTreeString(csModel.clrlist));
-    const crlstring = this.createTreeString(csModel.clrlist);
+    if (csModel.clrlist !== undefined && csModel.clrlist !== null) {
+      console.log('... openDialog2() to test on string this.ClickedSelectedModel.clrlist ' + this.createTreeString(csModel.clrlist));
+      const crlstring = this.createTreeString(csModel.clrlist);
 
-    const dialogRef = this.dialog.open(ClrviewComponent, {
-      width: '850px',
-      data: JSON.parse(crlstring)
-    });
+      const dialogRef = this.dialog.open(ClrviewComponent, {
+        width: '850px',
+        data: JSON.parse(crlstring)
+      });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed; name: ' + result);
-    });
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed; name: ' + result);
+      });
+    }else {
+      this.openDialog4();
+    }
   }
 
   public openDialog2(): void {
-    const TestTree_DATA: any = {
-      'D3: Dokumentations- und Lesekompetenzen von Messdaten zz': {
-        'IT-Berufe und IT-Kompetenzen in der Industrie 4.0 zz': 'https://www.bibb.de/veroeffentlichungen/de/publication/show/7833'
-      },
-      'F4: Überwachung und Instandhaltung der vernetzten Systeme': {
-        'Hands on Industrie 4.0: 1.7 Die neue Qualität der Flexibilität': 'https://mooc.house/courses/industrie40-2016/items/7tUdCRZIAGu1GtiUM3GBqG',
-        'Hands on Industrie 4.0: 1.6 Enterprise Internet of Things': 'https://mooc.house/courses/industrie40-2016/items/3ENBLZInxWxpVj4vzcjdzl'
-      }
-    };
+    // const TestTree_DATA: any = {
+    //   'D3: Dokumentations- und Lesekompetenzen von Messdaten zz': {
+    //     'IT-Berufe und IT-Kompetenzen in der Industrie 4.0 zz': 'https://www.bibb.de/veroeffentlichungen/de/publication/show/7833'
+    //   },
+    //   'F4: Überwachung und Instandhaltung der vernetzten Systeme': {
+    //     'Hands on Industrie 4.0: 1.7 Die neue Qualität der Flexibilität': 'https://mooc.house/courses/industrie40-2016/items/7tUdCRZIAGu1GtiUM3GBqG',
+    //     'Hands on Industrie 4.0: 1.6 Enterprise Internet of Things': 'https://mooc.house/courses/industrie40-2016/items/3ENBLZInxWxpVj4vzcjdzl'
+    //   }
+    // };
 
-    console.log('... openDialog2() to test on string this.ClickedSelectedModel.clrlist ' + this.createTreeString(this.ClickedSelectedModel.clrlist));
-    const crlstring = this.createTreeString(this.ClickedSelectedModel.clrlist);
+   // console.log('... openDialog2() to test on string this.ClickedSelectedModel.clrlist ' + this.createTreeString(this.ClickedSelectedModel.clrlist));
+    if (this.ClickedSelectedModel.clrlist !== undefined && this.ClickedSelectedModel.clrlist !== null) {
+      const crlstring = this.createTreeString(this.ClickedSelectedModel.clrlist);
 
+      const dialogRef = this.dialog.open(ClrviewComponent, {
+        width: '850px',
+        // data: { name: this.test_name, animal: this.test_animal }
+        // data: <JSON> TestTree_DATA
+        data: JSON.parse(crlstring)
+      });
 
-    const dialogRef = this.dialog.open(ClrviewComponent, {
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed; name: ' + result);
+        // this.test_animal = result;
+      });
+    } else {
+      this.openDialog4();
+    }
+  }
+
+  public openDialog4(): void {
+    const crlstring = 'keine verwandten Kompetenzen und Lernressourcen ';
+
+    const dialogRef = this.dialog.open(NoKLRDialog, {
       width: '850px',
-      // data: { name: this.test_name, animal: this.test_animal }
-      // data: <JSON> TestTree_DATA
-      data: JSON.parse(crlstring)
+      data: { title: 'Hinweis', text: crlstring }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed; name: ' + result);
-      // this.test_animal = result;
     });
   }
 
@@ -318,3 +407,18 @@ export class ModellDesignComponent implements OnInit {
 
 
 
+@Component({
+  selector: 'noKLR-dialog',
+  templateUrl: 'noKLR-dialog.html',
+})
+export class NoKLRDialog {
+
+  constructor(
+    public dialogRef: MatDialogRef<NoKLRDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+}

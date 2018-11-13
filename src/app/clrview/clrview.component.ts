@@ -77,6 +77,9 @@ export class FileDatabase {
   providers: [FileDatabase]
 })
 export class ClrviewComponent implements OnInit {
+
+  title: string = 'Übersicht der zugehörigen Kompetenzen und Lernressourcen';
+
   nestedTreeControl: NestedTreeControl<FileNode>;
 
   nestedDataSource: MatTreeNestedDataSource<FileNode>;

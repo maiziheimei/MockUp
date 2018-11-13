@@ -8,8 +8,10 @@ import {DataService} from "./data.service";
 import {UserService} from "./user.service";
 import {NewUser} from "./newuser";
 import {v4 as uuid} from "uuid";
+import {MassnahmenComponent} from "./massnahmen/massnahmen.component";
 
 @Component({
+  providers:[ EvaluationComponent,MassnahmenComponent ],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
@@ -22,7 +24,7 @@ export class AppComponent implements OnInit {
 
   continueLogout = false;
 
-  constructor( private authService: AuthService, private dialog: MatDialog, private  _data: DataService, private _userService: UserService ) { }
+  constructor( private authService: AuthService, private dialog: MatDialog, private  _data: DataService, private _userService: UserService, private _evn: EvaluationComponent) { }
 
   ngOnInit() {
     this._data.selectedModels.subscribe(res => this.sms = res);
@@ -36,11 +38,18 @@ export class AppComponent implements OnInit {
   onLogout() {
     // open download-alert dialog
     let dialogRef = this.dialog.open(DownloadAlertComponent);
+
     dialogRef.afterClosed().subscribe(result => {
       // NOTE: The result can also be nothing if the user presses the `esc` key or clicks outside the dialog
       if (result == 'confirm') {
-        // this._data.exportJson(this.sms, this.currUser);
-        this._data.downloadAsPDF(this.sms, this.currUser);
+         this._data.exportJson(this.sms, this.currUser);
+
+         //// ... try to download a pdf
+         // this._evn.ngOnInit();
+         // this._evn.preview();
+         // this._data.print('contentToConvert');
+
+       // this._data.downloadAsPDF(this.sms, this.currUser);
        // this.authService.logout();
       };
 

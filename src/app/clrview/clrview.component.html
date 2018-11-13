@@ -1,6 +1,7 @@
 <h1 style="color: #368AC0" mat-dialog-title>Übersicht der zugehörigen Kompetenzen und Lernressourcen</h1>
 <div mat-dialog-content>
 
+
   <cdk-tree [dataSource]="nestedDataSource" [treeControl]="nestedTreeControl">
     <cdk-nested-tree-node *cdkTreeNodeDef="let node" class="example-tree-node" cdkTreeNodeToggle [cdkTreeNodeToggleRecursive]="true">
       <button mat-icon-button disabled></button>
@@ -25,3 +26,6 @@
 
 
 </div>
+
+
+

@@ -27,7 +27,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*!**************************!*\
   !*** ./src/app/ComLR.ts ***!
   \**************************/
-/*! exports provided: ComLR, LRObj, CRLObj */
+/*! exports provided: ComLR, LRObj, CRLObj, DependencyObj, AusPair, pairObj */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -35,6 +35,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ComLR", function() { return ComLR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LRObj", function() { return LRObj; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CRLObj", function() { return CRLObj; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DependencyObj", function() { return DependencyObj; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AusPair", function() { return AusPair; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pairObj", function() { return pairObj; });
+// competence and learning resource
 var ComLR = /** @class */ (function () {
     function ComLR() {
     }
@@ -51,6 +55,24 @@ var CRLObj = /** @class */ (function () {
     function CRLObj() {
     }
     return CRLObj;
+}());
+
+var DependencyObj = /** @class */ (function () {
+    function DependencyObj() {
+    }
+    return DependencyObj;
+}());
+
+var AusPair = /** @class */ (function () {
+    function AusPair() {
+    }
+    return AusPair;
+}());
+
+var pairObj = /** @class */ (function () {
+    function pairObj() {
+    }
+    return pairObj;
 }());
 
 
@@ -134,7 +156,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "a {\n  color: #B8B8B8;\n}\n\n.header-logout {\n  background-color: #808080;\n  color: #ffffff;\n  height :50px;\n  margin:auto;\n}\n\n.he{\n  float: left;\n  width: 75%;\n}\n\n.app-header{\n  float: right;\n  width: 78%;\n}\n\n.lo{\n  float: left;\n  width: 25%;\n  font-size: 2.4em !important;\n  text-align: -moz-left;\n  font-weight: 400;\n  display: inline;\n}\n\nbutton {\n  background-color: transparent;\n  border-style: hidden;\n}\n\n"
+module.exports = "a {\n  color: #B8B8B8;\n}\n\n.header-logout {\n  background-color: #808080;\n  color: #ffffff;\n  height :50px;\n  margin:auto;\n}\n\n.he{\n  float: left;\n  width: 75%;\n}\n\n.app-header{\n  float: left;\n  width: 90%;\n  margin-right: 85px;\n}\n\n.lo{\n  float: left;\n  width: 15%;\n  font-size: 2.4em !important;\n  text-align: right;\n  font-weight: 400;\n  display: inline;\n}\n\nbutton {\n  background-color: transparent;\n  border-style: hidden;\n}\n\n#menu{\n  background: #808080;\n  color:#fff;\n}\n"
 
 /***/ }),
 
@@ -145,7 +167,7 @@ module.exports = "a {\n  color: #B8B8B8;\n}\n\n.header-logout {\n  background-co
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"header-logout\" *ngIf=\"onOff | async as isLoggedIn\">\n  <div class=\"he\">\n    <app-header class=\"app-header\"></app-header></div>\n    <div class=\"lo\"><button type=\"button\" (click)=\"onLogout()\" *ngIf=\"onOff\">Exit</button></div>\n</div>\n\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>\n\n<div id=\"main-footer\">\n    <a routerLink=\"/impressum\" routerLinkActive=\"active\"> IMPRESSUM & DATENSCHUTZERKLÄRUNG </a>\n</div>\n\n"
+module.exports = "\n<div id=\"menu\">\n<div class=\"container\">\n  <div class=\"header-logout\" *ngIf=\"onOff | async as isLoggedIn\">\n    <div class=\"he\">\n      <app-header class=\"app-header\"></app-header>\n    </div>\n    <div class=\"lo\"><button type=\"button\" (click)=\"onLogout()\" *ngIf=\"onOff\">Exit</button></div>\n  </div>\n</div>\n</div>\n\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>\n\n<div id=\"main-footer\">\n    <a routerLink=\"/impressum\" routerLinkActive=\"active\"> IMPRESSUM & DATENSCHUTZERKLÄRUNG </a>\n</div>\n\n"
 
 /***/ }),
 
@@ -163,10 +185,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _download_alert_download_alert_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./download-alert/download-alert.component */ "./src/app/download-alert/download-alert.component.ts");
 /* harmony import */ var _auth_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./auth/auth.service */ "./src/app/auth/auth.service.ts");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./data.service */ "./src/app/data.service.ts");
-/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./user.service */ "./src/app/user.service.ts");
-/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/index.js");
-/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(uuid__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _evaluation_evaluation_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./evaluation/evaluation.component */ "./src/app/evaluation/evaluation.component.ts");
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./data.service */ "./src/app/data.service.ts");
+/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./user.service */ "./src/app/user.service.ts");
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/index.js");
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(uuid__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _massnahmen_massnahmen_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./massnahmen/massnahmen.component */ "./src/app/massnahmen/massnahmen.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -183,12 +207,15 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var AppComponent = /** @class */ (function () {
-    function AppComponent(authService, dialog, _data, _userService) {
+    function AppComponent(authService, dialog, _data, _userService, _evn) {
         this.authService = authService;
         this.dialog = dialog;
         this._data = _data;
         this._userService = _userService;
+        this._evn = _evn;
         this.sms = [];
         this.continueLogout = false;
     }
@@ -207,8 +234,12 @@ var AppComponent = /** @class */ (function () {
         dialogRef.afterClosed().subscribe(function (result) {
             // NOTE: The result can also be nothing if the user presses the `esc` key or clicks outside the dialog
             if (result == 'confirm') {
-                // this._data.exportJson(this.sms, this.currUser);
-                _this._data.downloadAsPDF(_this.sms, _this.currUser);
+                _this._data.exportJson(_this.sms, _this.currUser);
+                //// ... try to download a pdf
+                // this._evn.ngOnInit();
+                // this._evn.preview();
+                // this._data.print('contentToConvert');
+                // this._data.downloadAsPDF(this.sms, this.currUser);
                 // this.authService.logout();
             }
             ;
@@ -216,7 +247,7 @@ var AppComponent = /** @class */ (function () {
             // to clean up the cache before logout
             _this.sms = [];
             _this._data.changeGoal(_this.sms);
-            _this.currUser.uuid = Object(uuid__WEBPACK_IMPORTED_MODULE_6__["v4"])();
+            _this.currUser.uuid = Object(uuid__WEBPACK_IMPORTED_MODULE_7__["v4"])();
             _this.currUser.mission = '';
             _this.currUser.vision = '';
             _this.currUser.strategy = '';
@@ -228,11 +259,12 @@ var AppComponent = /** @class */ (function () {
     };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            providers: [_evaluation_evaluation_component__WEBPACK_IMPORTED_MODULE_4__["EvaluationComponent"], _massnahmen_massnahmen_component__WEBPACK_IMPORTED_MODULE_8__["MassnahmenComponent"]],
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
         }),
-        __metadata("design:paramtypes", [_auth_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialog"], _data_service__WEBPACK_IMPORTED_MODULE_4__["DataService"], _user_service__WEBPACK_IMPORTED_MODULE_5__["UserService"]])
+        __metadata("design:paramtypes", [_auth_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialog"], _data_service__WEBPACK_IMPORTED_MODULE_5__["DataService"], _user_service__WEBPACK_IMPORTED_MODULE_6__["UserService"], _evaluation_evaluation_component__WEBPACK_IMPORTED_MODULE_4__["EvaluationComponent"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -363,7 +395,8 @@ var AppModule = /** @class */ (function () {
                 _sort_arr_pipe__WEBPACK_IMPORTED_MODULE_32__["SortArrPipe"],
                 _clrview_clrview_component__WEBPACK_IMPORTED_MODULE_33__["ClrviewComponent"],
                 _download_alert_download_alert_component__WEBPACK_IMPORTED_MODULE_36__["DownloadAlertComponent"],
-                _evaluation_evaluation_component__WEBPACK_IMPORTED_MODULE_15__["DialogOverviewExampleDialogComponent"]
+                _evaluation_evaluation_component__WEBPACK_IMPORTED_MODULE_15__["DialogOverviewExampleDialogComponent"],
+                _modell_design_modell_design_component__WEBPACK_IMPORTED_MODULE_13__["NoKLRDialog"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -380,7 +413,7 @@ var AppModule = /** @class */ (function () {
             providers: [_angular_common_http__WEBPACK_IMPORTED_MODULE_17__["HttpClientModule"], _modell_service__WEBPACK_IMPORTED_MODULE_25__["ModellService"], _modell_design_modell_design_component__WEBPACK_IMPORTED_MODULE_13__["ModellDesignComponent"], _data_service__WEBPACK_IMPORTED_MODULE_26__["DataService"], _user_service__WEBPACK_IMPORTED_MODULE_27__["UserService"], _auth_auth_service__WEBPACK_IMPORTED_MODULE_30__["AuthService"], _auth_auth_guard__WEBPACK_IMPORTED_MODULE_29__["AuthGuard"], { provide: _angular_material__WEBPACK_IMPORTED_MODULE_20__["MAT_DATE_LOCALE"], useValue: 'en-GB' },
                 { provide: _angular_core__WEBPACK_IMPORTED_MODULE_2__["LOCALE_ID"], useValue: 'de-DE' },
                 { provide: _angular_material__WEBPACK_IMPORTED_MODULE_20__["MAT_DIALOG_DATA"], useValue: {} }, { provide: _angular_material__WEBPACK_IMPORTED_MODULE_20__["MatDialogRef"], useValue: {} }],
-            entryComponents: [_clrview_clrview_component__WEBPACK_IMPORTED_MODULE_33__["ClrviewComponent"], _download_alert_download_alert_component__WEBPACK_IMPORTED_MODULE_36__["DownloadAlertComponent"], _evaluation_evaluation_component__WEBPACK_IMPORTED_MODULE_15__["DialogOverviewExampleDialogComponent"]],
+            entryComponents: [_clrview_clrview_component__WEBPACK_IMPORTED_MODULE_33__["ClrviewComponent"], _download_alert_download_alert_component__WEBPACK_IMPORTED_MODULE_36__["DownloadAlertComponent"], _evaluation_evaluation_component__WEBPACK_IMPORTED_MODULE_15__["DialogOverviewExampleDialogComponent"], _modell_design_modell_design_component__WEBPACK_IMPORTED_MODULE_13__["NoKLRDialog"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
         })
     ], AppModule);
@@ -538,6 +571,9 @@ var ClrService = /** @class */ (function () {
         this.http.get('assets/learningResource.json')
             .map(function (res) { return res.json(); })
             .subscribe(function (data) { return _this.testdata = data; }, function (err) { return console.log(err); }, function () { return console.log(_this.testdata.length + ' comlearningResource got from local json file'); });
+        this.http.get('assets/dependency.json')
+            .map(function (res) { return res.json(); })
+            .subscribe(function (data) { return _this.dependencies = data; }, function (err) { return console.log(err); }, function () { return console.log(_this.dependencies.length + '  dependencies got from local json file' + _this.dependencies); });
     }
     // to get learning resource of a competence
     ClrService.prototype.getLRObj = function (compt_name) {
@@ -553,6 +589,26 @@ var ClrService = /** @class */ (function () {
             }
         }
         return null;
+    };
+    // to get the Ausprägung Pair of the given kriterien
+    ClrService.prototype.getAusPair = function (kriID) {
+        var deIndex = this.dependencies.findIndex(function (x) { return x.kri_id === kriID; });
+        console.log(kriID + '...  is checked; its index of dependence list:' + deIndex);
+        if (deIndex > -1) {
+            return this.dependencies[deIndex].dependAuspr;
+        }
+        else {
+            return null;
+        }
+    };
+    ClrService.prototype.getDependenType = function (kriID) {
+        var deIndex = this.dependencies.findIndex(function (x) { return x.kri_id === kriID; });
+        if (deIndex > -1) {
+            return this.dependencies[deIndex].dependencyType;
+        }
+        else {
+            return null;
+        }
     };
     ClrService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -585,7 +641,7 @@ module.exports = ".example-tree-invisible {\n  display: none;\n}\n\n\n.example-t
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1 style=\"color: #368AC0\" mat-dialog-title>Übersicht der zugehörigen Kompetenzen und Lernressourcen</h1>\n<div mat-dialog-content>\n\n  <cdk-tree [dataSource]=\"nestedDataSource\" [treeControl]=\"nestedTreeControl\">\n    <cdk-nested-tree-node *cdkTreeNodeDef=\"let node\" class=\"example-tree-node\" cdkTreeNodeToggle [cdkTreeNodeToggleRecursive]=\"true\">\n      <button mat-icon-button disabled></button>\n\n      <a href=\"{{node.type}}\"  target=\"_blank\">\n        -> &nbsp; {{node.filename}}\n      </a>\n    </cdk-nested-tree-node>\n    <cdk-nested-tree-node *cdkTreeNodeDef=\"let node; when: hasNestedChild\" class=\"example-tree-node\">\n      <button mat-icon-button [attr.aria-label]=\"'toggle ' + node.filename\" cdkTreeNodeToggle>\n        <mat-icon class=\"mat-icon-rtl-mirror\">\n          {{nestedTreeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}\n        </mat-icon>\n      </button>\n      {{node.filename}}:  {{node.type}}\n\n      <div [class.example-tree-invisible]=\"nestedTreeControl.isExpanded(node)\">\n        <ng-container cdkTreeNodeOutlet></ng-container>\n      </div>\n    </cdk-nested-tree-node>\n  </cdk-tree>\n\n\n</div>\n"
+module.exports = "<h1 style=\"color: #368AC0\" mat-dialog-title>Übersicht der zugehörigen Kompetenzen und Lernressourcen</h1>\n<div mat-dialog-content>\n\n\n  <cdk-tree [dataSource]=\"nestedDataSource\" [treeControl]=\"nestedTreeControl\">\n    <cdk-nested-tree-node *cdkTreeNodeDef=\"let node\" class=\"example-tree-node\" cdkTreeNodeToggle [cdkTreeNodeToggleRecursive]=\"true\">\n      <button mat-icon-button disabled></button>\n\n      <a href=\"{{node.type}}\"  target=\"_blank\">\n        -> &nbsp; {{node.filename}}\n      </a>\n    </cdk-nested-tree-node>\n    <cdk-nested-tree-node *cdkTreeNodeDef=\"let node; when: hasNestedChild\" class=\"example-tree-node\">\n      <button mat-icon-button [attr.aria-label]=\"'toggle ' + node.filename\" cdkTreeNodeToggle>\n        <mat-icon class=\"mat-icon-rtl-mirror\">\n          {{nestedTreeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}\n        </mat-icon>\n      </button>\n      {{node.filename}}:  {{node.type}}\n\n      <div [class.example-tree-invisible]=\"nestedTreeControl.isExpanded(node)\">\n        <ng-container cdkTreeNodeOutlet></ng-container>\n      </div>\n    </cdk-nested-tree-node>\n  </cdk-tree>\n\n\n</div>\n\n\n\n"
 
 /***/ }),
 
@@ -700,6 +756,7 @@ var ClrviewComponent = /** @class */ (function () {
     function ClrviewComponent(database, treedata) {
         var _this = this;
         this.treedata = treedata;
+        this.title = 'Übersicht der zugehörigen Kompetenzen und Lernressourcen';
         this._getChildren = function (node) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(node.children); };
         this.hasNestedChild = function (_, nodeData) { return !(nodeData.type); };
         this.nestedTreeControl = new _angular_cdk_tree__WEBPACK_IMPORTED_MODULE_0__["NestedTreeControl"](this._getChildren);
@@ -739,6 +796,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_BehaviorSubject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/BehaviorSubject */ "./node_modules/rxjs-compat/_esm5/BehaviorSubject.js");
 /* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.min.js");
 /* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jspdf__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! html2canvas */ "./node_modules/html2canvas/dist/npm/index.js");
+/* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(html2canvas__WEBPACK_IMPORTED_MODULE_3__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -751,16 +810,17 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var DataService = /** @class */ (function () {
     function DataService() {
         // this used to persist the selected models, which will be used by all the other pages
         this.seModels = new rxjs_BehaviorSubject__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]([]);
         this.selectedModels = this.seModels.asObservable();
         this.priorities = [
-            { value: '3', viewValue: 'hoch' },
-            { value: '2', viewValue: 'mittel' },
-            { value: '1', viewValue: 'niedrig' },
-            { value: '0', viewValue: 'keiner' }
+            { value: '3', viewValue: 'HOCH' },
+            { value: '2', viewValue: 'MITTEL' },
+            { value: '1', viewValue: 'NIEDRIG' },
+            { value: '0', viewValue: 'KEINER' }
         ];
     }
     DataService.prototype.changeGoal = function (selectedModels) {
@@ -837,7 +897,7 @@ var DataService = /** @class */ (function () {
         currentUser.kriterienList = arrForJson.map(function (x) { return Object.assign({}, x); });
         var c = JSON.stringify(currentUser, null, '\t');
         var file = new Blob([c], { type: 'text/json' });
-        this.downloadAsJson(file, 'Your_Criteria.json');
+        this.downloadAsJson(file, 'Ihre_Criteria.json');
     };
     DataService.prototype.downloadAsJson = function (blob, filename) {
         if (window.navigator.msSaveOrOpenBlob) { // IE10+
@@ -873,6 +933,81 @@ var DataService = /** @class */ (function () {
         // const jsonStr = JSON.stringify(currentUser, null, '\t');
         doc.save('your_criteria.pdf');
     };
+    // public captureScreen(elementid: string)
+    // {
+    //   this.printPDF();
+    // }
+    //
+    //
+    // printPDF() {
+    //
+    //   var data = document.getElementById('contentToConvert');
+    //   html2canvas(data).then(canvas => {
+    //     // Few necessary setting options
+    //     var imgWidth = 180;
+    //     var pageHeight = 295;
+    //     var imgHeight = canvas.height * imgWidth / canvas.width;
+    //     var heightLeft = imgHeight;
+    //
+    //
+    //     console.log("... canvas.clientHeight is: ",canvas.clientHeight );
+    //     console.log("... canvas.clientWidth is: ",canvas.clientWidth );
+    //     console.log("... canvas.height is: ",canvas.height );
+    //     console.log("... canvas.width is: ",canvas.width );
+    //
+    //     const contentDataURL = canvas.toDataURL('image/png');
+    //     let pdf = new jsPDF('p', 'mm', 'a4'); // A4 size page of PDF
+    //     var position = 2;
+    //     pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
+    //     pdf.save('MYPdf.pdf'); // Generated PDF
+    //   });
+    //
+    // }
+    DataService.prototype.print = function (idstr) {
+        var quotes = document.getElementById('contentToConvert');
+        //var quotes = document.getElementById(idstr);
+        html2canvas__WEBPACK_IMPORTED_MODULE_3__(document.querySelector('#' + idstr)).then(function (canvas) {
+            // document.body.appendChild(canvas);
+            //! MAKE YOUR PDF‚
+            var pdf = new jspdf__WEBPACK_IMPORTED_MODULE_2__('p', 'pt', 'letter');
+            console.log("... quotes.clientHeight is: ", quotes.clientHeight);
+            console.log("... canvas.Height is: ", canvas.height);
+            for (var i = 0; i <= quotes.clientHeight / 980; i++) {
+                //! This is all just html2canvas stuff
+                var srcImg = canvas;
+                var sX = 0;
+                var sY = 980 * i; // start 980 pixels down for every new page
+                var sWidth = 1000;
+                var sHeight = 980;
+                var dX = 0;
+                var dY = 0;
+                var dWidth = 1000;
+                var dHeight = 980;
+                var onePageCanvas = document.createElement("canvas");
+                onePageCanvas.setAttribute('width', '1000');
+                onePageCanvas.setAttribute('height', '980');
+                var ctx = onePageCanvas.getContext('2d');
+                // details on this usage of this function:
+                // https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Using_images#Slicing
+                ctx.drawImage(srcImg, sX, sY, sWidth, sHeight, dX, dY, dWidth, dHeight);
+                // document.body.appendChild(canvas);
+                var canvasDataURL = onePageCanvas.toDataURL("image/png", 1.0);
+                var width = onePageCanvas.width;
+                var height = onePageCanvas.clientHeight;
+                //! If we're on anything other than the first page,
+                // add another page
+                if (i > 0) {
+                    pdf.addPage(612, 791); //8.5" x 11" in pts (in*72)
+                }
+                //! now we declare that we're working on that page
+                pdf.setPage(i + 1);
+                //! now we add content to that page!
+                pdf.addImage(canvasDataURL, 'PNG', 10, 40, (width * .62), (height * .62));
+            }
+            //! after the for loop is finished running, we save the pdf.
+            pdf.save('Adaption_Kriterien.pdf');
+        });
+    };
     DataService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
         __metadata("design:paramtypes", [])
@@ -902,7 +1037,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<mat-dialog-content>\n  <h2>Sobald Sie sich abmelden, werden alle Ihre Daten entfernt. </h2>\n</mat-dialog-content>\n<mat-dialog-actions align=\"end\">\n  <button mat-button matDialogClose=\"confirm\" color=\"primary\">herunterladen(.pdf)</button>\n  <button mat-button matDialogClose=\"cancel\" color=\"warn\">Nein, Danke</button>\n</mat-dialog-actions>\n"
+module.exports = "\n<mat-dialog-content>\n  <h2>Beachtung: sobald Sie sich abmelden, werden alle Ihre Daten entfernt. </h2>\n</mat-dialog-content>\n<mat-dialog-actions align=\"end\">\n  <button mat-button matDialogClose=\"confirm\" color=\"primary\">herunterladen(.json)</button>\n  <button mat-button matDialogClose=\"cancel\" color=\"warn\">Nein, Danke</button>\n</mat-dialog-actions>\n"
 
 /***/ }),
 
@@ -948,7 +1083,7 @@ var DownloadAlertComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1 mat-dialog-title>Vorschau Ihrer Kriterien: </h1>\n<div mat-dialog-content>\n\n    <textarea type=\"text\" maxlength=\"1000000\" style=\"font-family: Arial; font-size: 12pt; width:100%; height: 800px;\" value=\"{{data}} \" disabled>  </textarea>\n\n</div>\n"
+module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n\n    table {\n      width:100%;\n      height:95%;\n    }\n    table, th, td {\n      border: 1px solid black;\n      border-collapse: collapse;\n    }\n    th, td {\n      padding: 15px;\n      text-align: left;\n      font: normal 14px courier !important;\n    }\n\n    td.td01 {\n      padding: 15px;\n      text-align: left;\n      font: normal 16px courier !important;\n      background-color: #d7d7d7;\n    }\n\n    /*table#t01 tr:nth-child(even) {*/\n      /*background-color: #eee;*/\n    /*}*/\n    /*table#t01 tr:nth-child(odd) {*/\n      /*background-color: #fff;*/\n    /*}*/\n\n    table#t01 th {\n      background-color: black;\n      color: white;\n    }\n\n    table.t02 {\n      border: 0px;\n    }\n\n    .printButton {\n      float: right;\n      width: 15%;\n      background-color: #A9B7C0;\n      border: none;\n      color: white;\n      padding: 3px;\n      font-size: medium;\n      margin-left: 15px;\n      margin-right: 15px;\n      margin-top: 5px;\n    }\n\n  </style>\n</head>\n<body>\n\n<div>\n  <input  class=\"printButton\" type=\"button\" value=\"Drucken (.pdf)\" (click)=\"printHtml2PDF()\"/>\n</div>\n\n\n<h1 mat-dialog-title>Vorschau Ihrer Kriterien: </h1>\n\n<div mat-dialog-content >\n\n  <div id=\"contentToConvert\">\n  <table style=\"width:100%\">\n    <tr><td class=\"td01\"  width=\"30%\">Nutzer UUID   </td> <td>{{data.uuid}}</td></tr>\n    <tr><td class=\"td01\"  width=\"30%\">Mission</td> <td  >{{data.mission}}</td></tr>\n    <tr><td class=\"td01\"  width=\"30%\">Vision</td>  <td  >{{data.vision}}</td></tr>\n    <tr><td class=\"td01\"  width=\"30%\">Strategie</td> <td>{{data.strategy}}</td></tr>\n  </table>\n\n  <br style=\"line-height:5vh\">\n  <h2> ausgewählt Kriterien: </h2>\n  <br>\n\n  <div *ngFor=\"let kr of data.kriterienList; index as i\">\n    <table id=\"t01\" border=\"1\" style=\"width:100%\">\n      <tr>\n        <th width=\"63%\">Kriterien_ID: {{kr.kriterium_id}}</th>\n        <td class=\"td01\" width=\"10%\">priority:</td>\n        <td width=\"9%\"> {{kr.priority}}</td>\n        <td class=\"td01\" width=\"10%\">isEvaluated</td>\n        <td width=\"8%\">{{kr.isEvaluated}}</td>\n      </tr>\n    </table>\n\n    <table style=\"width:100%\">\n      <tr><td class=\"td01\"  width=\"30%\">Kriterium</td><td >{{kr.kriterium}}</td></tr>\n      <tr><td class=\"td01\"  width=\"30%\">Korrelierendem Kriterium</td><td  >{{kr.Korkri}}</td>\n      </tr>\n      <tr><td class=\"td01\" >Massnahmen</td><td colspan=\"3\" >{{kr.Massnahmen}}</td></tr>\n      <tr><td class=\"td01\">Notiz</td><td colspan=\"3\" >{{kr.Evaluation_note}}</td></tr>\n    </table>\n\n    <div *ngFor=\"let iste of kr.Iste; index as ii; let l = count\">\n      <table style=\"width:100%\">\n        <tr>\n          <td width=\"12%\" rowspan=\"2\">Ist</td>\n          <td class=\"td01\" width=\"18%\" align=\"center\">Ausprägung {{iste.id}} </td>\n          <td width=\"70%\" align=\"center\">{{iste.content}}</td>\n        </tr>\n        <tr>\n          <td class=\"td01\" width=\"18%\">Notiz</td>\n          <td width=\"70%\" >{{iste.note}}</td>\n        </tr>\n      </table>\n    </div>\n\n    <div *ngFor=\"let ziel of kr.Ziele; index as ii; let l = count\">\n      <table class=\"t02\"  style=\"width:100%\">\n        <tr>\n          <td width=\"12%\" rowspan=\"2\">Ziel</td>\n          <td class=\"td01\" width=\"18%\" align=\"center\">Ausprägung {{ziel.id}} </td>\n          <td  width=\"70%\" align=\"center\">{{ziel.content}}</td>\n        </tr>\n        <tr>\n          <td class=\"td01\" width=\"18%\">Notiz</td>\n          <td width=\"70%\" >{{ziel.note}}</td>\n        </tr>\n      </table>\n    </div>\n\n    <div *ngFor=\"let clr of kr.clrlist; index as ii; let l = count\">\n      <table class=\"t02\" style=\"width:100%\">\n        <tr>\n          <td  width=\"12%\" [attr.rowspan]=\"clr.learningresources.length *2 +1\">Kompetenz</td>\n          <td  > {{clr.competence_name}}</td>\n        </tr>\n\n        <div  *ngFor=\"let lr of clr.learningresources\">\n          <tr>\n            <td  class=\"td01\" width=\"18%\"colspan=\"2\" rowspan=\"2\">Lernressource</td>\n            <td  width=\"70%\">{{lr.lr_id}} : {{lr.lr_name}} </td>\n          </tr>\n          <tr>\n            <td width=\"70%\">{{lr.lr_link}}</td>\n          </tr>\n        </div>\n\n      </table>\n\n    </div>\n\n    <table class=\"t02\" style=\"width:100%\">\n      <tr>\n        <td class=\"td01\" width=\"12%\">Kosten</td>    <td width=\"18%\">{{kr.Kosten | currency:'EUR':true}}</td>\n        <td class=\"td01\" width=\"10%\">Termin</td>    <td width=\"20%\">{{kr.Termin | date: 'dd/MM/yyyy'}}</td>\n        <td class=\"td01\" width=\"18%\">Verantwortlich</td>  <td width=\"22%\">{{kr.Verantwortlich}}</td>\n      </tr>\n    </table>\n\n\n    <br style=\"line-height:5vh\" >\n\n  </div>\n\n\n</div>\n</div>\n\n\n</body>\n</html>\n"
 
 /***/ }),
 
@@ -959,7 +1094,7 @@ module.exports = "<h1 mat-dialog-title>Vorschau Ihrer Kriterien: </h1>\n<div mat
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/*.container{*/\n  /*background-color: #fac9ae;*/\n  /*}*/\n  div.input-group{\n  float: left;\n  width: 88%;\n  /*border: 1px dotted #A9B7C0;*/\n  border-radius: 25px;\n  background: lightgrey;\n  padding: 20px;\n  margin-top: 20px;\n}\n  #label1{\n  float: left;\n  width: 90%;\n}\n  .input-select{\n  float: right;\n  width: 5%;\n  align-content: left;\n  margin-left: 15px;\n  margin-top: 110px;\n}\n  .checkedModel{\n  float: left;\n  width: 60%;\n  margin:2px;\n}\n  .checkedModel input{\n  background-color:#A9B7C0;\n  width:95%;\n  color:black;\n  font-size: medium;\n  font-weight: bold;\n  padding:5px;\n  border:none;\n  margin-bottom: 5px;\n  display: block;\n}\n  .balls{\n  width: 15%;\n  background-color: #d7d7d7;\n  color:darkgrey;\n  height: 30px;\n  margin-right: 10px;\n  font-size: medium;\n  font-weight: bold;\n  text-align: center;\n}\n  .priority{\n  float:right;\n  width: 18%;\n  margin:2px;\n}\n  .priority input{\n  font-size: medium;\n  height: 30px;\n  width: 100%;\n  font-weight: bold;\n  margin-right: 80px;\n  background-color: #d7d7d7;\n  border:none;\n  display: block;\n  text-align: center;\n  padding:5px;\n  margin-bottom: 5px;\n  color:darkgrey;\n}\n  div.input-group.mb-3{\n  float: left;\n  width: 95%;\n  padding: 0px;\n  margin-top: 2px;\n  background: lightgrey;\n}\n  div.input-group-prepend {\n  float: left;\n  width: 15%;\n}\n  .input-group-text{\n  font-size: medium;\n  font-weight: bold;\n  background: lightgrey;\n  color: gray;\n}\n  .form-control{\n  font-size: medium;\n  background: lightgrey;\n  border-style: solid;\n  border-width: 2px;\n}\n  .form-control-2{\n  font-size: medium;\n  background-color: whitesmoke;\n  border-style: none;\n  width: 778px;\n}\n  .mass{\n  float:left;\n  width: 100%;\n  display: block;\n}\n  .mass  textarea{\n  float: left;\n  width: 95%;\n  background-color: #d7d7d7;\n  overflow: hidden;\n  display: block;\n  margin-top: 5px;\n  margin-bottom: 5px;\n  border:1px;\n  font-size: medium;\n  color:darkgrey;\n  font-weight: normal;\n}\n  .KTV-form {\n  min-width: 150px;\n  max-width: 100%;\n  width: 100%;\n  margin-top: 0px;\n}\n  .example-full-width {\n  width: 95%;\n  font-size: medium;\n  font-weight: bold;\n  background-color: #d7d7d7;\n  color:darkgrey;\n}\n  .btn {\n  float: left;\n  width: 15%;\n  background-color: #989898;\n  border: none;\n  color: white;\n  padding: 12px 30px;\n  font-size: medium;\n  cursor: pointer;\n  margin-left: 15px;\n  margin-right: 15px;\n  margin-top: 10px;\n  padding: 3px;\n}\n  /* Darker background on mouse-over */\n  .btn:hover {\n  background-color: #787878;\n}\n  .info{\n  float: left;\n  width: 20%;\n  margin-left: 405px;\n  margin-top: 10px;\n  font-size: medium;\n}\n"
+module.exports = "/*.container{*/\n  /*background-color: #fac9ae;*/\n  /*}*/\n  div.input-group{\n  float: left;\n  width: 90%;\n  /*border: 1px dotted #A9B7C0;*/\n  border-radius: 25px;\n  background: lightgrey;\n  padding: 20px;\n  margin-top: 20px;\n}\n  #label1{\n  float: left;\n  width: 90%;\n}\n  .input-select{\n  float: right;\n  width: 5%;\n  align-content: left;\n  margin-left: 15px;\n  margin-top: 110px;\n}\n  .checkedModel{\n  float: left;\n  width: 50%;\n  margin:2px;\n}\n  .checkedModel input{\n  background-color:#A9B7C0;\n  width:98%;\n  color:black;\n  font-size: medium;\n  font-weight: bold;\n  padding:5px;\n  border:none;\n  margin-bottom: 5px;\n  display: block;\n}\n  .balls{\n  width: 16%;\n  background-color: #E8E8E8;\n  color:darkgrey;\n  height: 34px;\n  margin-top: 2px;\n  margin-right: 5px;\n  font-size: medium;\n  font-weight: bold;\n  text-align: left;\n  padding-top: 5px;\n}\n  .priority{\n  float:right;\n  width: 16%;\n  margin:2px;\n}\n  .priority input{\n  font-size: medium;\n  height: 34px;\n  width: 100%;\n  font-weight: bold;\n  margin-right: 80px;\n  background-color: #E8E8E8;\n  border:none;\n  display: block;\n  text-align: left;\n  padding:5px;\n  margin-bottom: 5px;\n  color:darkgrey;\n}\n  div.input-group.mb-3{\n  float: left;\n  width: 100%;\n  padding: 0px;\n  margin-top: 2px;\n  background: lightgrey;\n}\n  div.input-group-prepend {\n  float: left;\n  width: 15%;\n}\n  .input-group-text{\n  font-size: medium;\n  font-weight: bold;\n  background: lightgrey;\n  color: gray;\n}\n  .form-control{\n  font-size: medium;\n  background: #E8E8E8;\n  border-style: solid;\n  border-width: 2px;\n  width: 80%;\n}\n  .form-control-2{\n  font-size: medium;\n  background-color: whitesmoke;\n  border-style: none;\n  border-width: 2px;\n  width: 85%;\n}\n  /*.mass{*/\n  /*float:left;*/\n  /*width: 100%;*/\n  /*display: block;*/\n  /*}*/\n  /*.mass  textarea{*/\n  /*float: left;*/\n  /*width: 95%;*/\n  /*background-color: #d7d7d7;*/\n  /*overflow: hidden;*/\n  /*display: block;*/\n  /*margin-top: 5px;*/\n  /*margin-bottom: 5px;*/\n  /*border:1px;*/\n  /*font-size: medium;*/\n  /*color:darkgrey;*/\n  /*font-weight: normal;*/\n  /*}*/\n  .KTV-form {\n  min-width: 150px;\n  max-width: 100%;\n  width: 100%;\n  margin-top: 0px;\n}\n  .example-full-width {\n  width: 100%;\n  font-size: medium;\n  font-weight: bold;\n  background-color: #d7d7d7;\n  color:darkgrey;\n}\n  .btn {\n  float: left;\n  width: 15%;\n  background-color: #989898;\n  border: none;\n  color: white;\n  font-size: medium;\n  cursor: pointer;\n  margin-left: 15px;\n  margin-right: 15px;\n  margin-top: 10px;\n  padding: 3px;\n}\n  /* Darker background on mouse-over */\n  .btn:hover {\n  background-color: #787878;\n}\n  .info{\n  float: left;\n  width: 20%;\n  margin-left: 405px;\n  margin-top: 10px;\n  font-size: medium;\n}\n"
 
 /***/ }),
 
@@ -970,7 +1105,7 @@ module.exports = "/*.container{*/\n  /*background-color: #fac9ae;*/\n  /*}*/\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n\n  <div id=\"label1\">\n    <label>Welche Maßnahmen wurden umgesetzt? </label>\n  </div>\n\n  <div>\n    <div class=\"info\"> Sie haben evaluiert {{number}} Kriterien. </div>\n    <button class=\"btn\" (click)=\"preview()\"> Vorschau </button>\n    <button class=\"btn\" (click)=\"save2Json()\"> herunterladen (.json)</button>\n    <!--<a class=\"btn btn-clear\" title=\"Download JSON\" [href]=\"downloadJsonHref\" download=\"download.json\"></a>-->\n  </div>\n  <div *ngFor=\"let cm of sms; index as i\">\n    <div class =\"input-group\">\n      <div class=\"checkedModel\"> <input  disabled type=\"text\" id=\"{{cm.kriterium_id}}\" value=\"{{cm.kriterium_id}}. {{cm.kriterium}}\"></div>\n      <div class=\"balls\"> {{get_izIDs(cm, 'i')}} -> {{get_izIDs(cm, 'z')}}</div>\n      <div class=\"priority\"> <input  type=\"text\" disabled value=\" Priorität: {{cm.priority}}\"></div>\n\n\n      <div class=\"input-group mb-3\">\n        <div class=\"input-group-prepend\">\n          <span class=\"input-group-text\">Maßnahme: </span>\n        </div>\n        <textarea class=\"form-control\" aria-label=\"Maßnahme: \"  value=\"{{cm.Massnahmen}}\"  matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\" disabled></textarea>\n      </div>\n\n      <div class=\"input-group mb-3\">\n        <div class=\"input-group-prepend\">\n          <span class=\"input-group-text\" style=\"color:black\"> Notiz: </span>\n        </div>\n        <textarea class=\"form-control-2\" aria-label=\"Notiz:\" [(ngModel)]=\"cm.Evaluation_note\"  matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\" ></textarea>\n      </div>\n\n\n      <form class=\"KTV-form\">\n        <table class=\"example-full-width\" cellspacing=\"0\">\n          <tr>\n            <td><mat-form-field class=\"example-full-width\" >\n              <input matInput type=\"text\" placeholder=\"Kosten: (EUR)\" value=\"{{ cm.Kosten| currency:'EUR':true}}\" disabled>\n            </mat-form-field></td>\n            <td>\n              <mat-form-field class=\"example-full-width\">\n              <input matInput [matDatepicker]=\"picker2\"  placeholder=\"Termin:\" [value]=\"cm.Termin\" disabled name=\"myDate\">\n                <mat-datepicker-toggle matSuffix [for]=\"picker2\"></mat-datepicker-toggle>\n                <mat-datepicker #picker2 disabled></mat-datepicker>\n            </mat-form-field>\n            </td>\n            <!--<td>-->\n              <!--<mat-form-field>-->\n                <!--<input matInput [matDatepicker]=\"picker3\" placeholder=\"Termin2\" [value]=\"cm.Termin\">-->\n                <!--<mat-datepicker-toggle matSuffix [for]=\"picker3\"></mat-datepicker-toggle>-->\n                <!--<mat-datepicker #picker3 disabled></mat-datepicker>-->\n              <!--</mat-form-field>-->\n            <!--</td>-->\n            <td><mat-form-field class=\"example-full-width\">\n              <input matInput placeholder=\"Verantwortlich:\" maxlength=\"30\" value=\"{{cm.Verantwortlich}}\" disabled>\n            </mat-form-field></td>\n          </tr></table>\n      </form>\n    </div><!--input Group-->\n\n    <div class=\"input-select\" *ngIf=\"sms[i]\">\n    <!--<div class=\"input-select\">-->\n      <mat-checkbox type=\"checkbox\" checked=\"false\" [checked]=\"sms[i].isEvaluated\" (change)=\"onChange($event, i, cm)\" ></mat-checkbox>\n    </div>\n  </div>\n\n\n</div><!--container-->\n"
+module.exports = "<!--<div class=\"container\">-->\n\n  <div id=\"label1\">\n    <label>Welche Maßnahmen wurden umgesetzt? </label>\n  </div>\n\n  <div >\n    <div class=\"info\"> Sie haben evaluiert {{number}} Kriterien. </div>\n    <button class=\"btn\" (click)=\"preview()\"> Vorschau & Drucken </button>\n    <button class=\"btn\" (click)=\"save2Json()\"> herunterladen (.json)</button>\n    <!--<a class=\"btn btn-clear\" title=\"Download JSON\" [href]=\"downloadJsonHref\" download=\"download.json\"></a>-->\n  </div>\n\n<!--<div  id=\"contentToConvert\" >-->\n  <div   *ngFor=\"let cm of sms; index as i\">\n    <div class =\"input-group\">\n      <div class=\"checkedModel\"> <input  disabled type=\"text\" id=\"{{cm.kriterium_id}}\" value=\"{{cm.kriterium_id}}. {{cm.kriterium}}\"></div>\n      <div class=\"balls\">&nbsp;Ist:  {{get_izIDs(cm, 'i')}}</div>\n      <div class=\"balls\">Ziel: {{get_izIDs(cm, 'z')}}</div>\n      <div class=\"priority\"> <input  type=\"text\" disabled value=\" Priorität: {{cm.priority}}\"></div>\n\n\n      <div class=\"input-group mb-3\">\n        <div class=\"input-group-prepend\">\n          <span class=\"input-group-text\">Maßnahme: </span>\n        </div>\n        <textarea class=\"form-control\" aria-label=\"Maßnahme: \"  value=\"{{cm.Massnahmen}}\"  matTextareaAutosize matAutosizeMinRows=\"2\" matAutosizeMaxRows=\"10\" disabled></textarea>\n      </div>\n\n      <div class=\"input-group mb-3\">\n        <div class=\"input-group-prepend\">\n          <span class=\"input-group-text\" style=\"color:black\"> Notiz: </span>\n        </div>\n        <textarea class=\"form-control-2\" aria-label=\"Notiz:\" [(ngModel)]=\"cm.Evaluation_note\"  matTextareaAutosize matAutosizeMinRows=\"2\" matAutosizeMaxRows=\"10\" ></textarea>\n      </div>\n\n\n      <form class=\"KTV-form\">\n        <table class=\"example-full-width\" cellspacing=\"0\">\n          <tr>\n            <td><mat-form-field class=\"example-full-width\" >\n              <input matInput type=\"text\" placeholder=\"Kosten: (€)\" value=\"{{ cm.Kosten| currency:'EUR':true}}\" disabled>\n            </mat-form-field></td>\n            <td>\n              <mat-form-field class=\"example-full-width\">\n              <input matInput [matDatepicker]=\"picker2\"  placeholder=\"Termin:\" [value]=\"cm.Termin\" disabled name=\"myDate\">\n                <mat-datepicker-toggle matSuffix [for]=\"picker2\"></mat-datepicker-toggle>\n                <mat-datepicker #picker2 disabled></mat-datepicker>\n            </mat-form-field>\n            </td>\n            <!--<td>-->\n              <!--<mat-form-field>-->\n                <!--<input matInput [matDatepicker]=\"picker3\" placeholder=\"Termin2\" [value]=\"cm.Termin\">-->\n                <!--<mat-datepicker-toggle matSuffix [for]=\"picker3\"></mat-datepicker-toggle>-->\n                <!--<mat-datepicker #picker3 disabled></mat-datepicker>-->\n              <!--</mat-form-field>-->\n            <!--</td>-->\n            <td><mat-form-field class=\"example-full-width\">\n              <input matInput placeholder=\"Verantwortlich:\" maxlength=\"30\" value=\"{{cm.Verantwortlich}}\" disabled>\n            </mat-form-field></td>\n          </tr></table>\n      </form>\n    </div><!--input Group-->\n\n    <div class=\"input-select\" *ngIf=\"sms[i]\">\n    <!--<div class=\"input-select\">-->\n      <mat-checkbox type=\"checkbox\" checked=\"false\" [checked]=\"sms[i].isEvaluated\" (change)=\"onChange($event, i, cm)\" ></mat-checkbox>\n    </div>\n  </div>\n\n<!--</div>-->\n<!--</div>&lt;!&ndash;container&ndash;&gt;-->\n"
 
 /***/ }),
 
@@ -1111,19 +1246,44 @@ var EvaluationComponent = /** @class */ (function () {
         return date_temp.value;
     };
     EvaluationComponent.prototype.preview = function () {
+        console.log('...1. this.currentUser: ', this.currentUser);
         var arrForJson = [];
         for (var i = 0; i < this.sms.length; i++) {
+            // var deSe: SelectedModel = this.sms[i];
+            // delete deSe.Auspraegung_note;
+            // delete deSe.isselected;
+            // delete deSe.prioirtyNum;
+            // delete deSe.Erklaerung;
+            // arrForJson.push(deSe);
             arrForJson.push(this.sms[i]);
         }
         this.currentUser.kriterienList = arrForJson.map(function (x) { return Object.assign({}, x); });
+        this._userService.changeUser(this.currentUser);
+        console.log('... 2. this.currentUser: ', this.currentUser);
+        // delete this.currentUser.name;
         var objJSON = JSON.stringify(this.currentUser, null, '\t');
         console.log('.... preview json: ', objJSON);
-        this.openDialogPreview(objJSON);
+        // this.openDialogPreview(objJSON);
+        this.openDialogPreviewInTable(this.currentUser);
     };
-    EvaluationComponent.prototype.openDialogPreview = function (TestTree_DATA) {
+    // openDialogPreview( TestTree_DATA: any): void {
+    //
+    //   const dialogRef = this.dialog.open(DialogOverviewExampleDialogComponent, {
+    //     width: '1000px',
+    //    // height: '1000px',
+    //     // data: { name: this.test_name, animal: this.test_animal }
+    //     data: <JSON> TestTree_DATA
+    //   });
+    //
+    //   dialogRef.afterClosed().subscribe(result => {
+    //     console.log('The preview dialog was closed; ');
+    //   });
+    // }
+    EvaluationComponent.prototype.openDialogPreviewInTable = function (TestTree_DATA) {
+        console.log('... TestTree_DATA: ', TestTree_DATA);
         var dialogRef = this.dialog.open(DialogOverviewExampleDialogComponent, {
-            width: '1200px',
-            height: '1000px',
+            width: '1000px',
+            //height: '1000px',
             // data: { name: this.test_name, animal: this.test_animal }
             data: TestTree_DATA
         });
@@ -1144,20 +1304,28 @@ var EvaluationComponent = /** @class */ (function () {
 }());
 
 var DialogOverviewExampleDialogComponent = /** @class */ (function () {
-    function DialogOverviewExampleDialogComponent(dialogRef, data) {
+    function DialogOverviewExampleDialogComponent(dialogRef, _dataService, data) {
         this.dialogRef = dialogRef;
+        this._dataService = _dataService;
         this.data = data;
     }
     DialogOverviewExampleDialogComponent.prototype.onNoClick = function () {
         this.dialogRef.close();
+    };
+    // captureScreenPDF(){
+    //   this._dataService.captureScreen('contentToConvert');
+    // }
+    DialogOverviewExampleDialogComponent.prototype.printHtml2PDF = function () {
+        this._dataService.print('contentToConvert');
     };
     DialogOverviewExampleDialogComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'dialog-overview-example-dialog',
             template: __webpack_require__(/*! ./dialog-overview-example-dialog-component.html */ "./src/app/evaluation/dialog-overview-example-dialog-component.html"),
         }),
-        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_6__["MAT_DIALOG_DATA"])),
-        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialogRef"], Object])
+        __param(2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_6__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialogRef"],
+            _data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"], Object])
     ], DialogOverviewExampleDialogComponent);
     return DialogOverviewExampleDialogComponent;
 }());
@@ -1297,7 +1465,7 @@ var ImpressumComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".myform{\n  width:100%;\n  float:left;\n  padding: 20px;\n}\n\n#close-icon {\n  width:10%;\n}\n\n.myform .form-group{\n  padding: 0;\n  margin: 0;\n}\n\n.myform .smsPart{\n  margin-bottom: 10px;\n  margin-top: 10px;\n  background-color: yellow;\n}\n\n.myform .msPart{\n  margin-bottom: 10px;\n  margin-top: 10px;\n  background-color: greenyellow;\n}\n\n.myform .form-group label{\n  float:left;\n  width: 60%;\n  height: 30px;\n  background-color:#A9B7C0;\n  color:#333;\n  font-weight: bolder;\n  padding:0;\n  border:none;\n  margin-bottom: 20px;\n  margin-top: 15px;\n  font-size: medium;\n  cursor: zoom-in;\n}\n\n.hange {\n  float: left;\n  width:18%;\n  height:30px;\n  background-color: #EFD9C1;\n  font-size: 12px;\n  margin-top: 15px;\n  margin-left: 1px;\n}\n\n.myform .form-group mat-checkbox {\n  float: right;\n  width: 20%;\n  margin-right: -80px;\n  margin-top: 20px;\n  padding: 0;\n}\n\n.fa-check-circle-o{\n  font-size:40px;\n  color:orange;\n  width: 20%;\n  float:right;\n  margin-right: -80px;\n  margin-top: 20px;\n  padding: 0;\n  box-sizing: border-box;\n  position: center;\n}\n\n.fa-check-circle{\n  font-size:40px;\n  color:orange;\n  float:right;\n  width: 20%;\n  box-sizing: border-box;\n  position: center;\n  margin-right: -80px;\n  margin-top: 20px;\n  padding: 0;\n}\n\n.myform .form-group textarea {\n  padding: 8px;\n  width: 75%;\n  border-radius: 0;\n  overflow: hidden;\n  background: #EFD9C1;\n  display: block;\n  border-color: lightgrey;\n  font-size: medium;\n  resize: none;\n  overflow-y: scroll;\n}\n\n.mat-form-field{\n  width:100% !important;\n  border:0;\n  margin:0;\n  padding:0;\n}\n\n#wrapper {\n}\n\n#content {\n  float: left;\n  width: 80%;\n}\n\n#sidebar {\n  float: right;\n  width: 20%;\n  margin-right: -100px;\n  margin-bottom: 0;\n  margin-top: 0;\n}\n\n#cleared {\n  clear: both;\n}\n\n.mat-radio-button  {\n  margin-right: 20px;\n  margin-left: 20px;\n}\n\n.mat-radio-group {\n  float: right;\n  margin-right: 15px;\n}\n\n#filter {\n  float: right;\n  width: 100%;\n  margin-right: 80px;\n}\n\n.rb {\n  font: normal 20px courier !important;\n  color: grey;\n}\n"
+module.exports = ".myform{\n  width:100%;\n  float:left;\n  padding:0px;\n}\n\n#close-icon {\n  width:10%;\n}\n\n.myform .form-group{\n  padding: 0;\n  margin: 0;\n}\n\n.myform .smsPart{\n  margin-bottom: 10px;\n  margin-top: 10px;\n  background-color: yellow;\n}\n\n.myform .msPart{\n  margin-bottom: 10px;\n  margin-top: 10px;\n  background-color: greenyellow;\n}\n\n.myform .form-group label{\n  float:left;\n  width: 60%;\n  height: 30px;\n  background-color:#A9B7C0;\n  color:#333;\n  font-weight: bolder;\n  padding:0;\n  border:none;\n  margin-bottom: 20px;\n  margin-top: 15px;\n  font-size: medium;\n  cursor: zoom-in;\n}\n\n.hange {\n  float: left;\n  width:25%;\n  height:30px;\n  background-color: #EFD9C1;\n  font-size: 12px;\n  margin-top: 15px;\n  margin-left: 1px;\n  border: 0px;\n}\n\n.myform .form-group mat-checkbox {\n  float: right;\n  width: 20%;\n  margin-right: -80px;\n  margin-top: 20px;\n  padding: 0;\n}\n\n.fa-check-circle-o{\n  font-size:40px;\n  color:orange;\n  width: 20%;\n  float:right;\n  margin-right: -80px;\n  margin-top: 20px;\n  padding: 0;\n  box-sizing: border-box;\n  position: center;\n}\n\n.fa-check-circle{\n  font-size:40px;\n  color:orange;\n  float:right;\n  width: 20%;\n  box-sizing: border-box;\n  position: center;\n  margin-right: -80px;\n  margin-top: 20px;\n  padding: 0;\n}\n\n.myform .form-group textarea {\n  padding: 8px;\n  width: 75%;\n  border-radius: 0;\n  overflow: hidden;\n  background: #EFD9C1;\n  display: block;\n  border-color: lightgrey;\n  font-size: medium;\n  resize: none;\n  overflow-y: scroll;\n}\n\n.mat-form-field{\n  width:100% !important;\n  border:0;\n  margin:0;\n  padding:0;\n}\n\n#wrapper {\n}\n\n#content {\n  float: left;\n  width: 80%;\n}\n\n#sidebar {\n  float: right;\n  width: 20%;\n  margin-right: -100px;\n  margin-bottom: 0;\n  margin-top: 0;\n}\n\n#cleared {\n  clear: both;\n}\n\n.mat-radio-button  {\n  margin-right: 20px;\n  margin-left: 20px;\n}\n\n.mat-radio-group {\n  float: right;\n  margin-right: 15px;\n}\n\n#filter {\n  float: right;\n  width: 100%;\n  margin-right: 80px;\n}\n\n.rb {\n  font: normal 20px courier !important;\n  color: grey;\n}\n"
 
 /***/ }),
 
@@ -1308,7 +1476,7 @@ module.exports = ".myform{\n  width:100%;\n  float:left;\n  padding: 20px;\n}\n\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container\">\n  <form class=\"myform\">\n    <div id=\"label1\">\n      <label> Welche Kriterien benötigen Sie für Ihre Ziele?  </label>\n    </div>\n    <!--<div id=\"showAll\">-->\n      <!--<label (click)=\"allParts()\"> {{showAll}} </label>-->\n    <!--</div>-->\n\n    <div id=\"filter\">\n    <mat-radio-group  [(ngModel)]=\"selectedAll\" name=\"radio\">\n      <mat-radio-button class=\"rb\" *ngFor=\"let sa of saOptions\" [value]=\"sa\">\n        {{sa}}\n      </mat-radio-button>\n    </mat-radio-group>\n    </div>\n    <!--<div >Your favorite season is: {{selectedAll}}</div>-->\n\n\n    <div *ngIf=\"selectedAll==='auswählen'\">\n    <div class =\"form-group\" *ngFor=\"let modell of modells | sortArr:'_id': 'ascending'; let i = index;\">\n      <div *ngIf=\"modell.isSelected\">\n        <label title=\"click to see description\" (click)=\"showBeschreibung(i)\" >{{modell._id}}. {{modell.Kriterium}}</label>\n        <p class=\"hange\" *ngIf=\"i === 9 && getCheckState(modell)\"> \"Zusammenhängende: 46, 27, 28\"</p>\n        <mat-checkbox type=\"checkbox\" checked=\"false\" [checked]=\"getCheckState(modell)\" (change)=\"onChange($event, i, modell)\" ></mat-checkbox>\n        <textarea [hidden]=\"!hiddenValue[i]\" placeholder=\"\"  rows=\"5\" >{{modell.Beschreibung}}</textarea>\n      </div>\n    </div>\n    </div>\n\n\n    <div *ngIf=\"selectedAll==='alle'\">\n    <div class =\"form-group\" *ngFor=\"let modell of modells | sortArr:'_id': 'ascending'; let i = index;\">\n        <label title=\"click to see description\" (click)=\"showBeschreibung(i)\" >{{modell._id}}. {{modell.Kriterium}}</label>\n        <p class=\"hange\" *ngIf=\"i === 9 && getCheckState(modell)\"> \"Zusammenhängende: 46, 27, 28\"</p>\n        <mat-checkbox type=\"checkbox\" checked=\"false\" [checked]=\"getCheckState(modell)\" (change)=\"onChange($event, i, modell)\" ></mat-checkbox>\n        <textarea [hidden]=\"!hiddenValue[i]\"  placeholder=\"\"  rows=\"5\" >{{modell.Beschreibung}}</textarea>\n      </div>\n    </div>\n  </form>\n</div>\n"
+module.exports = "\n<!--<div class=\"container\">-->\n<form class=\"myform\">\n  <div id=\"label1\">\n    <label> Welche Kriterien benötigen Sie für Ihre Ziele?  </label>\n  </div>\n  <!--<div id=\"showAll\">-->\n  <!--<label (click)=\"allParts()\"> {{showAll}} </label>-->\n  <!--</div>-->\n\n  <div id=\"filter\">\n    <mat-radio-group  [(ngModel)]=\"selectedAll\" name=\"radio\">\n      <mat-radio-button class=\"rb\" *ngFor=\"let sa of saOptions\" [value]=\"sa\">\n        {{sa}}\n      </mat-radio-button>\n    </mat-radio-group>\n  </div>\n  <!--<div >Your favorite season is: {{selectedAll}}</div>-->\n\n\n  <div *ngIf=\"selectedAll==='auswählen'\">\n    <div class =\"form-group\" *ngFor=\"let modell of modells | sortArr:'_id': 'ascending'; let i = index;\">\n      <div *ngIf=\"modell.isSelected\">\n        <label title=\"click to see description\" (click)=\"showBeschreibung(i)\" >{{modell._id}}. {{modell.Kriterium}}</label>\n        <input class=\"hange\" *ngIf=\"getCheckState(modell) && !(getDependentKriFromSM(modell) ===null) \" [value]=\"getDependentKriFromSM(modell)\" disabled/>\n        <mat-checkbox type=\"checkbox\" checked=\"false\" [checked]=\"getCheckState(modell)\" (change)=\"onChange($event, i, modell)\" ></mat-checkbox>\n        <textarea [hidden]=\"!hiddenValue[i]\" placeholder=\"\"  rows=\"5\" >{{modell.Beschreibung}}</textarea>\n      </div>\n    </div>\n  </div>\n\n\n  <div *ngIf=\"selectedAll==='alle'\">\n    <div class =\"form-group\" *ngFor=\"let modell of modells | sortArr:'_id': 'ascending'; let i = index;\">\n      <label title=\"click to see description\" (click)=\"showBeschreibung(i)\" >{{modell._id}}. {{modell.Kriterium}}</label>\n      <input class=\"hange\" *ngIf=\"getCheckState(modell) && !(getDependentKriFromSM(modell) === null)\" [value]=\"getDependentKriFromSM(modell)\" disabled/>\n      <mat-checkbox type=\"checkbox\" checked=\"false\" [checked]=\"getCheckState(modell)\" (change)=\"onChange($event, i, modell)\" ></mat-checkbox>\n      <textarea [hidden]=\"!hiddenValue[i]\"  placeholder=\"\"  rows=\"5\" >{{modell.Beschreibung}}</textarea>\n    </div>\n  </div>\n</form>\n<!--</div>-->\n"
 
 /***/ }),
 
@@ -1353,7 +1521,9 @@ var KriterienComponent = /** @class */ (function () {
         this._clrService = _clrService;
         // showAll = 'show Selected';
         this.sms = [];
-        this.hiddenValue = new Array(42).fill(false);
+        this.modells = [];
+        this.hiddenValue = new Array(47).fill(false);
+        this.dependencyStr = "Abhängigkeiten: ";
         this.selectedAll = 'alle';
         // shortLong: boolean;
         this.saOptions = [
@@ -1412,20 +1582,32 @@ var KriterienComponent = /** @class */ (function () {
             console.log('... the clr of checked model: ', mod);
         }
     };
+    KriterienComponent.prototype.getKirDependency = function (mod) {
+        var kirID = parseInt(mod._id);
+        var tempDependent = [];
+        tempDependent = this._clrService.getAusPair(kirID);
+        mod.dependentAusp = tempDependent;
+        mod.dependentType = this._clrService.getDependenType(kirID);
+        mod.Korkri = this.getKorrelierendemKriterium(mod);
+        console.log('... the dependecy of checked model: ', mod);
+    };
     // selectedIndex is actually the model ID
-    KriterienComponent.prototype.addItem = function (selectedIndex, kri, clrcontent) {
+    KriterienComponent.prototype.addItem = function (selectedIndex, kri, clrcontent, ausP, deType, kk) {
         var newItem = new _selectedModel__WEBPACK_IMPORTED_MODULE_3__["SelectedModel"]();
         newItem.isselected = true;
         newItem.kriterium = kri;
         newItem.kriterium_id = selectedIndex;
         newItem.clrlist = clrcontent;
+        newItem.dependentAusp = ausP;
+        newItem.dependentType = deType;
+        newItem.Korkri = kk;
         if (this.sms.length === 0) {
             this.sms[0] = newItem;
-            console.log('... to add the checked model: ', selectedIndex);
+            // console.log('... to add the checked model: ', selectedIndex);
         }
         else {
             this.sms.push(newItem);
-            console.log('... to push the checked model: ', selectedIndex);
+            // console.log('... to push the checked model: ', selectedIndex);
         }
         // this.sms[selectedIndex] = true;
         this._data.changeGoal(this.sms);
@@ -1455,11 +1637,70 @@ var KriterienComponent = /** @class */ (function () {
             return false;
         }
     };
+    KriterienComponent.prototype.getDependentKriFromSM = function (model) {
+        var s = '';
+        if (this.getCheckState(model)) {
+            var smodel = this.sms.find(function (x) { return x.kriterium_id === model._id; });
+            //console.log('.... using smodel to get dependency');
+            s = this.getDependentKri(smodel);
+            if (s === null)
+                return null;
+            if (s === undefined)
+                return null;
+            if (s !== null && s !== undefined) {
+                console.log(" ... s: ", s);
+                return s;
+            }
+            else {
+                var ss = this.getDependentKri(model);
+                console.log(" ... ss: ", ss);
+                return ss;
+            }
+        }
+    };
+    KriterienComponent.prototype.getDependentKri = function (model) {
+        // console.log('.... then the smodle: ', model);
+        var allRelatedKriIDs = '';
+        if (model.dependentAusp !== undefined && model.dependentAusp !== null) {
+            for (var _i = 0, _a = model.dependentAusp; _i < _a.length; _i++) {
+                var de = _a[_i];
+                if (de.bulb) {
+                    allRelatedKriIDs += de.relatedKri_id + ", ";
+                }
+            }
+            if (allRelatedKriIDs !== null && allRelatedKriIDs.length !== 0) {
+                var tttp = '💡' + this.dependencyStr + allRelatedKriIDs.substring(0, allRelatedKriIDs.length - 2);
+                console.log(" ... allRelatedKriIDs length: ", allRelatedKriIDs.length, allRelatedKriIDs);
+                console.log(" ... tttp: ", tttp);
+                return tttp;
+            }
+        }
+        else {
+            console.log(" ... sss: ");
+            return null;
+        }
+    };
+    KriterienComponent.prototype.getKorrelierendemKriterium = function (model) {
+        var kkstr = '';
+        if (model.dependentAusp !== undefined && model.dependentAusp !== null) {
+            for (var _i = 0, _a = model.dependentAusp; _i < _a.length; _i++) {
+                var de = _a[_i];
+                if (de.bulb) {
+                    kkstr += de.relatedKri_id + ", ";
+                }
+            }
+        }
+        if (kkstr !== null && kkstr !== '') {
+            return '💡' + kkstr.substring(0, kkstr.length - 2);
+        }
+        else {
+            return null;
+        }
+    };
     KriterienComponent.prototype.onSMSChange = function (event, i, modell) {
     };
     // check or uncheck modell
     KriterienComponent.prototype.onChange = function (event, index, item) {
-        var _this = this;
         // this.lastAction = 'index: ' + index + ', label: ' + item.label + ', checked: ' + item.checked;
         //
         // console.log('before: ', index, event, item);
@@ -1475,38 +1716,39 @@ var KriterienComponent = /** @class */ (function () {
         // retrieve ComLR list
         var mo = this.modells[checkedID];
         this.getCLRObjList(mo);
+        //get this model's dependency
+        this.getKirDependency(mo);
+        this._modellService.changeModel(this.modells);
         if (item.checked) {
             item.isSelected = true;
             if (!this.smsExist(kid)) { // not exist in sms
-                this.addItem(kid, item.Kriterium, item.clrlist); // add
+                this.addItem(kid, item.Kriterium, item.clrlist, item.dependentAusp, item.dependentType, item.Korkri); // add
             }
-            if (kid === '10' || kid === 10) {
-                this.checked10th = true;
-            }
+            // if (kid === '10' || kid === 10) {
+            //   this.checked10th = true;
+            // }
         }
         if (!item.checked) { // uncheck
             item.isSelected = false;
             if (this.smsExist(kid)) {
                 this.removeItem(kid);
             }
-            if (kid === '10' || kid === 10) {
-                this.checked10th = false;
-            }
+            // if (kid === '10' || kid === 10) {
+            //   this.checked10th = false;
+            // }
         }
         this._modellService.changeModel(this.modells);
         this._data.changeGoal(this.sms);
-        console.log('... the persisted sms ...: ', this.sms.length);
-        var _loop_1 = function (i) {
-            var temp = this_1.modells.findIndex(function (x) { return x._id === _this.sms[i].kriterium_id; });
-            if (temp > -1) {
-                this_1.modells[temp].isSelected = true;
-            }
-            console.log(this_1.sms[i].kriterium_id, this_1.sms[i].kriterium, this_1.sms[i].isselected);
-        };
-        var this_1 = this;
-        for (var i = 0; i < this.sms.length; i++) {
-            _loop_1(i);
-        }
+        // console.log('... the persisted sms ...: ', this.sms.length);
+        // for (let i = 0; i < this.sms.length; i++) {
+        //   let temp = this.modells.findIndex(x => x._id === this.sms[i].kriterium_id);
+        //   if(temp > -1){
+        //     this.modells[temp].isSelected  = true;
+        //   }
+        //   // console.log(this.sms[i].kriterium_id, this.sms[i].kriterium, this.sms[i].isselected);
+        //   // console.log('.... model of the persist smodel, item: ', item);
+        //   // console.log('.... model of the persist smodel: ', this.modells[checkedID]);
+        // }
     };
     KriterienComponent.prototype.smsExist = function (kid) {
         if (this.sms.length === 0) {
@@ -1665,7 +1907,7 @@ var LoginComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".input-group{\n  float: left;\n  width: 90%;\n  /*border: 1px dotted #A9B7C0;*/\n  border-radius: 25px;\n  background: lightgrey;\n  padding: 20px;\n  margin-top: 20px;\n}\n\ndiv.input-group.mb-3{\n  float: left;\n  width: 95%;\n  padding: 0px;\n  margin-top: 2px;\n}\n\n.input-group-text{\n  font-size: medium;\n  font-weight: bold;\n}\n\n.form-control{\n  font-size: medium;\n  background-color: #F7F9F9;\n}\n\n.checkedModel{\n  float: left;\n  width: 45%;\n  margin:2px;\n}\n\n.checkedModel input{\n  background-color:#A9B7C0;\n  width:95%;\n  color:#333;\n  font-size: medium;\n  font-weight: bold;\n  padding:5px;\n  border:none;\n  margin-bottom: 5px;\n  display: block;\n}\n\n.smallLable {\n  background-color:#A9B7C0;\n  width:45px;\n  height: 34px;\n  color:#333;\n  font-size: medium;\n  font-weight: bold;\n  padding:5px;\n  border:none;\n  margin-bottom: 0px;\n  margin-left: 15px;\n  display: block;\n}\n\n.balls{\n  width: 15%;\n  background-color: #EFD9C1;\n  height: 30px;\n  margin-right: 30px;\n  font-size: medium;\n  font-weight: bold;\n  text-align: center;\n  cursor: zoom-in;\n}\n\n.numberCircle {\n  width: 15%;\n  display: block;\n  margin-right: 10px;\n  margin-top: 0px;\n  margin-left: 10px;\n  background: #EFD9C1;\n  border-radius: 100%;\n  width: 36px;\n  height: 36px;\n  padding: 3px;\n  border: 2px solid #EFD9C1;\n  color: #808080;\n  text-align: center;\n  font: 24px Arial, sans-serif;\n  cursor: zoom-in;\n}\n\nbutton#help-icon {\n  width: 40px;\n  height: 36px;\n  padding-left: 0px;\n  padding-right: 0px;\n  margin-left: 20px;\n  background-color: transparent;\n  border: none;\n}\n\n.izLable {\n  display: block;\n  margin-top:0px;\n  margin-right: 5px;\n  width: 80px;\n  height: 33px;\n  margin-left: 2px;\n  background: #EFD9C1;\n  text-align: center;\n  font: 18px Arial, sans-serif;\n  color: #808080;\n  padding: 8px;\n}\n\n.diplayContent {\n  padding: 8px;\n  width: 95%;\n  border-radius: 0;\n  overflow: hidden;\n  background: #F2E0CD;\n  display: block;\n  border-color: lightgrey;\n  font-size: medium;\n  resize: vertical;\n  overflow-y: scroll;\n  margin-bottom: 10px;\n  color: black;\n}\n\n.priority{\n  float:right;\n  width: 15%;\n  margin:2px;\n}\n\n.priority input{\n  font-size: medium;\n  width: 100%;\n  height: 34px;\n  margin-left: 10px;\n  font-weight: bold;\n  margin-right: 80px;\n  background-color: #EFD9C1;\n  border:none;\n  display: block;\n  text-align: center;\n  padding:5px;\n  margin-bottom: 5px;\n}\n\n.mass{\n  float:left;\n  width: 100%;\n  display: block;\n}\n\n.mass  textarea{\n  float: left;\n  width: 100%;\n  background-color: #f9f9f9;\n  overflow: hidden;\n  display: block;\n  margin-top: 5px;\n  margin-bottom: 5px;\n  border:1px;\n  font-size: medium;\n}\n\n.KTV-form {\n  min-width: 150px;\n  max-width: 100%;\n  width: 100%;\n  margin-top: 0px;\n}\n\n.example-full-width {\n  width: 95%;\n  font-size: medium;\n  font-weight: bold;\n  background-color: #C7D8C6;\n}\n\n.example2-form {\n  width: 95%;\n}\n\n.example2-full-width {\n  width: 100%;\n  font-size: large;\n  font-weight: bold;\n}\n\n#myCarousel{\n  width: 100%;\n  margin-top: 3px;\n  padding: 10px;\n  background: darkgray;\n  height: 800px;\n}\n\n.carousel-inner{\n  width: 80%;\n}\n\n#myCarousel .carousel-inner .item {\n  width:70%;\n  margin-left: 280px;\n  margin-right: 280px;\n  font-size: medium;\n}\n\n#myCarousel .carousel-inner .left .carousel-control {\n  float: left;\n  margin-left: 0;\n  padding-left: 0;\n}\n\n#myCarousel .carousel-inner .right .carousel-control{\n  float: right;\n  margin-right: 0;\n  padding-right: 0;\n}\n\n.material-icons {\n  font-size: 32px;\n  color: #666666;\n}\n"
+module.exports = ".input-group{\n  float: left;\n  width: 90%;\n  /*border: 1px dotted #A9B7C0;*/\n  border-radius: 25px;\n  background: lightgrey;\n  padding: 20px;\n  margin-top: 20px;\n}\n\ndiv.input-group.mb-3{\n  float: left;\n  width: 95%;\n  padding: 0px;\n  margin-top: 2px;\n}\n\n.input-group-text{\n  font-size: medium;\n  font-weight: bold;\n}\n\n.form-control{\n  font-size: medium;\n  background-color: #F7F9F9;\n}\n\n.checkedModel{\n  float: left;\n  width: 45%;\n  margin:2px;\n}\n\n.checkedModel input{\n  background-color:#A9B7C0;\n  width:100%;\n  color:#333;\n  font-size: medium;\n  font-weight: bold;\n  padding:5px;\n  border:none;\n  margin-bottom: 0px;\n  display: block;\n}\n\n.smallLable {\n  background-color:#A9B7C0;\n  width:45px;\n  height: 34px;\n  color:#333;\n  font-size: medium;\n  font-weight: bold;\n  padding:5px;\n  border:none;\n  margin-top: 2px;\n  margin-bottom: 0px;\n  margin-left: 2px;\n  display: block;\n}\n\n.smallLablePri {\n  background-color:#A9B7C0;\n  width:80px;\n  height: 34px;\n  color:#333;\n  font-size: medium;\n  font-weight: bold;\n  padding:5px;\n  border:none;\n  margin-top: 2px;\n  margin-bottom: 0px;\n  margin-left: 2px;\n  display: block;\n}\n\n.balls{\n  width: 15%;\n  background-color: #EFD9C1;\n  height: 30px;\n  margin-right: 30px;\n  font-size: medium;\n  font-weight: bold;\n  text-align: center;\n  cursor: zoom-in;\n}\n\n.numberCircle {\n  width: 15%;\n  display: block;\n  margin-right: 10px;\n  margin-top: 0px;\n  margin-left: 10px;\n  background: #EFD9C1;\n  border-radius: 100%;\n  width: 36px;\n  height: 36px;\n  padding: 3px;\n  border: 2px solid #EFD9C1;\n  color: #808080;\n  text-align: center;\n  font: 24px Arial, sans-serif;\n  cursor: zoom-in;\n}\n\nbutton#help-icon {\n  width: 40px;\n  height: 36px;\n  padding-left: 0px;\n  padding-right: 0px;\n  margin-left: 5px;\n  background-color: transparent;\n  border: none;\n}\n\n.izLable {\n  display: block;\n  margin-top:0px;\n  margin-right: 5px;\n  width: 110px;\n  height: 33px;\n  margin-left: 2px;\n  background: #EFD9C1;\n  text-align: center;\n  font: 15px Arial, sans-serif;\n  color: #808080;\n  padding: 8px;\n  margin-top: 2px;\n}\n\n.diplayContent {\n  padding: 8px;\n  width: 95%;\n  border-radius: 0;\n  overflow: hidden;\n  background: #F2E0CD;\n  display: block;\n  border-color: lightgrey;\n  font-size: medium;\n  resize: vertical;\n  overflow-y: scroll;\n  margin-bottom: 10px;\n  color: black;\n}\n\n.priority{\n  float:right;\n  width: 7.5%;\n  margin:2px;\n}\n\n.priority input{\n  font-size: medium;\n  width: 100%;\n  height: 34px;\n  margin-left: 0px;\n  font-weight: bold;\n  margin-right: 80px;\n  background-color: #EFD9C1;\n  border:none;\n  display: block;\n  text-align: left;\n  padding:0px;\n  margin-bottom: 5px;\n}\n\n.mass{\n  float:left;\n  width: 100%;\n  display: block;\n}\n\n.mass  textarea{\n  float: left;\n  width: 100%;\n  background-color: #f9f9f9;\n  overflow: hidden;\n  display: block;\n  margin-top: 5px;\n  margin-bottom: 5px;\n  border:1px;\n  font-size: medium;\n}\n\n.KTV-form {\n  min-width: 150px;\n  max-width: 100%;\n  width: 100%;\n  margin-top: 0px;\n}\n\n.example-full-width {\n  width: 95%;\n  font-size: medium;\n  font-weight: bold;\n  background-color: #C7D8C6;\n}\n\n.example2-form {\n  width: 95%;\n}\n\n.example2-full-width {\n  width: 100%;\n  font-size: large;\n  font-weight: bold;\n}\n\n#myCarousel{\n  width: 100%;\n  margin-top: 3px;\n  padding: 10px;\n  background: darkgray;\n  height: 800px;\n}\n\n.carousel-inner{\n  width: 80%;\n}\n\n#myCarousel .carousel-inner .item {\n  width:70%;\n  margin-left: 280px;\n  margin-right: 280px;\n  font-size: medium;\n}\n\n#myCarousel .carousel-inner .left .carousel-control {\n  float: left;\n  margin-left: 0;\n  padding-left: 0;\n}\n\n#myCarousel .carousel-inner .right .carousel-control{\n  float: right;\n  margin-right: 0;\n  padding-right: 0;\n}\n\n.material-icons {\n  font-size: 32px;\n  color: #666666;\n}\n"
 
 /***/ }),
 
@@ -1676,7 +1918,7 @@ module.exports = ".input-group{\n  float: left;\n  width: 90%;\n  /*border: 1px 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n\n  <div id=\"label1\">\n    <label> Welche Maßnahmen sollen die Lücken zwischen Ist- und Ziel-Zuständen schließen? </label>\n  </div>\n\n  <div *ngFor=\"let cm of ssms; index as i\">\n     <!--<div class =\"input-group\" *ngIf=\"sms[i]\">-->\n     <div class =\"input-group\">\n\n         <div class=\"checkedModel\"> <input  disabled type=\"text\" id=\"{{cm.kriterium_id}}\" value=\"{{cm.kriterium_id}}. {{cm.kriterium}}\"></div>\n         <!--<div class=\"balls\" (click)=\"showContent(i)\"> {{cm.ist_id}} -> {{cm.ziel_id}}</div>-->\n         <div><input class=\"smallLable\" disabled type=\"text\" value=\"Ist: \"></div>\n         <div class=\"izLable\" [ngStyle]=\"{'background-color': hiddenShowIst[i]? '#71B7FD' : '#EFD9C1'}\" (click)=\"showIst(i)\">{{get_izIDs(cm, 'i')}}</div>\n\n         <!--<div> <img height=\"30\" width=\"30\" background-color=\"\" src=\"assets/images/arrow1.png\"></div>-->\n         <div><input class=\"smallLable\" disabled type=\"text\" value=\"Ziel: \"></div>\n         <div class=\"izLable\" [ngStyle]=\"{'background-color': hiddenShowZiel[i]? '#a0d878' : '#EFD9C1'}\" (click)=\"showZiel(i)\">{{get_izIDs(cm, 'z')}}</div>\n         <div class=\"priority\"> <input  type=\"text\" disabled value=\" Priorität: {{cm.priority}}\"></div>\n\n       <button id=\"help-icon\" (click)=\"openCLRDialog(cm)\"\n               matTooltip=\"View related competencies and learning resources\"\n               aria-label=\"Button that displays a tooltip when focused or hovered over\">\n         <mat-icon> help </mat-icon>\n       </button>\n\n\n       <textarea disabled style=\"background-color: #71B7FD\" class=\"diplayContent\" [hidden]=\"!hiddenShowIst[i]\" matInput placeholder=\"\" matTextareaAutosize matAutosizeMinRows=\"5\" matAutosizeMaxRows=\"10\"> {{get_izContent(cm, 'i')}}</textarea>\n       <textarea disabled style=\"background-color: #a0d878\" class=\"diplayContent\" [hidden]=\"!hiddenShowZiel[i]\" matInput placeholder=\"\" matTextareaAutosize matAutosizeMinRows=\"5\" matAutosizeMaxRows=\"10\"> {{get_izContent(cm, 'z')}}</textarea>\n\n       <div class=\"input-group mb-3\">\n         <div class=\"input-group-prepend\">\n           <span class=\"input-group-text\">Maßnahme: </span>\n         </div>\n         <textarea class=\"form-control\" aria-label=\"Maßnahme: \"  [(ngModel)]=\"cm.Massnahmen\"  matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\"></textarea>\n       </div>\n\n       <!--<div class=\"input-group mb-3\">-->\n         <!--<div class=\"input-group-prepend\">-->\n           <!--<span class=\"input-group-text\">Erklärung: &nbsp;&nbsp;</span>-->\n         <!--</div>-->\n         <!--<textarea class=\"form-control\" aria-label=\"Erklärung: \" [(ngModel)]=\"cm.Erklaerung\" matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\"></textarea>-->\n       <!--</div>-->\n\n       <div class=\"mass\">\n\n         <form class=\"KTV-form\">\n         <table class=\"example-full-width\" cellspacing=\"0\">\n           <tr>\n              <!--<td><mat-form-field class=\"example-full-width\" >-->\n                <!--<input matInput [(ngModel)]=\"cm.Kosten\" placeholder=\"Kosten: (€)\" [ngModelOptions]=\"{standalone: true}\" (keypress)=\"numberOnly($event)\">-->\n                <!--<mat-hint align=\"end\">Nummer nur</mat-hint>-->\n              <!--</mat-form-field></td>-->\n             <td><mat-form-field class=\"example-full-width\">\n               <input  matInput #box (keyup.enter)=\"update(box.value)\" (blur)=\"update(box.value, cm)\" placeholder=\"Kosten: (€)\" [ngModel]=\"cm.Kosten| currency:'EUR':true\" name=\"money\">\n               <mat-hint align=\"end\">Nummer nur</mat-hint>\n             </mat-form-field></td>\n\n              <td><mat-form-field class=\"example-full-width\">\n                <input matInput [matDatepicker]=\"picker\" placeholder=\"Termin:\" [(ngModel)]=\"cm.Termin\"  [ngModelOptions]=\"{standalone: true}\" >\n                <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n                <mat-datepicker #picker ></mat-datepicker>\n              </mat-form-field></td>\n              <td><mat-form-field class=\"example-full-width\">\n                <input matInput #postalCode maxlength=\"30\" placeholder=\"Verantwortlich\" [(ngModel)]=\"cm.Verantwortlich\" [ngModelOptions]=\"{standalone: true}\" >\n              </mat-form-field></td>\n        </tr></table>\n      </form>\n\n       <!--<div> current Mass {{cm.Massnahmen}} Erk:{{cm.Erklaerung}}  Kost: {{cm.Kosten}} Ver: {{cm.Verantwortlich}} Termin: {{cm.Termin}}</div>-->\n\n     </div><!--input Group-->\n\n\n  </div>\n\n</div>\n\n</div>\n\n\n"
+module.exports = "<!--<div class=\"container\">-->\n\n  <div id=\"label1\">\n    <label> Welche Maßnahmen sollen die Lücken zwischen Ist- und Ziel-Zuständen schließen? </label>\n  </div>\n\n  <div *ngFor=\"let cm of ssms; index as i\">\n     <!--<div class =\"input-group\" *ngIf=\"sms[i]\">-->\n     <div class =\"input-group\">\n\n         <div class=\"checkedModel\"> <input  disabled type=\"text\" id=\"{{cm.kriterium_id}}\" value=\"{{cm.kriterium_id}}. {{cm.kriterium}}\"></div>\n         <!--<div class=\"balls\" (click)=\"showContent(i)\"> {{cm.ist_id}} -> {{cm.ziel_id}}</div>-->\n         <div><input class=\"smallLable\" disabled type=\"text\" value=\"Ist: \"></div>\n         <div class=\"izLable\" [ngStyle]=\"{'background-color': hiddenShowIst[i]? '#71B7FD' : '#EFD9C1'}\" (click)=\"showIst(i)\">{{get_izIDs(cm, 'i')}}</div>\n\n         <!--<div> <img height=\"30\" width=\"30\" background-color=\"\" src=\"assets/images/arrow1.png\"></div>-->\n         <div><input class=\"smallLable\" disabled type=\"text\" value=\"Ziel: \"></div>\n         <div class=\"izLable\" [ngStyle]=\"{'background-color': hiddenShowZiel[i]? '#a0d878' : '#EFD9C1'}\" (click)=\"showZiel(i)\">{{get_izIDs(cm, 'z')}}</div>\n         <div><input class=\"smallLablePri\" disabled type=\"text\" value=\"Priorität: \"></div>\n         <div class=\"priority\"> <input  type=\"text\" disabled value=\"&nbsp;{{cm.priority}}\"></div>\n\n       <button id=\"help-icon\" (click)=\"openCLRDialog(cm)\"\n               matTooltip=\"View related competencies and learning resources\"\n               aria-label=\"Button that displays a tooltip when focused or hovered over\">\n         <mat-icon> help </mat-icon>\n       </button>\n\n\n       <textarea disabled style=\"background-color: #71B7FD\" class=\"diplayContent\" [hidden]=\"!hiddenShowIst[i]\" matInput placeholder=\"\" matTextareaAutosize matAutosizeMinRows=\"5\" matAutosizeMaxRows=\"10\"> {{get_izContent(cm, 'i')}}</textarea>\n       <textarea disabled style=\"background-color: #a0d878\" class=\"diplayContent\" [hidden]=\"!hiddenShowZiel[i]\" matInput placeholder=\"\" matTextareaAutosize matAutosizeMinRows=\"5\" matAutosizeMaxRows=\"10\"> {{get_izContent(cm, 'z')}}</textarea>\n\n       <div class=\"input-group mb-3\">\n         <div class=\"input-group-prepend\">\n           <span class=\"input-group-text\">Maßnahme: </span>\n         </div>\n         <textarea class=\"form-control\" aria-label=\"Maßnahme: \"  [(ngModel)]=\"cm.Massnahmen\"  matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\"></textarea>\n       </div>\n\n       <!--<div class=\"input-group mb-3\">-->\n         <!--<div class=\"input-group-prepend\">-->\n           <!--<span class=\"input-group-text\">Erklärung: &nbsp;&nbsp;</span>-->\n         <!--</div>-->\n         <!--<textarea class=\"form-control\" aria-label=\"Erklärung: \" [(ngModel)]=\"cm.Erklaerung\" matTextareaAutosize matAutosizeMinRows=\"3\" matAutosizeMaxRows=\"15\"></textarea>-->\n       <!--</div>-->\n\n       <div class=\"mass\">\n\n         <form class=\"KTV-form\">\n         <table class=\"example-full-width\" cellspacing=\"0\">\n           <tr>\n              <!--<td><mat-form-field class=\"example-full-width\" >-->\n                <!--<input matInput [(ngModel)]=\"cm.Kosten\" placeholder=\"Kosten: (€)\" [ngModelOptions]=\"{standalone: true}\" (keypress)=\"numberOnly($event)\">-->\n                <!--<mat-hint align=\"end\">Nummer nur</mat-hint>-->\n              <!--</mat-form-field></td>-->\n             <td>\n\n               <mat-form-field class=\"example-full-width\">\n               <input matInput #box (keyup.enter)=\"update(box.value)\" (blur)=\"update(box.value, cm, i)\" placeholder=\"Kosten: (€)\" [ngModel]=\"cm.Kosten| currency:'EUR':'symbol-narrow'\" name=\"Kost\">\n               <mat-hint [ngStyle]=\"{'color': hintText[i]? 'gray' : 'red'}\" align=\"end\" > {{getHintTxt(hintText[i])}}</mat-hint>\n               <!--<mat-error *ngIf=\"Kost.errors.\">-->\n                 <!--falsche Eingabe! Nummer nur.-->\n               <!--</mat-error>-->\n             </mat-form-field>\n\n             </td>\n\n\n              <td><mat-form-field class=\"example-full-width\">\n                <input matInput [matDatepicker]=\"picker\" placeholder=\"Termin:\" [(ngModel)]=\"cm.Termin\"  [ngModelOptions]=\"{standalone: true}\" >\n                <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n                <mat-datepicker #picker ></mat-datepicker>\n              </mat-form-field></td>\n              <td><mat-form-field class=\"example-full-width\">\n                <input matInput #postalCode maxlength=\"30\" placeholder=\"Verantwortlich\" [(ngModel)]=\"cm.Verantwortlich\" [ngModelOptions]=\"{standalone: true}\" >\n              </mat-form-field></td>\n        </tr></table>\n      </form>\n\n       <!--<div> current Mass {{cm.Massnahmen}} Erk:{{cm.Erklaerung}}  Kost: {{cm.Kosten}} Ver: {{cm.Verantwortlich}} Termin: {{cm.Termin}}</div>-->\n\n     </div><!--input Group-->\n\n\n  </div>\n\n</div>\n\n<!--</div>-->\n\n"
 
 /***/ }),
 
@@ -1694,6 +1936,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data.service */ "./src/app/data.service.ts");
 /* harmony import */ var _modell_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modell.service */ "./src/app/modell.service.ts");
 /* harmony import */ var _modell_design_modell_design_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modell-design/modell-design.component */ "./src/app/modell-design/modell-design.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1707,13 +1950,22 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var MassnahmenComponent = /** @class */ (function () {
+    // Kost = new FormControl(null, {
+    //   validators: Validators.pattern("^[0-9.,]*\\s*€?$"),
+    //   updateOn: 'blur'
+    // });
     function MassnahmenComponent(_modellService, _data, mdc) {
         this._modellService = _modellService;
         this._data = _data;
         this.mdc = mdc;
         this.ssms = [];
-        this.money = 13495;
+        // money: number = 13495;
+        // money: FormControl;
+        this.hintCorrect = 'Komma & Nummer nur!';
+        this.hintWrong = 'falsch! Komma & Nummer nur!';
+        this.email = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].email]);
     }
     MassnahmenComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1724,10 +1976,19 @@ var MassnahmenComponent = /** @class */ (function () {
         this._data.changeGoal(this.ssms);
         this.hiddenShowIst = new Array(this.ssms.length).fill(false);
         this.hiddenShowZiel = new Array(this.ssms.length).fill(false);
+        this.hintText = new Array(this.ssms.length).fill(true);
         // console.log('... the passed on sms has ...: ', this.ssms.length);
         // for (let i = 0; i < this.ssms.length; i++) {
         //   console.log(this.ssms[i].kriterium_id, this.ssms[i].kriterium,
         //     this.ssms[i].isselected, this.ssms[i].int_priorty); }
+    };
+    MassnahmenComponent.prototype.getHintTxt = function (tf) {
+        if (tf) {
+            return this.hintCorrect;
+        }
+        else {
+            return this.hintWrong;
+        }
     };
     MassnahmenComponent.prototype.showIst = function (i) {
         if (this.hiddenShowIst[i]) {
@@ -1786,23 +2047,39 @@ var MassnahmenComponent = /** @class */ (function () {
     //   return Number(num);
     // }
     //
-    // validateOnlyNumbers(evt) {
-    //   var theEvent = evt || window.event;
-    //   var key = theEvent.keyCode || theEvent.which;
-    //   key = String.fromCharCode( key );
-    //   var regex = /[0-9]|\./;
-    //   if( !regex.test(key) ) {
-    //     theEvent.returnValue = false;
-    //     if(theEvent.preventDefault) theEvent.preventDefault();
-    //   }
-    // }
-    //
+    MassnahmenComponent.prototype.validateOnlyNumbers = function (evt) {
+        var theEvent = evt || window.event;
+        var key = theEvent.keyCode || theEvent.which;
+        key = String.fromCharCode(key);
+        var regex = /[0-9]|\./;
+        if (!regex.test(key)) {
+            theEvent.returnValue = false;
+            if (theEvent.preventDefault)
+                theEvent.preventDefault();
+        }
+    };
     // valuechange(newValue) {
     //   this.money = newValue;
     //   console.log(newValue)
     // }
-    MassnahmenComponent.prototype.update = function (value, cmodel) {
-        this.money = value;
+    MassnahmenComponent.prototype.update = function (value, cmodel, index) {
+        // if (value.toString().match(/^[0-9]*$/)) {
+        if (value.toString().match(/^[0-9.]*\s*€?$/)) {
+            this.hintText[index] = true;
+            console.log('...... kost is number: ', value);
+            // this.money = value;
+            cmodel.Kosten = value.toString();
+        }
+        else {
+            this.hintText[index] = false;
+            console.log('...... kost is string: ', value);
+            cmodel.Kosten = '';
+            value = '';
+            return value;
+        }
+    };
+    MassnahmenComponent.prototype.update2 = function (value, cmodel) {
+        console.log('...... kost is number: ', value);
         cmodel.Kosten = value.toString();
     };
     MassnahmenComponent.prototype.numberOnly = function (event) {
@@ -1811,6 +2088,14 @@ var MassnahmenComponent = /** @class */ (function () {
             return false;
         }
         return true;
+    };
+    MassnahmenComponent.prototype.checkKost = function (kost) {
+        return (kost.toString().match(/^[0-9]*$/));
+    };
+    MassnahmenComponent.prototype.getErrorMessage = function () {
+        return this.email.hasError('required') ? 'You must enter a value' :
+            this.email.hasError('email') ? 'Not a valid email' :
+                '';
     };
     MassnahmenComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -2093,7 +2378,7 @@ var ModellCenterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".labs{\n  margin-top: 30px;\n  width: 100%;\n  margin-bottom: 10px;\n  position: relative;\n}\n\n#close-icon{\n  float:left;\n  width:5%;\n  margin-right: 10px;\n  margin-left: 2px;\n  margin-top: -10px;\n}\n\n.labs label{\n  float: left;\n  width: 8%;\n  display: block;\n  margin-right: 0;\n  margin-left: 5px;\n  background-color: #EFD9C1;\n  font-size: large;\n  color: #555555;\n  padding:5px;\n  text-align: center;\n}\n\n.labs input[type='text']{\n  float: left;\n  width: 55%;\n  height: 37px;\n  background-color: #A9B7C0;\n  border: 0;\n  font: bold 20px courier !important;\n  padding: 5px;\n  margin-left:10px;\n  margin-right:10px;\n}\n\n.labs input[type='number']{\n  float: left;\n  width: 5%;\n  background-color: #C7D8C6;\n  font-weight: bold;\n  font-size: large;\n  text-align: center;\n  padding:5px;\n  border:0;\n  margin-left: 2px;\n  margin-top: 0px;\n}\n\n.labs mat-form-field {\n  height: 37px;\n}\n\n.labs .mat-form-field-wrapper {\n  float: left;\n  width: 10%;\n  height: 35px;\n}\n\n.prioritySection{\n  float: left;\n  width: 12%;\n  height: 37px;\n  margin-top: 0px;\n  margin-right: 10px;\n  /*font-weight: bold;*/\n  /*font-size: medium;*/\n  /*text-align: center;*/\n  /*padding:5px;*/\n  /*border:0;*/\n  /*margin-left: 2px;*/\n  /*margin-top: 0px;*/\n}\n\n.prioritySection mat-select{\n  height: 37px;\n  font-weight: normal;\n  font-size: medium;\n  text-align: center;\n  padding:0px;\n  border:0;\n  margin-left: 2px;\n  margin-top: 0px;\n}\n\n.labs input[type=number]::-webkit-inner-spin-button,\n.labs input[type=number]::-webkit-outer-spin-button {\n\n  opacity: 1;\n}\n\nbutton.mat-button{\n  width:5%;\n  margin-left: 10px;\n}\n\nbutton#info.mat-button {\n  /*width: 5%;*/\n  float: right;\n  margin-top: -15px;\n}\n\nbutton#help-icon {\n  width: 40px;\n  height: 36px;\n  padding-left: 0px;\n  padding-right: 0px;\n  margin-left: 0px;\n  background-color: transparent;\n  border: none;\n}\n\n/*.mat-icon-button.small {*/\n\n/*width:15%;*/\n\n/*}*/\n\n.mat-card.model-detail.mat-card{\n  float: left;\n  display: block;\n  width:97%;\n  /*height:160px;*/\n  background-color: #A9B7C0;\n  margin-top: 15px;\n  margin-left: 10px;\n  padding-bottom:5px;\n  overflow: no-display;\n}\n\n#model-text {\n  width: 90%;\n  float:left;\n  display: block;\n  background-color: #A9B7C0;\n  border: 0px;\n  margin-bottom: 2px;\n}\n\n/*the following 4 styling is for changing the size of icon*/\n\n.mat-icon-button.small {\n  width: 42px;\n  height: 42px;\n  line-height: 42px;\n}\n\n.mat-icon, .mat-icon-button i {\n  line-height: 36px;\n}\n\n.mat-icon {\n  /*margin-left: 25px;*/\n  width: 36px;\n  height:36px;\n}\n\n.material-icons {\n  font-size: 32px;\n  color: #666666;\n}\n\n#model_note{\n  width: 85%;\n  display: block;\n  margin-top: 20px;\n  margin-bottom: 5px;\n}\n\n.aug-cards{\n  width: 100%;\n}\n\n.aug-cards mat-card-title{\n  align-content: center;\n}\n\n/*.mat-form-field{*/\n\n/*width:95%;*/\n\n/*}*/\n\n/*.mat-form-field-wrapper {*/\n\n/*padding-bottom: -1.25em;*/\n\n/*}*/\n\n.example-card-0, .example-card-3, .example-card-4, .example-card-5, .example-card-6, .example-card-7{\n  float:left;\n  width:23%;\n  align-items: center;\n  display: block;\n  background: lightgrey;\n  margin-top: 15px;\n  margin-left: 10px;\n  margin-right:8px;\n  overflow: no-display;\n  padding-left: 13px;\n  padding-right: 10px;\n  padding-top: 5px;\n  padding-bottom: 2px;\n}\n\n/*.example-card-1{*/\n\n/*float:left;*/\n\n/*width:23%;*/\n\n/*display: block;*/\n\n/*background: #7272fd;*/\n\n/*margin-top: 15px;*/\n\n/*margin-left: 10px;*/\n\n/*margin-right:8px;*/\n\n/*padding-left: 10px;*/\n\n/*padding-right: 10px;*/\n\n/*padding-top: 5px;*/\n\n/*padding-bottom: 2px;*/\n\n/*overflow: no-display;*/\n\n/*}*/\n\n/*.example-card-2{*/\n\n/*float:left;*/\n\n/*width:23%;*/\n\n/*display: block;*/\n\n/*background: #FA8072;*/\n\n/*margin-top: 15px;*/\n\n/*margin-left: 10px;*/\n\n/*margin-right:8px;*/\n\n/*overflow: no-display;*/\n\n/*padding-left: 10px;*/\n\n/*padding-right: 10px;*/\n\n/*padding-top: 5px;*/\n\n/*padding-bottom: 2px;*/\n\n/*}*/\n\n.mat-select{\n  background: #A9B7C0;\n  height: 30px;\n  padding: 2px;\n  width:85%;\n  font-size: large;\n  font-weight: normal;\n  margin:2px;\n}\n\n.mat-card-title {\n  margin-bottom: 5px;\n}\n\n.aus_text{\n  width:95%;\n  background: none;\n  border:none;\n  padding:0;\n}\n\ntextarea{\n  float: left;\n  background: #C7D8C6;\n  width: 100%;\n  /*padding: 2px;*/\n  /*margin:0;*/\n}\n\n.big-note-editor{\n  float: left;\n  width: 100%;\n  margin-top: 5px;\n}\n\n.big-aug_note{\n  float: left;\n  width: 90%;\n  color:  darkblue;\n  font-size: medium;\n  margin-right: 20px;\n}\n\n.big-note-label {\n  float:right;\n  width: 5%;\n}\n\n.note-editor{\n   float: left;\n   width: 100%;\n   margin-top: 5px;\n }\n\n.aug_note{\n  float: left;\n  width: 85%;\n  color:  darkblue;\n  font-size: medium;\n}\n\n.note-label {\n  float:right;\n  width:8%;\n}\n"
+module.exports = ".labs{\n  margin-top: 30px;\n  width: 100%;\n  margin-bottom: 10px;\n  position: relative;\n}\n\n#close-icon{\n  float:left;\n  width:5%;\n  margin-right: 10px;\n  margin-left: 2px;\n  margin-top: -10px;\n}\n\n.labs label{\n  float: left;\n  width: 8%;\n  display: block;\n  margin-right: 0;\n  margin-left: 5px;\n  background-color: #EFD9C1;\n  font-size: large;\n  color: #555555;\n  padding:5px;\n  text-align: center;\n}\n\nlabel#R {\n  float: left;\n  width: 13%;\n  display: block;\n  margin-right: 0;\n  margin-left: 0px;\n  background-color: #EFD9C1;\n  font-size: large;\n  color: #555555;\n  padding:5px;\n  text-align: center;\n}\n\n.labs input[type='text']{\n  float: left;\n  width: 55%;\n  height: 37px;\n  background-color: #A9B7C0;\n  border: 0;\n  font: bold 20px courier !important;\n  padding: 5px;\n  margin-left:0px;\n  margin-right:5px;\n}\n\n.labs input[type='number']{\n  float: left;\n  width: 5%;\n  background-color: #C7D8C6;\n  font-weight: bold;\n  font-size: large;\n  text-align: center;\n  padding:5px;\n  border:0;\n  margin-left: 2px;\n  margin-top: 0px;\n}\n\n.labs mat-form-field {\n  height: 37px;\n}\n\n.labs .mat-form-field-wrapper {\n  float: left;\n  width: 10%;\n  height: 35px;\n}\n\n.prioritySection{\n  float: left;\n  width: 12%;\n  height: 37px;\n  margin-top: 0px;\n  margin-right: 0px;\n  /*font-weight: bold;*/\n  /*font-size: medium;*/\n  /*text-align: center;*/\n  /*padding:5px;*/\n  /*border:0;*/\n  /*margin-left: 2px;*/\n  /*margin-top: 0px;*/\n}\n\n.prioritySection mat-select{\n  height: 37px;\n  font-weight: normal;\n  font-size: medium;\n  text-align: center;\n  padding:5px;\n  border:0;\n  margin-left: 2px;\n  margin-top: 0px;\n}\n\n.labs input[type=number]::-webkit-inner-spin-button,\n.labs input[type=number]::-webkit-outer-spin-button {\n\n  opacity: 1;\n}\n\nbutton.mat-button{\n  width:5%;\n  margin-left: 10px;\n}\n\nbutton#info.mat-button {\n  /*width: 5%;*/\n  float: right;\n  margin-top: -15px;\n}\n\nbutton#help-icon {\n  width: 40px;\n  height: 36px;\n  padding-left: 0px;\n  padding-right: 0px;\n  margin-left: 0px;\n  background-color: transparent;\n  border: none;\n}\n\n/*.mat-icon-button.small {*/\n\n/*width:15%;*/\n\n/*}*/\n\n.mat-card.model-detail.mat-card{\n  float: left;\n  display: block;\n  width:97%;\n  /*height:160px;*/\n  background-color: #A9B7C0;\n  margin-top: 5px;\n  margin-left: 10px;\n  padding-bottom:5px;\n  overflow: no-display;\n}\n\n#model-text {\n  width: 90%;\n  float:left;\n  display: block;\n  background-color: #A9B7C0;\n  border: 0px;\n  margin-bottom: 2px;\n}\n\n/*the following 4 styling is for changing the size of icon*/\n\n.mat-icon-button.small {\n  width: 42px;\n  height: 42px;\n  line-height: 42px;\n}\n\n.mat-icon, .mat-icon-button i {\n  line-height: 36px;\n}\n\n.mat-icon {\n  /*margin-left: 25px;*/\n  width: 36px;\n  height:36px;\n}\n\n.material-icons {\n  font-size: 32px;\n  color: #666666;\n}\n\n#model_note{\n  width: 85%;\n  display: block;\n  margin-top: 20px;\n  margin-bottom: 5px;\n}\n\n.aug-cards{\n  width: 100%;\n}\n\n.aug-cards mat-card-title{\n  align-content: center;\n}\n\n/*.mat-form-field{*/\n\n/*width:95%;*/\n\n/*}*/\n\n/*.mat-form-field-wrapper {*/\n\n/*padding-bottom: -1.25em;*/\n\n/*}*/\n\n.example-card-0, .example-card-3, .example-card-4, .example-card-5, .example-card-6, .example-card-7{\n  float:left;\n  width:23%;\n  align-items: center;\n  display: block;\n  background: lightgrey;\n  margin-top: 15px;\n  margin-left: 10px;\n  margin-right:8px;\n  overflow: no-display;\n  padding-left: 13px;\n  padding-right: 10px;\n  padding-top: 5px;\n  padding-bottom: 2px;\n}\n\n/*.example-card-1{*/\n\n/*float:left;*/\n\n/*width:23%;*/\n\n/*display: block;*/\n\n/*background: #7272fd;*/\n\n/*margin-top: 15px;*/\n\n/*margin-left: 10px;*/\n\n/*margin-right:8px;*/\n\n/*padding-left: 10px;*/\n\n/*padding-right: 10px;*/\n\n/*padding-top: 5px;*/\n\n/*padding-bottom: 2px;*/\n\n/*overflow: no-display;*/\n\n/*}*/\n\n/*.example-card-2{*/\n\n/*float:left;*/\n\n/*width:23%;*/\n\n/*display: block;*/\n\n/*background: #FA8072;*/\n\n/*margin-top: 15px;*/\n\n/*margin-left: 10px;*/\n\n/*margin-right:8px;*/\n\n/*overflow: no-display;*/\n\n/*padding-left: 10px;*/\n\n/*padding-right: 10px;*/\n\n/*padding-top: 5px;*/\n\n/*padding-bottom: 2px;*/\n\n/*}*/\n\n.mat-select{\n  background: #A9B7C0;\n  height: 30px;\n  padding: 2px;\n  width:90%;\n  font-size: large;\n  font-weight: normal;\n  margin:2px;\n}\n\n.mat-card-title {\n  margin-bottom: 5px;\n}\n\n.aus_text{\n  width:95%;\n  background: none;\n  border:none;\n  padding:0;\n}\n\ntextarea{\n  float: left;\n  background: #C7D8C6;\n  width: 100%;\n  /*padding: 2px;*/\n  /*margin:0;*/\n}\n\n.big-note-editor{\n  float: left;\n  width: 100%;\n  margin-top: 5px;\n}\n\n.big-aug_note{\n  float: left;\n  width: 90%;\n  color:  darkblue;\n  font-size: medium;\n  margin-right: 20px;\n}\n\n.big-note-label {\n  float:right;\n  width: 5%;\n}\n\n.note-editor{\n   float: left;\n   width: 100%;\n   margin-top: 5px;\n }\n\n.aug_note{\n  float: left;\n  width: 90%;\n  color:  darkblue;\n  font-size: small;\n}\n\n.note-label {\n  float:right;\n  width:8%;\n}\n\n.multi_lines_text {\n  float: left;\n  width: 85%;\n  color:  darkblue;\n  font-size: medium;\n  white-space: pre-line;\n}\n"
 
 /***/ }),
 
@@ -2104,7 +2389,7 @@ module.exports = ".labs{\n  margin-top: 30px;\n  width: 100%;\n  margin-bottom: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" xmlns=\"http://www.w3.org/1999/html\">\n<!--<div> current Priority {{ClickedSelectedModel.priority}} Ist: {{ClickedSelectedModel.ist_id}} Ziel: {{ClickedSelectedModel.ziel_id}}</div>-->\n\n  <div class=\"labs\">\n    <!--<a mat-icon-button id=\"close-icon\" (click)=\"closeBlock()\"><mat-icon> clear </mat-icon></a>-->\n    <a mat-icon-button id=\"close-icon\" (click)=\"closeBlock()\"><img src=\"assets/images/saveback.png\" width=\"50\" height=\"50\"></a>\n    <label id=\"R\"> Relevant</label>\n    <input type=\"text\" [(ngModel)]=\" ClickedModell._id + '. ' + ClickedModell.Kriterium\">\n\n    <label> Priorität: </label>\n    <!--<input matInput type=\"number\" placeholder=\"1\" min=\"1\" max=\"42\" [(ngModel)]=\"ClickedSelectedModel.priority\"/>-->\n    <div class=\"prioritySection\">\n    <!--<mat-form-field>-->\n      <!--<mat-select  [(value)]=\"priorityLevels.values[ClickedSelectedModel.priority]\" (selectionChange)=\"changePri($event)\">-->\n        <mat-select  [value]=\"ClickedSelectedModel.prioirtyNum.toString()\" (selectionChange)=\"changePri($event)\">\n\n        <mat-option (onSelectionChange)=\"changePri($event)\" *ngFor=\"let level of priorityLevels\" [value]=\"level.value\">\n          {{ level.viewValue }}\n        </mat-option>\n      </mat-select>\n    <!--</mat-form-field>-->\n    </div>\n\n    <button id=\"help-icon\"  (click)=\"openDialog2()\"\n            matTooltip=\"View related compentences and learning resources\"\n            aria-label=\"Button that displays a tooltip when focused or hovered over\">\n      <mat-icon> help </mat-icon>\n    </button>\n  </div>\n\n  <mat-card class=\"model-detail\">\n    <mat-card-content>\n      <textarea id=\"model-text\" rows=\"3\">{{ClickedModell.Beschreibung}}</textarea>\n      <!--<a mat-icon-button class=\"small\"><mat-icon> info </mat-icon></a>-->\n      <button mat-button id=\"info\"\n              matTooltip=\"More info about this\"\n              aria-label=\"Button that displays a tooltip when focused or hovered over\">\n        <mat-icon> info </mat-icon>\n      </button>\n\n      <div class=\"big-note-editor\">\n        <mat-icon class=\"big-note-label\" (click)=\"showNote(8)\"> edit </mat-icon>\n        <textarea class=\"big-aug_note\" title=\"edit note\"  matInput [rows]=\"hiddeRow[8]\" placeholder=\"Notiz\" [(ngModel)]= \"ClickedSelectedModel.Kriterium_note\"> </textarea>\n      </div>\n    </mat-card-content>\n  </mat-card>\n\n  <mat-card class=\"example-card-0\" [ngStyle]=\"{'background': getBColor(niz[ind])}\" *ngFor=\" let au of auspraegung; index as ind\" >\n    <mat-card-header>\n      <mat-card-title><h3> Ausprägung {{ind}}</h3></mat-card-title>\n    </mat-card-header>\n    <mat-card-content>\n      <textarea class=\"aus_text\"  rows=\"4\" disabled> {{au}} </textarea>\n      <mat-select [value]=\"niz[ind]\"  #device (selectionChange)=\"onChange($event, device.value, ind)\">\n        <mat-option value=\"0\">Keine</mat-option>\n        <mat-option value=\"1\">Ist</mat-option>\n        <mat-option value=\"2\">Ziel</mat-option>\n        <mat-option value=\"3\">Ist+Ziel</mat-option>\n      </mat-select>\n      <div class=\"note-editor\">\n        <mat-icon class=\"note-label\" (click)=\"showNote(ind)\"> edit </mat-icon>  <!--<label class=\"note-label\" (click)=\"showNote(ind)\" > {{noteOnLabel}}</label>-->\n        <textarea class=\"aug_note\" title=\"edit note\"  placeholder=\"Notiz\"   matInput  [rows]=\"hiddeRow[ind]\" [(ngModel)]=\"ClickedSelectedModel.Auspraegung_note[ind]\"></textarea>\n      </div>\n    </mat-card-content>\n  </mat-card>\n\n\n  </div>\n<!--</div>-->\n\n\n\n\n\n\n\n\n\n\n"
+module.exports = "<div class=\"container\" xmlns=\"http://www.w3.org/1999/html\">\n<!--<div> current Priority {{ClickedSelectedModel.priority}} Ist: {{ClickedSelectedModel.ist_id}} Ziel: {{ClickedSelectedModel.ziel_id}}</div>-->\n\n  <div class=\"labs\">\n    <!--<a mat-icon-button id=\"close-icon\" (click)=\"closeBlock()\"><mat-icon> clear </mat-icon></a>-->\n    <a mat-icon-button id=\"close-icon\" (click)=\"closeBlock()\"><img src=\"assets/images/saveback.png\" width=\"50\" height=\"50\"></a>\n\n    <input type=\"text\" [(ngModel)]=\" ClickedModell._id + '. ' + ClickedModell.Kriterium\">\n\n    <label> Priorität: </label>\n    <!--<input matInput type=\"number\" placeholder=\"1\" min=\"1\" max=\"42\" [(ngModel)]=\"ClickedSelectedModel.priority\"/>-->\n    <div class=\"prioritySection\">\n    <!--<mat-form-field>-->\n      <!--<mat-select  [(value)]=\"priorityLevels.values[ClickedSelectedModel.priority]\" (selectionChange)=\"changePri($event)\">-->\n        <mat-select  [value]=\"ClickedSelectedModel.prioirtyNum.toString()\" (selectionChange)=\"changePri($event)\">\n\n        <mat-option (onSelectionChange)=\"changePri($event)\" *ngFor=\"let level of priorityLevels\" [value]=\"level.value\">\n          {{ level.viewValue }}\n        </mat-option>\n      </mat-select>\n    <!--</mat-form-field>-->\n    </div>\n    <label id=\"R\"> Kompetenz: </label>\n\n    <button id=\"help-icon\"  (click)=\"openDialog2()\"\n            matTooltip=\"View related compentences and learning resources\"\n            aria-label=\"Button that displays a tooltip when focused or hovered over\">\n      <mat-icon> help </mat-icon>\n    </button>\n  </div>\n\n  <mat-card class=\"model-detail\">\n    <mat-card-content>\n      <textarea id=\"model-text\" rows=\"3\">{{ClickedModell.Beschreibung}}</textarea>\n      <!--<a mat-icon-button class=\"small\"><mat-icon> info </mat-icon></a>-->\n      <button mat-button id=\"info\"\n              matTooltip=\"More info about this\"\n              aria-label=\"Button that displays a tooltip when focused or hovered over\">\n        <mat-icon> info </mat-icon>\n      </button>\n\n      <div class=\"big-note-editor\">\n        <mat-icon class=\"big-note-label\" (click)=\"showNote(8)\"> edit </mat-icon>\n        <textarea class=\"big-aug_note\" title=\"edit note\"  matInput [rows]=\"hiddeRow[8]\" placeholder=\"Notiz\" [(ngModel)]= \"ClickedSelectedModel.Kriterium_note\"> </textarea>\n      </div>\n    </mat-card-content>\n  </mat-card>\n\n  <mat-card class=\"example-card-0\" [ngStyle]=\"{'background': getBColor(niz[ind])}\" *ngFor=\" let au of auspraegung; index as ind\" >\n    <mat-card-header>\n      <mat-card-title><h3> Ausprägung {{ind}}</h3></mat-card-title>\n    </mat-card-header>\n    <mat-card-content>\n      <textarea class=\"aus_text\"  rows=\"4\" disabled> {{au}} </textarea>\n      <mat-select [value]=\"niz[ind]\"  #device (selectionChange)=\"onChange($event, device.value, ind)\">\n        <mat-option value=\"0\">Keine</mat-option>\n        <mat-option value=\"1\">Ist</mat-option>\n        <mat-option value=\"2\">Ziel</mat-option>\n        <mat-option value=\"3\">Ist+Ziel</mat-option>\n      </mat-select>\n      <div class=\"note-editor\">\n        <mat-icon class=\"note-label\" (click)=\"showNote(ind)\"> edit </mat-icon>  <!--<label class=\"note-label\" (click)=\"showNote(ind)\" > {{noteOnLabel}}</label>-->\n        <textarea class=\"aug_note\" title=\"edit note\"  placeholder=\"Notiz\"   matInput  [rows]=\"hiddeRow[ind]\" [(ngModel)]=\"ClickedSelectedModel.Auspraegung_note[ind]\"></textarea>\n      </div>\n      <!--<div class=\"note-editor\">-->\n        <!--<mat-icon class=\"note-label\" (click)=\"showNote(ind)\"> edit </mat-icon>  &lt;!&ndash;<label class=\"note-label\" (click)=\"showNote(ind)\" > {{noteOnLabel}}</label>&ndash;&gt;-->\n        <!--<textarea class=\"multi_lines_text\" title=\"edit note\"  placeholder=\"Notiz\"   matInput  [rows]=\"hiddeRow[ind]\" [(ngModel)]=\"ClickedSelectedModel.Auspraegung_note[ind]\"></textarea>-->\n        <!--&lt;!&ndash;<pre [(ngModel)]=\"ClickedSelectedModel.Auspraegung_note[ind]\"></pre>&ndash;&gt;-->\n      <!--</div>-->\n    </mat-card-content>\n  </mat-card>\n\n\n  </div>\n<!--</div>-->\n\n\n\n\n\n\n\n\n\n\n"
 
 /***/ }),
 
@@ -2112,12 +2397,13 @@ module.exports = "<div class=\"container\" xmlns=\"http://www.w3.org/1999/html\"
 /*!**********************************************************!*\
   !*** ./src/app/modell-design/modell-design.component.ts ***!
   \**********************************************************/
-/*! exports provided: ModellDesignComponent */
+/*! exports provided: ModellDesignComponent, NoKLRDialog */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModellDesignComponent", function() { return ModellDesignComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NoKLRDialog", function() { return NoKLRDialog; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _modell__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modell */ "./src/app/modell.ts");
 /* harmony import */ var _selectedModel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../selectedModel */ "./src/app/selectedModel.ts");
@@ -2133,6 +2419,9 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 };
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
 };
 
 
@@ -2226,6 +2515,7 @@ var ModellDesignComponent = /** @class */ (function () {
     ModellDesignComponent.prototype.existsObj = function (c_index, iz_list) {
         return iz_list.findIndex(function (x) { return parseInt(x) === c_index; }) > -1;
     };
+    // any change with dropdown menu
     ModellDesignComponent.prototype.onChange = function (event, optionValue, cIndex) {
         console.log('... hey I am here');
         console.log('... hey option is', this.iz_selects[optionValue], cIndex, this.ClickedSelectedModel.kriterium_id);
@@ -2257,10 +2547,11 @@ var ModellDesignComponent = /** @class */ (function () {
         }
         // testing cretiria_10
         if (this.ClickedSelectedModel.kriterium_id == 10 && cIndex === 3) {
-            var dependency = 'Abhängigkeit: 9. Methodik der Fertigungs und Montagesteuerung - Ausprägung 2\n' +
-                '7. Betriebsdatenerfassung - Ausprägung 2\n' +
-                '20. Produktionsstücklisten und Rezepturen - Ausprägung 1\n' +
-                '28. Auswertung von Daten - Ausprägung 1';
+            // const dependency: string = 'Abhängigkeit: 9. Methodik der Fertigungs und Montagesteuerung - Ausprägung 2\n' +
+            // '7. Betriebsdatenerfassung - Ausprägung 2\n' +
+            // '20. Produktionsstücklisten und Rezepturen - Ausprägung 1\n' +
+            // '28. Auswertung von Daten - Ausprägung 1';
+            var dependency = this.getAuspDepen4Ziel(cIndex);
             if (optionValue === '2' || optionValue === '3') {
                 console.log('...  getting in here !!');
                 this.ClickedSelectedModel.Auspraegung_note[3] = dependency;
@@ -2282,11 +2573,64 @@ var ModellDesignComponent = /** @class */ (function () {
             this.ClickedSelectedModel.Ziele = this.ClickedSelectedModel.Ziele.filter(function (obj) { return obj.id !== cIndex; });
         }
     };
+    ModellDesignComponent.prototype.getAuspDepen4Ziel = function (fromAusID) {
+        console.log('.... the.ClickedSelectedModel is', this.ClickedSelectedModel);
+        var noteStr = '';
+        var count = 0;
+        var bulb = '💡';
+        var dependList = this.ClickedSelectedModel.dependentAusp;
+        if (dependList !== undefined && this.ClickedSelectedModel.dependentAusp !== null) {
+            var fromKriID = this.ClickedSelectedModel.kriterium_id;
+            var tobulb = false;
+            for (var _a = 0, dependList_1 = dependList; _a < dependList_1.length; _a++) {
+                var dep = dependList_1[_a];
+                var toKriID = -1;
+                var toAusID = -1;
+                if (!dep.bulb) { // buld:false
+                    toKriID = dep.relatedKri_id;
+                    var ap = dep.pair;
+                    for (var _i = 0; _i < ap.length; _i++) {
+                        if (ap[_i].from === fromAusID) {
+                            toAusID = ap[_i].to;
+                            tobulb = ap[_i].to_bulb;
+                            if (toAusID > 0) {
+                                count++;
+                                var newstr = "Kriterien_" + toKriID + " -> Ausprägung#" + toAusID + "; ";
+                                if (ap[_i].to_bulb) {
+                                    newstr += bulb + "\n";
+                                }
+                                else {
+                                    newstr += "\n";
+                                }
+                                console.log('.... newstr is: ', newstr);
+                                noteStr += newstr;
+                                console.log('.... noteStr is: ', noteStr);
+                            }
+                            if (toAusID === -1) {
+                                count++;
+                                noteStr += "Kriterien_" + toKriID + "; " + bulb + "\n";
+                            }
+                            break;
+                        }
+                    }
+                } // if dep.bulb === false
+            } //loop of dependList
+        }
+        if (count > 0) {
+            noteStr = "Abhängigkeit: (" + count + ")\n" + noteStr;
+            console.log('.... final noteStr is: ', noteStr);
+            return noteStr;
+        }
+        else {
+            return null;
+        }
+    };
     // call by onChange
     ModellDesignComponent.prototype.newZEIT = function (cIndex) {
         var newZiel = new _modell__WEBPACK_IMPORTED_MODULE_1__["Ziel"]();
         newZiel.id = cIndex;
-        newZiel.note = this.ClickedSelectedModel.Auspraegung_note[cIndex];
+        newZiel.note = this.getAuspDepen4Ziel(cIndex);
+        this.ClickedSelectedModel.Auspraegung_note[cIndex] = newZiel.note;
         newZiel.content = this.auspraegung[cIndex];
         return newZiel;
     };
@@ -2300,16 +2644,16 @@ var ModellDesignComponent = /** @class */ (function () {
     };
     // called by closeBlock;   update the ist and Ziel note
     ModellDesignComponent.prototype.updateIZnote = function (entry) {
-        for (var _i = 0, _a = entry.Iste; _i < _a.length; _i++) {
-            var em = _a[_i];
+        for (var _a = 0, _b = entry.Iste; _a < _b.length; _a++) {
+            var em = _b[_a];
             console.log('ist... em.id', em.id);
             if (this.noteIndexContains(em.id, entry)) {
                 em.note = entry.Auspraegung_note[parseInt(em.id)];
                 console.log('... em.note: ', em.note);
             }
         }
-        for (var _b = 0, _c = entry.Ziele; _b < _c.length; _b++) {
-            var em = _c[_b];
+        for (var _c = 0, _d = entry.Ziele; _c < _d.length; _c++) {
+            var em = _d[_c];
             console.log('ziel... em.id', em.id);
             if (this.noteIndexContains(em.id, entry)) {
                 em.note = entry.Auspraegung_note[em.id];
@@ -2327,45 +2671,65 @@ var ModellDesignComponent = /** @class */ (function () {
         return false;
     };
     ModellDesignComponent.prototype.openDialog3 = function (csModel) {
-        console.log('... openDialog2() to test on string this.ClickedSelectedModel.clrlist ' + this.createTreeString(csModel.clrlist));
-        var crlstring = this.createTreeString(csModel.clrlist);
-        var dialogRef = this.dialog.open(_clrview_clrview_component__WEBPACK_IMPORTED_MODULE_4__["ClrviewComponent"], {
-            width: '850px',
-            data: JSON.parse(crlstring)
-        });
-        dialogRef.afterClosed().subscribe(function (result) {
-            console.log('The dialog was closed; name: ' + result);
-        });
+        if (csModel.clrlist !== undefined && csModel.clrlist !== null) {
+            console.log('... openDialog2() to test on string this.ClickedSelectedModel.clrlist ' + this.createTreeString(csModel.clrlist));
+            var crlstring = this.createTreeString(csModel.clrlist);
+            var dialogRef = this.dialog.open(_clrview_clrview_component__WEBPACK_IMPORTED_MODULE_4__["ClrviewComponent"], {
+                width: '850px',
+                data: JSON.parse(crlstring)
+            });
+            dialogRef.afterClosed().subscribe(function (result) {
+                console.log('The dialog was closed; name: ' + result);
+            });
+        }
+        else {
+            this.openDialog4();
+        }
     };
     ModellDesignComponent.prototype.openDialog2 = function () {
-        var TestTree_DATA = {
-            'D3: Dokumentations- und Lesekompetenzen von Messdaten zz': {
-                'IT-Berufe und IT-Kompetenzen in der Industrie 4.0 zz': 'https://www.bibb.de/veroeffentlichungen/de/publication/show/7833'
-            },
-            'F4: Überwachung und Instandhaltung der vernetzten Systeme': {
-                'Hands on Industrie 4.0: 1.7 Die neue Qualität der Flexibilität': 'https://mooc.house/courses/industrie40-2016/items/7tUdCRZIAGu1GtiUM3GBqG',
-                'Hands on Industrie 4.0: 1.6 Enterprise Internet of Things': 'https://mooc.house/courses/industrie40-2016/items/3ENBLZInxWxpVj4vzcjdzl'
-            }
-        };
-        console.log('... openDialog2() to test on string this.ClickedSelectedModel.clrlist ' + this.createTreeString(this.ClickedSelectedModel.clrlist));
-        var crlstring = this.createTreeString(this.ClickedSelectedModel.clrlist);
-        var dialogRef = this.dialog.open(_clrview_clrview_component__WEBPACK_IMPORTED_MODULE_4__["ClrviewComponent"], {
+        // const TestTree_DATA: any = {
+        //   'D3: Dokumentations- und Lesekompetenzen von Messdaten zz': {
+        //     'IT-Berufe und IT-Kompetenzen in der Industrie 4.0 zz': 'https://www.bibb.de/veroeffentlichungen/de/publication/show/7833'
+        //   },
+        //   'F4: Überwachung und Instandhaltung der vernetzten Systeme': {
+        //     'Hands on Industrie 4.0: 1.7 Die neue Qualität der Flexibilität': 'https://mooc.house/courses/industrie40-2016/items/7tUdCRZIAGu1GtiUM3GBqG',
+        //     'Hands on Industrie 4.0: 1.6 Enterprise Internet of Things': 'https://mooc.house/courses/industrie40-2016/items/3ENBLZInxWxpVj4vzcjdzl'
+        //   }
+        // };
+        // console.log('... openDialog2() to test on string this.ClickedSelectedModel.clrlist ' + this.createTreeString(this.ClickedSelectedModel.clrlist));
+        if (this.ClickedSelectedModel.clrlist !== undefined && this.ClickedSelectedModel.clrlist !== null) {
+            var crlstring = this.createTreeString(this.ClickedSelectedModel.clrlist);
+            var dialogRef = this.dialog.open(_clrview_clrview_component__WEBPACK_IMPORTED_MODULE_4__["ClrviewComponent"], {
+                width: '850px',
+                // data: { name: this.test_name, animal: this.test_animal }
+                // data: <JSON> TestTree_DATA
+                data: JSON.parse(crlstring)
+            });
+            dialogRef.afterClosed().subscribe(function (result) {
+                console.log('The dialog was closed; name: ' + result);
+                // this.test_animal = result;
+            });
+        }
+        else {
+            this.openDialog4();
+        }
+    };
+    ModellDesignComponent.prototype.openDialog4 = function () {
+        var crlstring = 'keine verwandten Kompetenzen und Lernressourcen ';
+        var dialogRef = this.dialog.open(NoKLRDialog, {
             width: '850px',
-            // data: { name: this.test_name, animal: this.test_animal }
-            // data: <JSON> TestTree_DATA
-            data: JSON.parse(crlstring)
+            data: { title: 'Hinweis', text: crlstring }
         });
         dialogRef.afterClosed().subscribe(function (result) {
             console.log('The dialog was closed; name: ' + result);
-            // this.test_animal = result;
         });
     };
     // input this.ClickedSelectedModel.clrlist
     // output: TestTree_DATA
     ModellDesignComponent.prototype.createTreeString = function (clrobj_list) {
         var tree_string = '{';
-        for (var _i = 0, clrobj_list_1 = clrobj_list; _i < clrobj_list_1.length; _i++) {
-            var entry = clrobj_list_1[_i];
+        for (var _a = 0, clrobj_list_1 = clrobj_list; _a < clrobj_list_1.length; _a++) {
+            var entry = clrobj_list_1[_a];
             var ename = entry.competence_name.replace(/"/g, '\'');
             tree_string = tree_string + '\"' + ename + '\":{' + this.getLRString(entry.learningresources) + '},';
         }
@@ -2375,8 +2739,8 @@ var ModellDesignComponent = /** @class */ (function () {
     };
     ModellDesignComponent.prototype.getLRString = function (lrob) {
         var subtree_string = '';
-        for (var _i = 0, lrob_1 = lrob; _i < lrob_1.length; _i++) {
-            var entry = lrob_1[_i];
+        for (var _a = 0, lrob_1 = lrob; _a < lrob_1.length; _a++) {
+            var entry = lrob_1[_a];
             var eename = entry.lr_name;
             var eelink = entry.lr_link;
             subtree_string = subtree_string + '\"' + eename + '\": ' + '\"' + eelink + '\",';
@@ -2435,7 +2799,37 @@ var ModellDesignComponent = /** @class */ (function () {
     return ModellDesignComponent;
 }());
 
+var NoKLRDialog = /** @class */ (function () {
+    function NoKLRDialog(dialogRef, data) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+    }
+    NoKLRDialog.prototype.onNoClick = function () {
+        this.dialogRef.close();
+    };
+    NoKLRDialog = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'noKLR-dialog',
+            template: __webpack_require__(/*! ./noKLR-dialog.html */ "./src/app/modell-design/noKLR-dialog.html"),
+        }),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_5__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialogRef"], Object])
+    ], NoKLRDialog);
+    return NoKLRDialog;
+}());
 
+
+
+/***/ }),
+
+/***/ "./src/app/modell-design/noKLR-dialog.html":
+/*!*************************************************!*\
+  !*** ./src/app/modell-design/noKLR-dialog.html ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h1 mat-dialog-title>{{data.title}}</h1>\n<div mat-dialog-content>\n  <p style=\"font-size: x-large\">\n  {{data.text}}\n  </p>\n\n</div>\n"
 
 /***/ }),
 
@@ -2569,7 +2963,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/index.js");
 /* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(uuid__WEBPACK_IMPORTED_MODULE_0__);
 
-var NewUser = { uuid: Object(uuid__WEBPACK_IMPORTED_MODULE_0__["v4"])(), name: '', mission: ' ', vision: '', strategy: '', kriterienList: [] };
+var NewUser = { uuid: Object(uuid__WEBPACK_IMPORTED_MODULE_0__["v4"])(), name: '', mission: '', vision: '', strategy: '', kriterienList: [] };
 
 
 /***/ }),
@@ -2592,7 +2986,7 @@ var SelectedModel = /** @class */ (function () {
         this.isEvaluated = false;
         this.Iste = [];
         this.Ziele = [];
-        this.priority = 'keiner';
+        this.priority = 'KEINER';
         this.prioirtyNum = 0;
         this.Kosten = '';
         this.Evaluation_note = '';
@@ -2602,6 +2996,9 @@ var SelectedModel = /** @class */ (function () {
         this.Termin = null;
         this.Auspraegung_note = new Array(8);
         this.clrlist = [];
+        this.Korkri = '';
+        this.dependentType = '';
+        this.dependentAusp = [];
     }
     return SelectedModel;
 }());
@@ -2711,7 +3108,7 @@ var SortArrPipe = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".containerStart {\n  display: -ms-grid;\n  display: grid;\n  -ms-grid-columns: 50% auto;\n      grid-template-columns: 50% auto;\n}\n.col {\n  padding: .4em 1.3em;\n}\n.titleTable{\n  width: 100%;\n  height: 60px;\n  margin-top: 20px;\n  margin-bottom: 0px;\n  background-color: #A9B7C0;\n}\n.td2{\n  float:left;\n  width:240px;\n  height: 30px;\n  text-align: left;\n  margin-top:10px;\n  margin-right: 45px;\n  margin-left: 10px;\n  font-size: 150%;\n}\n.td1{\n  float:left;\n  width: 40%;\n  margin-top: 5px;\n}\n.textlink {\n  background-color: #A9B7C0;\n  /*font-family: \"Times New Roman\", Times, serif;*/\n  font-size: 150%;\n  width: 100%;\n  padding:auto;\n  margin-bottom: 0px;\n  margin-top: -60px;\n  box-sizing: border-box;\n  border: 0;\n  text-align: left;\n}\na {\n  color: #0067a2;\n}\n.loadButton {\n  background-color: #EFD9C1;;\n  width: 98px;\n  margin-left: 20px;\n}\n.textarea.ng-invalid {\n  /*background-color: rgba(211,211,211, 0.8);*/\n  background-color: #A9B7C0;\n  /*font-family: \"Times New Roman\", Times, serif;*/\n  font-size: 150%;\n  padding:auto;\n  margin-bottom: 5px;\n  margin-top: -15px;\n  box-sizing: border-box;\n  width: 100%;\n  height: 450px;\n  border: 0;\n  text-align: left;\n}\n.textarea.ng-invalid-2 {\n  /*background-color: rgba(211,211,211, 0.8);*/\n  background-color: #A9B7C0;\n  /*font-family: \"Times New Roman\", Times, serif;*/\n  font-size: 150%;\n  padding:auto;\n  margin-bottom: 20px;\n  margin-top: 18px;\n  box-sizing: border-box;\n  width: 100%;\n  height: 315px;\n  border: 0;\n  text-align: left;\n}\n.input-group {\n  margin-bottom: 15px;\n  box-sizing: border-box;\n  width: 100%;\n  height: 156px;\n  border: 0;\n  margin-top: 20px;\n}\n.input-group-text {\n  background-color: #A9B7C0;\n  width: 106px;\n  font-size: small;\n  font-weight: normal;\n  font-style: italic;\n}\n.zielText{\n  background-color: #A9B7C0;\n  font-size: small;\n  font-weight: normal;\n  font-style: italic;\n  padding-top: 45px;\n  color: #495057;\n}\n.form-control {\n font-size: 12pt;\n background-color: #8c9ca7;\n color:  #EFD9C1;\n}\n.textarea.ng-valid {\n  background-color: #EFD9C1;\n  font-size: 150%;\n  font-style: italic;\n  margin-bottom: 2px;\n  box-sizing: border-box;\n  width: 100%;\n  height:150px;\n  border: 0;\n  margin-top: 50px;\n}\n.textarea.ng-valid-2 {\n  background-color: #EFD9C1;\n  font-size: 150%;\n  font-style: italic;\n  margin-bottom: 2px;\n  box-sizing: border-box;\n  width: 100%;\n  height: 150px;\n  border: 0;\n  margin-top: 2px;\n}\ninput.btn {\n  border: 0;\n  display:block;\n  padding:1em 3em;\n  background:brown;\n  color:white;\n  margin-bottom:1em;\n  cursor:pointer;\n}\n.video {\n  box-sizing: border-box;\n  width: 100%;\n  height: 450px;\n  margin-top: 20px;\n}\n.uuidLableLeft {\n  margin-top: 30px;\n  height: 20px;\n  text-align: left;\n  font-size: small;\n}\n.uuidLable {\n  margin-top: 30px;\n  height: 20px;\n  text-align: right;\n  font-size: small;\n}\n.newButton {\n  background-color: #EFD9C1;;\n  width: 98px;\n  position: absolute;\n  left: 15px;\n}\n"
+module.exports = ".containerStart {\n  display: -ms-grid;\n  display: grid;\n  -ms-grid-columns: 42.5% auto;\n      grid-template-columns: 42.5% auto;\n}\n.col {\n\n}\n.titleTable{\n  width: 100%;\n  height: 60px;\n  margin-top: 20px;\n  margin-bottom: 0px;\n  background-color: #A9B7C0;\n}\n.td2{\n  float:left;\n  width:240px;\n  height: 30px;\n  text-align: left;\n  margin-top:10px;\n  margin-right: 15px;\n  margin-left: 10px;\n  font-size: 150%;\n}\n.td1{\n  float:left;\n  width: 40%;\n  margin-top: 5px;\n}\n.textlink {\n  background-color: #A9B7C0;\n  /*font-family: \"Times New Roman\", Times, serif;*/\n  font-size: 150%;\n  width: 100%;\n  padding:auto;\n  margin-bottom: 0px;\n  margin-top: -40px;\n  box-sizing: border-box;\n  border: 0;\n  text-align: right;\n  margin-right: 5px;\n}\na {\n  color: #0067a2;\n}\n.loadButton {\n  background-color: #EFD9C1;;\n  width: 94px;\n  margin-left: 20px;\n  font-size: 10pt;\n}\n.textarea.ng-invalid {\n  /*background-color: rgba(211,211,211, 0.8);*/\n  background-color: #A9B7C0;\n  /*font-family: \"Times New Roman\", Times, serif;*/\n  font-size: 145%;\n  padding:auto;\n  margin-bottom: 5px;\n  margin-top: -15px;\n  box-sizing: border-box;\n  width: 100%;\n  height: 450px;\n  border: 0;\n  text-align: left;\n}\n.textarea.ng-invalid-2 {\n  /*background-color: rgba(211,211,211, 0.8);*/\n  background-color: #A9B7C0;\n  /*font-family: \"Times New Roman\", Times, serif;*/\n  font-size: 150%;\n  padding:auto;\n  margin-bottom: 20px;\n  margin-top: 0px;\n  box-sizing: border-box;\n  width: 100%;\n  height: 315px;\n  border: 0;\n  text-align: left;\n}\n.input-group {\n  margin-bottom: 15px;\n  box-sizing: border-box;\n  width: 85%;\n  height: 156px;\n  border: 0px;\n  margin-top: 20px;\n}\n.input-group-text {\n  background-color: #A9B7C0;\n  width: 128px;\n  font-size: 12pt;\n  /*font-weight: normal;*/\n  font-style: italic;\n}\n.zielText{\n  background-color: #A9B7C0;\n  font-size: 12pt;\n  font-style: italic;\n  padding-top: 45px;\n  color: #495057;\n  width: 128px;\n}\n.form-control {\n font-size: 12pt;\n background-color: #8c9ca7;\n color:  #EFD9C1;\n}\n.textarea.ng-valid {\n  background-color: #EFD9C1;\n  font-size: 150%;\n  font-style: italic;\n  margin-bottom: 2px;\n  box-sizing: border-box;\n  width: 100%;\n  height:150px;\n  border: 0;\n  margin-top: 50px;\n}\n.textarea.ng-valid-2 {\n  background-color: #EFD9C1;\n  font-size: 150%;\n  font-style: italic;\n  margin-bottom: 2px;\n  box-sizing: border-box;\n  width: 100%;\n  height: 150px;\n  border: 0;\n  margin-top: 2px;\n}\ninput.btn {\n  border: 0;\n  display:block;\n  padding:1em 3em;\n  background:brown;\n  color:white;\n  margin-bottom:1em;\n  cursor:pointer;\n}\n.video {\n  box-sizing: border-box;\n  margin-top: 22px;\n  width:85%;\n}\n.uuidLableLeft {\n  margin-top: 30px;\n  height: 20px;\n  text-align: left;\n  font-size: small;\n}\n.uuidLable {\n  width: 85%;\n  margin-top: 30px;\n  height: 20px;\n  text-align: right;\n  font-size: small;\n}\n.newButton {\n  background-color: #EFD9C1;;\n  width: 106px;\n  position: absolute;\n  left: 15px;\n  font-size: 10pt;\n}\n"
 
 /***/ }),
 
@@ -2722,7 +3119,7 @@ module.exports = ".containerStart {\n  display: -ms-grid;\n  display: grid;\n  -
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"containerStart\">\n  <div class=\"col\">\n    <div class=\"uuidLableLeft\"> <b>Möchten Sie Ihre vorherige Datei importieren(.json)?</b>\n      <!--<button >import</button>-->\n      <input style=\"display: none\" type=\"file\" accept=\".json\" (change)=\"onFileLoad($event)\" #fileinput>\n      <button class=\"loadButton\" type=\"button\" (click)=\"fileinput.click()\"> laden </button>\n    </div>\n\n    <div class=\"titleTable\">\n        <!--<div  class=\"td2\"> <a href=\"http://www.adaption-projekt.de/\"><h1>Projekt ADAPTION</h1></a></div>-->\n      <div  class=\"td2\"> <h1>Projekt ADAPTION</h1></div>\n        <div class=\"td1\"> <img src=\"assets/images/adaption.png\" width=55% height=35%> </div>\n    </div>\n\n    <div>\n    <br><textarea disabled class =\"textarea ng-invalid\"   name=\"item\" rows=\"30\"  cols=\"50\" placeholder=\"Ziel des Forschungsprojektes ADAPTION ist es, KMU und Unternehmen bei der Migration zum Cyber-physischen System für Produktion und Fertigung zu unterstützen. Gefördert vom BMBF wird ein reifegradbasiertes Vorgehensmodell hierzu entwickelt, das die Ableitung eines individuellen Migrationspfades unter Beachtung von Wirtschaftlichkeitsgesichtspunkten ermöglicht. Der optimale Zielreifegrad wird individuell nach Nutzen und Wirtschaftlichkeit für jedes Unternehmen festgelegt. Das Vorgehensmodell verfolgt einen Ansatz, der die drei betrieblichen Gestaltungsdimensionen Technik, Organisation und Personal berücksichtigt.\n      &#10;Die Aufgabe des Educational Technology Lab in ADAPTION besteht in der Formalisierung und software-technischen Umsetzung eines Reifegrad- und Vorgehensmodell bei der Migration zum Cyber-physischen Produktionssystem. Weiterhin in der Erweiterung eines existierenden Assistenzsystems um digitale Lernszenarien, die für Cyber-physische Produktionssysteme relevant sind. Die Migration wird bei Anwendungspartnern verschiedener Größe (Konzern, KMU) unter realen Bedingungen untersucht, gewonnene Erkenntnisse werden in das allgemeine Vorgehensmodell überführt.\"></textarea>\n      <div class=\"textlink\"><a target=\"_blank\" href=\"http://www.adaption-projekt.de/\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Mehr Info]</a></div><br>\n\n    </div>\n    <br><textarea disabled class =\"textarea ng-invalid-2\" type=\"textarea\"  name=\"item\" placeholder=\"&#10; ADAPTION Tool (ADAPTION) entwickelt ein Selbstbewertungstool für ein Industrie 4.0-Audit, um den vorliegenden Reifegrad zu ermitteln und auf dieser Grundlage den unter wirtschaftlichen Gesichtspunkten optimalen Reifegrad festzulegen. Das Ziel ist die Unterstützung dieses Prozesses:\n          1. Strategische Ausrichtung\n          2. Industrie 4.0 Audit\n          3. Zielstellung\n          4. Maßnahmen-planung\n          5. Evaluation \" ></textarea><br>\n\n  </div>\n\n  <div class=\"col\">\n\n\n    <div class=\"uuidLable\">  <button class=\"newButton\" type=\"button\" (click)=\"createNewUser()\"> neu </button>\n      Willkommen!  Ihre Benutzer_ID ist: <b style=\"color:#EFD9C1; background-color: #8c9ca7; font-weight: 200\">{{cUser.uuid}}</b></div>\n\n    <!--<br><textarea class =\"textarea ng-valid-2\" name=\"item\"-->\n                  <!--placeholder=\"Was ist Ihre Vision?\"  [(ngModel)]=\"cUser.vision\"  ></textarea><br>-->\n    <!--<br><textarea class =\"textarea ng-valid-2\"  name=\"item\"-->\n                  <!--placeholder=\"Was ist Ihre Mission?\"  [(ngModel)]=\"cUser.mission\"  ></textarea><br>-->\n\n    <!--<br><textarea class =\"textarea ng-valid-2\"  name=\"item\"-->\n                  <!--placeholder=\"Was sind Ihre Strategische Ziele? (z.B. für 6 Monate) \" [(ngModel)]=\"cUser.strategy\" ></textarea><br>-->\n\n    <div class=\"input-group\">\n      <div class=\"input-group-prepend\">\n        <span class=\"input-group-text\">Vision: &nbsp; </span>\n      </div>\n      <textarea class=\"form-control\" aria-label=\"Vision:  \" placeholder=\"Was ist Ihre Vision?\"  [(ngModel)]=\"cUser.vision\" ></textarea>\n    </div>\n    <div class=\"input-group\">\n      <div class=\"input-group-prepend\">\n        <span class=\"input-group-text\" >Mission: </span>\n      </div>\n      <textarea class=\"form-control\" aria-label=\"Mission:\"  placeholder=\"Was ist Ihre Mission?\"  [(ngModel)]=\"cUser.mission\"  ></textarea>\n    </div>\n    <div class=\"input-group\">\n      <div class=\"input-group-prepend\">\n        <textarea class=\"zielText\" rows=\"4\" cols=\"12\" disabled>strategische Zielausrichtung: </textarea>\n      </div>\n      <textarea class=\"form-control\" aria-label=\"Ziel:  \"  placeholder=\"Was sind Ihre strategische Ziele? (z.B. für 6 Monate) \" [(ngModel)]=\"cUser.strategy\" ></textarea>\n    </div>\n\n    <div class=\"video\">\n      <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/kQLbVVPNTMQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>\n    </div>\n\n  </div>\n\n  <!--<div> current User vision: {{cUser.vision}} </div>-->\n  <!--<div> current User mission : {{cUser.mission}} </div>-->\n  <!--<div> current User mission : {{cUser.strategy}} </div>-->\n</div>\n\n"
+module.exports = "<div class=\"containerStart\">\n  <div class=\"col\">\n    <div class=\"uuidLableLeft\"> <b>Möchten Sie Ihre vorherige Datei importieren(.json)?</b>\n      <!--<button >import</button>-->\n      <input style=\"display: none\" type=\"file\" accept=\".json\" (change)=\"onFileLoad($event)\" #fileinput>\n      <button class=\"loadButton\" type=\"button\" (click)=\"fileinput.click()\"> laden </button>\n    </div>\n\n    <div class=\"titleTable\">\n        <!--<div  class=\"td2\"> <a href=\"http://www.adaption-projekt.de/\"><h1>Projekt ADAPTION</h1></a></div>-->\n      <div  class=\"td2\"> <h1>Projekt ADAPTION</h1></div>\n        <div class=\"td1\"> <img src=\"assets/images/adaption.png\" width=55% height=35% style=\"margin-left: 80px;\"> </div>\n    </div>\n\n    <div>\n    <br><textarea disabled class =\"textarea ng-invalid\"   name=\"item\" rows=\"30\"  cols=\"50\" placeholder=\"Ziel des Forschungsprojektes ADAPTION ist es, KMU und Unternehmen bei der Migration zum Cyber-physischen System für Produktion und Fertigung zu unterstützen. Gefördert vom BMBF wird ein reifegradbasiertes Vorgehensmodell hierzu entwickelt, das die Ableitung eines individuellen Migrationspfades unter Beachtung von Wirtschaftlichkeitsgesichtspunkten ermöglicht. Der optimale Zielreifegrad wird individuell nach Nutzen und Wirtschaftlichkeit für jedes Unternehmen festgelegt. Das Vorgehensmodell verfolgt einen Ansatz, der die drei betrieblichen Gestaltungsdimensionen Technik, Organisation und Personal berücksichtigt.\n      &#10;Die Aufgabe des Educational Technology Lab in ADAPTION besteht in der Formalisierung und software-technischen Umsetzung eines Reifegrad- und Vorgehensmodell bei der Migration zum Cyber-physischen Produktionssystem. Weiterhin in der Erweiterung eines existierenden Assistenzsystems um digitale Lernszenarien, die für Cyber-physische Produktionssysteme relevant sind. Die Migration wird bei Anwendungspartnern verschiedener Größe (Konzern, KMU) unter realen Bedingungen untersucht, gewonnene Erkenntnisse werden in das allgemeine Vorgehensmodell überführt.\"></textarea>\n      <div class=\"textlink\"><a target=\"_blank\" href=\"http://www.adaption-projekt.de/\">[Mehr Info]&nbsp; &nbsp; </a></div><br>\n\n    </div>\n    <br><textarea disabled class =\"textarea ng-invalid-2\" type=\"textarea\"  name=\"item\" placeholder=\"ADAPTION Tool (ADAPTION) entwickelt ein Selbstbewertungstool für ein Industrie 4.0-Audit, um den vorliegenden Reifegrad zu ermitteln und auf dieser Grundlage den unter wirtschaftlichen Gesichtspunkten optimalen Reifegrad festzulegen. Das Ziel ist die Unterstützung dieses Prozesses:\n          1. Strategische Ausrichtung\n          2. Industrie 4.0 Audit\n          3. Zielstellung\n          4. Maßnahmen-planung\n          5. Evaluation \" ></textarea><br>\n\n  </div>\n\n  <div class=\"col\">\n\n\n    <div class=\"uuidLable\">\n      <button class=\"newButton\" type=\"button\" (click)=\"createNewUser()\"> neu </button>Benutzer_ID: <b style=\"color:black; background-color: #D0D8DD; margin-right: 3px; font-weight:bold\">&nbsp; {{cUser.uuid}} &nbsp;&nbsp; </b>\n    </div>\n\n    <!--<br><textarea class =\"textarea ng-valid-2\" name=\"item\"-->\n                  <!--placeholder=\"Was ist Ihre Vision?\"  [(ngModel)]=\"cUser.vision\"  ></textarea><br>-->\n    <!--<br><textarea class =\"textarea ng-valid-2\"  name=\"item\"-->\n                  <!--placeholder=\"Was ist Ihre Mission?\"  [(ngModel)]=\"cUser.mission\"  ></textarea><br>-->\n\n    <!--<br><textarea class =\"textarea ng-valid-2\"  name=\"item\"-->\n                  <!--placeholder=\"Was sind Ihre Strategische Ziele? (z.B. für 6 Monate) \" [(ngModel)]=\"cUser.strategy\" ></textarea><br>-->\n\n    <div class=\"input-group\">\n      <div class=\"input-group-prepend\">\n        <span class=\"input-group-text\">Vision: &nbsp; </span>\n      </div>\n      <textarea class=\"form-control\" aria-label=\"Vision:  \" placeholder=\"Was ist Ihre xxx Vision?\" [(ngModel)]=\"cUser.vision\"></textarea>\n    </div>\n    <div class=\"input-group\">\n      <div class=\"input-group-prepend\">\n        <span class=\"input-group-text\" >Mission: </span>\n      </div>\n      <textarea class=\"form-control\" placeholder=\"Was ist Ihre Mission?\" [(ngModel)]=\"cUser.mission\"></textarea>\n    </div>\n    <div class=\"input-group\">\n      <div class=\"input-group-prepend\">\n        <!--<textarea class=\"zielText\" rows=\"4\" cols=\"12\" disabled>strategische Zielausrichtung: </textarea>-->\n        <span class=\"zielText\" rows=\"4\" cols=\"12\" disabled>strategische Zielausrichtung: </span>\n     </div>\n     <textarea class=\"form-control\" aria-label=\"Ziel:  \"  placeholder=\"Was sind Ihre strategische Ziele? (z.B. für 6 Monate) \" [(ngModel)]=\"cUser.strategy\" ></textarea>\n   </div>\n\n   <div class=\"video\">\n     <iframe width=\"536\" height=\"315\" src=\"https://www.youtube.com/embed/kQLbVVPNTMQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>\n   </div>\n\n </div>\n\n <!--<div> current User vision: {{cUser.vision}} </div>-->\n  <!--<div> current User mission : {{cUser.mission}} </div>-->\n  <!--<div> current User mission : {{cUser.strategy}} </div>-->\n</div>\n\n"
 
 /***/ }),
 
@@ -2768,7 +3165,7 @@ var StartComponent = /** @class */ (function () {
         this._userService = _userService;
         this.http = http;
         this._data = _data;
-        this.vision = 'Was ist Ihre Vision?';
+        this.vision = 'Was ist Ihre yyy Vision?';
         this.mission = 'Was ist Ihre Mission?';
         this.strategy = 'Was sind Ihre Strategische Ziele? (z.B. für 6 Monate) ';
         this.myForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormGroup"]({
@@ -2834,6 +3231,7 @@ var StartComponent = /** @class */ (function () {
                     console.log('... mission: ', _this.cUser.mission);
                     console.log('... vision: ', _this.cUser.vision);
                     _this.vision = _this.loadUser.vision;
+                    _this.mission = _this.loadUser.mission;
                     console.log('... uuid of cUser: ', _this.cUser.uuid);
                     _this._userService.changeUser(_this.cUser);
                     _this._data.changeGoal(_this.slist);
@@ -2932,7 +3330,7 @@ var UserService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".myform{\n  width:100%;\n  float:left;\n  padding: 0;\n}\n\n/*#label1{*/\n\n/*background: #EFD9C1;*/\n\n/*width: 100%;*/\n\n/*margin-bottom: 10px;*/\n\n/*margin-top: 30px;*/\n\n/*font: normal 20px courier !important;*/\n\n/*padding:10px;*/\n\n/*}*/\n\n#three-labels{\n  float: right;\n  width: 35%;\n  margin-bottom: 20px;\n  margin-top: 15px;\n  margin-right: 90px;\n}\n\n#three-labels label{\n  display: -ms-inline-grid;\n  display: inline-grid;\n  float:right;\n  background-color: #C7D8C6;\n  margin-left: 20px;\n  margin-right: 20px;\n  width: 80px;\n  text-align: center;\n  font-weight: bolder;\n  font-size: medium;\n  padding: 3px;\n}\n\n.form-group label{\n  float: left;\n  width: 60%;\n  background-color:#A9B7C0;\n  color:#333;\n  font-weight: bold;\n  font-size: medium;\n  padding:5px;\n  border:none;\n  margin-bottom: 10px;\n  margin-top: 10px;\n  display: -ms-inline-grid;\n  display: inline-grid;\n}\n\n.input-group button{\n  float: left;\n  width: 60%;\n  background-color:#A9B7C0;\n  color:#333;\n  padding:5px;\n  border:none;\n  margin-bottom: 10px;\n  margin-top: 10px;\n  display: -ms-inline-grid;\n  display: inline-grid;\n  font-size: medium;\n  font-weight: bold;\n  text-align: left;\n  cursor: zoom-in;\n}\n\n.numberCircle {\n  display: block;\n  margin-right: 40px;\n  margin-top: 12px;\n  margin-left: 40px;\n  background: #EFD9C1;\n  border-radius: 100%;\n  width: 36px;\n  height: 36px;\n  padding: 3px;\n  border: 2px solid #EFD9C1;\n  color: #808080;\n  text-align: center;\n  font: 20px Arial, sans-serif;\n}\n\n.izLable {\n  display: block;\n  margin-top: 12px;\n  margin-right: 20px;\n  width: 80px;\n  height: 33px;\n  margin-left: 25px;\n  background: #EFD9C1;\n  text-align: center;\n  font: 18px Arial, sans-serif;\n  color: #808080;\n  padding: 8px;\n}\n"
+module.exports = ".myform{\n  width:100%;\n  float:left;\n  padding: 0;\n}\n\n/*#label1{*/\n\n/*background: #EFD9C1;*/\n\n/*width: 100%;*/\n\n/*margin-bottom: 10px;*/\n\n/*margin-top: 30px;*/\n\n/*font: normal 20px courier !important;*/\n\n/*padding:10px;*/\n\n/*}*/\n\n#three-labels{\n  float: right;\n  width: 36%;\n  margin-bottom: 20px;\n  margin-top: 15px;\n  margin-right: 110px;\n}\n\n#three-labels label{\n  display: -ms-inline-grid;\n  display: inline-grid;\n  float:right;\n  background-color: #C7D8C6;\n  margin-left: 5px;\n  margin-right: 5px;\n  width: 110px;\n  text-align: center;\n  font-weight: bolder;\n  font-size: medium;\n  padding: 3px;\n}\n\n.form-group label{\n  float: left;\n  width: 60%;\n  background-color:#A9B7C0;\n  color:#333;\n  font-weight: bold;\n  font-size: medium;\n  padding:5px;\n  border:none;\n  margin-bottom: 10px;\n  margin-top: 10px;\n  display: -ms-inline-grid;\n  display: inline-grid;\n}\n\n.input-group button{\n  float: left;\n  width: 58%;\n  background-color:#A9B7C0;\n  color:#333;\n  padding:5px;\n  border:none;\n  margin-bottom: 10px;\n  margin-top: 10px;\n  display: -ms-inline-grid;\n  display: inline-grid;\n  font-size: medium;\n  font-weight: bold;\n  text-align: left;\n  cursor: zoom-in;\n}\n\n.numberCircle {\n  float: left;\n  display: block;\n  margin-right: 50px;\n  margin-top: 10px;\n  margin-left: 0px;\n  background: #EFD9C1;\n  border-radius: 100%;\n  width: 36px;\n  height: 36px;\n  padding: 3px;\n  border: 2px solid #EFD9C1;\n  color: #808080;\n  text-align: center;\n  font: 18px Arial, sans-serif;\n}\n\n.istLable {\n  float: left;\n  width: 10%;\n  display: block;\n  margin-top: 10px;\n  margin-right: 10px;\n  height: 33px;\n  margin-left: 12px;\n  background: #EFD9C1;\n  text-align: center;\n  font: 15px Arial, sans-serif;\n  color: #808080;\n  padding-top: 7px;\n}\n\n.zeilLable {\n  float: left;\n  width: 10%;\n  display: block;\n  margin-top: 10px;\n  margin-right: 45px;\n  height: 33px;\n  margin-left: 0px;\n  background: #EFD9C1;\n  text-align: center;\n  font: 15px Arial, sans-serif;\n  color: #808080;\n  padding-top: 7px;\n}\n"
 
 /***/ }),
 
@@ -2943,7 +3341,7 @@ module.exports = ".myform{\n  width:100%;\n  float:left;\n  padding: 0;\n}\n\n/*
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--Zustaede as the parentComponet and Modell-design as the child component-->\n\n<div *ngIf = \"displayThenBlock; then thenBlock  else elseBlock\"></div>\n\n<ng-template #thenBlock>\n  <!-- for testing\n  <h2>  this is then block</h2>\n  <button (click)= hideThenBlock()> hide </button>-->\n\n\n  <div id=\"label1\">\n    <label> Was sind die Ist-, Ziel-Zustände und Prioritäten für die ausgewählten Kriterien? </label>\n  </div>\n\n    <div id=\"three-labels\">\n      <label> Priorität </label>\n      <label> Ziel </label>\n      <label> Ist </label>\n    </div>\n\n\n  <!--<div *ngFor=\"let cmodle of checkedModells | sortArr:'priority': 'descending '| sortArr:'kriterium_id'; let m = index;\" >-->\n    <div *ngFor=\"let cmodle of sortPK(checkedModells); let m = index;\" >\n\n    <div class =\"input-group\">\n      <button type=\"text\" (click)=openEditor(cmodle)> {{cmodle.kriterium_id}}. {{cmodle.kriterium}} </button>\n      <!--<div class=\"izLable\">{{getISTE(cmodle, 'i')}}</div>-->\n      <!--<div class=\"izLable\">{{getISTE(cmodle, 'z')}}</div>-->\n      <!--<div title= \"{{cmodle.priority}}\" class=\"numberCircle\">{{getPriorityLevel(cmodle)}}</div>-->\n\n      <div (click)=openEditor(cmodle) class=\"izLable\">{{getISTE(cmodle, 'i')}}</div>\n      <div (click)=openEditor(cmodle) class=\"izLable\">{{getISTE(cmodle, 'z')}}</div>\n      <div (click)=openEditor(cmodle) title= \"{{cmodle.priority}}\" class=\"numberCircle\">{{getPriorityLevel(cmodle)}}</div>\n    </div>\n  </div>\n\n\n</ng-template>\n\n\n<ng-template #elseBlock>\n  <!--<h2>  this is else block</h2>-->\n  <!--<button (click)= showThenBlock()> show</button>-->\n\n  <app-modell-design (childEvent)=\"receiveChanage($event)\" [parentSwitch]=\"displayThenBlock\" [ClickedSelectedModel]=\"csMod\" [ClickedModell] =\"cMod\"> </app-modell-design>\n\n</ng-template>\n"
+module.exports = "<!--Zustaede as the parentComponet and Modell-design as the child component-->\n\n<div *ngIf = \"displayThenBlock; then thenBlock  else elseBlock\"></div>\n\n<ng-template #thenBlock>\n  <!-- for testing\n  <h2>  this is then block</h2>\n  <button (click)= hideThenBlock()> hide </button>-->\n\n\n  <div id=\"label1\">\n    <label> Was sind die Ist-, Ziel-Zustände und Prioritäten für die ausgewählten Kriterien? </label>\n  </div>\n\n    <div id=\"three-labels\">\n      <label> Priorität </label>\n      <label> Ziel </label>\n      <label> Ist </label>\n    </div>\n\n\n  <!--<div *ngFor=\"let cmodle of checkedModells | sortArr:'priority': 'descending '| sortArr:'kriterium_id'; let m = index;\" >-->\n    <div *ngFor=\"let cmodle of sortPK(checkedModells); let m = index;\" >\n\n    <div class =\"input-group\">\n      <button type=\"text\" (click)=openEditor(cmodle)> {{cmodle.kriterium_id}}. {{cmodle.kriterium}} </button>\n      <!--<div class=\"izLable\">{{getISTE(cmodle, 'i')}}</div>-->\n      <!--<div class=\"izLable\">{{getISTE(cmodle, 'z')}}</div>-->\n      <!--<div title= \"{{cmodle.priority}}\" class=\"numberCircle\">{{getPriorityLevel(cmodle)}}</div>-->\n\n      <div (click)=openEditor(cmodle) class=\"istLable\">{{getISTE(cmodle, 'i')}}</div>\n      <div (click)=openEditor(cmodle) class=\"zeilLable\">{{getISTE(cmodle, 'z')}}</div>\n      <div (click)=openEditor(cmodle) title= \"{{cmodle.priority}}\" class=\"numberCircle\">{{getPriorityLevel(cmodle)}}</div>\n    </div>\n  </div>\n\n\n</ng-template>\n\n\n<ng-template #elseBlock>\n  <!--<h2>  this is else block</h2>-->\n  <!--<button (click)= showThenBlock()> show</button>-->\n\n  <app-modell-design (childEvent)=\"receiveChanage($event)\" [parentSwitch]=\"displayThenBlock\" [ClickedSelectedModel]=\"csMod\" [ClickedModell] =\"cMod\"> </app-modell-design>\n\n</ng-template>\n"
 
 /***/ }),
 
@@ -3030,7 +3428,7 @@ var ZustaendeComponent = /** @class */ (function () {
         this.displayThenBlock = $event;
     };
     ZustaendeComponent.prototype.getPriorityLevel = function (sms) {
-        return sms.priority.charAt(0);
+        return sms.priority.toUpperCase().charAt(0);
     };
     // getFullPri(sms) {
     //   return this._data.priorities.find(x => x.value === sms.priority);
@@ -3047,7 +3445,7 @@ var ZustaendeComponent = /** @class */ (function () {
             temp_list = [];
         }
         if (temp_list.length === 0) {
-            return 'N';
+            return 'Keiner';
         }
         else {
             var temp_ist_ids = temp_list.map(function (ist) {

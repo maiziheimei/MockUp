@@ -68,7 +68,7 @@ export class ZustaendeComponent implements OnInit {
   }
 
   getPriorityLevel(sms: SelectedModel) {
-    return sms.priority.charAt(0);
+    return sms.priority.toUpperCase().charAt(0);
   }
 
   // getFullPri(sms) {
@@ -86,7 +86,7 @@ export class ZustaendeComponent implements OnInit {
     }
 
     if(temp_list.length === 0) {
-      return 'N';
+      return 'Keiner';
     } else {
       const temp_ist_ids = temp_list.map(function (ist) {
         return ist.id;

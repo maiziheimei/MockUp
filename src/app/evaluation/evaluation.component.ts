@@ -10,6 +10,7 @@ import {SelectedModel} from "../selectedModel";
 import {ClrviewComponent} from "../clrview/clrview.component";
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {FormControl} from "@angular/forms";
+import {User} from "../user";
 
 @Component({
   providers:[ MassnahmenComponent ],
@@ -56,7 +57,6 @@ export class EvaluationComponent implements OnInit {
 
   save2Json() {
     this._data.exportJson(this.sms, this.currentUser);
-
   }
 
  //  public exportJson(sms): void {
@@ -121,27 +121,59 @@ export class EvaluationComponent implements OnInit {
     return date_temp.value;
   }
 
-  preview() {
+ public preview() {
+   console.log('...1. this.currentUser: ',this.currentUser);
+
     const arrForJson = [];
     for (let i = 0; i < this.sms.length; i ++) {
+
+      // var deSe: SelectedModel = this.sms[i];
+      // delete deSe.Auspraegung_note;
+      // delete deSe.isselected;
+      // delete deSe.prioirtyNum;
+      // delete deSe.Erklaerung;
+      // arrForJson.push(deSe);
+
       arrForJson.push(this.sms[i]);
     }
 
     this.currentUser.kriterienList = arrForJson.map(x => Object.assign({}, x));
+    this._userService.changeUser(this.currentUser);
+
+   console.log('... 2. this.currentUser: ',this.currentUser);
+    // delete this.currentUser.name;
+
     const objJSON = JSON.stringify(this.currentUser, null, '\t');
     console.log('.... preview json: ', objJSON);
 
-    this.openDialogPreview(objJSON);
+   // this.openDialogPreview(objJSON);
+    this.openDialogPreviewInTable(this.currentUser);
   }
 
 
-  openDialogPreview( TestTree_DATA: any): void {
+  // openDialogPreview( TestTree_DATA: any): void {
+  //
+  //   const dialogRef = this.dialog.open(DialogOverviewExampleDialogComponent, {
+  //     width: '1000px',
+  //    // height: '1000px',
+  //     // data: { name: this.test_name, animal: this.test_animal }
+  //     data: <JSON> TestTree_DATA
+  //   });
+  //
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log('The preview dialog was closed; ');
+  //   });
+  // }
+
+  openDialogPreviewInTable( TestTree_DATA: User): void {
+
+    console.log('... TestTree_DATA: ',TestTree_DATA);
 
     const dialogRef = this.dialog.open(DialogOverviewExampleDialogComponent, {
-      width: '1200px',
-      height: '1000px',
+      width: '1000px',
+      //height: '1000px',
       // data: { name: this.test_name, animal: this.test_animal }
-      data: <JSON> TestTree_DATA
+      data: TestTree_DATA
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -160,10 +192,20 @@ export class DialogOverviewExampleDialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<DialogOverviewExampleDialogComponent>,
+    private  _dataService: DataService,
     @Inject(MAT_DIALOG_DATA) public data: any) {
   }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
+
+  // captureScreenPDF(){
+  //   this._dataService.captureScreen('contentToConvert');
+  // }
+
+  printHtml2PDF(){
+    this._dataService.print('contentToConvert');
+  }
+
 }

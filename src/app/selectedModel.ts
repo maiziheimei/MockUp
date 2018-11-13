@@ -1,5 +1,5 @@
 import { Ist, Ziel} from "./modell";
-import { CRLObj } from "./ComLR";
+import {AusPair, CRLObj, DependencyObj} from "./ComLR";
 
 export class SelectedModel {
   kriterium_id: number;
@@ -19,7 +19,9 @@ export class SelectedModel {
   Verantwortlich: string;
   Auspraegung_note: string[];
   clrlist: CRLObj[];
-
+  Korkri: string;
+  dependentType: string;
+  dependentAusp: AusPair[];
 
   constructor() {
     this.kriterium_id = 0;
@@ -28,7 +30,7 @@ export class SelectedModel {
     this.isEvaluated = false;
     this.Iste = [];
     this.Ziele = [];
-    this.priority = 'keiner';
+    this.priority = 'KEINER';
     this.prioirtyNum = 0;
     this.Kosten = '';
     this.Evaluation_note = '';
@@ -38,6 +40,10 @@ export class SelectedModel {
     this.Termin = null;
     this.Auspraegung_note = new Array<string>(8);
     this.clrlist = [];
+    this.Korkri= '';
+    this.dependentType = '';
+    this.dependentAusp = [];
+
   }
 }
 

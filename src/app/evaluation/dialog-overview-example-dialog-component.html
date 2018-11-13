@@ -1,6 +1,168 @@
-<h1 mat-dialog-title>Vorschau Ihrer Kriterien: </h1>
-<div mat-dialog-content>
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
 
-    <textarea type="text" maxlength="1000000" style="font-family: Arial; font-size: 12pt; width:100%; height: 800px;" value="{{data}} " disabled>  </textarea>
+    table {
+      width:100%;
+      height:95%;
+    }
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 15px;
+      text-align: left;
+      font: normal 14px courier !important;
+    }
+
+    td.td01 {
+      padding: 15px;
+      text-align: left;
+      font: normal 16px courier !important;
+      background-color: #d7d7d7;
+    }
+
+    /*table#t01 tr:nth-child(even) {*/
+      /*background-color: #eee;*/
+    /*}*/
+    /*table#t01 tr:nth-child(odd) {*/
+      /*background-color: #fff;*/
+    /*}*/
+
+    table#t01 th {
+      background-color: black;
+      color: white;
+    }
+
+    table.t02 {
+      border: 0px;
+    }
+
+    .printButton {
+      float: right;
+      width: 15%;
+      background-color: #A9B7C0;
+      border: none;
+      color: white;
+      padding: 3px;
+      font-size: medium;
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-top: 5px;
+    }
+
+  </style>
+</head>
+<body>
+
+<div>
+  <input  class="printButton" type="button" value="Drucken (.pdf)" (click)="printHtml2PDF()"/>
+</div>
+
+
+<h1 mat-dialog-title>Vorschau Ihrer Kriterien: </h1>
+
+<div mat-dialog-content >
+
+  <div id="contentToConvert">
+  <table style="width:100%">
+    <tr><td class="td01"  width="30%">Nutzer UUID   </td> <td>{{data.uuid}}</td></tr>
+    <tr><td class="td01"  width="30%">Mission</td> <td  >{{data.mission}}</td></tr>
+    <tr><td class="td01"  width="30%">Vision</td>  <td  >{{data.vision}}</td></tr>
+    <tr><td class="td01"  width="30%">Strategie</td> <td>{{data.strategy}}</td></tr>
+  </table>
+
+  <br style="line-height:5vh">
+  <h2> ausgewählt Kriterien: </h2>
+  <br>
+
+  <div *ngFor="let kr of data.kriterienList; index as i">
+    <table id="t01" border="1" style="width:100%">
+      <tr>
+        <th width="63%">Kriterien_ID: {{kr.kriterium_id}}</th>
+        <td class="td01" width="10%">priority:</td>
+        <td width="9%"> {{kr.priority}}</td>
+        <td class="td01" width="10%">isEvaluated</td>
+        <td width="8%">{{kr.isEvaluated}}</td>
+      </tr>
+    </table>
+
+    <table style="width:100%">
+      <tr><td class="td01"  width="30%">Kriterium</td><td >{{kr.kriterium}}</td></tr>
+      <tr><td class="td01"  width="30%">Korrelierendem Kriterium</td><td  >{{kr.Korkri}}</td>
+      </tr>
+      <tr><td class="td01" >Massnahmen</td><td colspan="3" >{{kr.Massnahmen}}</td></tr>
+      <tr><td class="td01">Notiz</td><td colspan="3" >{{kr.Evaluation_note}}</td></tr>
+    </table>
+
+    <div *ngFor="let iste of kr.Iste; index as ii; let l = count">
+      <table style="width:100%">
+        <tr>
+          <td width="12%" rowspan="2">Ist</td>
+          <td class="td01" width="18%" align="center">Ausprägung {{iste.id}} </td>
+          <td width="70%" align="center">{{iste.content}}</td>
+        </tr>
+        <tr>
+          <td class="td01" width="18%">Notiz</td>
+          <td width="70%" >{{iste.note}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div *ngFor="let ziel of kr.Ziele; index as ii; let l = count">
+      <table class="t02"  style="width:100%">
+        <tr>
+          <td width="12%" rowspan="2">Ziel</td>
+          <td class="td01" width="18%" align="center">Ausprägung {{ziel.id}} </td>
+          <td  width="70%" align="center">{{ziel.content}}</td>
+        </tr>
+        <tr>
+          <td class="td01" width="18%">Notiz</td>
+          <td width="70%" >{{ziel.note}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div *ngFor="let clr of kr.clrlist; index as ii; let l = count">
+      <table class="t02" style="width:100%">
+        <tr>
+          <td  width="12%" [attr.rowspan]="clr.learningresources.length *2 +1">Kompetenz</td>
+          <td  > {{clr.competence_name}}</td>
+        </tr>
+
+        <div  *ngFor="let lr of clr.learningresources">
+          <tr>
+            <td  class="td01" width="18%"colspan="2" rowspan="2">Lernressource</td>
+            <td  width="70%">{{lr.lr_id}} : {{lr.lr_name}} </td>
+          </tr>
+          <tr>
+            <td width="70%">{{lr.lr_link}}</td>
+          </tr>
+        </div>
+
+      </table>
+
+    </div>
+
+    <table class="t02" style="width:100%">
+      <tr>
+        <td class="td01" width="12%">Kosten</td>    <td width="18%">{{kr.Kosten | currency:'EUR':true}}</td>
+        <td class="td01" width="10%">Termin</td>    <td width="20%">{{kr.Termin | date: 'dd/MM/yyyy'}}</td>
+        <td class="td01" width="18%">Verantwortlich</td>  <td width="22%">{{kr.Verantwortlich}}</td>
+      </tr>
+    </table>
+
+
+    <br style="line-height:5vh" >
+
+  </div>
+
 
 </div>
+</div>
+
+
+</body>
+</html>

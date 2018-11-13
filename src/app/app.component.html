@@ -1,7 +1,13 @@
-<div class="header-logout" *ngIf="onOff | async as isLoggedIn">
-  <div class="he">
-    <app-header class="app-header"></app-header></div>
+
+<div id="menu">
+<div class="container">
+  <div class="header-logout" *ngIf="onOff | async as isLoggedIn">
+    <div class="he">
+      <app-header class="app-header"></app-header>
+    </div>
     <div class="lo"><button type="button" (click)="onLogout()" *ngIf="onOff">Exit</button></div>
+  </div>
+</div>
 </div>
 
 <div class="container">

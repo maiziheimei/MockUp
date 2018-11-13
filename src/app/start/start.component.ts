@@ -19,8 +19,8 @@ import { NewUser } from '../newuser';
 })
 export class StartComponent implements OnInit {
 
-  vision = 'Was ist Ihre Vision?';
-  mission = 'Was ist Ihre Mission?';
+  vision   = 'Was ist Ihre yyy Vision?';
+  mission  = 'Was ist Ihre Mission?';
   strategy = 'Was sind Ihre Strategische Ziele? (z.B. für 6 Monate) ';
   cUser: User;
   loadUser: any;
@@ -102,6 +102,7 @@ export class StartComponent implements OnInit {
           console.log('... mission: ', this.cUser.mission);
           console.log('... vision: ', this.cUser.vision);
           this.vision = this.loadUser.vision;
+          this.mission = this.loadUser.mission;
           console.log('... uuid of cUser: ', this.cUser.uuid);
 
           this._userService.changeUser(this.cUser);

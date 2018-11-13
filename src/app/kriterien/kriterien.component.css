@@ -1,7 +1,7 @@
 .myform{
   width:100%;
   float:left;
-  padding: 20px;
+  padding:0px;
 }
 
 #close-icon {
@@ -44,12 +44,13 @@
 
 .hange {
   float: left;
-  width:18%;
+  width:25%;
   height:30px;
   background-color: #EFD9C1;
   font-size: 12px;
   margin-top: 15px;
   margin-left: 1px;
+  border: 0px;
 }
 
 .myform .form-group mat-checkbox {

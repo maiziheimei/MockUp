@@ -1,4 +1,4 @@
-import {CRLObj} from "./ComLR";
+import {AusPair, CRLObj} from "./ComLR";
 
 export class Modell {
   _id: string;
@@ -36,7 +36,11 @@ export class Modell {
     id: string,
     createdDate: string
   };
+
   clrlist: CRLObj[];
+  Korkri: string;
+  dependentType: string;
+  dependentAusp: AusPair[];
 }
 
 export class Ist {

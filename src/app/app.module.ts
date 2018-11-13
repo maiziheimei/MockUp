@@ -16,7 +16,7 @@ import { ModelDetailComponent } from './model-detail/model-detail.component';
 import { StartComponent } from './start/start.component';
 import { KriterienComponent } from './kriterien/kriterien.component';
 import { ZustaendeComponent } from './zustaende/zustaende.component';
-import { ModellDesignComponent } from './modell-design/modell-design.component';
+import { ModellDesignComponent, NoKLRDialog} from './modell-design/modell-design.component';
 import { MassnahmenComponent } from './massnahmen/massnahmen.component';
 import { DialogOverviewExampleDialogComponent, EvaluationComponent} from './evaluation/evaluation.component';
 
@@ -79,7 +79,8 @@ import {MatRadioModule} from '@angular/material/radio';
     SortArrPipe,
     ClrviewComponent,
     DownloadAlertComponent,
-    DialogOverviewExampleDialogComponent
+    DialogOverviewExampleDialogComponent,
+    NoKLRDialog
   ],
   imports: [
     BrowserModule,
@@ -96,7 +97,7 @@ import {MatRadioModule} from '@angular/material/radio';
   providers: [HttpClientModule, ModellService, ModellDesignComponent, DataService, UserService, AuthService, AuthGuard, {provide: MAT_DATE_LOCALE, useValue: 'en-GB'},
     {provide: LOCALE_ID, useValue: 'de-DE'},
     {provide: MAT_DIALOG_DATA, useValue: {}},  {provide: MatDialogRef, useValue: {}}],
-  entryComponents: [ClrviewComponent, DownloadAlertComponent,DialogOverviewExampleDialogComponent],
+  entryComponents: [ClrviewComponent, DownloadAlertComponent,DialogOverviewExampleDialogComponent, NoKLRDialog],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

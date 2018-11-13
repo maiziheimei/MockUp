@@ -1,0 +1,1815 @@
+[
+  {
+    "kri_id": 9,
+    "dependencyType": "P",
+    "dependAuspr": [
+      {
+        "relatedKri_id": 10,
+        "relatedKri_depenTape": "P",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 2,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 0,
+            "to_bulb": false
+          },
+          {
+            "from": 5,
+            "to": 4,
+            "to_bulb": false
+          },
+          {
+            "from": 6,
+            "to": 4,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 30,
+        "relatedKri_depenTape": "P",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 4,
+            "to": 3,
+            "to_bulb": true
+          },
+          {
+            "from": 5,
+            "to": 3,
+            "to_bulb": true
+          },
+          {
+            "from": 6,
+            "to": 3,
+            "to_bulb": true
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 7,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 2,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 3,
+            "to_bulb": false
+          },
+          {
+            "from": 5,
+            "to": 4,
+            "to_bulb": false
+          },
+          {
+            "from": 6,
+            "to": 4,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 8,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 5,
+            "to": 5,
+            "to_bulb": false
+          },
+          {
+            "from": 6,
+            "to": 5,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 11,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 2,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 3,
+            "to_bulb": false
+          },
+          {
+            "from": 5,
+            "to": 3,
+            "to_bulb": false
+          },
+          {
+            "from": 6,
+            "to": 4,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 13,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 4,
+            "to": 3,
+            "to_bulb": false
+          },
+          {
+            "from": 5,
+            "to": 3,
+            "to_bulb": false
+          },
+          {
+            "from": 6,
+            "to": 3,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 18,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 2,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 5,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 6,
+            "to": 2,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 20,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 2,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 3,
+            "to_bulb": false
+          },
+          {
+            "from": 5,
+            "to": 3,
+            "to_bulb": false
+          },
+          {
+            "from": 6,
+            "to": 3,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 24,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 2,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 3,
+            "to_bulb": false
+          },
+          {
+            "from": 5,
+            "to": 3,
+            "to_bulb": false
+          },
+          {
+            "from": 6,
+            "to": 3,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 28,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 5,
+            "to": 3,
+            "to_bulb": false
+          },
+          {
+            "from": 6,
+            "to": 3,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 39,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 4,
+            "to": 3,
+            "to_bulb": true
+          },
+          {
+            "from": 5,
+            "to": 3,
+            "to_bulb": true
+          },
+          {
+            "from": 6,
+            "to": 3,
+            "to_bulb": true
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 46,
+        "relatedKri_depenTape": "S",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 27,
+        "relatedKri_depenTape": "T",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 4,
+            "to": 3,
+            "to_bulb": false
+          },
+          {
+            "from": 5,
+            "to": 3,
+            "to_bulb": false
+          },
+          {
+            "from": 6,
+            "to": 3,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 29,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 35,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      }
+    ]
+  },
+  {
+    "kri_id": 10,
+    "dependencyType": "P",
+    "dependAuspr": [
+      {
+        "relatedKri_id": 9,
+        "relatedKri_depenTape": "P",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 1,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 5,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 30,
+        "relatedKri_depenTape": "P",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 4,
+            "to": 3,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 7,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 1,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 2,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 5,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 8,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 4,
+            "to": 5,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 13,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 4,
+            "to": 4,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 18,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 4,
+            "to": 2,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 20,
+        "relatedKri_depenTape": null,
+        "bulb": false,
+        "pair": [
+          {
+            "from": 1,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 2,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 3,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 24,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 4,
+            "to": 3,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 28,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 1,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 2,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 2,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 45,
+        "relatedKri_depenTape": "S",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 1,
+        "relatedKri_depenTape": "T",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 4,
+            "to": 2,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 3,
+        "relatedKri_depenTape": "T",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 4,
+            "to": 1,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 4,
+        "relatedKri_depenTape": "T",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 4,
+            "to": 1,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 27,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 28,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      }
+    ]
+  },
+  {
+    "kri_id": 12,
+    "dependencyType": "P",
+    "dependAuspr": [
+      {
+        "relatedKri_id": 13,
+        "relatedKri_depenTape": "S",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 28,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 2,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 5,
+            "to": 3,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 27,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 28,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      }
+    ]
+  },
+  {
+    "kri_id": 14,
+    "dependencyType": "P",
+    "dependAuspr": [
+      {
+        "relatedKri_id": 7,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 1,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 2,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 5,
+            "to": 1,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 8,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 5,
+            "to": 4,
+            "to_bulb": true
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 11,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 3,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 5,
+            "to": 3,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 15,
+        "relatedKri_depenTape": "S",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 20,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 3,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 5,
+            "to": 1,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 21,
+        "relatedKri_depenTape": null,
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 22,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 2,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 5,
+            "to": 1,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 28,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 1,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 2,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 5,
+            "to": 1,
+            "to_bulb": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "kri_id": 16,
+    "dependencyType": "P",
+    "dependAuspr": [
+      {
+        "relatedKri_id": 11,
+        "relatedKri_depenTape": "P",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 7,
+            "to": 6,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 7,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 3,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 1,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 8,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 5,
+            "to": 3,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 28,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 3,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 5,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 6,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 7,
+            "to": 3,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 1,
+        "relatedKri_depenTape": "T",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 5,
+            "to": 2,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 27,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      }
+    ]
+  },
+  {
+    "kri_id": 17,
+    "dependencyType": "P",
+    "dependAuspr": [
+      {
+        "relatedKri_id": 11,
+        "relatedKri_depenTape": "P",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 7,
+            "to": 6,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 8,
+        "relatedKri_depenTape": "S",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 28,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 3,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 5,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 6,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 7,
+            "to": 3,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 1,
+        "relatedKri_depenTape": "T",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 5,
+            "to": 2,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 27,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      }
+    ]
+  },
+  {
+    "kri_id": 23,
+    "dependencyType": "P",
+    "dependAuspr": [
+      {
+        "relatedKri_id": 8,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 1,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 2,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 5,
+            "to": 4,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 22,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 3,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 3,
+            "to_bulb": false
+          },
+          {
+            "from": 5,
+            "to": 4,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 28,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 3,
+            "to": 2,
+            "to_bulb": true
+          },
+          {
+            "from": 4,
+            "to": 4,
+            "to_bulb": true
+          },
+          {
+            "from": 5,
+            "to": 4,
+            "to_bulb": true
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 27,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      }
+    ]
+  },
+  {
+    "kri_id": 46,
+    "dependencyType": "P",
+    "dependAuspr": [
+      {
+        "relatedKri_id": 5,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 7,
+            "to": 2,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 6,
+        "relatedKri_depenTape": "S",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 3,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 4,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 26,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      }
+    ]
+  },
+  {
+    "kri_id": 31,
+    "dependencyType": "P",
+    "dependAuspr": [
+      {
+        "relatedKri_id": 7,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 6,
+            "to": 2,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 8,
+        "relatedKri_depenTape": "S",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 18,
+        "relatedKri_depenTape": "S",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 19,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 2,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 5,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 6,
+            "to": 2,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 20,
+        "relatedKri_depenTape": "S",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 39,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 5,
+            "to": 4,
+            "to_bulb": false
+          },
+          {
+            "from": 6,
+            "to": 4,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 2,
+        "relatedKri_depenTape": "T",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 3,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 5,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 6,
+            "to": 2,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 3,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 4,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 27,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 29,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      }
+    ]
+  },
+  {
+    "kri_id": 30,
+    "dependencyType": "P",
+    "dependAuspr": [
+      {
+        "relatedKri_id": 7,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 2,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 2,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 4,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 3,
+            "to": -1,
+            "to_bulb": true
+          },
+          {
+            "from": 4,
+            "to": -1,
+            "to_bulb": true
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 20,
+        "relatedKri_depenTape": "T",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 1,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 2,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 3,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 24,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 1,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 2,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 3,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 3,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 25,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 1,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 2,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 3,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 3,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 3,
+        "relatedKri_depenTape": "T",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 3,
+            "to": -1,
+            "to_bulb": true
+          },
+          {
+            "from": 4,
+            "to": -1,
+            "to_bulb": true
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 21,
+        "relatedKri_depenTape": "T",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 1,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 2,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 3,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 4,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 27,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 9,
+        "relatedKri_depenTape": "P",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 3,
+            "to": 3,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 4,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 31,
+        "relatedKri_depenTape": "P",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 3,
+            "to": 3,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 3,
+            "to_bulb": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "kri_id": 7,
+    "dependencyType": "S",
+    "dependAuspr": [
+      {
+        "relatedKri_id": 8,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 5,
+            "to": 5,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 27,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 29,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      }
+    ]
+  },
+  {
+    "kri_id": 8,
+    "dependencyType": "S",
+    "dependAuspr": [
+      {
+        "relatedKri_id": 1,
+        "relatedKri_depenTape": "T",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 2,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 5,
+            "to": 2,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 27,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 29,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      }
+    ]
+  },
+  {
+    "kri_id": 11,
+    "dependencyType": "S",
+    "dependAuspr": [
+      {
+        "relatedKri_id": 7,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 3,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 3,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 8,
+        "relatedKri_depenTape": "S",
+        "bulb": true,
+        "pair": [
+          {
+            "from": 3,
+            "to": 2,
+            "to_bulb": true
+          },
+          {
+            "from": 4,
+            "to": 2,
+            "to_bulb": true
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 27,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 29,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      }
+    ]
+  },
+  {
+    "kri_id": 22,
+    "dependencyType": "S",
+    "dependAuspr": [
+      {
+        "relatedKri_id": 21,
+        "relatedKri_depenTape": "T",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 1,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 2,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 2,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 3,
+            "to_bulb": false
+          },
+          {
+            "from": 5,
+            "to": 3,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 29,
+        "relatedKri_depenTape": "S",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 1,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 2,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 3,
+            "to": 1,
+            "to_bulb": false
+          },
+          {
+            "from": 4,
+            "to": 2,
+            "to_bulb": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "kri_id": 24,
+    "dependencyType": "S",
+    "dependAuspr": [
+      {
+        "relatedKri_id": 26,
+        "relatedKri_depenTape": "T",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 6,
+            "to": 3,
+            "to_bulb": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "kri_id": 2,
+    "dependencyType": "T",
+    "dependAuspr": [
+      {
+        "relatedKri_id": 1,
+        "relatedKri_depenTape": "T",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 0,
+            "to": 1,
+            "to_bulb": true
+          },
+          {
+            "from": 1,
+            "to": 3,
+            "to_bulb": true
+          },
+          {
+            "from": 2,
+            "to": 3,
+            "to_bulb": true
+          },
+          {
+            "from": 3,
+            "to": 3,
+            "to_bulb": true
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 3,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 4,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 7,
+        "relatedKri_depenTape": "S",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 27,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 29,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      }
+    ]
+  },
+  {
+    "kri_id": 3,
+    "dependencyType": "T",
+    "dependAuspr": [
+      {
+        "relatedKri_id": 1,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 2,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      }
+    ]
+  },
+  {
+    "kri_id": 4,
+    "dependencyType": "T",
+    "dependAuspr": [
+      {
+        "relatedKri_id": 1,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      },
+      {
+        "relatedKri_id": 2,
+        "relatedKri_depenTape": "T",
+        "bulb": true,
+        "pair": null
+      }
+    ]
+  },
+  {
+    "kri_id": 21,
+    "dependencyType": "T",
+    "dependAuspr": [
+      {
+        "relatedKri_id": 1,
+        "relatedKri_depenTape": "T",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 6,
+            "to": 2,
+            "to_bulb": false
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 3,
+        "relatedKri_depenTape": "T",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 5,
+            "to": 4,
+            "to_bulb": true
+          },
+          {
+            "from": 6,
+            "to": 4,
+            "to_bulb": true
+          }
+        ]
+      },
+      {
+        "relatedKri_id": 4,
+        "relatedKri_depenTape": "T",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 5,
+            "to": 4,
+            "to_bulb": true
+          },
+          {
+            "from": 6,
+            "to": 4,
+            "to_bulb": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "kri_id": 26,
+    "dependencyType": "T",
+    "dependAuspr": [
+      {
+        "relatedKri_id": 4,
+        "relatedKri_depenTape": "T",
+        "bulb": false,
+        "pair": [
+          {
+            "from": 2,
+            "to": 1,
+            "to_bulb": true
+          },
+          {
+            "from": 3,
+            "to": 1,
+            "to_bulb": true
+          },
+          {
+            "from": 4,
+            "to": 1,
+            "to_bulb": true
+          }
+        ]
+      }
+    ]
+  }
+]

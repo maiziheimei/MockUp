@@ -9,16 +9,16 @@
     <div class="titleTable">
         <!--<div  class="td2"> <a href="http://www.adaption-projekt.de/"><h1>Projekt ADAPTION</h1></a></div>-->
       <div  class="td2"> <h1>Projekt ADAPTION</h1></div>
-        <div class="td1"> <img src="assets/images/adaption.png" width=55% height=35%> </div>
+        <div class="td1"> <img src="assets/images/adaption.png" width=55% height=35% style="margin-left: 80px;"> </div>
     </div>
 
     <div>
     <br><textarea disabled class ="textarea ng-invalid"   name="item" rows="30"  cols="50" placeholder="Ziel des Forschungsprojektes ADAPTION ist es, KMU und Unternehmen bei der Migration zum Cyber-physischen System für Produktion und Fertigung zu unterstützen. Gefördert vom BMBF wird ein reifegradbasiertes Vorgehensmodell hierzu entwickelt, das die Ableitung eines individuellen Migrationspfades unter Beachtung von Wirtschaftlichkeitsgesichtspunkten ermöglicht. Der optimale Zielreifegrad wird individuell nach Nutzen und Wirtschaftlichkeit für jedes Unternehmen festgelegt. Das Vorgehensmodell verfolgt einen Ansatz, der die drei betrieblichen Gestaltungsdimensionen Technik, Organisation und Personal berücksichtigt.
       &#10;Die Aufgabe des Educational Technology Lab in ADAPTION besteht in der Formalisierung und software-technischen Umsetzung eines Reifegrad- und Vorgehensmodell bei der Migration zum Cyber-physischen Produktionssystem. Weiterhin in der Erweiterung eines existierenden Assistenzsystems um digitale Lernszenarien, die für Cyber-physische Produktionssysteme relevant sind. Die Migration wird bei Anwendungspartnern verschiedener Größe (Konzern, KMU) unter realen Bedingungen untersucht, gewonnene Erkenntnisse werden in das allgemeine Vorgehensmodell überführt."></textarea>
-      <div class="textlink"><a target="_blank" href="http://www.adaption-projekt.de/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Mehr Info]</a></div><br>
+      <div class="textlink"><a target="_blank" href="http://www.adaption-projekt.de/">[Mehr Info]&nbsp; &nbsp; </a></div><br>
 
     </div>
-    <br><textarea disabled class ="textarea ng-invalid-2" type="textarea"  name="item" placeholder="&#10; ADAPTION Tool (ADAPTION) entwickelt ein Selbstbewertungstool für ein Industrie 4.0-Audit, um den vorliegenden Reifegrad zu ermitteln und auf dieser Grundlage den unter wirtschaftlichen Gesichtspunkten optimalen Reifegrad festzulegen. Das Ziel ist die Unterstützung dieses Prozesses:
+    <br><textarea disabled class ="textarea ng-invalid-2" type="textarea"  name="item" placeholder="ADAPTION Tool (ADAPTION) entwickelt ein Selbstbewertungstool für ein Industrie 4.0-Audit, um den vorliegenden Reifegrad zu ermitteln und auf dieser Grundlage den unter wirtschaftlichen Gesichtspunkten optimalen Reifegrad festzulegen. Das Ziel ist die Unterstützung dieses Prozesses:
           1. Strategische Ausrichtung
           2. Industrie 4.0 Audit
           3. Zielstellung
@@ -30,8 +30,9 @@
   <div class="col">
 
 
-    <div class="uuidLable">  <button class="newButton" type="button" (click)="createNewUser()"> neu </button>
-      Willkommen!  Ihre Benutzer_ID ist: <b style="color:#EFD9C1; background-color: #8c9ca7; font-weight: 200">{{cUser.uuid}}</b></div>
+    <div class="uuidLable">
+      <button class="newButton" type="button" (click)="createNewUser()"> neu </button>Benutzer_ID: <b style="color:black; background-color: #D0D8DD; margin-right: 3px; font-weight:bold">&nbsp; {{cUser.uuid}} &nbsp;&nbsp; </b>
+    </div>
 
     <!--<br><textarea class ="textarea ng-valid-2" name="item"-->
                   <!--placeholder="Was ist Ihre Vision?"  [(ngModel)]="cUser.vision"  ></textarea><br>-->
@@ -45,28 +46,29 @@
       <div class="input-group-prepend">
         <span class="input-group-text">Vision: &nbsp; </span>
       </div>
-      <textarea class="form-control" aria-label="Vision:  " placeholder="Was ist Ihre Vision?"  [(ngModel)]="cUser.vision" ></textarea>
+      <textarea class="form-control" aria-label="Vision:  " placeholder="Was ist Ihre xxx Vision?" [(ngModel)]="cUser.vision"></textarea>
     </div>
     <div class="input-group">
       <div class="input-group-prepend">
         <span class="input-group-text" >Mission: </span>
       </div>
-      <textarea class="form-control" aria-label="Mission:"  placeholder="Was ist Ihre Mission?"  [(ngModel)]="cUser.mission"  ></textarea>
+      <textarea class="form-control" placeholder="Was ist Ihre Mission?" [(ngModel)]="cUser.mission"></textarea>
     </div>
     <div class="input-group">
       <div class="input-group-prepend">
-        <textarea class="zielText" rows="4" cols="12" disabled>strategische Zielausrichtung: </textarea>
-      </div>
-      <textarea class="form-control" aria-label="Ziel:  "  placeholder="Was sind Ihre strategische Ziele? (z.B. für 6 Monate) " [(ngModel)]="cUser.strategy" ></textarea>
-    </div>
+        <!--<textarea class="zielText" rows="4" cols="12" disabled>strategische Zielausrichtung: </textarea>-->
+        <span class="zielText" rows="4" cols="12" disabled>strategische Zielausrichtung: </span>
+     </div>
+     <textarea class="form-control" aria-label="Ziel:  "  placeholder="Was sind Ihre strategische Ziele? (z.B. für 6 Monate) " [(ngModel)]="cUser.strategy" ></textarea>
+   </div>
 
-    <div class="video">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/kQLbVVPNTMQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
+   <div class="video">
+     <iframe width="536" height="315" src="https://www.youtube.com/embed/kQLbVVPNTMQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+   </div>
 
-  </div>
+ </div>
 
-  <!--<div> current User vision: {{cUser.vision}} </div>-->
+ <!--<div> current User vision: {{cUser.vision}} </div>-->
   <!--<div> current User mission : {{cUser.mission}} </div>-->
   <!--<div> current User mission : {{cUser.strategy}} </div>-->
 </div>

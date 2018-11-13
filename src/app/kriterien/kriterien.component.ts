@@ -6,7 +6,7 @@ import { DataService } from '../data.service';
 import { SelectedModel } from '../selectedModel';
 import { UserService } from '../user.service';
 import { User} from '../user';
-import {CRLObj, LRObj} from "../ComLR";
+import {AusPair, CRLObj, LRObj} from "../ComLR";
 import {ClrService} from "../clr.service";
 import {CurrencyPipe} from "@angular/common";
 
@@ -22,9 +22,10 @@ export class KriterienComponent implements OnInit {
   checked10th:boolean;
   // showAll = 'show Selected';
   sms = [];
-  modells: any;
+  modells = [];
   lastAction: string;
-  hiddenValue = new Array(42).fill(false);
+  hiddenValue = new Array(47).fill(false);
+  dependencyStr = "Abhängigkeiten: ";
 
   selectedAll: string = 'alle';
   // shortLong: boolean;
@@ -39,8 +40,10 @@ export class KriterienComponent implements OnInit {
   ngOnInit() {
     this._modellService.sharedModells.subscribe(res => this.modells = res);
     this._modellService.changeModel(this.modells);
+
     this._data.selectedModels.subscribe(res => this.sms = res);
     this._data.changeGoal(this.sms);
+
     console.log('... the sms length is: ', this.sms.length);
   }
 
@@ -90,19 +93,37 @@ export class KriterienComponent implements OnInit {
     }
   }
 
+
+  getKirDependency(mod: Modell) {
+    const kirID = parseInt( mod._id);
+    let tempDependent : AusPair[] = [];
+    tempDependent= this._clrService.getAusPair(kirID);
+
+    mod.dependentAusp = tempDependent;
+    mod.dependentType = this._clrService.getDependenType(kirID);
+    mod.Korkri = this.getKorrelierendemKriterium(mod);
+
+    console.log('... the dependecy of checked model: ', mod);
+  }
+
   // selectedIndex is actually the model ID
-  addItem(selectedIndex, kri, clrcontent) {
+  addItem(selectedIndex, kri, clrcontent, ausP, deType, kk) {
     const newItem = new SelectedModel();
     newItem.isselected = true;
     newItem.kriterium = kri;
     newItem.kriterium_id = selectedIndex;
     newItem.clrlist = clrcontent;
+    newItem.dependentAusp = ausP;
+    newItem.dependentType = deType;
+    newItem.Korkri = kk;
+
     if (this.sms.length === 0) {
       this.sms[0] = newItem;
-      console.log('... to add the checked model: ', selectedIndex);
+     // console.log('... to add the checked model: ', selectedIndex);
     } else {
       this.sms.push(newItem);
-      console.log('... to push the checked model: ', selectedIndex); }
+     // console.log('... to push the checked model: ', selectedIndex);
+    }
     // this.sms[selectedIndex] = true;
     this._data.changeGoal(this.sms);
   }
@@ -134,6 +155,67 @@ export class KriterienComponent implements OnInit {
 
   }
 
+  getDependentKriFromSM(model){
+    let s = '';
+    if(this.getCheckState(model)) {
+      const smodel: SelectedModel = this.sms.find(x => x.kriterium_id === model._id);
+      //console.log('.... using smodel to get dependency');
+      s = this.getDependentKri(smodel);
+      if(s === null) return null;
+      if(s === undefined) return null;
+
+      if (s !== null && s !== undefined) {
+        console.log(" ... s: ", s);
+        return s;
+      } else {
+        const  ss = this.getDependentKri(model);
+        console.log(" ... ss: ", ss);
+        return ss;
+      }
+    }
+  }
+
+  getDependentKri(model) {
+   // console.log('.... then the smodle: ', model);
+    let allRelatedKriIDs = '';
+    if (model.dependentAusp !== undefined && model.dependentAusp !== null ) {
+      for (let de of model.dependentAusp) {
+        if (de.bulb){
+          allRelatedKriIDs += de.relatedKri_id + ", ";
+        }
+      }
+
+      if (allRelatedKriIDs !== null && allRelatedKriIDs.length !== 0) {
+        const tttp = '💡'+  this.dependencyStr + allRelatedKriIDs.substring(0, allRelatedKriIDs.length - 2);
+        console.log(" ... allRelatedKriIDs length: ", allRelatedKriIDs.length, allRelatedKriIDs);
+        console.log(" ... tttp: ", tttp);
+        return tttp;
+      }
+    }else {
+      console.log(" ... sss: ");
+      return null;
+    }
+  }
+
+
+  getKorrelierendemKriterium (model) {
+    let kkstr = '';
+
+    if (model.dependentAusp !== undefined && model.dependentAusp !== null) {
+      for (let de of model.dependentAusp) {
+        if (de.bulb) {
+          kkstr += de.relatedKri_id + ", ";
+        }
+      }
+    }
+
+    if (kkstr !== null && kkstr !== '') {
+      return '💡'+ kkstr.substring(0, kkstr.length - 2) ;
+    } else {
+      return null;
+    }
+  }
+
   onSMSChange(event, i, modell){
 
   }
@@ -158,34 +240,42 @@ export class KriterienComponent implements OnInit {
     const mo: Modell = this.modells[checkedID];
     this.getCLRObjList(mo);
 
+    //get this model's dependency
+    this.getKirDependency(mo);
+
+    this._modellService.changeModel(this.modells);
+
     if (item.checked)  {
       item.isSelected= true;
       if (!this.smsExist(kid)) { // not exist in sms
-        this.addItem(kid, item.Kriterium, item.clrlist); // add
+        this.addItem(kid, item.Kriterium, item.clrlist, item.dependentAusp, item.dependentType, item.Korkri); // add
       }
-      if (kid === '10' || kid === 10) {
-        this.checked10th = true;
-      }
+      // if (kid === '10' || kid === 10) {
+      //   this.checked10th = true;
+      // }
     }
     if (!item.checked) { // uncheck
       item.isSelected= false;
       if (this.smsExist(kid)) {
         this.removeItem(kid);
       }
-      if (kid === '10' || kid === 10) {
-        this.checked10th = false;
-      }
+      // if (kid === '10' || kid === 10) {
+      //   this.checked10th = false;
+      // }
     }
     this._modellService.changeModel(this.modells);
     this._data.changeGoal(this.sms);
 
-    console.log('... the persisted sms ...: ', this.sms.length);
-    for (let i = 0; i < this.sms.length; i++) {
-      let temp = this.modells.findIndex(x => x._id === this.sms[i].kriterium_id);
-      if(temp > -1){
-        this.modells[temp].isSelected  = true;
-      }
-      console.log(this.sms[i].kriterium_id, this.sms[i].kriterium, this.sms[i].isselected); }
+    // console.log('... the persisted sms ...: ', this.sms.length);
+    // for (let i = 0; i < this.sms.length; i++) {
+    //   let temp = this.modells.findIndex(x => x._id === this.sms[i].kriterium_id);
+    //   if(temp > -1){
+    //     this.modells[temp].isSelected  = true;
+    //   }
+    //   // console.log(this.sms[i].kriterium_id, this.sms[i].kriterium, this.sms[i].isselected);
+    //   // console.log('.... model of the persist smodel, item: ', item);
+    //   // console.log('.... model of the persist smodel: ', this.modells[checkedID]);
+    // }
 
   }
 

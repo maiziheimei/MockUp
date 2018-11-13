@@ -1,19 +1,22 @@
-<div class="container">
+<!--<div class="container">-->
 
   <div id="label1">
     <label>Welche Maßnahmen wurden umgesetzt? </label>
   </div>
 
-  <div>
+  <div >
     <div class="info"> Sie haben evaluiert {{number}} Kriterien. </div>
-    <button class="btn" (click)="preview()"> Vorschau </button>
+    <button class="btn" (click)="preview()"> Vorschau & Drucken </button>
     <button class="btn" (click)="save2Json()"> herunterladen (.json)</button>
     <!--<a class="btn btn-clear" title="Download JSON" [href]="downloadJsonHref" download="download.json"></a>-->
   </div>
-  <div *ngFor="let cm of sms; index as i">
+
+<!--<div  id="contentToConvert" >-->
+  <div   *ngFor="let cm of sms; index as i">
     <div class ="input-group">
       <div class="checkedModel"> <input  disabled type="text" id="{{cm.kriterium_id}}" value="{{cm.kriterium_id}}. {{cm.kriterium}}"></div>
-      <div class="balls"> {{get_izIDs(cm, 'i')}} -> {{get_izIDs(cm, 'z')}}</div>
+      <div class="balls">&nbsp;Ist:  {{get_izIDs(cm, 'i')}}</div>
+      <div class="balls">Ziel: {{get_izIDs(cm, 'z')}}</div>
       <div class="priority"> <input  type="text" disabled value=" Priorität: {{cm.priority}}"></div>
 
 
@@ -21,14 +24,14 @@
         <div class="input-group-prepend">
           <span class="input-group-text">Maßnahme: </span>
         </div>
-        <textarea class="form-control" aria-label="Maßnahme: "  value="{{cm.Massnahmen}}"  matTextareaAutosize matAutosizeMinRows="3" matAutosizeMaxRows="15" disabled></textarea>
+        <textarea class="form-control" aria-label="Maßnahme: "  value="{{cm.Massnahmen}}"  matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="10" disabled></textarea>
       </div>
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text" style="color:black"> Notiz: </span>
         </div>
-        <textarea class="form-control-2" aria-label="Notiz:" [(ngModel)]="cm.Evaluation_note"  matTextareaAutosize matAutosizeMinRows="3" matAutosizeMaxRows="15" ></textarea>
+        <textarea class="form-control-2" aria-label="Notiz:" [(ngModel)]="cm.Evaluation_note"  matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="10" ></textarea>
       </div>
 
 
@@ -36,7 +39,7 @@
         <table class="example-full-width" cellspacing="0">
           <tr>
             <td><mat-form-field class="example-full-width" >
-              <input matInput type="text" placeholder="Kosten: (EUR)" value="{{ cm.Kosten| currency:'EUR':true}}" disabled>
+              <input matInput type="text" placeholder="Kosten: (€)" value="{{ cm.Kosten| currency:'EUR':true}}" disabled>
             </mat-form-field></td>
             <td>
               <mat-form-field class="example-full-width">
@@ -65,5 +68,5 @@
     </div>
   </div>
 
-
-</div><!--container-->
+<!--</div>-->
+<!--</div>&lt;!&ndash;container&ndash;&gt;-->
