@@ -1,6 +1,7 @@
 <div class="containerStart">
   <div class="col">
-    <div class="uuidLableLeft"> <b>Möchten Sie Ihre vorherige Datei importieren(.json)?</b>
+    <div class="uuidLableLeft">
+      <b id="label_laden">Möchten Sie Ihre vorherige Datei importieren(.json)?</b>
       <!--<button >import</button>-->
       <input style="display: none" type="file" accept=".json" (change)="onFileLoad($event)" #fileinput>
       <button class="loadButton" type="button" (click)="fileinput.click()"> laden </button>
@@ -28,7 +29,6 @@
   </div>
 
   <div class="col">
-
 
     <div class="uuidLable">
       <button class="newButton" type="button" (click)="createNewUser()"> neu </button>Benutzer_ID: <b style="color:black; background-color: #D0D8DD; margin-right: 3px; font-weight:bold">&nbsp; {{cUser.uuid}} &nbsp;&nbsp; </b>

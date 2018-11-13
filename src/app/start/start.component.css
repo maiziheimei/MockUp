@@ -48,11 +48,18 @@ a {
   color: #0067a2;
 }
 
+#label_laden{
+  float: left;
+  width: 80%
+}
+
 .loadButton {
   background-color: #EFD9C1;;
-  width: 94px;
+  /*width: 94px;*/
   margin-left: 20px;
   font-size: 10pt;
+  float: left;
+  width: 15%
 }
 
 .textarea.ng-invalid {
