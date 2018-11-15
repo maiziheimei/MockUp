@@ -24,7 +24,7 @@ export class DataService {
     {value: '3', viewValue: 'HOCH'},
     {value: '2', viewValue: 'MITTEL'},
     {value: '1', viewValue: 'NIEDRIG'},
-    {value: '0', viewValue: 'KEINER'}
+    {value: '0', viewValue: 'KEINE'}
   ];
 
   public sortMulti(obj: SelectedModel[]) {
@@ -214,6 +214,7 @@ export class DataService {
 
           var onePageCanvas = document.createElement("canvas");
           onePageCanvas.setAttribute('width', '1000');
+         // onePageCanvas.setAttribute('width', document.body.clientWidth.toString());
           onePageCanvas.setAttribute('height', '980');
           var ctx = onePageCanvas.getContext('2d');
           // details on this usage of this function:

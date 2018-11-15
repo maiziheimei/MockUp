@@ -86,7 +86,7 @@ export class ZustaendeComponent implements OnInit {
     }
 
     if(temp_list.length === 0) {
-      return 'Keiner';
+      return 'Kein';
     } else {
       const temp_ist_ids = temp_list.map(function (ist) {
         return ist.id;

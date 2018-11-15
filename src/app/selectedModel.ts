@@ -30,7 +30,7 @@ export class SelectedModel {
     this.isEvaluated = false;
     this.Iste = [];
     this.Ziele = [];
-    this.priority = 'KEINER';
+    this.priority = 'KEINE';
     this.prioirtyNum = 0;
     this.Kosten = '';
     this.Evaluation_note = '';

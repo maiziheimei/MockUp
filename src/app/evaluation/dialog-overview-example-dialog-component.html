@@ -40,6 +40,11 @@
       border: 0px;
     }
 
+    .printNote{
+      float: right;
+      margin-top: 15px;
+      color: blue;
+    }
     .printButton {
       float: right;
       width: 15%;
@@ -48,7 +53,7 @@
       color: white;
       padding: 3px;
       font-size: medium;
-      margin-left: 15px;
+      margin-left: 10px;
       margin-right: 15px;
       margin-top: 5px;
     }
@@ -59,14 +64,20 @@
 
 <div>
   <input  class="printButton" type="button" value="Drucken (.pdf)" (click)="printHtml2PDF()"/>
+  <span class="printNote"> <h5><i> Kein Zoomen, wenn Drucken </i></h5>  </span>
 </div>
 
+<div id="contentToConvert">
 
 <h1 mat-dialog-title>Vorschau Ihrer Kriterien: </h1>
 
+
 <div mat-dialog-content >
 
-  <div id="contentToConvert">
+
+
+
+
   <table style="width:100%">
     <tr><td class="td01"  width="30%">Nutzer UUID   </td> <td>{{data.uuid}}</td></tr>
     <tr><td class="td01"  width="30%">Mission</td> <td  >{{data.mission}}</td></tr>
@@ -91,10 +102,10 @@
 
     <table style="width:100%">
       <tr><td class="td01"  width="30%">Kriterium</td><td >{{kr.kriterium}}</td></tr>
-      <tr><td class="td01"  width="30%">Korrelierendem Kriterium</td><td  >{{kr.Korkri}}</td>
+      <tr><td class="td01"  width="30%">Korrelierendes Kriterium</td><td  >{{kr.Korkri}}</td>
       </tr>
-      <tr><td class="td01" >Massnahmen</td><td colspan="3" >{{kr.Massnahmen}}</td></tr>
-      <tr><td class="td01">Notiz</td><td colspan="3" >{{kr.Evaluation_note}}</td></tr>
+      <tr><td class="td01" >Maßnahmen</td><td colspan="3" >{{kr.Massnahmen}}</td></tr>
+      <tr><td class="td01">Evaluation Notiz</td><td colspan="3" >{{kr.Evaluation_note}}</td></tr>
     </table>
 
     <div *ngFor="let iste of kr.Iste; index as ii; let l = count">
